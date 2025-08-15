@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body style="{% if page.mysetting.background-color %}background-color:{{page.mysetting.background-color}};{% endif %}">
+
+    {% if page.mysetting.display != 'fullscreen' %}
+      {%- include header.html -%}
+    {% endif %}
+
+    <main class="page-content" aria-label="Content">
+    {% if  page.mysetting.nowrapper %}
+        {{ content }}
+    {% else %}
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    {% endif %}
+    </main>
+
+    {% if page.mysetting.display != 'fullscreen' %}
+      {%- include footer.html -%}
+    {% endif %}
+
+  </body>
+
+</html>

@@ -1,0 +1,353 @@
+.wide-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+.time-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Section Titles */
+.time-section-title {
+  font-size: 2em;
+  color: #e0e0e0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Popular Times Section */
+.popular-times-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.popular-time-card {
+  position: relative;
+  flex: 0 0 170px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.popular-time-card:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.country-abbr {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #aaa;
+}
+
+@media (max-width: 525px) {
+  .wide-wrapper {
+    padding: 0 5px;
+  }
+
+  .popular-times-grid {
+    gap: 10px;
+  }
+
+  .popular-time-card {
+    box-sizing: border-box;
+    flex: 0 0 calc(50% - 6px);
+    padding: 10px;
+  }
+
+  .popular-time-card .city {
+    font-size: 1.2em;
+  }
+
+  .popular-time-card .time {
+    font-size: 1.3em;
+  }
+}
+
+.popular-time-card .city {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.popular-time-card .time {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+}
+
+.popular-time-card .time small {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tab-link {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #ccc;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.tab-link:hover {
+  color: #fff;
+}
+
+.tab-link.active {
+  color: #3399ff;
+  border-bottom-color: #3399ff;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.country-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+
+.country-name {
+  font-size: 1.8em;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.country-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+.single-timezone-notice {
+  background-color: #e7f3ff;
+  border-left: 4px solid #007bff;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  border-radius: 4px;
+}
+
+.timezone-group {
+  margin-bottom: 20px;
+}
+
+.timezone-name {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 15px;
+}
+
+.city-time-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.city-time-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.city-time-item:last-child {
+  border-bottom: none;
+}
+
+.city-time-item .city {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.city-time-item .time {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: right;
+}
+
+.city-time-item .time small {
+    font-size: 0.6em;
+    font-weight: 400;
+    color: #6c757d;
+    display: block;
+}
+
+/* Wrapper for the toggle button */
+.toggle-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Right-align items */
+  gap: 30px;
+  align-items: center;
+  padding: 10px 0; /* Add some vertical padding */
+  margin: 20px 0; /* Adjust margins for the new look */
+  border-bottom: 1px solid #444; /* Separator line */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+@media (max-width: 768px) {
+  .toggle-wrapper {
+    justify-content: center; /* Center items on smaller screens */
+    gap: 15px;
+  }
+  .settings-item {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Toggle Switch Styles */
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toggle-switch-container span {
+  font-size: 0.9em;
+  color: #888;
+  font-weight: 500;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 28px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #28a745;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #28a745;
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* New styles for settings items */
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-label {
+  font-size: 0.9em;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.time-picker-input {
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 0.9em;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid  #28a745;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirm-btn:hover {
+  background-color: #6ec682;
+}
+
+.reset-btn {
+  background-color: #8b3232;
+  color: white;
+  border: 1px solid #a34e4e;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #a14646;
+}
+
+/* Style for disabled toggle */
+.toggle-switch.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

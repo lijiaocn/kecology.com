@@ -1,0 +1,380 @@
+/* General layout */
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff; /* Changed to white */
+    text-align: center; /* Centered */
+}
+
+.json-tool-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 15px;
+    box-sizing: border-box;
+    min-width: 1045px; /* Accommodate two panes at their new min-width */
+}
+
+/* Toolbar */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.toolbar-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.toolbar-btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.toolbar-btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.toolbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+#copy-feedback {
+    color: #28a745;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#copy-feedback.show {
+    opacity: 1;
+}
+
+.toolbar-actions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.toolbar-actions button:hover {
+    background-color: #0056b3;
+}
+
+/* Main content area */
+.main-content {
+    display: flex;
+    flex: 1;
+    gap: 15px;
+    min-height: 0;
+}
+
+/* Panes */
+.editor-pane, .output-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #fff;
+    min-width: 0; /* Let flexbox handle the sizing */
+}
+
+.editor-pane {
+    border-top-left-radius: 0;
+}
+
+/* Editor Header */
+.editor-header, .output-pane .tabs {
+    min-height: 45px; /* Unify header heights */
+    box-sizing: border-box;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #fff;
+    gap: 15px; /* Add spacing between buttons and status */
+}
+
+.editor-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.editor-actions button {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #212529;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.editor-actions button:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+#clear-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+.status-bar {
+    padding: 8px 0; /* Left and right padding set to 0 */
+    font-size: 13px;
+    display: none;
+    flex-grow: 1;
+    text-align: left; /* Changed from right */
+}
+
+.status-bar.error {
+    color: #dc3545;
+    /* background-color: #f8d7da; */
+    display: block;
+}
+
+.status-bar.success {
+    color: #28a745;
+    /* background-color: #d4edda; */
+    display: block;
+}
+
+/* Editor and Output Wrappers */
+.editor-wrapper, .output-wrapper {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    background-color: #fff;
+    position: relative; /* For layering */
+}
+
+/* Line Numbers */
+.line-numbers {
+    width: 40px;
+    padding: 10px 0;
+    background-color: #fff; /* Changed to white */
+    text-align: right;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6c757d;
+    border-right: 1px solid #dee2e6;
+    user-select: none;
+    white-space: pre;
+    padding-right: 5px;
+    overflow: hidden;
+}
+
+/* Editor Highlighting & Textarea */
+#highlighting-layer,
+#json-input {
+    /* Common styles for both layers */
+    box-sizing: border-box; /* Fix for width + padding overflow */
+    position: absolute;
+    top: 0;
+    left: 40px; /* Match line-numbers width */
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 40px);
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+#highlighting-layer {
+    color: transparent;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#json-input {
+    z-index: 2;
+    color: #212529;
+    background-color: transparent;
+    caret-color: black;
+}
+
+.error-line {
+    background-color: rgba(220, 53, 69, 0.15);
+    display: block;
+    margin: 0 -10px;
+    padding: 0 10px;
+}
+
+.error-char {
+    background-color: rgba(220, 53, 69, 0.4);
+    border-radius: 2px;
+}
+
+#json-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Output pane */
+.output-pane .tabs {
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+    flex-shrink: 0;
+    background-color: #fff; /* Unify background */
+}
+
+.output-pane .tabs button {
+    padding: 10px; /* Reduced padding */
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+
+.output-pane .tabs button.active {
+    font-weight: 600;
+    color: #007bff;
+    background-color: #fff;
+    border-bottom: 2px solid #007bff;
+}
+
+.output-pane .tab-content {
+    flex: 1;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.output-pane .tab-content pre {
+    margin: 0;
+    padding: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #212529;
+    line-height: 1.6;
+}
+
+.output-wrapper pre {
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tree View Styles */
+#tree-output {
+    padding: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#tree-output ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
+    border-left: 1px dotted #ccc;
+}
+
+#tree-output li {
+    position: relative;
+}
+
+#tree-output .key {
+    color: #a52a2a; /* Brown */
+    font-weight: bold;
+}
+
+#tree-output .key.collapsible {
+    cursor: pointer;
+}
+
+#tree-output .key.collapsible::before {
+    content: '▸';
+    color: #666;
+    display: inline-block;
+    margin-right: 4px;
+    transition: transform 0.1s;
+}
+
+#tree-output .key.collapsible.open::before {
+    transform: rotate(90deg);
+}
+
+#tree-output .value {
+    color: #008000; /* Green */
+}
+
+#tree-output .value.string {
+    color: #d14; /* Reddish */
+}
+
+#tree-output .value.null {
+    color: #007bff; /* Blue */
+}
+
+#tree-output .value.boolean {
+    color: #fd7e14; /* Orange */
+}
+
+/* --- THEME OVERRIDE --- */
+/* Override Jekyll minima theme's code block background (#eef) */
+.json-tool-container pre,
+.json-tool-container code {
+  background-color: transparent;
+  border: none;
+}

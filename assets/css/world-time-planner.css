@@ -1,0 +1,335 @@
+/* General App Styles */
+#world-time-planner-app {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.wtp-header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.wtp-header h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 0.2em;
+}
+
+/* Selector Styles */
+.wtp-selectors-container {
+  margin-bottom: 2em;
+}
+
+.wtp-popular-cities h2, .wtp-country-selector h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5em;
+}
+
+.wtp-city-grid, .wtp-country-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.wtp-city-grid label, .wtp-country-grid .wtp-country-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.wtp-city-grid label:hover, .wtp-country-grid .wtp-country-item:hover {
+  background-color: #444;
+}
+
+.wtp-country-item {
+  padding: 12px 18px;
+}
+
+/* Modal Styles */
+.wtp-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.wtp-modal-content {
+  background-color: #2c2c2c;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.wtp-modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Timeline Styles */
+.wtp-timeline-container {
+  background-color: #1a1a1a;
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.wtp-timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+.wtp-time-nav-controls, .wtp-date-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#wtp-date-picker {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+#wtp-now-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#wtp-now-btn:hover {
+    background-color: #0056b3;
+}
+
+#wtp-date-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.wtp-date-button,
+#wtp-scroll-left-btn,
+#wtp-scroll-right-btn {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.wtp-date-button:hover,
+#wtp-scroll-left-btn:hover,
+#wtp-scroll-right-btn:hover {
+  background-color: #444;
+  border-color: #777;
+}
+
+.wtp-date-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+#wtp-scroll-left-btn:disabled,
+#wtp-scroll-right-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+#wtp-time-selector {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ff5722;
+  pointer-events: none; /* So it doesn't block mouse events on rows */
+  z-index: 20;
+}
+
+.wtp-hover-time-label {
+    display: none;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    z-index: 21;
+    pointer-events: none;
+    transform: translateX(10px);
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+/* Timeline Row Styles */
+.wtp-timeline-row {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 30px; /* Increased to prevent label overlap */
+}
+
+.wtp-timezone-info {
+  flex: 0 0 100px;
+  padding: 10px;
+  background-color: #252525;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.wtp-remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.wtp-city {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.wtp-country {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.wtp-current-time {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-top: 5px;
+  min-height: 1.2em;
+  min-width: 4ch;
+}
+
+.wtp-timeline-track {
+  flex-grow: 1;
+  display: flex;
+  border-radius: 0 0 4px 4px;
+  /* overflow: hidden; */ /* Removed to allow day labels to show */
+  position: relative;
+}
+
+.wtp-timeline-hour {
+  width: 50px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #aaa;
+  border-left: 1px solid #333;
+  padding: 5px 0;
+  position: relative;
+}
+
+.wtp-timeline-hour::after {
+    content: attr(data-hour);
+}
+
+/* Time of Day Colors */
+.wtp-timeline-hour.night {
+  background-color: #2c3e50;
+}
+
+.wtp-timeline-hour.work {
+  background-color: #27ae60;
+}
+
+.wtp-timeline-hour.evening {
+  background-color: #f39c12;
+}
+
+.wtp-timeline-hour.day {
+  background-color: #3498db;
+}
+
+.wtp-current-time-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: red;
+    z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wtp-timezone-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.wtp-timeline-hour.wtp-day-start {
+    border-left: 2px solid #000; /* Separator */
+    position: relative;
+}
+
+.wtp-timeline-hour.wtp-day-start::before {
+    content: attr(data-day-label);
+    position: absolute;
+    top: -20px; /* Position it above the timeline */
+    left: 2px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #e0e0e0;
+}
+
+.wtp-current-hour {
+    font-weight: bold;
+}
+
+.wtp-current-hour::after {
+    color: #fff;
+}
+
+.wtp-current-hour::before {
+    content: '▲\ANow';
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* color: #007bff; */
+    color:white;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    white-space: pre;
+    line-height: 1.1;
+}
