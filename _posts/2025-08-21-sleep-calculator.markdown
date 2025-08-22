@@ -137,6 +137,45 @@ backgroud-color: black
         font-size: 14px;
         color: #e0e0e0;
     }
+    #suggestion-now {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #1c2b3a;
+        border-radius: 8px;
+        border: 1px solid #00c7b4;
+    }
+    #suggestion-now h3 {
+        color: #00c7b4;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    #suggestion-now p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    #wakeup-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    #calculate-now-btn, #back-btn {
+        background-color: #00c7b4;
+        color: #0d1a26;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        margin-top: 15px;
+        display: inline-block;
+    }
+    #calculate-now-btn:hover, #back-btn:hover {
+        background-color: #00a896;
+    }
 </style>
 
 <div id="sleep-calculator-container">
@@ -150,13 +189,21 @@ backgroud-color: black
             <div class="time-scroller" id="ampm-scroller"></div>
         </div>
     </div>
-    <div id="results-container"></div>
+    <div id="results-container" style="display: none;">
+        <h3 id="results-title"></h3>
+        <div id="bedtime-options"></div>
+    </div>
     <p class="explanation">The average person takes about 15 minutes to fall asleep. The calculated times factor this in, aiming for you to wake up at the end of a 90-minute sleep cycle.</p>
+    <div id="suggestion-now">
+        <h3>Go to bed now?</h3>
+        <p>Click the button to see when you should wake up if you go to sleep now.</p>
+        <button id="calculate-now-btn">Calculate Wake-up Times</button>
+        <div id="wakeup-options"></div>
+        <button id="back-btn" style="display: none;">Back</button>
+    </div>
 </div>
 
 <script>
-    const resultsContainer = document.getElementById('results-container');
-
     function formatTime(date) {
         let hours = date.getHours();
         let minutes = date.getMinutes();
@@ -297,12 +344,15 @@ backgroud-color: black
         const wakeUpDate = new Date();
         wakeUpDate.setHours(hour, minute, 0, 0);
 
-        resultsContainer.innerHTML = `
-            <h3 id="results-title">To wake up refreshed at ${formatTime(wakeUpDate)}, try to fall asleep at one of these times:</h3>
-            <div id="bedtime-options"></div>
-        `;
-        
+        const resultsContainer = document.getElementById('results-container');
+        const resultsTitle = document.getElementById('results-title');
         const bedtimeOptionsContainer = document.getElementById('bedtime-options');
+
+        if (!resultsContainer || !resultsTitle || !bedtimeOptionsContainer) return;
+
+        resultsTitle.textContent = `To wake up refreshed at ${formatTime(wakeUpDate)}, try to fall asleep at one of these times:`;
+        resultsContainer.style.display = 'block';
+
         bedtimeOptionsContainer.innerHTML = '';
 
         const sleepOnsetMinutes = 15;
@@ -347,6 +397,85 @@ backgroud-color: black
         });
     }
 
+    function calculateAndShowWakeUpTimes() {
+        const wakeupOptionsContainer = document.getElementById('wakeup-options');
+        const calculateBtn = document.getElementById('calculate-now-btn');
+        const backBtn = document.getElementById('back-btn');
+        const suggestionContainer = document.getElementById('suggestion-now');
+        const paragraph = suggestionContainer.querySelector('p');
+
+        if (!wakeupOptionsContainer || !calculateBtn || !backBtn || !paragraph) return;
+
+        const now = new Date();
+        const sleepTime = new Date(now.getTime() + 15 * 60 * 1000);
+
+        const wakeUpTimes = [];
+        const sleepCycleMinutes = 90;
+        const numberOfCycles = 6;
+
+        for (let i = 1; i <= numberOfCycles; i++) {
+            let wakeUpTime = new Date(sleepTime.getTime() + i * sleepCycleMinutes * 60 * 1000);
+            
+            const durationHours = Math.floor((i * sleepCycleMinutes) / 60);
+            const durationMinutes = (i * sleepCycleMinutes) % 60;
+            let durationText = `${durationHours}h`;
+            if (durationMinutes > 0) {
+                durationText += ` ${durationMinutes}m`;
+            }
+
+            wakeUpTimes.push({time: wakeUpTime, duration: durationText});
+        }
+
+        paragraph.textContent = 'If you fall asleep in the next 15 minutes, try waking up at one of these times:';
+        calculateBtn.style.display = 'none';
+        backBtn.style.display = 'inline-block';
+
+        wakeupOptionsContainer.innerHTML = '';
+        
+        wakeUpTimes.reverse().forEach(wt => {
+            const wakeupElement = document.createElement('div');
+            wakeupElement.className = 'bedtime';
+            
+            const timeSpan = document.createElement('span');
+            timeSpan.textContent = formatTime(wt.time);
+            
+            const durationSpan = document.createElement('span');
+            durationSpan.className = 'duration-annotation';
+            durationSpan.textContent = `(${wt.duration} sleep)`;
+
+            wakeupElement.appendChild(timeSpan);
+            wakeupElement.appendChild(durationSpan);
+            wakeupOptionsContainer.appendChild(wakeupElement);
+        });
+    }
+
+    function resetSuggestionBox() {
+        const wakeupOptionsContainer = document.getElementById('wakeup-options');
+        const calculateBtn = document.getElementById('calculate-now-btn');
+        const backBtn = document.getElementById('back-btn');
+        const suggestionContainer = document.getElementById('suggestion-now');
+        const paragraph = suggestionContainer.querySelector('p');
+
+        if (!wakeupOptionsContainer || !calculateBtn || !backBtn || !paragraph) return;
+
+        paragraph.textContent = 'Click the button to see when you should wake up if you go to sleep now.';
+        calculateBtn.style.display = 'inline-block';
+        backBtn.style.display = 'none';
+        wakeupOptionsContainer.innerHTML = '';
+    }
+
+    function setupSuggestionBox() {
+        const calculateBtn = document.getElementById('calculate-now-btn');
+        const backBtn = document.getElementById('back-btn');
+
+        if(calculateBtn) {
+            calculateBtn.addEventListener('click', calculateAndShowWakeUpTimes);
+        }
+        if(backBtn) {
+            backBtn.addEventListener('click', resetSuggestionBox);
+        }
+    }
+
     function setInitialTime() {
         const now = new Date();
         now.setHours(now.getHours() + 9);
@@ -357,7 +486,7 @@ backgroud-color: black
         const initialAmpm = initialHour >= 12 ? 'PM' : 'AM';
 
         initialHour = initialHour % 12;
-        initialHour = initialHour ? initialHour : 12; // Handle midnight (00:xx becomes 12:xx AM)
+        initialHour = initialHour ? initialHour : 12;
 
         hourScroller.setValue(initialHour);
         minuteScroller.setValue(initialMinute.toString().padStart(2, '0'));
@@ -365,5 +494,6 @@ backgroud-color: black
     }
 
     setInitialTime();
+    setupSuggestionBox();
     
 </script>
