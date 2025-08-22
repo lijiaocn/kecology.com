@@ -223,6 +223,38 @@ backgroud-color: black
             updateActive();
         });
 
+        let isDragging = false;
+        let startY;
+        let startTranslateY;
+
+        container.addEventListener('touchstart', e => {
+            e.preventDefault();
+            isDragging = true;
+            startY = e.touches[0].clientY;
+            startTranslateY = -currentIndex * itemHeight;
+            list.style.transition = 'none';
+        }, { passive: false });
+
+        container.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const deltaY = e.touches[0].clientY - startY;
+            list.style.transform = `translateY(${startTranslateY + deltaY}px)`;
+        }, { passive: false });
+
+        container.addEventListener('touchend', e => {
+            if (!isDragging) return;
+            isDragging = false;
+            list.style.transition = 'transform 0.15s ease-out';
+            
+            const currentTransform = list.style.transform;
+            const currentTranslateY = currentTransform ? parseFloat(currentTransform.replace('translateY(', '').replace('px)', '')) : 0;
+
+            currentIndex = Math.round(-currentTranslateY / itemHeight);
+            currentIndex = Math.max(0, Math.min(items.length - 1, currentIndex));
+            updateActive();
+        });
+
         function setValue(value) {
             const index = items.indexOf(value);
             if (index !== -1) {
