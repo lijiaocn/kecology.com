@@ -4,7 +4,6 @@ title:  "Sleep Calculator"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
 permalink: /tool/sleep-calculator
-comments: true
 display: fullscreen
 backgroud-color: black
 ---
