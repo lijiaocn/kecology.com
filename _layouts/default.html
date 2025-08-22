@@ -3,9 +3,11 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body style="{% if page.backgroud-color %}background-color: {{page.backgroud-color}};{% endif %}">
 
-    {%- include header.html -%}
+    {% if page.display != 'fullscreen' %}
+      {%- include header.html -%}
+    {% endif %}
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -13,7 +15,9 @@
       </div>
     </main>
 
-    {%- include footer.html -%}
+    {% if page.display != 'fullscreen' %}
+      {%- include footer.html -%}
+    {% endif %}
 
   </body>
 
