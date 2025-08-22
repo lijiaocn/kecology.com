@@ -4,9 +4,13 @@ title:  "Sleep Calculator"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
 permalink: /tool/sleep-calculator
+description: "Find your perfect bedtime with our Sleep Calculator. Based on 90-minute sleep cycles, it calculates the best time to go to sleep from your desired wake-up time. Or, find out the best times to wake up if you go to bed now. Start your day feeling refreshed!"
 display: fullscreen
 backgroud-color: black
 ---
+
+
+<p style="text-align:center;color:#FFE0B2">{{ page.description }}</p>
 <style>
     #sleep-calculator-container {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
