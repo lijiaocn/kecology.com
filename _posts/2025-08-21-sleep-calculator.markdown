@@ -1,10 +1,10 @@
 ---
 layout: page
-title:  "Sleep Calculator - Find the Best Time to Sleep and Wake Up"
+title:  "Sleep Calculator - Find the Best Time to Sleep"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
 permalink: /tool/sleep-calculator
-description: "Based on 90-minute sleep cycles, it calculates the best time to go to sleep from your desired wake-up time. Or, find out the best times to wake up if you go to bed now. Start your day feeling refreshed!"
+description: "Based on 90-minute sleep cycles, it calculates the best time to go to sleep from your desired wake-up time. Start your day feeling refreshed!"
 display: fullscreen
 backgroud-color: black
 ---
@@ -104,6 +104,20 @@ backgroud-color: black
         border-bottom: 1px solid #00c7b4;
         pointer-events: none;
     }
+    .keyboard-hint {
+        font-size: 14px;
+        color: #8492a6;
+        margin-top: 15px;
+        text-align: center;
+    }
+    .keyboard-hint kbd {
+        background-color: #1c2b3a;
+        color: #e0e0e0;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        border: 1px solid #3a506b;
+    }
     #results-container {
         margin-top: 20px;
     }
@@ -137,11 +151,6 @@ backgroud-color: black
         margin-top: 2px;
         font-weight: 500;
     }
-    .explanation {
-        margin-top: 25px;
-        font-size: 14px;
-        color: #e0e0e0;
-    }
     #suggestion-now {
         margin-top: 30px;
         padding: 20px;
@@ -159,13 +168,7 @@ backgroud-color: black
         font-size: 15px;
         margin-bottom: 15px;
     }
-    #wakeup-options {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-    #calculate-now-btn, #back-btn {
+    .btn {
         background-color: #00c7b4;
         color: #0d1a26;
         border: none;
@@ -178,7 +181,7 @@ backgroud-color: black
         margin-top: 15px;
         display: inline-block;
     }
-    #calculate-now-btn:hover, #back-btn:hover {
+    .btn:hover {
         background-color: #00a896;
     }
 
@@ -214,6 +217,7 @@ backgroud-color: black
             <div class="time-scroller" id="ampm-scroller"></div>
         </div>
     </div>
+    <p class="keyboard-hint">Shortcuts:  <kbd>↑</kbd> <kbd>↓</kbd> to adjust, and <kbd>←</kbd> <kbd>→</kbd> to switch</p>
     <div id="results-container" style="display: none;">
         <h3 id="results-title">To wake up refreshed at <span id="wake-up-time"></span>, try to fall asleep at one of these times: <small style="font-weight: normal;">(Includes 15 mins to fall asleep & 90-min sleep cycles)</small></h3>
         <div id="bedtime-options"></div>
@@ -235,9 +239,7 @@ backgroud-color: black
     <div id="suggestion-now">
         <h3>Go to bed now?</h3>
         <p>See wake-up times if you go to sleep now.</p>
-        <button id="calculate-now-btn">Calculate Wake-up Times</button>
-        <div id="wakeup-options"></div>
-        <button id="back-btn" style="display: none;">Back</button>
+                <a href="/tool/wakeup-calculator" class="btn" style="text-decoration: none;">Calculate Wake-up Times</a>
     </div>
 </div>
 
@@ -252,7 +254,7 @@ backgroud-color: black
         return hours + ':' + minutes + ' ' + ampm;
     }
 
-    function createScroller(containerId, items) {
+    function createScroller(containerId, items, prevScrollerId, nextScrollerId) {
         const container = document.getElementById(containerId);
         const list = document.createElement('div');
         list.className = 'scroller-list';
@@ -287,6 +289,7 @@ backgroud-color: black
 
         const itemHeight = 40;
         let currentIndex = 0;
+        let realTranslateY = 0;
 
         function updateActive() {
             const listItems = list.children;
@@ -294,18 +297,32 @@ backgroud-color: black
                 listItems[i].classList.remove('active');
             }
             listItems[currentIndex + paddingItems].classList.add('active');
-            list.style.transform = `translateY(-${currentIndex * itemHeight}px)`;
+            realTranslateY = -currentIndex * itemHeight;
+            list.style.transition = 'transform 0.15s ease-out';
+            list.style.transform = `translateY(${realTranslateY}px)`;
             calculateBedtimes();
         }
 
+        let wheelingTimeout;
         container.addEventListener('wheel', e => {
             e.preventDefault();
-            if (e.deltaY < 0) {
-                currentIndex = Math.max(0, currentIndex - 1);
-            } else {
-                currentIndex = Math.min(items.length - 1, currentIndex + 1);
-            }
-            updateActive();
+            
+            list.style.transition = 'none';
+            realTranslateY -= e.deltaY * 0.5; // Adjust sensitivity
+
+            const maxTranslateY = 0;
+            const minTranslateY = -(items.length - 1) * itemHeight;
+            realTranslateY = Math.max(minTranslateY, Math.min(maxTranslateY, realTranslateY));
+
+            list.style.transform = `translateY(${realTranslateY}px)`;
+
+            clearTimeout(wheelingTimeout);
+            wheelingTimeout = setTimeout(() => {
+                list.style.transition = 'transform 0.15s ease-out';
+                currentIndex = Math.round(-realTranslateY / itemHeight);
+                currentIndex = Math.max(0, Math.min(items.length - 1, currentIndex));
+                updateActive();
+            }, 150);
         });
 
         let isDragging = false;
@@ -316,7 +333,7 @@ backgroud-color: black
             e.preventDefault();
             isDragging = true;
             startY = e.touches[0].clientY;
-            startTranslateY = -currentIndex * itemHeight;
+            startTranslateY = realTranslateY;
             list.style.transition = 'none';
         }, { passive: false });
 
@@ -324,7 +341,13 @@ backgroud-color: black
             if (!isDragging) return;
             e.preventDefault();
             const deltaY = e.touches[0].clientY - startY;
-            list.style.transform = `translateY(${startTranslateY + deltaY}px)`;
+            realTranslateY = startTranslateY + deltaY;
+            
+            const maxTranslateY = 0;
+            const minTranslateY = -(items.length - 1) * itemHeight;
+            realTranslateY = Math.max(minTranslateY, Math.min(maxTranslateY, realTranslateY));
+
+            list.style.transform = `translateY(${realTranslateY}px)`;
         }, { passive: false });
 
         container.addEventListener('touchend', e => {
@@ -339,6 +362,42 @@ backgroud-color: black
             currentIndex = Math.max(0, Math.min(items.length - 1, currentIndex));
             updateActive();
         });
+
+        // Keyboard and Click support
+        container.tabIndex = 0; // Make focusable
+        container.style.outline = 'none'; // Remove default outline
+
+        container.addEventListener('focus', () => {
+            selection.style.borderColor = '#ffc107'; // Highlight when focused
+        });
+        container.addEventListener('blur', () => {
+            selection.style.borderColor = '#00c7b4'; // Revert on blur
+        });
+
+        container.addEventListener('keydown', e => {
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentIndex = Math.max(0, currentIndex - 1);
+                updateActive();
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentIndex = Math.min(items.length - 1, currentIndex + 1);
+                updateActive();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                if (prevScrollerId) document.getElementById(prevScrollerId).focus();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                if (nextScrollerId) document.getElementById(nextScrollerId).focus();
+            }
+        });
+
+        if (containerId === 'ampm-scroller') {
+            container.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateActive();
+            });
+        }
 
         function setValue(value) {
             const index = items.indexOf(value);
@@ -359,9 +418,9 @@ backgroud-color: black
     const minutes = Array.from({length: 60}, (_, i) => i.toString().padStart(2, '0'));
     const ampm = ['AM', 'PM'];
 
-    const hourScroller = createScroller('hour-scroller', hours);
-    const minuteScroller = createScroller('minute-scroller', minutes);
-    const ampmScroller = createScroller('ampm-scroller', ampm);
+    const hourScroller = createScroller('hour-scroller', hours, 'ampm-scroller', 'minute-scroller');
+    const minuteScroller = createScroller('minute-scroller', minutes, 'hour-scroller', 'ampm-scroller');
+    const ampmScroller = createScroller('ampm-scroller', ampm, 'minute-scroller', 'hour-scroller');
 
     function calculateBedtimes() {
         let hour = parseInt(hourScroller.getValue(), 10);
@@ -435,84 +494,7 @@ backgroud-color: black
         });
     }
 
-    function calculateAndShowWakeUpTimes() {
-        const wakeupOptionsContainer = document.getElementById('wakeup-options');
-        const calculateBtn = document.getElementById('calculate-now-btn');
-        const backBtn = document.getElementById('back-btn');
-        const suggestionContainer = document.getElementById('suggestion-now');
-        const paragraph = suggestionContainer.querySelector('p');
-
-        if (!wakeupOptionsContainer || !calculateBtn || !backBtn || !paragraph) return;
-
-        const now = new Date();
-        const sleepTime = new Date(now.getTime() + 15 * 60 * 1000);
-
-        const wakeUpTimes = [];
-        const sleepCycleMinutes = 90;
-        const numberOfCycles = 6;
-
-        for (let i = 1; i <= numberOfCycles; i++) {
-            let wakeUpTime = new Date(sleepTime.getTime() + i * sleepCycleMinutes * 60 * 1000);
-            
-            const durationHours = Math.floor((i * sleepCycleMinutes) / 60);
-            const durationMinutes = (i * sleepCycleMinutes) % 60;
-            let durationText = `${durationHours}h`;
-            if (durationMinutes > 0) {
-                durationText += ` ${durationMinutes}m`;
-            }
-
-            wakeUpTimes.push({time: wakeUpTime, duration: durationText});
-        }
-
-        paragraph.textContent = 'If you fall asleep in the next 15 minutes, try waking up at one of these times:';
-        calculateBtn.style.display = 'none';
-        backBtn.style.display = 'inline-block';
-
-        wakeupOptionsContainer.innerHTML = '';
-        
-        wakeUpTimes.reverse().forEach(wt => {
-            const wakeupElement = document.createElement('div');
-            wakeupElement.className = 'bedtime';
-            
-            const timeSpan = document.createElement('span');
-            timeSpan.textContent = formatTime(wt.time);
-            
-            const durationSpan = document.createElement('span');
-            durationSpan.className = 'duration-annotation';
-            durationSpan.textContent = `(${wt.duration} sleep)`;
-
-            wakeupElement.appendChild(timeSpan);
-            wakeupElement.appendChild(durationSpan);
-            wakeupOptionsContainer.appendChild(wakeupElement);
-        });
-    }
-
-    function resetSuggestionBox() {
-        const wakeupOptionsContainer = document.getElementById('wakeup-options');
-        const calculateBtn = document.getElementById('calculate-now-btn');
-        const backBtn = document.getElementById('back-btn');
-        const suggestionContainer = document.getElementById('suggestion-now');
-        const paragraph = suggestionContainer.querySelector('p');
-
-        if (!wakeupOptionsContainer || !calculateBtn || !backBtn || !paragraph) return;
-
-        paragraph.textContent = 'Click the button to see when you should wake up if you go to sleep now.';
-        calculateBtn.style.display = 'inline-block';
-        backBtn.style.display = 'none';
-        wakeupOptionsContainer.innerHTML = '';
-    }
-
-    function setupSuggestionBox() {
-        const calculateBtn = document.getElementById('calculate-now-btn');
-        const backBtn = document.getElementById('back-btn');
-
-        if(calculateBtn) {
-            calculateBtn.addEventListener('click', calculateAndShowWakeUpTimes);
-        }
-        if(backBtn) {
-            backBtn.addEventListener('click', resetSuggestionBox);
-        }
-    }
+    
 
     function setInitialTime() {
         const now = new Date();
@@ -529,10 +511,11 @@ backgroud-color: black
         hourScroller.setValue(initialHour);
         minuteScroller.setValue(initialMinute.toString().padStart(2, '0'));
         ampmScroller.setValue(initialAmpm);
+
+        document.getElementById('hour-scroller').focus();
     }
 
     setInitialTime();
-    setupSuggestionBox();
 
     function setBookmarkKeys() {
         const keySpan = document.getElementById('bookmark-keys');
