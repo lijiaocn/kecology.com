@@ -1,10 +1,10 @@
 ---
 layout: page
-title:  "Sleep Calculator"
+title:  "Sleep Calculator - Find the Best Time to Sleep and Wake Up"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
 permalink: /tool/sleep-calculator
-description: "Find your perfect bedtime with our Sleep Calculator. Based on 90-minute sleep cycles, it calculates the best time to go to sleep from your desired wake-up time. Or, find out the best times to wake up if you go to bed now. Start your day feeling refreshed!"
+description: "Based on 90-minute sleep cycles, it calculates the best time to go to sleep from your desired wake-up time. Or, find out the best times to wake up if you go to bed now. Start your day feeling refreshed!"
 display: fullscreen
 backgroud-color: black
 ---
@@ -205,7 +205,7 @@ backgroud-color: black
 
 <div id="sleep-calculator-container">
     <h1>Sleep Calculator</h1>
-    <p>Set your desired wake-up time to calculate when you should go to sleep. A good night's sleep consists of 5-6 sleep cycles.</p>
+    <p>Set your wake-up time to see when you should go to sleep.</p>
     <div id="controls">
         <div class="custom-time-picker">
             <div class="time-scroller" id="hour-scroller"></div>
@@ -215,13 +215,26 @@ backgroud-color: black
         </div>
     </div>
     <div id="results-container" style="display: none;">
-        <h3 id="results-title"></h3>
+        <h3 id="results-title">To wake up refreshed at <span id="wake-up-time"></span>, try to fall asleep at one of these times: <small style="font-weight: normal;">(Includes 15 mins to fall asleep & 90-min sleep cycles)</small></h3>
         <div id="bedtime-options"></div>
+                                <div style="background-color: #1c2b3a; border-left: 5px solid #00c7b4; padding: 15px; margin: 20px 0 0 0; border-radius: 4px; color: #e0e0e0; font-size: 15px; text-align: left;">
+          <p style="margin: 0 0 10px 0; font-weight: bold;"><span style="color: #ff6b6b;">❤</span> British Heart Foundation Advice: <a href="https://www.bhf.org.uk/informationsupport/heart-matters-magazine/news/behind-the-headlines/sleep-time-and-heart-disease" target="_blank" style="color: #8492a6; text-decoration: none; font-size: 12px;">(read more)</a></p>
+          <ul style="margin: 0; padding-left: 0; list-style-type: none;">
+            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #00c7b4;">✔</span>
+              Sleep between <strong>10pm-11pm</strong> for a healthier heart.
+            </li>
+            <li style="padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #00c7b4;">✔</span>
+              Most adults should aim for <strong>7 to 9 hours</strong> of sleep per night.
+            </li>
+          </ul>
+        </div>
     </div>
-    <p class="explanation">The average person takes about 15 minutes to fall asleep. The calculated times factor this in, aiming for you to wake up at the end of a 90-minute sleep cycle.</p>
+    
     <div id="suggestion-now">
         <h3>Go to bed now?</h3>
-        <p>Click the button to see when you should wake up if you go to sleep now.</p>
+        <p>See wake-up times if you go to sleep now.</p>
         <button id="calculate-now-btn">Calculate Wake-up Times</button>
         <div id="wakeup-options"></div>
         <button id="back-btn" style="display: none;">Back</button>
@@ -375,7 +388,7 @@ backgroud-color: black
 
         if (!resultsContainer || !resultsTitle || !bedtimeOptionsContainer) return;
 
-        resultsTitle.textContent = `To wake up refreshed at ${formatTime(wakeUpDate)}, try to fall asleep at one of these times:`;
+        document.getElementById('wake-up-time').textContent = formatTime(wakeUpDate);
         resultsContainer.style.display = 'block';
 
         bedtimeOptionsContainer.innerHTML = '';
@@ -531,3 +544,5 @@ backgroud-color: black
     }
     setBookmarkKeys();
 </script>
+
+
