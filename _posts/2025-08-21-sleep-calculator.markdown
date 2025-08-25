@@ -4,14 +4,14 @@ title:  "Sleep Calculator - Find the Best Time to Sleep"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
 permalink: /tool/sleep-calculator
-description: "Based on 90-minute sleep cycles, it calculates the best time to go to sleep from your desired wake-up time. Start your day feeling refreshed!"
+description: "Find the best time to go to sleep from your desired wake-up time, based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
 display: fullscreen
 backgroud-color: black
 ---
 
 
-<p style="text-align:center;color:#FFE0B2">{{ page.description }}</p>
-<p class="bookmark-hint">Like this tool? Press <span id="bookmark-keys"></span> to bookmark it for later.</p>
+<p style="text-align:center;color:#FFE0B2">{{ page.description }} Bookmark this page if it helps you.</p>
+<!-- <p class="bookmark-hint">Like this tool? Press <span id="bookmark-keys"></span> to bookmark it for later.</p> -->
 <style>
     #sleep-calculator-container {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -185,25 +185,7 @@ backgroud-color: black
         background-color: #00a896;
     }
 
-    .bookmark-hint {
-        text-align: center;
-        background-color: #ffc107;
-        color: #0d1a26;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 20px auto;
-        max-width: 450px;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-
-    .bookmark-hint kbd {
-        background-color: #0d1a26;
-        color: #ffc107;
-        padding: 3px 6px;
-        border-radius: 4px;
-        font-family: monospace;
-    }
+    
 </style>
 
 <div id="sleep-calculator-container">
@@ -516,16 +498,6 @@ backgroud-color: black
     }
 
     setInitialTime();
-
-    function setBookmarkKeys() {
-        const keySpan = document.getElementById('bookmark-keys');
-        if (keySpan) {
-            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-            const keyText = isMac ? '<kbd>Cmd + D</kbd>' : '<kbd>Ctrl + D</kbd>';
-            keySpan.innerHTML = keyText;
-        }
-    }
-    setBookmarkKeys();
 </script>
 
 

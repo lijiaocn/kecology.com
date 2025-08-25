@@ -4,13 +4,12 @@ title:  "Wake Up Calculator - Find the Best Time to Wake Up"
 date:   2025-08-25 10:00:00 +0800
 categories: tool
 permalink: /tool/wakeup-calculator
-description: "Based on 90-minute sleep cycles, find out the best times to wake up if you go to bed now."
+description: "Find out the best times to wake up if you go to bed now, based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
 display: fullscreen
 backgroud-color: black
 ---
 
-<p style="text-align:center;color:#FFE0B2">{{ page.description }}</p>
-<p class="bookmark-hint">Like this tool? Press <span id="bookmark-keys"></span> to bookmark it for later.</p>
+<p style="text-align:center;color:#FFE0B2">{{ page.description }} Bookmark this page if it helps you.</p>
 <style>
     #sleep-calculator-container {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -74,24 +73,6 @@ backgroud-color: black
     #suggestion-now p {
         font-size: 15px;
         margin-bottom: 15px;
-    }
-    .bookmark-hint {
-        text-align: center;
-        background-color: #ffc107;
-        color: #0d1a26;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 20px auto;
-        max-width: 450px;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-    .bookmark-hint kbd {
-        background-color: #0d1a26;
-        color: #ffc107;
-        padding: 3px 6px;
-        border-radius: 4px;
-        font-family: monospace;
     }
     .btn {
         background-color: #00c7b4;
@@ -209,19 +190,9 @@ backgroud-color: black
         });
     }
 
-    function setBookmarkKeys() {
-        const keySpan = document.getElementById('bookmark-keys');
-        if (keySpan) {
-            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-            const keyText = isMac ? '<kbd>Cmd + D</kbd>' : '<kbd>Ctrl + D</kbd>';
-            keySpan.innerHTML = keyText;
-        }
-    }
-
     // Run calculations on page load
     document.addEventListener('DOMContentLoaded', function() {
         calculateAndShowWakeUpTimes();
-        setBookmarkKeys();
 
         const refreshButton = document.getElementById('refresh-button');
         if (refreshButton) {
