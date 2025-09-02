@@ -191,7 +191,7 @@ backgroud-color: black
 </style>
 
 <div id="sleep-calculator-container">
-    <h1>Sleep Calculator</h1>
+    <h1>Best Bedtime Calculator</h1>
     <p>Set your wake-up time to see when you should go to sleep.</p>
     <div id="controls">
         <div class="custom-time-picker">

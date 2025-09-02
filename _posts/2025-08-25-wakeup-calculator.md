@@ -5,7 +5,9 @@ date:   2025-08-25 10:00:00 +0800
 categories: tool
 permalink: /tool/wakeup-calculator
 description: "Find out the best times to wake up if you go to bed now, based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
-display: fullscreen
+mysetting:
+  display: fullscreen
+  nowrapper: false
 backgroud-color: black
 ---
 
@@ -115,7 +117,7 @@ backgroud-color: black
     <div id="wakeup-options" style="margin-top: 20px;"></div>
     <div id="suggestion-now">
         <p style="margin-bottom: 15px;">Need to calculate your bedtime?</p>
-        <a href="/tool/sleep-calculator" class="btn">Go to Sleep Time Calculator</a>
+        <a href="/tool/best-bedtime-calculator" class="btn">Go to Bedtime Calculator</a>
     </div>
 </div>
 
