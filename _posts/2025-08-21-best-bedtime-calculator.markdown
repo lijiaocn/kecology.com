@@ -3,9 +3,11 @@ layout: page
 title:  "Sleep Calculator - Find the Best Time to Sleep"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
-permalink: /tool/sleep-calculator
+permalink: /tool/best-bedtime-calculator
 description: "Find the best time to go to sleep from your desired wake-up time, based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
-display: fullscreen
+mysetting:
+  display: fullscreen
+  nowrapper: false
 backgroud-color: black
 ---
 
