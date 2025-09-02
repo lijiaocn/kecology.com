@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Sleep Calculator - Find the Best Time to Sleep"
+title:  "Best Bedtime Calculator - Find the Best Time to Sleep"
 date:   2025-08-15 17:25:46 +0800
 categories: tool
 permalink: /tool/best-bedtime-calculator
