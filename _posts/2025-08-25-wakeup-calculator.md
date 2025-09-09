@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Wake Up Calculator: What Time Should I Wake Up Tomorrow?"
+title:  "Wakeup Time Calculator: What Time Should I Wake Up Tomorrow?"
 date:   2025-08-25 10:00:00 +0800
 last_modified_at: 2025-09-09 14:46:00 +0800
 categories: tool
@@ -105,7 +105,7 @@ mysetting:
 </style>
 
 <div id="sleep-calculator-container">
-    <h3>Wake Up Time Calculator</h3>
+    <h3>Wakeup Time Calculator</h3>
     <p>Select when you plan to go to sleep, and we'll calculate the best wake-up times for you. The calculation includes an average of 15 minutes to fall asleep.</p>
     
     <div id="bedtime-options-container">
