@@ -3,7 +3,7 @@
 
   {%- include head.html -%}
 
-  <body style="{% if page.backgroud-color %}background-color: {{page.backgroud-color}};{% endif %}">
+  <body style="{% if page.mysetting.background-color %}background-color:{{page.mysetting.background-color}};{% endif %}">
 
     {% if page.mysetting.display != 'fullscreen' %}
       {%- include header.html -%}
