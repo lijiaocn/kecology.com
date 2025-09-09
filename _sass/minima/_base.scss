@@ -235,6 +235,7 @@ table {
   color: lighten($text-color, 18%);
   border-collapse: collapse;
   border: 1px solid $grey-color-light;
+  table-layout: fixed;
   // tr {
   //   &:nth-child(even) {
   //     background-color: lighten($grey-color-light, 6%);
@@ -250,7 +251,8 @@ table {
     border-bottom-color: darken($grey-color-light, 12%);
     max-width: 8em;
     white-space: normal;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
   td {
     border: 1px solid $grey-color-light;
