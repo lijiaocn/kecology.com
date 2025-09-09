@@ -2,7 +2,7 @@
 layout: page
 title:  "Wakeup Time Calculator: What Time Should I Wake Up Tomorrow?"
 date:   2025-08-25 10:00:00 +0800
-last_modified_at: 2025-09-09 14:46:00 +0800
+last_modified_at: 2025-09-10 09:46:00 +0800
 categories: tool
 permalink: /tool/wakeup-calculator
 description: "Find out the best times to wake up based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
@@ -62,8 +62,6 @@ mysetting:
     }
     #custom-time-container {
         margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #1c2b3a;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -114,17 +112,21 @@ mysetting:
         <button id="calc-30-min" class="bedtime-option-btn">In 30 minutes</button>
     </div>
 
+    <div id="results-wrapper" style="display: none;">
+        <div id="wakeup-title" style="margin-top: 30px; color: #00c7b4; font-weight: 600; font-size: 18px;"></div>
+        <div id="wakeup-options"></div>
+    </div>
+
     <div id="custom-time-container">
         <label for="custom-time-input">Or pick a bedtime:</label>
         <input type="time" id="custom-time-input">
         <button id="calc-custom-btn" class="bedtime-option-btn">Calculate</button>
     </div>
 
-    <div id="wakeup-title" style="margin-top: 30px; color: #00c7b4; font-weight: 600; font-size: 18px;"></div>
-    <div id="wakeup-options"></div>
+    <hr style="border: none; height: 1px; background-color: #1c2b3a; margin: 30px 0;">
 
     <div style="margin-top: 20px;">
-        <p style="margin-bottom: 10px;">Want to calculate your bedtime from your wake-up time?</p>
+        <p style="margin-bottom: 15px;">Want to calculate your bedtime from your wake-up time?</p>
         <a href="/tool/best-bedtime-calculator" class="bedtime-option-btn" style="text-decoration: none;">Try our Bedtime Calculator</a>
     </div>
 
@@ -134,6 +136,7 @@ mysetting:
     document.addEventListener('DOMContentLoaded', function() {
         const wakeupOptionsContainer = document.getElementById('wakeup-options');
         const wakeupTitle = document.getElementById('wakeup-title');
+        const resultsWrapper = document.getElementById('results-wrapper');
         const calcNowBtn = document.getElementById('calc-now');
         const calc15MinBtn = document.getElementById('calc-15-min');
         const calc30MinBtn = document.getElementById('calc-30-min');
@@ -160,8 +163,9 @@ mysetting:
         }
 
         function calculateAndShowWakeUpTimes(startTime, startTimeString) {
-            if (!wakeupOptionsContainer || !wakeupTitle) return;
+            if (!wakeupOptionsContainer || !wakeupTitle || !resultsWrapper) return;
 
+            resultsWrapper.style.display = 'block';
             wakeupTitle.textContent = `If you go to bed ${startTimeString}, wake up at:`;
 
             // Add 15 minutes to account for the time it takes to fall asleep.
@@ -233,6 +237,7 @@ mysetting:
             const timeValue = customTimeInput.value;
             if (!timeValue) {
                 // Maybe provide feedback to the user
+                if (resultsWrapper) resultsWrapper.style.display = 'none';
                 wakeupTitle.textContent = 'Please select a time first.';
                 wakeupOptionsContainer.innerHTML = '';
                 return;

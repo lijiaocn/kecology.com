@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "Black Screen: Dead Pixel Test, Screen Cleaning & More"
+title: "Black Screen: Dead Pixel Test, Screen Cleaning & More (Supports More Colors)"
 description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
 date: "2025-09-09 20:22:14 +0800"
-last_modified_at: "2025-09-09 20:25:14 +0800"
+last_modified_at: "2025-09-09 22:00:04 +0800"
 categories: "tool"
 permalink: /tool/black-screen
 comments: false
@@ -16,11 +16,13 @@ mysetting:
 <style>
   #content {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+    width: 90%;
+    max-width: 800px;
   }
   #content h1 {
     font-size: 2.1em;
@@ -47,19 +49,26 @@ mysetting:
     font-size: 1em;
     margin-bottom: 8px;
   }
-  #fullscreen-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    border: 1px solid white;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
+  #color-palette-container {
+    margin-top: 30px;
   }
-
-  #fullscreen-button:hover {
-    background-color: #333;
+  #color-palette {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .color-swatch {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .color-swatch:hover {
+    transform: scale(1.15);
   }
 </style>
 
@@ -76,18 +85,60 @@ mysetting:
       <li><b>Reduce eye strain:</b> A black screen is easier on your eyes in the dark.</li>
     </ul>
   </div>
-  <button id="fullscreen-button">Enter Fullscreen</button>
+  <div id="color-palette-container">
+    <p>Click a color to fill the screen:</p>
+    <div id="color-palette">
+      <div class="color-swatch" style="background-color: white;" data-color="white" title="White Screen"></div>
+      <div class="color-swatch" style="background-color: black;" data-color="black" title="Black Screen"></div>
+      <div class="color-swatch" style="background-color: red;" data-color="red" title="Red Screen"></div>
+      <div class="color-swatch" style="background-color: yellow;" data-color="yellow" title="Yellow Screen"></div>
+      <div class="color-swatch" style="background-color: blue;" data-color="blue" title="Blue Screen"></div>
+      <div class="color-swatch" style="background-color: green;" data-color="green" title="Green Screen"></div>
+    </div>
+  </div>
 </div>
 
 <script>
-  document.getElementById('fullscreen-button').addEventListener('click', () => {
-    document.documentElement.requestFullscreen();
-    document.getElementById('content').style.display = 'none';
-  });
+  document.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('content');
+    const initialBodyBackground = document.body.style.backgroundColor || 'black';
 
-  document.addEventListener('fullscreenchange', () => {
-    if (!document.fullscreenElement) {
-      document.getElementById('content').style.display = 'block';
+    function enterFullscreen(color) {
+      document.body.style.backgroundColor = color;
+      content.style.display = 'none';
+
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        exitFullscreen();
+      });
     }
+
+    function exitFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+      content.style.display = 'block';
+      document.body.style.backgroundColor = initialBodyBackground;
+    }
+
+    document.querySelectorAll('.color-swatch').forEach(swatch => {
+      swatch.addEventListener('click', (e) => {
+        const color = e.target.dataset.color;
+        enterFullscreen(color);
+      });
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        exitFullscreen();
+      }
+    });
+
+    // Allow exiting fullscreen with a click/tap on the screen
+    document.addEventListener('click', (e) => {
+        if (document.fullscreenElement && e.target === document.documentElement) {
+            exitFullscreen();
+        }
+    });
   });
 </script>
