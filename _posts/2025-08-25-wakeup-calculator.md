@@ -273,7 +273,7 @@ Use the calculator above to find your best wake-up times. The diagram below show
 
 Different age groups have different sleep needs. Here’s a quick guide to how many hours of sleep and how many sleep cycles are generally recommended:
 
-| Age Group | Recommended Hours of Sleep | RecommendedXXXXXXXXXXXXXXXXXXXXXXXXXX Sleep Cycles |
+| Age Group | Recommended Hours of Sleep | Recommended Sleep Cycles |
 | :--- | :--- | :--- |
 | Newborn (0-3 months) | 14-17 hours | N/A |
 | Infant (4-11 months) | 12-15 hours | N/A |
