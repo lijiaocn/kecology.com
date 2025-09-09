@@ -105,7 +105,7 @@ mysetting:
 
 <div id="sleep-calculator-container">
     <h3>Wake Up Time Calculator</h3>
-    <p>To wake up feeling refreshed, you should wake up at the end of a sleep cycle. Select when you plan to go to sleep, and we'll calculate the best wake-up times for you. The calculation includes an average of 15 minutes to fall asleep.</p>
+    <p>Select when you plan to go to sleep, and we'll calculate the best wake-up times for you. The calculation includes an average of 15 minutes to fall asleep.</p>
     
     <div id="bedtime-options-container">
         <button id="calc-now" class="bedtime-option-btn">Go to bed now</button>
