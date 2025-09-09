@@ -6,9 +6,9 @@ categories: tool
 permalink: /tool/best-bedtime-calculator
 description: "Find the best time to go to sleep from your desired wake-up time, based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
 mysetting:
-  display: fullscreen
   nowrapper: false
-backgroud-color: black
+#   display: fullscreen
+# backgroud-color: black
 ---
 
 
