@@ -2,7 +2,7 @@
 layout: page
 title:  "Wake Up Calculator: What Time Should I Wake Up Tomorrow?"
 date:   2025-08-25 10:00:00 +0800
-last_modified_at: 2025-09-09 14:28:00 +0800
+last_modified_at: 2025-09-09 14:46:00 +0800
 categories: tool
 permalink: /tool/wakeup-calculator
 description: "Find out the best times to wake up based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
@@ -122,6 +122,11 @@ mysetting:
 
     <div id="wakeup-title" style="margin-top: 30px; color: #00c7b4; font-weight: 600; font-size: 18px;"></div>
     <div id="wakeup-options"></div>
+
+    <div style="margin-top: 20px;">
+        <p style="margin-bottom: 10px;">Want to calculate your bedtime from your wake-up time?</p>
+        <a href="/tool/best-bedtime-calculator" class="bedtime-option-btn" style="text-decoration: none;">Try our Bedtime Calculator</a>
+    </div>
 
 </div>
 
