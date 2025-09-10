@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Elements
     const jsonInput = document.getElementById('json-input');
     const copyBtn = document.getElementById('copy-btn');
     const copyFeedback = document.getElementById('copy-feedback');
@@ -6,8 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     const inputLineNumbers = document.getElementById('input-line-numbers');
+    const uploadFileBtn = document.getElementById('upload-file-btn');
+    const fileInput = document.getElementById('file-input');
+    const clearBtn = document.getElementById('clear-btn');
+    const formatInputBtn = document.getElementById('format-input-btn');
+    const compactInputBtn = document.getElementById('compact-input-btn');
+    const highlightingLayer = document.getElementById('highlighting-layer');
 
-    // Line number elements
     const lineNumbers = {
         formatted: document.getElementById('output-line-numbers'),
         yaml: document.getElementById('yaml-line-numbers'),
@@ -24,9 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
         urlencode: document.getElementById('urlencode-output'),
     };
 
+    // State
     let currentJson = null;
     let activeTab = 'tree';
     let copyTimeout;
+    const STORAGE_KEY = 'json-tool-input';
+
+    // --- Core Functions ---
 
     const updateStatus = (message, isError = false) => {
         statusBar.textContent = message;
@@ -53,19 +63,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         updateLineNumbers('1', inputLineNumbers);
-        updateLineNumbers('1', lineNumbers.formatted);
-        updateLineNumbers('1', lineNumbers.yaml);
-        updateLineNumbers('1', lineNumbers.xml);
+        Object.values(lineNumbers).forEach(el => updateLineNumbers('1', el));
+        highlightingLayer.innerHTML = '';
     };
 
-    const processJson = () => {
+    const processJson = (isInitialLoad = false) => {
         const jsonString = jsonInput.value;
         updateLineNumbers(jsonString, inputLineNumbers);
+        highlightingLayer.innerHTML = ''; // Clear previous highlights
 
         if (!jsonString.trim()) {
             updateStatus('');
             clearOutputs();
             currentJson = null;
+            if (!isInitialLoad) {
+                localStorage.removeItem(STORAGE_KEY);
+            }
             return;
         }
 
@@ -73,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentJson = JSON.parse(jsonString);
             updateStatus('Valid JSON', false);
             renderOutputs();
+            localStorage.setItem(STORAGE_KEY, jsonString);
         } catch (e) {
             currentJson = null;
             updateStatus(`Invalid JSON: ${e.message}`, true);
@@ -82,9 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     else outputs[key].textContent = '';
                 }
             }
-            updateLineNumbers('1', lineNumbers.formatted);
-            updateLineNumbers('1', lineNumbers.yaml);
-            updateLineNumbers('1', lineNumbers.xml);
+            Object.values(lineNumbers).forEach(el => updateLineNumbers('1', el));
+            handleJsonError(jsonString, e);
         }
     };
 
@@ -92,49 +105,125 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentJson === null) return;
 
         const compactString = JSON.stringify(currentJson);
-
-        // Formatted
         const formattedString = JSON.stringify(currentJson, null, 4);
+        const xmlString = jsonToXml(currentJson);
+        const yamlString = jsonToYaml(currentJson);
+
         outputs.formatted.textContent = formattedString;
         updateLineNumbers(formattedString, lineNumbers.formatted);
 
-        // Compact
         outputs.compact.textContent = compactString;
 
-        // Tree View
         outputs.tree.innerHTML = '';
         outputs.tree.appendChild(createJsonTree(currentJson));
 
-        // XML
-        const xmlString = jsonToXml(currentJson);
         outputs.xml.textContent = xmlString;
         updateLineNumbers(xmlString, lineNumbers.xml);
 
-        // YAML
-        const yamlString = jsonToYaml(currentJson);
         outputs.yaml.textContent = yamlString;
         updateLineNumbers(yamlString, lineNumbers.yaml);
 
-        // Base64
         try {
             outputs.base64.textContent = btoa(unescape(encodeURIComponent(compactString)));
         } catch (e) {
             outputs.base64.textContent = 'Error encoding to Base64.';
         }
 
-        // URL Encode
         outputs.urlencode.textContent = encodeURIComponent(compactString);
     };
 
+    const handleJsonError = (text, error) => {
+        // Regex for Chrome/Edge ("at position X") and Firefox ("line X column Y")
+        const posRegex = /(?:at position|in JSON at position) (\d+)/;
+        const lineColRegex = /line (\d+) column (\d+)/;
+        
+        const posMatch = error.message.match(posRegex);
+        const lineColMatch = error.message.match(lineColRegex);
+
+        let errorLine, errorCol;
+
+        if (lineColMatch) {
+            errorLine = parseInt(lineColMatch[1], 10);
+            errorCol = parseInt(lineColMatch[2], 10);
+        } else if (posMatch) {
+            const charIndex = parseInt(posMatch[1], 10);
+            let lines = text.substring(0, charIndex).split('\n');
+            errorLine = lines.length;
+            errorCol = lines[lines.length - 1].length + 1;
+        } else {
+            return; // Cannot determine error location
+        }
+        
+        highlightError(text, errorLine, errorCol);
+    };
+
+    const highlightError = (text, line, col) => {
+        const escapeHtml = (unsafe) => unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const lines = text.split('\n');
+        if (line > lines.length || line < 1) return;
+
+        const lineIndex = line - 1;
+        const colIndex = col - 1;
+
+        const highlightedLines = lines.map(escapeHtml);
+
+        if (lineIndex < highlightedLines.length && colIndex >= 0) {
+            let lineContent = lines[lineIndex]; // Use original line for char manipulation
+            if (colIndex < lineContent.length) {
+                const char = lineContent[colIndex];
+                const part1 = escapeHtml(lineContent.substring(0, colIndex));
+                const part2 = escapeHtml(lineContent.substring(colIndex + 1));
+                const highlightedChar = `<span class="error-char">${escapeHtml(char)}</span>`;
+                highlightedLines[lineIndex] = `${part1}${highlightedChar}${part2}`;
+            }
+        }
+
+        highlightedLines[lineIndex] = `<span class="error-line">${highlightedLines[lineIndex]}</span>`;
+        highlightingLayer.innerHTML = highlightedLines.join('\n');
+    };
+
     // --- Event Listeners ---
-    jsonInput.addEventListener('input', processJson);
-    jsonInput.addEventListener('scroll', () => {
-        if (inputLineNumbers) {
-            inputLineNumbers.scrollTop = jsonInput.scrollTop;
+
+    jsonInput.addEventListener('input', () => processJson());
+
+    jsonInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            const start = jsonInput.selectionStart;
+            const end = jsonInput.selectionEnd;
+            const spaces = '    '; // 4 spaces for a tab
+
+            if (e.shiftKey) {
+                // Shift + Tab: Outdent
+                let lineStart = start;
+                while (lineStart > 0 && jsonInput.value[lineStart - 1] !== '\n') {
+                    lineStart--;
+                }
+                if (jsonInput.value.substring(lineStart, lineStart + spaces.length) === spaces) {
+                    jsonInput.value = jsonInput.value.substring(0, lineStart) + jsonInput.value.substring(lineStart + spaces.length);
+                    const newStart = Math.max(lineStart, start - spaces.length);
+                    jsonInput.selectionStart = jsonInput.selectionEnd = newStart;
+                }
+            } else {
+                // Tab: Indent
+                jsonInput.value = jsonInput.value.substring(0, start) + spaces + jsonInput.value.substring(end);
+                jsonInput.selectionStart = jsonInput.selectionEnd = start + spaces.length;
+            }
+            processJson(); // Re-process after changing content
         }
     });
 
-    // Add scroll listeners for all output wrappers that have line numbers
+    jsonInput.addEventListener('scroll', () => {
+        if (inputLineNumbers) {
+            inputLineNumbers.scrollTop = jsonInput.scrollTop;
+            inputLineNumbers.scrollLeft = jsonInput.scrollLeft;
+        }
+        if (highlightingLayer) {
+            highlightingLayer.scrollTop = jsonInput.scrollTop;
+            highlightingLayer.scrollLeft = jsonInput.scrollLeft;
+        }
+    });
+
     for (const key in lineNumbers) {
         const outputEl = outputs[key];
         const lineNumbersEl = lineNumbers[key];
@@ -142,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
             outputEl.parentElement.addEventListener('scroll', () => {
                 if (lineNumbersEl) {
                     lineNumbersEl.scrollTop = outputEl.parentElement.scrollTop;
+                    lineNumbersEl.scrollLeft = outputEl.parentElement.scrollLeft;
                 }
             });
         }
@@ -152,46 +242,87 @@ document.addEventListener('DOMContentLoaded', () => {
             updateStatus('Nothing to copy.', true);
             return;
         }
-
-        let contentToCopy = '';
-        if (activeTab === 'tree') {
-            contentToCopy = JSON.stringify(currentJson, null, 4);
-        } else if (outputs[activeTab]) {
-            contentToCopy = outputs[activeTab].textContent;
-        }
-
+        let contentToCopy = activeTab === 'tree' ? JSON.stringify(currentJson, null, 4) : (outputs[activeTab]?.textContent || '');
         if (contentToCopy) {
-            navigator.clipboard.writeText(contentToCopy).then(
-                () => {
-                    copyFeedback.textContent = 'Copied to clipboard!';
-                    copyFeedback.classList.add('show');
-                    clearTimeout(copyTimeout);
-                    copyTimeout = setTimeout(() => {
-                        copyFeedback.classList.remove('show');
-                    }, 2000);
-                },
-                () => {
-                    updateStatus('Failed to copy.', true);
-                }
-            );
+            navigator.clipboard.writeText(contentToCopy).then(() => {
+                copyFeedback.textContent = 'Copied to clipboard!';
+                copyFeedback.classList.add('show');
+                clearTimeout(copyTimeout);
+                copyTimeout = setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+            }, () => updateStatus('Failed to copy.', true));
         }
     });
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            const tabName = tab.dataset.tab;
-            activeTab = tabName;
-
+            activeTab = tab.dataset.tab;
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-
-            tabContents.forEach(content => {
-                content.classList.toggle('hidden', content.id !== tabName);
-            });
+            tabContents.forEach(content => content.classList.toggle('hidden', content.id !== activeTab));
         });
     });
 
-    // --- JSON Tree Viewer ---
+    clearBtn.addEventListener('click', () => {
+        jsonInput.value = '';
+        localStorage.removeItem(STORAGE_KEY);
+        processJson();
+    });
+
+    formatInputBtn.addEventListener('click', () => {
+        const currentVal = jsonInput.value;
+        if (!currentVal.trim()) return;
+        try {
+            const parsed = JSON.parse(currentVal);
+            jsonInput.value = JSON.stringify(parsed, null, 4);
+            processJson(); // Re-process to update everything
+        } catch (e) {
+            // If formatting fails, it means JSON is invalid.
+            // processJson() will catch and handle the error display.
+            processJson();
+        }
+    });
+
+    compactInputBtn.addEventListener('click', () => {
+        const currentVal = jsonInput.value;
+        if (!currentVal.trim()) return;
+        try {
+            const parsed = JSON.parse(currentVal);
+            jsonInput.value = JSON.stringify(parsed);
+            processJson(); // Re-process to update everything
+        } catch (e) {
+            // If compacting fails, it means JSON is invalid.
+            // processJson() will catch and handle the error display.
+            processJson();
+        }
+    });
+
+    uploadFileBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            jsonInput.value = e.target.result;
+            processJson();
+        };
+        reader.readAsText(file);
+        fileInput.value = ''; // Reset for same-file uploads
+    });
+
+    
+
+    // --- Initialization ---
+    const loadFromStorage = () => {
+        const savedJson = localStorage.getItem(STORAGE_KEY);
+        if (savedJson) {
+            jsonInput.value = savedJson;
+        }
+        processJson(true);
+    };
+
+    loadFromStorage();
+
+    // --- Converters and Tree Viewer (omitted for brevity) ---
     function createJsonTree(data) {
         const tree = buildTree(data, 'root');
         return tree;
@@ -241,7 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return ul;
     }
 
-    // --- Converters ---
     function jsonToXml(json) {
         const toXml = (v, name, ind) => {
             let xml = '';
@@ -347,7 +477,4 @@ document.addEventListener('DOMContentLoaded', () => {
             return `Error converting to YAML: ${e.message}`;
         }
     }
-
-    // Initial processing
-    processJson();
 });
