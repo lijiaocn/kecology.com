@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Black Screen: Dead Pixel Test, Screen Cleaning & More (Supports More Colors)"
+title: "Black Screen: Dead Pixel Test, Screen Cleaning (Supports More Colors)"
 description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
 date: "2025-09-09 20:22:14 +0800"
 last_modified_at: "2025-09-09 22:00:04 +0800"
@@ -14,15 +14,22 @@ mysetting:
 ---
 
 <style>
+  html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   #content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
     text-align: center;
     width: 90%;
     max-width: 800px;
+    padding: 2rem 0;
   }
   #content h1 {
     font-size: 2.1em;
@@ -73,7 +80,7 @@ mysetting:
 </style>
 
 <div id="content">
-  <h1>Black Screen: Dead Pixel Test, Screen Cleaning & More</h1>
+  <h1>Black Screen: Dead Pixel Test, Screen Cleaning</h1>
   <p>A simple tool to turn your screen completely black.</p>
   <div id="more-info">
     <p>Useful for many things:</p>
