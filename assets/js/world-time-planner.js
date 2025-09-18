@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const popularCitiesList = document.getElementById('popular-cities-list');
     const countryList = document.getElementById('country-list');
+    const timezoneList = document.getElementById('timezone-list');
     const modal = document.getElementById('city-modal');
     const modalCountryName = document.getElementById('modal-country-name');
+    const modalCountryInfo = document.getElementById('modal-country-info');
     const modalCityList = document.getElementById('modal-city-list');
     const closeModal = document.querySelector('.wtp-modal-close');
     const timeRows = document.getElementById('wtp-time-rows');
@@ -21,33 +23,130 @@ document.addEventListener('DOMContentLoaded', () => {
     const HOUR_BLOCK_WIDTH = 50; // px
 
     // State
-    let selectedTimezones = new Set();
+    let selectedCities = new Set(); // Store city keys like "Beijing,China" or "Label,Custom"
+    let customCities = []; // Array of { label: string, timezone: string }
     let currentTimeValue = 24; // Represents 30-min intervals from midnight
     let timelineStartOffsetHours = 0;
 
     const timezoneData = {
         'USA': {
+            'Washington D.C.': 'America/New_York', // Capital
             'New York': 'America/New_York',
             'Chicago': 'America/Chicago',
             'Denver': 'America/Denver',
             'Los Angeles': 'America/Los_Angeles',
         },
-        'Canada': { 'Toronto': 'America/Toronto' },
-        'Brazil': { 'São Paulo': 'America/Sao_Paulo' },
-        'UK': { 'London': 'Europe/London' },
-        'France': { 'Paris': 'Europe/Paris' },
-        'Germany': { 'Berlin': 'Europe/Berlin' },
-        'Russia': { 'Moscow': 'Europe/Moscow' },
-        'Egypt': { 'Cairo': 'Africa/Cairo' },
-        'South Africa': { 'Johannesburg': 'Africa/Johannesburg' },
-        'UAE': { 'Dubai': 'Asia/Dubai' },
-        'India': { 'Kolkata': 'Asia/Kolkata' },
-        'Singapore': { 'Singapore': 'Asia/Singapore' },
-        'China': { 'Shanghai': 'Asia/Shanghai' },
-        'South Korea': { 'Seoul': 'Asia/Seoul' },
-        'Japan': { 'Tokyo': 'Asia/Tokyo' },
-        'Australia': { 'Sydney': 'Australia/Sydney' },
-        'New Zealand': { 'Auckland': 'Pacific/Auckland' },
+        'Canada': { 
+            'Ottawa': 'America/Toronto', // Capital
+            'Toronto': 'America/Toronto' 
+        },
+        'Brazil': { 
+            'Brasília': 'America/Sao_Paulo', // Capital
+            'São Paulo': 'America/Sao_Paulo' 
+        },
+        'UK': { 
+            'London': 'Europe/London' // London is both capital and timezone representative
+        },
+        'France': { 
+            'Paris': 'Europe/Paris' // Paris is both capital and timezone representative
+        },
+        'Germany': { 
+            'Berlin': 'Europe/Berlin' // Berlin is both capital and timezone representative
+        },
+        'Russia': { 
+            'Moscow': 'Europe/Moscow' // Moscow is both capital and timezone representative
+        },
+        'Egypt': { 
+            'Cairo': 'Africa/Cairo' // Cairo is both capital and timezone representative
+        },
+        'South Africa': { 
+            'Cape Town': 'Africa/Johannesburg', // Legislative capital
+            'Johannesburg': 'Africa/Johannesburg' 
+        },
+        'UAE': { 
+            'Abu Dhabi': 'Asia/Dubai', // Capital
+            'Dubai': 'Asia/Dubai' 
+        },
+        'India': { 
+            'New Delhi': 'Asia/Kolkata', // Capital
+            'Kolkata': 'Asia/Kolkata' 
+        },
+        'Singapore': { 
+            'Singapore': 'Asia/Singapore' // Singapore is both capital and timezone representative
+        },
+        'China': { 
+            'Beijing': 'Asia/Shanghai', // Capital
+            'Shanghai': 'Asia/Shanghai' 
+        },
+        'South Korea': { 
+            'Seoul': 'Asia/Seoul' // Seoul is both capital and timezone representative
+        },
+        'Japan': { 
+            'Tokyo': 'Asia/Tokyo' // Tokyo is both capital and timezone representative
+        },
+        'Australia': { 
+            'Canberra': 'Australia/Sydney', // Capital
+            'Sydney': 'Australia/Sydney' 
+        },
+        'New Zealand': { 
+            'Wellington': 'Pacific/Auckland', // Capital
+            'Auckland': 'Pacific/Auckland' 
+        },
+    };
+
+    // Country timezone information data
+    const countryTimeInfo = {
+        'USA': {
+            description: 'The United States uses 4 time zones: <strong>Eastern Time (EST/EDT)</strong>, <strong>Central Time (CST/CDT)</strong>, <strong>Mountain Time (MST/MDT)</strong>, and <strong>Pacific Time (PST/PDT)</strong>. Observes daylight saving time.'
+        },
+        'Canada': {
+            description: 'Canada uses 1 time zone: <strong>Eastern Time (EST/EDT)</strong> and observes daylight saving time.'
+        },
+        'Brazil': {
+            description: 'Brazil uses 1 time zone: <strong>Brasília Time (BRT)</strong> and does not observe daylight saving time.'
+        },
+        'UK': {
+            description: 'The United Kingdom uses 1 time zone: <strong>Greenwich Mean Time (GMT)</strong> and <strong>British Summer Time (BST)</strong>, observing daylight saving time.'
+        },
+        'France': {
+            description: 'France uses 1 time zone: <strong>Central European Time (CET)</strong> and <strong>Central European Summer Time (CEST)</strong>, observing daylight saving time.'
+        },
+        'Germany': {
+            description: 'Germany uses 1 time zone: <strong>Central European Time (CET)</strong> and <strong>Central European Summer Time (CEST)</strong>, observing daylight saving time.'
+        },
+        'Russia': {
+            description: 'Russia uses 1 time zone: <strong>Moscow Standard Time (MSK)</strong> and does not observe daylight saving time.'
+        },
+        'Egypt': {
+            description: 'Egypt uses 1 time zone: <strong>Eastern European Time (EET)</strong> and <strong>Eastern European Summer Time (EEST)</strong>, observing daylight saving time.'
+        },
+        'South Africa': {
+            description: 'South Africa uses 1 time zone: <strong>South African Standard Time (SAST)</strong> and does not observe daylight saving time.'
+        },
+        'UAE': {
+            description: 'The UAE uses 1 time zone: <strong>Gulf Standard Time (GST)</strong> and does not observe daylight saving time.'
+        },
+        'India': {
+            description: 'India uses 1 time zone: <strong>Indian Standard Time (IST)</strong> and does not observe daylight saving time.'
+        },
+        'Singapore': {
+            description: 'Singapore uses 1 time zone: <strong>Singapore Standard Time (SGT)</strong> and does not observe daylight saving time.'
+        },
+        'China': {
+            description: 'China uses 1 time zone: <strong>China Standard Time (CST)</strong> and does not observe daylight saving time. The entire country uses Beijing time.'
+        },
+        'South Korea': {
+            description: 'South Korea uses 1 time zone: <strong>Korea Standard Time (KST)</strong> and does not observe daylight saving time.'
+        },
+        'Japan': {
+            description: 'Japan uses 1 time zone: <strong>Japan Standard Time (JST)</strong> and does not observe daylight saving time.'
+        },
+        'Australia': {
+            description: 'Australia uses 1 time zone: <strong>Australian Eastern Standard Time (AEST)</strong> and <strong>Australian Eastern Daylight Time (AEDT)</strong>, observing daylight saving time.'
+        },
+        'New Zealand': {
+            description: 'New Zealand uses 1 time zone: <strong>New Zealand Standard Time (NZST)</strong> and <strong>New Zealand Daylight Time (NZDT)</strong>, observing daylight saving time.'
+        }
     };
 
     const popularCities = [
@@ -72,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateAndSetTimelineHours() {
         const container = document.getElementById('wtp-timeline-container');
-        const availableWidth = container.offsetWidth - 100 - (2 * 24); // container - info_box - container_padding
+        const availableWidth = container.offsetWidth - 140 - (2 * 24); // container - info_box(140px) - container_padding
         const numHours = Math.floor(availableWidth / HOUR_BLOCK_WIDTH) - 1;
         TIMELINE_HOURS = Math.max(24, numHours);
         TIMELINE_INTERVALS = TIMELINE_HOURS * 2;
@@ -86,13 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function init() {
-        loadSelectedTimezones();
+        loadSelectedCities();
+        loadCustomCities();
         populatePopularCities();
         populateCountries();
+        populateTimezones();
         addEventListeners();
-        renderInitialRows(); // Create a row first so we can measure it
         calculateAndSetTimelineHours();
-        goToNow(); // Set initial time to now
+        // Ensure date is set BEFORE first render so hour blocks get created
+        goToNow(); // Set initial time to now and render
+        renderInitialRows(); // Create rows after date is set
+        renderAllTimelineGrids(); // Render again now that rows exist
         renderDateButtons();
         setInterval(renderAllTimelineGrids, 60 * 1000);
     }
@@ -114,8 +217,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const dayStr = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
                 .toISOString()
                 .split("T")[0];
-            button.textContent = date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+            // Compact label: "Mon 9/22"
+            const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
+            const mm = date.getMonth() + 1;
+            const dd = date.getDate();
+            button.textContent = `${weekday} ${mm}/${dd}`;
             button.dataset.date = dayStr;
+
+            // Mark weekend (Sat=6, Sun=0)
+            const dayNum = date.getDay();
+            if (dayNum === 0 || dayNum === 6) {
+                button.classList.add('weekend');
+            }
 
             if (selectedDate && date.getTime() === selectedDate.getTime()) {
                 button.classList.add('active');
@@ -134,20 +247,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function goToNow() {
         const now = new Date();
+        // Set both valueAsDate and a safe YYYY-MM-DD string for broader compatibility
         datePicker.valueAsDate = now;
+        const localISODate = new Date(now.getTime() - (now.getTimezoneOffset() * 60000))
+            .toISOString()
+            .split('T')[0];
+        datePicker.value = localISODate;
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         const diffMinutes = (now - startOfDay) / 60000;
         currentTimeValue = Math.round(diffMinutes / 30);
-        timelineStartOffsetHours = new Date().getHours() - 2;
+        timelineStartOffsetHours = new Date().getHours() - 1;
         scrollLeftBtn.disabled = false;
         renderAllTimelineGrids(); // Re-render grids for the new date and update times
         renderDateButtons();
     }
 
     function renderInitialRows() {
-        selectedTimezones.forEach(tz => {
-            const [city, country] = findCityCountryByTimezone(tz);
-            if (city) createTimelineRow(tz, city, country);
+        selectedCities.forEach(cityKey => {
+            const [city, country] = cityKey.split(',');
+            let timezone;
+            
+            if (country === 'Timezone') {
+                // For timezone entries, the city is actually the timezone string
+                timezone = city;
+            } else if (country === 'Custom') {
+                // For custom entries, find the timezone from customCities
+                const customEntry = customCities.find(c => c.label === city);
+                timezone = customEntry ? customEntry.timezone : null;
+            } else {
+                // For regular city entries
+                timezone = timezoneData[country] && timezoneData[country][city] ? timezoneData[country][city] : null;
+            }
+            
+            if (timezone) createTimelineRow(timezone, city, country);
         });
         renderAllTimelineGrids();
     }
@@ -163,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addEventListeners() {
         popularCitiesList.addEventListener('change', handleCheckboxChange);
+        timezoneList.addEventListener('change', handleCheckboxChange);
         countryList.addEventListener('click', handleCountryClick);
         closeModal.addEventListener('click', () => modal.style.display = 'none');
         window.addEventListener('click', (e) => { if (e.target == modal) modal.style.display = 'none'; });
@@ -200,13 +333,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         scrollRightBtn.addEventListener('click', () => {
-            timelineStartOffsetHours += 2;
+            timelineStartOffsetHours += 1;
             renderAllTimelineGrids();
             scrollLeftBtn.disabled = false; // Enable left scroll
         });
 
         scrollLeftBtn.addEventListener('click', () => {
-            timelineStartOffsetHours -= 2;
+            timelineStartOffsetHours -= 1;
             renderAllTimelineGrids();
         });
 
@@ -252,31 +385,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function loadSelectedTimezones() {
+    function loadSelectedCities() {
         const saved = localStorage.getItem('worldTimePlanner_selected');
         if (saved) {
-            const savedTimezones = JSON.parse(saved);
-            if (Array.isArray(savedTimezones) && savedTimezones.length > 0) {
-                selectedTimezones = new Set(savedTimezones);
+            const savedList = JSON.parse(saved);
+            if (Array.isArray(savedList) && savedList.length > 0) {
+                const migrated = [];
+                savedList.forEach(entry => {
+                    if (typeof entry !== 'string') return;
+                    if (entry.includes(',')) {
+                        // Already in City,Country format
+                        migrated.push(entry);
+                    } else if (entry.includes('/')) {
+                        // Old format: timezone string. Migrate to City,Country
+                        const [city, country] = findCityCountryByTimezone(entry);
+                        if (city && country) migrated.push(`${city},${country}`);
+                    }
+                });
+
+                if (migrated.length > 0) {
+                    selectedCities = new Set(migrated);
+                    // Save back in new format to avoid migrating every load
+                    saveSelectedCities();
+                } else {
+                    selectedCities.add('New York,USA');
+                }
             } else {
-                selectedTimezones.add('America/New_York'); // Default if saved is empty/invalid
+                selectedCities.add('New York,USA'); // Default if saved is empty/invalid
             }
         } else {
-            selectedTimezones.add('America/New_York'); // Default for first-time users
+            selectedCities.add('New York,USA'); // Default for first-time users
         }
     }
 
-    function saveSelectedTimezones() {
-        localStorage.setItem('worldTimePlanner_selected', JSON.stringify(Array.from(selectedTimezones)));
+    function saveSelectedCities() {
+        localStorage.setItem('worldTimePlanner_selected', JSON.stringify(Array.from(selectedCities)));
+    }
+
+    function loadCustomCities() {
+        try {
+            const saved = localStorage.getItem('worldTimePlanner_customCities');
+            if (saved) {
+                const arr = JSON.parse(saved);
+                if (Array.isArray(arr)) customCities = arr.filter(x => x && typeof x.label === 'string' && typeof x.timezone === 'string');
+            }
+        } catch (_) { /* ignore */ }
+    }
+
+    function saveCustomCities() {
+        localStorage.setItem('worldTimePlanner_customCities', JSON.stringify(customCities));
     }
 
     function addTimeline(timezone, city, country) {
-        if (selectedTimezones.has(timezone)) return;
-        selectedTimezones.add(timezone);
+        const cityKey = `${city},${country}`;
+        if (selectedCities.has(cityKey)) return;
+        selectedCities.add(cityKey);
         const row = createTimelineRow(timezone, city, country);
+        // Ensure TIMELINE_HOURS is calculated before rendering
+        calculateAndSetTimelineHours();
         renderTimelineGrid(row);
         updateSingleRowTimeDisplay(row);
-        saveSelectedTimezones();
+        saveSelectedCities();
     }
 
     function updateSingleRowTimeDisplay(row) {
@@ -313,25 +482,174 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ... (other helper functions)
-    function handleCheckboxChange(e) { if (e.target.type !== 'checkbox') return; const { value, checked, dataset } = e.target; if (checked) addTimeline(value, dataset.city, dataset.country); else removeTimeline(value); }
+    function handleCheckboxChange(e) { 
+        if (e.target.type !== 'checkbox') return; 
+        const { value, checked, dataset } = e.target; 
+        if (checked) {
+            addTimeline(value, dataset.city, dataset.country); 
+        } else {
+            const cityKey = `${dataset.city},${dataset.country}`;
+            removeTimeline(cityKey); 
+        }
+    }
     function handleCountryClick(e) { if (e.target.classList.contains('wtp-country-item')) openCityModal(e.target.dataset.country); }
-    function updateCheckbox(timezone, isChecked) { const checkbox = document.querySelector(`input[type="checkbox"][value="${timezone}"]`); if (checkbox) checkbox.checked = isChecked; }
+    function updateCheckbox(cityKey, isChecked) { 
+        const [city, country] = cityKey.split(',');
+        const checkboxes = document.querySelectorAll('#popular-cities-list input[type="checkbox"], #modal-city-list input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            if (checkbox.dataset.city === city && checkbox.dataset.country === country) {
+                checkbox.checked = isChecked;
+            }
+        });
+    }
 
     function createTimelineRow(timezone, city, country) {
         const timelineRow = timelineRowTemplate.content.cloneNode(true).firstElementChild;
+        const cityKey = `${city},${country}`;
         timelineRow.dataset.timezone = timezone;
-        timelineRow.querySelector('.wtp-city').textContent = city;
+        timelineRow.dataset.cityKey = cityKey;
+        
+        const cityElement = timelineRow.querySelector('.wtp-city');
+        cityElement.textContent = city;
+        
+        // Adjust font size based on city name length
+        if (city.length > 15) {
+            cityElement.setAttribute('data-very-long', 'true');
+        } else if (city.length > 10) {
+            cityElement.setAttribute('data-long', 'true');
+        }
+        
         timelineRow.querySelector('.wtp-current-time').textContent = '--:--';
-        timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(timezone);
+        timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(cityKey);
         timeRows.appendChild(timelineRow);
         return timelineRow;
     }
 
-    function populatePopularCities() { popularCities.forEach(({ city, country }) => { const timezone = timezoneData[country][city]; const label = document.createElement('label'); const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.value = timezone; checkbox.dataset.city = city; checkbox.dataset.country = country; if (selectedTimezones.has(timezone)) checkbox.checked = true; label.appendChild(checkbox); label.append(`${city}, ${country}`); popularCitiesList.appendChild(label); }); }
+    function populatePopularCities() { 
+        popularCitiesList.innerHTML = '';
+        // Built-in popular cities
+        popularCities.forEach(({ city, country }) => { 
+            const timezone = timezoneData[country][city]; 
+            const cityKey = `${city},${country}`;
+            const label = document.createElement('label'); 
+            const checkbox = document.createElement('input'); 
+            checkbox.type = 'checkbox'; 
+            checkbox.value = timezone; 
+            checkbox.dataset.city = city; 
+            checkbox.dataset.country = country; 
+            if (selectedCities.has(cityKey)) checkbox.checked = true; 
+            label.appendChild(checkbox); 
+            label.append(city); 
+            popularCitiesList.appendChild(label); 
+        });
+
+        // Custom cities persisted by user
+        customCities.forEach(({ label: displayName, timezone }) => {
+            const cityKey = `${displayName},Custom`;
+            const labelEl = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = timezone;
+            checkbox.dataset.city = displayName;
+            checkbox.dataset.country = 'Custom';
+            if (selectedCities.has(cityKey)) checkbox.checked = true;
+            labelEl.appendChild(checkbox);
+            labelEl.append(displayName);
+            popularCitiesList.appendChild(labelEl);
+        });
+
+    }
+
+
+    function populateTimezones() {
+        timezoneList.innerHTML = '';
+        const timezoneData = [
+            { label: 'Pacific/Baker_Island', timezone: 'Pacific/Baker_Island' },
+            { label: 'Pacific/Pago_Pago', timezone: 'Pacific/Pago_Pago' },
+            { label: 'Pacific/Honolulu', timezone: 'Pacific/Honolulu' },
+            { label: 'America/Anchorage', timezone: 'America/Anchorage' },
+            { label: 'America/Los_Angeles', timezone: 'America/Los_Angeles' },
+            { label: 'America/Denver', timezone: 'America/Denver' },
+            { label: 'America/Chicago', timezone: 'America/Chicago' },
+            { label: 'America/New_York', timezone: 'America/New_York' },
+            { label: 'America/Caracas', timezone: 'America/Caracas' },
+            { label: 'America/Sao_Paulo', timezone: 'America/Sao_Paulo' },
+            { label: 'Atlantic/South_Georgia', timezone: 'Atlantic/South_Georgia' },
+            { label: 'Atlantic/Azores', timezone: 'Atlantic/Azores' },
+            { label: 'Europe/London', timezone: 'Europe/London' },
+            { label: 'Europe/Paris', timezone: 'Europe/Paris' },
+            { label: 'Europe/Athens', timezone: 'Europe/Athens' },
+            { label: 'Europe/Moscow', timezone: 'Europe/Moscow' },
+            { label: 'Asia/Dubai', timezone: 'Asia/Dubai' },
+            { label: 'Asia/Karachi', timezone: 'Asia/Karachi' },
+            { label: 'Asia/Dhaka', timezone: 'Asia/Dhaka' },
+            { label: 'Asia/Bangkok', timezone: 'Asia/Bangkok' },
+            { label: 'Asia/Shanghai', timezone: 'Asia/Shanghai' },
+            { label: 'Asia/Tokyo', timezone: 'Asia/Tokyo' },
+            { label: 'Australia/Sydney', timezone: 'Australia/Sydney' },
+            { label: 'Pacific/Norfolk', timezone: 'Pacific/Norfolk' },
+            { label: 'Pacific/Auckland', timezone: 'Pacific/Auckland' }
+        ];
+
+        timezoneData.forEach(({ label, timezone }) => {
+            const cityKey = `${label},Timezone`;
+            const labelEl = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = timezone;
+            checkbox.dataset.city = label;
+            checkbox.dataset.country = 'Timezone';
+            if (selectedCities.has(cityKey)) checkbox.checked = true;
+            labelEl.appendChild(checkbox);
+            labelEl.append(label);
+            timezoneList.appendChild(labelEl);
+        });
+    }
     function populateCountries() { for (const country in timezoneData) { const countryItem = document.createElement('div'); countryItem.className = 'wtp-country-item'; countryItem.textContent = country; countryItem.dataset.country = country; countryList.appendChild(countryItem); } }
-    function openCityModal(country) { modalCountryName.textContent = country; modalCityList.innerHTML = ''; const cities = timezoneData[country]; for (const city in cities) { const timezone = cities[city]; const label = document.createElement('label'); const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.value = timezone; checkbox.dataset.city = city; checkbox.dataset.country = country; if (selectedTimezones.has(timezone)) checkbox.checked = true; label.appendChild(checkbox); label.append(city); modalCityList.appendChild(label); } modal.style.display = 'block'; modalCityList.onchange = handleCheckboxChange; }
+    function openCityModal(country) { 
+        modalCountryName.textContent = country; 
+        
+        // Display country timezone information
+        const countryInfo = countryTimeInfo[country];
+        if (countryInfo) {
+            modalCountryInfo.innerHTML = `
+                <div class="wtp-timezone-info-box">
+                    <div class="wtp-timezone-description">
+                        ${countryInfo.description}
+                    </div>
+                </div>
+            `;
+        } else {
+            modalCountryInfo.innerHTML = '';
+        }
+        
+        modalCityList.innerHTML = ''; 
+        const cities = timezoneData[country]; 
+        for (const city in cities) { 
+            const timezone = cities[city]; 
+            const cityKey = `${city},${country}`;
+            const label = document.createElement('label'); 
+            const checkbox = document.createElement('input'); 
+            checkbox.type = 'checkbox'; 
+            checkbox.value = timezone; 
+            checkbox.dataset.city = city; 
+            checkbox.dataset.country = country; 
+            if (selectedCities.has(cityKey)) checkbox.checked = true; 
+            label.appendChild(checkbox); 
+            label.append(city); 
+            modalCityList.appendChild(label); 
+        } 
+        modal.style.display = 'block'; 
+        modalCityList.onchange = handleCheckboxChange; 
+    }
     function getTimeOfDay(hour) { if (hour >= 9 && hour < 17) return 'work'; if (hour >= 17 && hour < 22) return 'evening'; if (hour >= 0 && hour < 7) return 'night'; return 'day'; }
-    function removeTimeline(timezone) { selectedTimezones.delete(timezone); const row = timeRows.querySelector(`[data-timezone="${timezone}"]`); if (row) row.remove(); updateCheckbox(timezone, false); saveSelectedTimezones(); }
+    function removeTimeline(cityKey) { 
+        selectedCities.delete(cityKey); 
+        const row = timeRows.querySelector(`[data-city-key="${cityKey}"]`); 
+        if (row) row.remove(); 
+        updateCheckbox(cityKey, false); 
+        saveSelectedCities(); 
+    }
     function renderAllTimelineGrids() { const rows = timeRows.querySelectorAll('.wtp-timeline-row'); rows.forEach(renderTimelineGrid); updateAllTimeDisplays(); }
 
     function renderTimelineGrid(row) {
@@ -348,11 +666,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const hourFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, hour: 'numeric', hour12: false });
         const fullDateFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, year: 'numeric', month: 'numeric', day: 'numeric' });
+        const weekdayFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, weekday: 'short' });
         const dayLabelFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, weekday: 'short', month: 'short', day: 'numeric' });
+        const ymdPartsFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit' });
 
         const now = new Date();
         const currentHourInTimezone = parseInt(hourFormatter.format(now), 10);
         const currentDateInTimezone = fullDateFormatter.format(now);
+        function getYMD(dateObj) {
+            const parts = ymdPartsFormatter.formatToParts(dateObj);
+            const map = {};
+            parts.forEach(p => { if (p.type !== 'literal') map[p.type] = p.value; });
+            return `${map.year}-${map.month}-${map.day}`; // YYYY-MM-DD in target timezone
+        }
+        const currentYMD = getYMD(now);
 
         let lastDate = '';
 
@@ -362,9 +689,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const localHour = parseInt(hourFormatter.format(timeForThisBlock), 10);
             const dateOfThisBlock = fullDateFormatter.format(timeForThisBlock);
+            const weekdayShort = weekdayFormatter.format(timeForThisBlock); // e.g., Sun, Mon, ...
+            const ymdOfThisBlock = getYMD(timeForThisBlock);
 
             const hourDiv = document.createElement('div');
             hourDiv.className = 'wtp-timeline-hour ' + getTimeOfDay(localHour);
+            if (weekdayShort === 'Sat' || weekdayShort === 'Sun') {
+                hourDiv.classList.add('weekend');
+            }
             hourDiv.dataset.hour = localHour;
 
             if (i === 0 || dateOfThisBlock !== lastDate) {
@@ -375,6 +707,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (dateOfThisBlock === currentDateInTimezone && localHour === currentHourInTimezone) {
                 hourDiv.classList.add('wtp-current-hour');
+            }
+
+            // Dim past hours (in the row's timezone)
+            if (ymdOfThisBlock < currentYMD || (ymdOfThisBlock === currentYMD && localHour < currentHourInTimezone)) {
+                hourDiv.classList.add('past-hour');
             }
 
             timelineTrack.appendChild(hourDiv);

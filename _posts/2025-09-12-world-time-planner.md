@@ -16,7 +16,7 @@ mysetting:
 <div id="world-time-planner-app">
   <header class="wtp-header">
     <h1>World Time Planner</h1>
-    <p>Find the perfect meeting time across time zones.</p>
+    <p>Find the best meeting time across cities in different time zones.</p>
   </header>
 
   <div class="wtp-selectors-container">
@@ -28,13 +28,19 @@ mysetting:
       <h2>Select City by Country</h2>
       <div id="country-list" class="wtp-country-grid"></div>
     </div>
+    <div class="wtp-timezone-selector">
+      <h2>Select by Time Zone</h2>
+      <div id="timezone-list" class="wtp-city-grid"></div>
+    </div>
     <div id="city-modal" class="wtp-modal">
       <div class="wtp-modal-content">
         <span class="wtp-modal-close">&times;</span>
         <h3 id="modal-country-name"></h3>
+        <div id="modal-country-info" class="wtp-country-info"></div>
         <div id="modal-city-list" class="wtp-city-grid"></div>
       </div>
     </div>
+
   </div>
 
   <div id="wtp-timeline-container" class="wtp-timeline-container">

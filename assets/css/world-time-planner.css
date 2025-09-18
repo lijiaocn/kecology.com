@@ -28,11 +28,45 @@
     text-align: center;
 }
 
+/* Add spacing between Popular Cities and Country selector */
+.wtp-popular-cities {
+  margin-bottom: 24px;
+}
+
 .wtp-popular-cities h2, .wtp-country-selector h2 {
   font-size: 1.5em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid #444;
-  padding-bottom: 0.5em;
+  margin-bottom: 0.8em;
+  position: relative;
+}
+
+.wtp-popular-cities h2::after, .wtp-country-selector h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #444, transparent);
+}
+
+.wtp-timezone-selector h2 {
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  text-align: center;
+  position: relative;
+}
+
+.wtp-timezone-selector h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #444, transparent);
 }
 
 .wtp-city-grid, .wtp-country-grid {
@@ -40,6 +74,21 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+}
+
+/* Improve spacing for city chips in the country modal */
+/* Center content inside modal */
+.wtp-modal-content {
+  text-align: center;
+}
+
+.wtp-modal .wtp-city-grid {
+  gap: 10px;
+  justify-content: center;
+}
+
+.wtp-modal .wtp-city-grid label {
+  padding: 10px 15px;
 }
 
 .wtp-city-grid label, .wtp-country-grid .wtp-country-item {
@@ -56,6 +105,26 @@
 .wtp-city-grid label:hover, .wtp-country-grid .wtp-country-item:hover {
   background-color: #444;
 }
+
+/* Add custom timezone button */
+.wtp-add-custom-btn {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px dashed #555;
+  border-radius: 20px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.wtp-add-custom-btn:hover {
+  background-color: #3a3a3a;
+}
+
+.wtp-hint-text {
+  margin-top: 8px;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
 
 .wtp-country-item {
   padding: 12px 18px;
@@ -90,6 +159,28 @@
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Country timezone information styles */
+.wtp-country-info {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.wtp-timezone-info-box {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.wtp-timezone-description {
+  margin-bottom: 0;
+}
+
+.wtp-timezone-info-box strong {
+  color: #007bff;
+  font-weight: 600;
 }
 
 /* Timeline Styles */
@@ -153,6 +244,17 @@
   transition: background-color 0.2s, border-color 0.2s;
 }
 
+.wtp-date-button.weekend {
+  /* subtle diagonal stripes for weekend */
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.06) 0px,
+    rgba(255, 255, 255, 0.06) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
 .wtp-date-button:hover,
 #wtp-scroll-left-btn:hover,
 #wtp-scroll-right-btn:hover {
@@ -206,7 +308,9 @@
 }
 
 .wtp-timezone-info {
-  flex: 0 0 100px;
+  flex: 0 0 140px;
+  min-width: 140px;
+  max-width: 140px;
   padding: 8px;
   background-color: #252525;
   border-radius: 4px 0 0 4px;
@@ -214,6 +318,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .wtp-remove-btn {
@@ -234,6 +339,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding-right: 20px; /* Space for the remove button */
+  max-width: 100%;
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+/* Responsive font size for very long city names */
+.wtp-city[data-long="true"] {
+  font-size: 0.9em;
+}
+
+.wtp-city[data-very-long="true"] {
+  font-size: 0.8em;
 }
 
 .wtp-current-time {
@@ -256,7 +373,7 @@
   width: 50px;
   text-align: center;
   font-size: 0.8em;
-  color: #aaa;
+  color: #aaa; /* fallback for any inline text */
   border-left: 1px solid #333;
   padding: 5px 0;
   position: relative;
@@ -264,6 +381,8 @@
 
 .wtp-timeline-hour::after {
     content: attr(data-hour);
+    color: rgba(255, 255, 255, 0.96);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,0.5);
 }
 
 /* Time of Day Colors */
@@ -281,6 +400,32 @@
 
 .wtp-timeline-hour.day {
   background-color: #3498db;
+}
+
+/* Lighten past hours (pastel effect without graying) - only on background colored parts */
+.wtp-timeline-hour.past-hour {
+  position: relative;
+}
+
+/* Use box-shadow inset to create the lightening effect without affecting day labels */
+.wtp-timeline-hour.past-hour {
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.35);
+}
+
+/* For day-start hours, use a different approach to avoid covering day labels */
+.wtp-timeline-hour.wtp-day-start.past-hour {
+  box-shadow: inset 0 20px 0 1000px rgba(255, 255, 255, 0.35);
+}
+
+/* Weekend shading on timeline hours */
+.wtp-timeline-hour.weekend {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 8px,
+    transparent 8px,
+    transparent 16px
+  );
 }
 
 .wtp-current-time-marker {
