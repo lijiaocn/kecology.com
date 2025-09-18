@@ -440,10 +440,6 @@
     background-color: #0056b3;
 }
 
-#wtp-date-buttons {
-  display: flex;
-  gap: 10px;
-}
 
 .wtp-date-button,
 #wtp-scroll-left-btn,
