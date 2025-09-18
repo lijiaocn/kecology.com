@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         today.setHours(0, 0, 0, 0);
 
         const selectedDate = parseDate(datePicker.value);
-        
+
         // Calculate number of date buttons based on screen width
         const screenWidth = window.innerWidth;
         let buttonCount;
@@ -457,6 +457,28 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTabListeners() {
         const tabButtons = document.querySelectorAll('.wtp-tab-btn');
         const tabPanels = document.querySelectorAll('.wtp-tab-panel');
+        const tabHint = document.getElementById('wtp-tab-hint');
+        
+        // Function to show hint
+        function showHint() {
+            tabHint.style.display = 'block';
+        }
+        
+        // Function to hide hint
+        function hideHint() {
+            tabHint.style.display = 'none';
+        }
+        
+        // Update hint visibility based on active tab
+        function updateHintVisibility() {
+            const hasActiveTab = document.querySelector('.wtp-tab-btn.active');
+            if (hasActiveTab) {
+                showHint();
+            } else {
+                hideHint();
+            }
+        }
+        
         
         tabButtons.forEach(button => {
             const handleTabClick = () => {
@@ -473,11 +495,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Remove active class from all buttons and panels
                     tabButtons.forEach(btn => {
                         btn.classList.remove('active');
-                        btn.title = 'Click to show options';
                     });
                     tabPanels.forEach(panel => panel.classList.remove('active'));
                     // Clear the saved tab selection
                     localStorage.removeItem('wtp-selected-tab');
+                    // Update hint visibility
+                    updateHintVisibility();
                     return;
                 }
                 
@@ -487,13 +510,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Remove active class from all buttons and panels
                 tabButtons.forEach(btn => {
                     btn.classList.remove('active');
-                    btn.title = 'Click to show options';
                 });
                 tabPanels.forEach(panel => panel.classList.remove('active'));
                 
                 // Add active class to clicked button
                 button.classList.add('active');
-                button.title = 'Click to hide options';
+                
+                // Update hint visibility
+                updateHintVisibility();
                 
                 // Show corresponding panel
                 let targetPanelId;
@@ -581,6 +605,18 @@ document.addEventListener('DOMContentLoaded', () => {
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabPanels.forEach(panel => panel.classList.remove('active'));
         }
+        
+        // Update hint visibility on page load
+        const tabHint = document.getElementById('wtp-tab-hint');
+        if (tabHint) {
+            const hasActiveTab = document.querySelector('.wtp-tab-btn.active');
+            if (hasActiveTab) {
+                tabHint.style.display = 'block';
+            } else {
+                tabHint.style.display = 'none';
+            }
+        }
+        
     }
 
     function handleRowsMouseMove(percent, selectorLeft) {

@@ -36,6 +36,7 @@
   margin-bottom: 1.5em;
   border-bottom: 1px solid #333;
   justify-content: center;
+  position: relative;
 }
 
 .wtp-tab-btn {
@@ -56,27 +57,22 @@
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.wtp-tab-btn:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8em;
-  white-space: nowrap;
-  z-index: 1000;
-  pointer-events: none;
-}
 
 
 .wtp-tab-btn.active {
   color: #007bff;
   border-bottom-color: #007bff;
   background-color: rgba(0, 123, 255, 0.1);
+}
+
+.wtp-tab-hint {
+  text-align: center;
+  color: #666;
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-bottom: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
 .wtp-tab-content {
