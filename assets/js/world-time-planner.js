@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateButtonsContainer = document.getElementById('wtp-date-buttons');
     const scrollLeftBtn = document.getElementById('wtp-scroll-left-btn');
     const scrollRightBtn = document.getElementById('wtp-scroll-right-btn');
+    const scrollContainer = document.getElementById('wtp-scroll-container');
 
     let TIMELINE_HOURS = 24;
     let TIMELINE_INTERVALS = TIMELINE_HOURS * 2;
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let customCities = []; // Array of { label: string, timezone: string }
     let currentTimeValue = 24; // Represents 30-min intervals from midnight
     let timelineStartOffsetHours = 0;
+    let draggedElement = null;
 
     const timezoneData = {
         'USA': {
@@ -284,10 +286,28 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollLeftBtn.disabled = false;
         renderAllTimelineGrids(); // Re-render grids for the new date and update times
         renderDateButtons();
+        
+        // Scroll timeline to the beginning
+        if (scrollContainer) {
+            scrollContainer.scrollLeft = 0;
+        }
     }
 
     function renderInitialRows() {
-        selectedCities.forEach(cityKey => {
+        // Load saved order
+        const savedOrder = loadCityOrder();
+        let citiesToRender = Array.from(selectedCities);
+        
+        // If we have a saved order, use it to sort the cities
+        if (savedOrder && savedOrder.length > 0) {
+            // Filter saved order to only include currently selected cities
+            const validOrder = savedOrder.filter(cityKey => selectedCities.has(cityKey));
+            // Add any new cities that weren't in the saved order
+            const newCities = citiesToRender.filter(cityKey => !validOrder.includes(cityKey));
+            citiesToRender = [...validOrder, ...newCities];
+        }
+        
+        citiesToRender.forEach(cityKey => {
             const [city, country] = cityKey.split(',');
             let timezone;
             
@@ -331,8 +351,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         nowBtn.addEventListener('click', goToNow);
 
-        const scrollContainer = document.getElementById('wtp-scroll-container');
-        
         scrollContainer.addEventListener('mousemove', (e) => {
             const firstRow = timeRows.querySelector('.wtp-timeline-row');
             if (!firstRow) return;
@@ -729,6 +747,25 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('worldTimePlanner_customCities', JSON.stringify(customCities));
     }
 
+    function saveCityOrder(order) {
+        localStorage.setItem('worldTimePlanner_cityOrder', JSON.stringify(order));
+    }
+
+    function loadCityOrder() {
+        try {
+            const saved = localStorage.getItem('worldTimePlanner_cityOrder');
+            if (saved) {
+                const order = JSON.parse(saved);
+                if (Array.isArray(order)) {
+                    return order;
+                }
+            }
+        } catch (e) {
+            console.warn('Failed to load city order:', e);
+        }
+        return null;
+    }
+
     function addTimeline(timezone, city, country) {
         const cityKey = `${city},${country}`;
         if (selectedCities.has(cityKey)) return;
@@ -741,6 +778,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Align widths after adding new row
         setTimeout(() => alignTimezoneInfoWidths(), 0);
         saveSelectedCities();
+        
+        // Save the new order (new city will be at the end)
+        const currentOrder = Array.from(timeRows.children).map(row => row.dataset.cityKey);
+        saveCityOrder(currentOrder);
     }
 
     function updateSingleRowTimeDisplay(row) {
@@ -749,26 +790,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const now = new Date();
 
-        const timeFormatter = new Intl.DateTimeFormat('en-US', {
-            timeZone: timezone,
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: false
-        });
+        try {
+            const timeFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: false
+            });
 
-        const dateFormatter = new Intl.DateTimeFormat('en-US', {
-            timeZone: timezone,
-            weekday: 'short',
-            month: 'short',
-            day: 'numeric'
-        });
+            const dateFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                weekday: 'short',
+                month: 'short',
+                day: 'numeric'
+            });
 
-        const timeString = timeFormatter.format(now);
-        const dateString = dateFormatter.format(now);
+            const timeString = timeFormatter.format(now);
+            const dateString = dateFormatter.format(now);
 
-        const timeElement = row.querySelector('.wtp-current-time');
-        timeElement.title = 'Current local time'; // Hint
-        timeElement.innerHTML = `${timeString}<br><span style="font-size: 0.8em; color: #aaa;">${dateString}</span>`;
+            const timeElement = row.querySelector('.wtp-current-time');
+            timeElement.title = 'Current local time'; // Hint
+            timeElement.innerHTML = `${timeString}<br><span style="font-size: 0.8em; color: #aaa;">${dateString}</span>`;
+        } catch (error) {
+            console.warn(`Failed to format time for timezone ${timezone}:`, error);
+            const timeElement = row.querySelector('.wtp-current-time');
+            timeElement.title = 'Invalid timezone'; // Hint
+            timeElement.innerHTML = `Invalid<br><span style="font-size: 0.8em; color: #aaa;">Timezone</span>`;
+        }
     }
 
     function updateAllTimeDisplays() {
@@ -823,6 +871,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
         timelineRow.querySelector('.wtp-current-time').textContent = '--:--';
         timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(cityKey);
+        
+        // Add drag functionality
+        timelineRow.draggable = true;
+        timelineRow.addEventListener('dragstart', handleDragStart);
+        timelineRow.addEventListener('dragover', handleDragOver);
+        timelineRow.addEventListener('drop', handleDrop);
+        timelineRow.addEventListener('dragend', handleDragEnd);
+        
         timeRows.appendChild(timelineRow);
         return timelineRow;
     }
@@ -882,7 +938,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateTimezones() {
         timezoneList.innerHTML = '';
         const timezoneData = [
-            { label: 'Pacific/Baker_Island', timezone: 'Pacific/Baker_Island' },
+            { label: 'Pacific/Midway', timezone: 'Pacific/Midway' },
             { label: 'Pacific/Pago_Pago', timezone: 'Pacific/Pago_Pago' },
             { label: 'Pacific/Honolulu', timezone: 'Pacific/Honolulu' },
             { label: 'America/Anchorage', timezone: 'America/Anchorage' },
@@ -975,7 +1031,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const row = timeRows.querySelector(`[data-city-key="${cityKey}"]`); 
         if (row) row.remove(); 
         updateCheckbox(cityKey, false); 
-        saveSelectedCities(); 
+        saveSelectedCities();
+        
+        // Update the saved order after removal
+        const currentOrder = Array.from(timeRows.children).map(row => row.dataset.cityKey);
+        saveCityOrder(currentOrder);
     }
     function alignTimezoneInfoWidths() {
         const timezoneInfoElements = timeRows.querySelectorAll('.wtp-timezone-info');
@@ -999,6 +1059,62 @@ document.addEventListener('DOMContentLoaded', () => {
         timezoneInfoElements.forEach(el => {
             el.style.width = maxWidth + 'px';
         });
+    }
+
+    // Drag and drop functions
+    function handleDragStart(e) {
+        draggedElement = this;
+        this.style.opacity = '0.5';
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.outerHTML);
+    }
+
+    function handleDragOver(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        e.dataTransfer.dropEffect = 'move';
+        return false;
+    }
+
+    function handleDrop(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        }
+
+        if (draggedElement !== this) {
+            // Get the current order
+            const currentOrder = Array.from(timeRows.children).map(row => row.dataset.cityKey);
+            
+            // Find positions
+            const draggedIndex = currentOrder.indexOf(draggedElement.dataset.cityKey);
+            const targetIndex = currentOrder.indexOf(this.dataset.cityKey);
+            
+            // Reorder the array
+            const newOrder = [...currentOrder];
+            newOrder.splice(draggedIndex, 1);
+            newOrder.splice(targetIndex, 0, draggedElement.dataset.cityKey);
+            
+            // Reorder DOM elements
+            const fragment = document.createDocumentFragment();
+            newOrder.forEach(cityKey => {
+                const element = timeRows.querySelector(`[data-city-key="${cityKey}"]`);
+                if (element) {
+                    fragment.appendChild(element);
+                }
+            });
+            timeRows.appendChild(fragment);
+            
+            // Save the new order
+            saveCityOrder(newOrder);
+        }
+
+        return false;
+    }
+
+    function handleDragEnd(e) {
+        this.style.opacity = '';
+        draggedElement = null;
     }
 
     function renderAllTimelineGrids() { 

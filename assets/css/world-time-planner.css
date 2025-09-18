@@ -599,6 +599,17 @@
   min-width: fit-content;
   width: max-content;
   overflow: visible; /* Ensure day labels are visible */
+  cursor: move;
+  transition: opacity 0.2s ease;
+}
+
+.wtp-timeline-row:hover {
+  opacity: 0.9;
+}
+
+.wtp-timeline-row.dragging {
+  opacity: 0.5;
+  transform: rotate(2deg);
 }
 
 .wtp-timezone-info {
@@ -699,19 +710,29 @@
   background-color: #3498db;
 }
 
-/* Lighten past hours (pastel effect without graying) - only on background colored parts */
+/* Past hours styling with diagonal stripes to indicate unavailable time */
 .wtp-timeline-hour.past-hour {
   position: relative;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  opacity: 0.6;
 }
 
-/* Use box-shadow inset to create the lightening effect without affecting day labels */
-.wtp-timeline-hour.past-hour {
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.35);
-}
-
-/* For day-start hours, use a different approach to avoid covering day labels */
+/* For day-start hours, adjust the stripe pattern to avoid covering day labels */
 .wtp-timeline-hour.wtp-day-start.past-hour {
-  box-shadow: inset 0 20px 0 1000px rgba(255, 255, 255, 0.35);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  opacity: 0.6;
 }
 
 /* Weekend shading on timeline hours */
