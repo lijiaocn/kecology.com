@@ -24,6 +24,10 @@
   margin-bottom: 2em;
 }
 
+.wtp-popular-cities, .wtp-country-selector {
+    text-align: center;
+}
+
 .wtp-popular-cities h2, .wtp-country-selector h2 {
   font-size: 1.5em;
   margin-bottom: 1em;
@@ -35,6 +39,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .wtp-city-grid label, .wtp-country-grid .wtp-country-item {

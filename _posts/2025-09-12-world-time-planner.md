@@ -21,11 +21,11 @@ mysetting:
 
   <div class="wtp-selectors-container">
     <div class="wtp-popular-cities">
-      <h2>Popular Cities</h2>
+      <h2>Select Popular Cities</h2>
       <div id="popular-cities-list" class="wtp-city-grid"></div>
     </div>
     <div class="wtp-country-selector">
-      <h2>Or Select by Country</h2>
+      <h2>Select City by Country</h2>
       <div id="country-list" class="wtp-country-grid"></div>
     </div>
     <div id="city-modal" class="wtp-modal">
@@ -39,14 +39,14 @@ mysetting:
 
   <div id="wtp-timeline-container" class="wtp-timeline-container">
     <div class="wtp-timeline-header">
+      <div class="wtp-date-controls">
+        <div id="wtp-date-buttons"></div>
+        <input type="date" id="wtp-date-picker">
+      </div>
       <div class="wtp-time-nav-controls">
         <button id="wtp-scroll-left-btn" title="Scroll left">&lt;</button>
         <button id="wtp-now-btn" title="Go to current time">Now</button>
         <button id="wtp-scroll-right-btn" title="Scroll right">&gt;</button>
-      </div>
-      <div class="wtp-date-controls">
-        <div id="wtp-date-buttons"></div>
-        <input type="date" id="wtp-date-picker">
       </div>
     </div>
     <div id="wtp-rows-wrapper" style="position: relative;">
