@@ -8,14 +8,14 @@ categories: "tools"
 permalink: /tool/world-time-planner
 mysetting:
   nowrapper: true
-  display: fullscreen
+  # display: fullscreen
 ---
 
 <link rel="stylesheet" href="/assets/css/world-time-planner.css?v=11">
 
 <div id="world-time-planner-app">
   <header class="wtp-header">
-    <h1>World Time Planner</h1>
+    <h2>World Time Planner</h2>
     <p>Find the best meeting time across cities in different time zones.</p>
   </header>
 

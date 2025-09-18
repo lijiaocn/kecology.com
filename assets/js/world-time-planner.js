@@ -343,7 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 timeSelector.style.display = 'block';
                 const offsetX = e.clientX - trackRect.left;
                 const percent = (offsetX / trackRect.width) * 100;
-                const selectorLeft = e.clientX - wrapperRect.left;
+                // Calculate selector position relative to the wrapper, accounting for scroll
+                const selectorLeft = e.clientX - wrapperRect.left + rowsWrapper.scrollLeft;
 
                 handleRowsMouseMove(percent, selectorLeft);
             } else {
@@ -494,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleRowsMouseMove(percent, selectorLeft) {
-        // Position relative to the rows wrapper
+        // Position relative to the rows wrapper, accounting for scroll
         timeSelector.style.left = `${selectorLeft}px`;
         timeSelector.style.transform = 'none';
 
