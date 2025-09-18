@@ -331,20 +331,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         nowBtn.addEventListener('click', goToNow);
 
-        rowsWrapper.addEventListener('mousemove', (e) => {
+        const scrollContainer = document.getElementById('wtp-scroll-container');
+        
+        scrollContainer.addEventListener('mousemove', (e) => {
             const firstRow = timeRows.querySelector('.wtp-timeline-row');
             if (!firstRow) return;
 
             const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
             const trackRect = timelineTrack.getBoundingClientRect();
-            const wrapperRect = rowsWrapper.getBoundingClientRect();
+            const containerRect = scrollContainer.getBoundingClientRect();
 
             if (e.clientX >= trackRect.left && e.clientX <= trackRect.right) {
                 timeSelector.style.display = 'block';
                 const offsetX = e.clientX - trackRect.left;
                 const percent = (offsetX / trackRect.width) * 100;
-                // Calculate selector position relative to the wrapper, accounting for scroll
-                const selectorLeft = e.clientX - wrapperRect.left + rowsWrapper.scrollLeft;
+                // Calculate selector position relative to the container, accounting for scroll
+                const selectorLeft = e.clientX - containerRect.left + scrollContainer.scrollLeft;
 
                 handleRowsMouseMove(percent, selectorLeft);
             } else {
@@ -352,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        rowsWrapper.addEventListener('mouseleave', () => {
+        scrollContainer.addEventListener('mouseleave', () => {
             timeSelector.style.display = 'none';
             document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
         });
@@ -361,8 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let isTouchingTimeline = false;
         let touchStartX = 0;
         let touchStartY = 0;
+        let hasMoved = false;
         
-        rowsWrapper.addEventListener('touchstart', (e) => {
+        scrollContainer.addEventListener('touchstart', (e) => {
             const firstRow = timeRows.querySelector('.wtp-timeline-row');
             if (!firstRow) return;
 
@@ -372,35 +375,54 @@ document.addEventListener('DOMContentLoaded', () => {
             
             touchStartX = touch.clientX;
             touchStartY = touch.clientY;
+            hasMoved = false;
             
             // Only prevent default if touching within the timeline track area
             if (touch.clientX >= trackRect.left && touch.clientX <= trackRect.right) {
                 isTouchingTimeline = true;
-                e.preventDefault(); // Prevent scrolling only when touching timeline
-                handleTouchMove(e);
+                // Don't prevent default immediately, wait to see if it's a scroll gesture
             }
         });
 
-        rowsWrapper.addEventListener('touchmove', (e) => {
-            if (isTouchingTimeline) {
-                e.preventDefault(); // Prevent scrolling only when touching timeline
-                handleTouchMove(e);
-            } else {
-                // Check if this is a horizontal scroll gesture
-                const touch = e.touches[0];
-                const deltaX = Math.abs(touch.clientX - touchStartX);
-                const deltaY = Math.abs(touch.clientY - touchStartY);
+        scrollContainer.addEventListener('touchmove', (e) => {
+            if (!isTouchingTimeline) return;
+            
+            const touch = e.touches[0];
+            const deltaX = touch.clientX - touchStartX;
+            const deltaY = touch.clientY - touchStartY;
+            const absDeltaX = Math.abs(deltaX);
+            const absDeltaY = Math.abs(deltaY);
+            
+            // If this is the first significant movement, decide whether to scroll or select
+            if (!hasMoved && (absDeltaX > 8 || absDeltaY > 8)) {
+                hasMoved = true;
                 
-                // If horizontal movement is greater than vertical, allow scrolling
-                if (deltaX > deltaY) {
-                    // Allow horizontal scrolling
+                // Calculate the angle of movement (in degrees)
+                const angle = Math.abs(Math.atan2(deltaY, deltaX) * 180 / Math.PI);
+                
+                // If movement is mostly vertical (angle > 60 degrees), allow page scrolling
+                if (angle > 60) {
+                    isTouchingTimeline = false; // Allow page scrolling
                     return;
+                } else if (angle < 30) {
+                    // Movement is mostly horizontal, allow timeline scrolling
+                    isTouchingTimeline = false; // Allow timeline scrolling
+                    return;
+                } else {
+                    // Diagonal movement - this is likely a selection gesture
+                    e.preventDefault();
                 }
             }
+            
+            // If we're in selection mode, handle the selection
+            if (isTouchingTimeline && hasMoved) {
+                e.preventDefault();
+                handleTouchMove(e);
+            }
         });
 
-        rowsWrapper.addEventListener('touchend', () => {
-            if (isTouchingTimeline) {
+        scrollContainer.addEventListener('touchend', () => {
+            if (isTouchingTimeline && hasMoved) {
                 // Keep the time selector visible for a moment on touch end
                 setTimeout(() => {
                     timeSelector.style.display = 'none';
@@ -408,6 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000); // Hide after 2 seconds
             }
             isTouchingTimeline = false;
+            hasMoved = false;
         });
 
         function handleTouchMove(e) {
@@ -416,15 +439,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
             const trackRect = timelineTrack.getBoundingClientRect();
-            const wrapperRect = rowsWrapper.getBoundingClientRect();
+            const containerRect = scrollContainer.getBoundingClientRect();
 
             const touch = e.touches[0];
             if (touch.clientX >= trackRect.left && touch.clientX <= trackRect.right) {
                 timeSelector.style.display = 'block';
                 const offsetX = touch.clientX - trackRect.left;
                 const percent = (offsetX / trackRect.width) * 100;
-                // Calculate selector position relative to the wrapper, accounting for scroll
-                const selectorLeft = touch.clientX - wrapperRect.left + rowsWrapper.scrollLeft;
+                // Calculate selector position relative to the container, accounting for scroll
+                const selectorLeft = touch.clientX - containerRect.left + scrollContainer.scrollLeft;
 
                 handleRowsMouseMove(percent, selectorLeft);
             } else {

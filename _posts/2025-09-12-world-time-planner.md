@@ -20,14 +20,15 @@ mysetting:
   </header>
 
   <div class="wtp-selectors-container">
-    <div class="wtp-tab-hint" id="wtp-tab-hint">
-      Click again to hide options
-    </div>
-    
     <div class="wtp-tab-buttons">
-      <button class="wtp-tab-btn active" data-tab="popular">Popular Cities</button>
-      <button class="wtp-tab-btn" data-tab="country">By Country</button>
-      <button class="wtp-tab-btn" data-tab="timezone">By Time Zone</button>
+      <div class="wtp-tab-btn-container">
+        <button class="wtp-tab-btn active" data-tab="popular">Popular Cities</button>
+        <button class="wtp-tab-btn" data-tab="country">By Country</button>
+        <button class="wtp-tab-btn" data-tab="timezone">By Time Zone</button>
+      </div>
+      <div class="wtp-tab-hint" id="wtp-tab-hint">
+        Click again to hide options
+      </div>
     </div>
     
     <div class="wtp-tab-content">
@@ -64,10 +65,12 @@ mysetting:
         <button id="wtp-scroll-right-btn" title="Scroll right">&gt;</button>
       </div>
     </div>
-    <div id="wtp-rows-wrapper" style="position: relative;">
-        <div id="wtp-time-rows"></div>
-        <div id="wtp-time-selector" style="display: none;"></div>
-    </div>
+        <div id="wtp-scroll-container">
+          <div id="wtp-rows-wrapper" style="position: relative;">
+              <div id="wtp-time-rows"></div>
+              <div id="wtp-time-selector" style="display: none;"></div>
+          </div>
+        </div>
   </div>
 
 </div>
