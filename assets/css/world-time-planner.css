@@ -143,7 +143,7 @@
 .wtp-city-grid, .wtp-country-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
 }
 
@@ -159,16 +159,16 @@
 }
 
 .wtp-modal .wtp-city-grid label {
-  padding: 10px 15px;
+  padding: 8px 12px;
 }
 
 .wtp-city-grid label, .wtp-country-grid .wtp-country-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: #333;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 8px 12px;
+  border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -354,6 +354,21 @@
     min-height: 30px;
     max-height: 30px;
   }
+  
+  /* Reduce padding for city/country options on medium screens */
+  .wtp-city-grid label, .wtp-country-grid .wtp-country-item {
+    padding: 6px 10px;
+    gap: 4px;
+    border-radius: 14px;
+  }
+  
+  .wtp-city-grid, .wtp-country-grid {
+    gap: 6px;
+  }
+  
+  .wtp-modal .wtp-city-grid label {
+    padding: 6px 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -410,6 +425,26 @@
     align-items: center;
     justify-content: center;
   }
+  
+  /* Further reduce padding for city/country options on very small screens */
+  .wtp-city-grid label, .wtp-country-grid .wtp-country-item {
+    padding: 4px 8px;
+    gap: 3px;
+    border-radius: 12px;
+    font-size: 0.85em;
+  }
+  
+  .wtp-city-grid, .wtp-country-grid {
+    gap: 4px;
+  }
+  
+  .wtp-modal .wtp-city-grid label {
+    padding: 4px 8px;
+  }
+  
+  .wtp-modal .wtp-city-grid {
+    gap: 4px;
+  }
 }
 
 #wtp-date-picker {
@@ -458,25 +493,10 @@
   opacity: 1;
 }
 
-#wtp-now-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-#wtp-now-btn:hover {
-    background-color: #0056b3;
-}
-
-
 .wtp-date-button,
 #wtp-scroll-left-btn,
-#wtp-scroll-right-btn {
+#wtp-scroll-right-btn,
+#wtp-now-btn {
   background-color: #333;
   color: #e0e0e0;
   border: 1px solid #555;
@@ -499,6 +519,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
+}
+
+#wtp-now-btn {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+#wtp-now-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
 .wtp-date-button.weekend {
@@ -571,9 +602,7 @@
 }
 
 .wtp-timezone-info {
-  flex: 0 0 140px;
-  min-width: 140px;
-  max-width: 140px;
+  flex: 0 0 auto;
   padding: 8px;
   background-color: #252525;
   border-radius: 4px 0 0 4px;
@@ -582,6 +611,8 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .wtp-remove-btn {
@@ -625,7 +656,7 @@
 }
 
 .wtp-timeline-track {
-  flex-grow: 1;
+  flex: 1 1 auto;
   display: flex;
   border-radius: 0 0 4px 4px;
   /* overflow: hidden; */ /* Removed to allow day labels to show */
@@ -720,10 +751,15 @@
     content: attr(data-day-label);
     position: absolute;
     top: -20px; /* Position it above the timeline */
-    left: 2px;
+    left: -1px; /* Account for the border-left */
+    width: 50px; /* Same width as hour block */
     font-size: 12px;
     white-space: nowrap;
     color: #e0e0e0;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.1); /* Slight background for better visibility */
+    border-radius: 2px;
 }
 
 .wtp-current-hour {

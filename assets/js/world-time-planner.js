@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         const diffMinutes = (now - startOfDay) / 60000;
         currentTimeValue = Math.round(diffMinutes / 30);
-        timelineStartOffsetHours = new Date().getHours() - 1;
+        timelineStartOffsetHours = new Date().getHours() - 2;
         scrollLeftBtn.disabled = false;
         renderAllTimelineGrids(); // Re-render grids for the new date and update times
         renderDateButtons();
@@ -738,6 +738,8 @@ document.addEventListener('DOMContentLoaded', () => {
         calculateAndSetTimelineHours();
         renderTimelineGrid(row);
         updateSingleRowTimeDisplay(row);
+        // Align widths after adding new row
+        setTimeout(() => alignTimezoneInfoWidths(), 0);
         saveSelectedCities();
     }
 
@@ -803,12 +805,19 @@ document.addEventListener('DOMContentLoaded', () => {
         timelineRow.dataset.cityKey = cityKey;
         
         const cityElement = timelineRow.querySelector('.wtp-city');
-        cityElement.textContent = city;
         
-        // Adjust font size based on city name length
-        if (city.length > 15) {
+        // For timezone entries, show only the city part after the slash
+        let displayName = city;
+        if (country === 'Timezone' && city.includes('/')) {
+            displayName = city.split('/').pop();
+        }
+        
+        cityElement.textContent = displayName;
+        
+        // Adjust font size based on display name length
+        if (displayName.length > 15) {
             cityElement.setAttribute('data-very-long', 'true');
-        } else if (city.length > 10) {
+        } else if (displayName.length > 10) {
             cityElement.setAttribute('data-long', 'true');
         }
         
@@ -968,7 +977,36 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCheckbox(cityKey, false); 
         saveSelectedCities(); 
     }
-    function renderAllTimelineGrids() { const rows = timeRows.querySelectorAll('.wtp-timeline-row'); rows.forEach(renderTimelineGrid); updateAllTimeDisplays(); }
+    function alignTimezoneInfoWidths() {
+        const timezoneInfoElements = timeRows.querySelectorAll('.wtp-timezone-info');
+        if (timezoneInfoElements.length === 0) return;
+        
+        // Reset widths to auto to get natural width
+        timezoneInfoElements.forEach(el => {
+            el.style.width = 'auto';
+        });
+        
+        // Calculate the maximum width
+        let maxWidth = 0;
+        timezoneInfoElements.forEach(el => {
+            const width = el.offsetWidth;
+            if (width > maxWidth) {
+                maxWidth = width;
+            }
+        });
+        
+        // Set all timezone info elements to the same width
+        timezoneInfoElements.forEach(el => {
+            el.style.width = maxWidth + 'px';
+        });
+    }
+
+    function renderAllTimelineGrids() { 
+        const rows = timeRows.querySelectorAll('.wtp-timeline-row'); 
+        rows.forEach(renderTimelineGrid); 
+        updateAllTimeDisplays();
+        alignTimezoneInfoWidths();
+    }
 
     function renderTimelineGrid(row) {
         const timezone = row.dataset.timezone;
