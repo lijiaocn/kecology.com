@@ -385,6 +385,17 @@ document.addEventListener('DOMContentLoaded', () => {
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const targetTab = button.dataset.tab;
+                const isCurrentlyActive = button.classList.contains('active');
+                
+                // If clicking the currently active tab, toggle it off
+                if (isCurrentlyActive) {
+                    // Remove active class from all buttons and panels
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+                    // Clear the saved tab selection
+                    localStorage.removeItem('wtp-selected-tab');
+                    return;
+                }
                 
                 // Save selected tab to localStorage
                 localStorage.setItem('wtp-selected-tab', targetTab);
