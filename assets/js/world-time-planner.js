@@ -187,10 +187,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function init() {
         loadSelectedCities();
         loadCustomCities();
+        
+        // Add default cities if none are selected
+        if (selectedCities.size === 0) {
+            selectedCities.add('New York,USA');
+            selectedCities.add('London,UK');
+            selectedCities.add('Shanghai,China');
+            saveSelectedCities();
+        }
+        
         populatePopularCities();
         populateCountries();
         populateTimezones();
         addEventListeners();
+        addTabListeners();
+        loadSelectedTab(); // Load saved tab selection
         calculateAndSetTimelineHours();
         // Ensure date is set BEFORE first render so hour blocks get created
         goToNow(); // Set initial time to now and render
@@ -206,8 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
         today.setHours(0, 0, 0, 0);
 
         const selectedDate = parseDate(datePicker.value);
+        
+        // Calculate number of date buttons based on screen width
+        const screenWidth = window.innerWidth;
+        let buttonCount;
+        if (screenWidth >= 1200) {
+            buttonCount = 7; // Large screens: 7 days
+        } else if (screenWidth >= 768) {
+            buttonCount = 5; // Medium screens: 5 days
+        } else if (screenWidth >= 480) {
+            buttonCount = 2; // Small screens: 2 days
+        } else {
+            buttonCount = 1; // Very small screens: 1 day (minimum)
+        }
 
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < buttonCount; i++) {
             const date = new Date(today);
             date.setDate(today.getDate() + i);
 
@@ -349,12 +373,73 @@ document.addEventListener('DOMContentLoaded', () => {
             resizeTimeout = setTimeout(() => {
                 calculateAndSetTimelineHours();
                 renderAllTimelineGrids();
+                renderDateButtons(); // Re-render date buttons on resize
             }, 200);
         });
     }
 
+    function addTabListeners() {
+        const tabButtons = document.querySelectorAll('.wtp-tab-btn');
+        const tabPanels = document.querySelectorAll('.wtp-tab-panel');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.dataset.tab;
+                
+                // Save selected tab to localStorage
+                localStorage.setItem('wtp-selected-tab', targetTab);
+                
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding panel
+                let targetPanelId;
+                if (targetTab === 'popular') {
+                    targetPanelId = 'popular-cities-panel';
+                } else {
+                    targetPanelId = `${targetTab}-panel`;
+                }
+                const targetPanel = document.getElementById(targetPanelId);
+                console.log('Target panel ID:', targetPanelId);
+                console.log('Target panel:', targetPanel);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    console.log('Panel classes after adding active:', targetPanel.className);
+                }
+                
+                // Ensure content is populated when switching tabs
+                if (targetTab === 'popular') {
+                    console.log('Switching to popular cities tab');
+                    populatePopularCities();
+                } else if (targetTab === 'country') {
+                    console.log('Switching to country tab');
+                    populateCountries();
+                } else if (targetTab === 'timezone') {
+                    console.log('Switching to timezone tab');
+                    populateTimezones();
+                }
+            });
+        });
+    }
+
+    function loadSelectedTab() {
+        const savedTab = localStorage.getItem('wtp-selected-tab');
+        if (savedTab) {
+            const tabButton = document.querySelector(`[data-tab="${savedTab}"]`);
+            if (tabButton) {
+                tabButton.click(); // Trigger the click event to switch tabs
+            }
+        }
+    }
+
     function handleRowsMouseMove(percent, selectorLeft) {
+        // Position relative to the rows wrapper
         timeSelector.style.left = `${selectorLeft}px`;
+        timeSelector.style.transform = 'none';
 
         const totalMinutes = (percent / 100) * TIMELINE_HOURS * 60;
         currentTimeValue = Math.round(totalMinutes / 30);
@@ -380,7 +465,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             label.textContent = timeFormatter.format(timeAtCursor);
+            // Position relative to the timeline track using percentage
             label.style.left = `${percent}%`;
+            label.style.transform = 'translate(-50%, -100%)';
             label.style.display = 'block';
         });
     }
@@ -526,10 +613,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populatePopularCities() { 
+        const popularCitiesList = document.getElementById('popular-cities-list');
+        if (!popularCitiesList) {
+            console.error('popular-cities-list element not found');
+            return;
+        }
+        
+        console.log('populatePopularCities called, popularCities:', popularCities);
+        console.log('popularCitiesList element:', popularCitiesList);
         popularCitiesList.innerHTML = '';
         // Built-in popular cities
+        let addedCount = 0;
         popularCities.forEach(({ city, country }) => { 
-            const timezone = timezoneData[country][city]; 
+            const timezone = timezoneData[country] && timezoneData[country][city] ? timezoneData[country][city] : null;
+            if (!timezone) {
+                console.warn(`Timezone not found for ${city}, ${country}`);
+                return;
+            }
             const cityKey = `${city},${country}`;
             const label = document.createElement('label'); 
             const checkbox = document.createElement('input'); 
@@ -540,8 +640,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (selectedCities.has(cityKey)) checkbox.checked = true; 
             label.appendChild(checkbox); 
             label.append(city); 
-            popularCitiesList.appendChild(label); 
+            popularCitiesList.appendChild(label);
+            addedCount++;
         });
+        console.log(`Added ${addedCount} popular cities to DOM`);
+        console.log('popularCitiesList children count:', popularCitiesList.children.length);
 
         // Custom cities persisted by user
         customCities.forEach(({ label: displayName, timezone }) => {
@@ -605,7 +708,16 @@ document.addEventListener('DOMContentLoaded', () => {
             timezoneList.appendChild(labelEl);
         });
     }
-    function populateCountries() { for (const country in timezoneData) { const countryItem = document.createElement('div'); countryItem.className = 'wtp-country-item'; countryItem.textContent = country; countryItem.dataset.country = country; countryList.appendChild(countryItem); } }
+    function populateCountries() { 
+        countryList.innerHTML = ''; // 清空容器避免重复
+        for (const country in timezoneData) { 
+            const countryItem = document.createElement('div'); 
+            countryItem.className = 'wtp-country-item'; 
+            countryItem.textContent = country; 
+            countryItem.dataset.country = country; 
+            countryList.appendChild(countryItem); 
+        } 
+    }
     function openCityModal(country) { 
         modalCountryName.textContent = country; 
         

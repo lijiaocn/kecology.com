@@ -20,18 +20,24 @@ mysetting:
   </header>
 
   <div class="wtp-selectors-container">
-    <div class="wtp-popular-cities">
-      <h2>Select Popular Cities</h2>
-      <div id="popular-cities-list" class="wtp-city-grid"></div>
+    <div class="wtp-tab-buttons">
+      <button class="wtp-tab-btn active" data-tab="popular">Popular Cities</button>
+      <button class="wtp-tab-btn" data-tab="country">By Country</button>
+      <button class="wtp-tab-btn" data-tab="timezone">By Time Zone</button>
     </div>
-    <div class="wtp-country-selector">
-      <h2>Select City by Country</h2>
-      <div id="country-list" class="wtp-country-grid"></div>
+    
+    <div class="wtp-tab-content">
+      <div class="wtp-tab-panel active" id="popular-cities-panel">
+        <div id="popular-cities-list" class="wtp-city-grid"></div>
+      </div>
+      <div class="wtp-tab-panel" id="country-panel">
+        <div id="country-list" class="wtp-country-grid"></div>
+      </div>
+      <div class="wtp-tab-panel" id="timezone-panel">
+        <div id="timezone-list" class="wtp-city-grid"></div>
+      </div>
     </div>
-    <div class="wtp-timezone-selector">
-      <h2>Select by Time Zone</h2>
-      <div id="timezone-list" class="wtp-city-grid"></div>
-    </div>
+    
     <div id="city-modal" class="wtp-modal">
       <div class="wtp-modal-content">
         <span class="wtp-modal-close">&times;</span>
@@ -40,7 +46,6 @@ mysetting:
         <div id="modal-city-list" class="wtp-city-grid"></div>
       </div>
     </div>
-
   </div>
 
   <div id="wtp-timeline-container" class="wtp-timeline-container">

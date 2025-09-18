@@ -24,6 +24,50 @@
   margin-bottom: 2em;
 }
 
+.wtp-tab-buttons {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #333;
+  justify-content: center;
+}
+
+.wtp-tab-btn {
+  background: none;
+  border: none;
+  color: #888;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  position: relative;
+}
+
+.wtp-tab-btn:hover {
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.wtp-tab-btn.active {
+  color: #007bff;
+  border-bottom-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.wtp-tab-content {
+  position: relative;
+}
+
+.wtp-tab-panel {
+  display: none !important;
+}
+
+.wtp-tab-panel.active {
+  display: block !important;
+}
+
 .wtp-popular-cities, .wtp-country-selector {
     text-align: center;
 }
@@ -122,7 +166,7 @@
 .wtp-hint-text {
   margin-top: 8px;
   color: #aaa;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 
@@ -165,8 +209,6 @@
 .wtp-country-info {
   margin: 15px 0;
   padding: 15px;
-  background-color: #333;
-  border-radius: 6px;
 }
 
 .wtp-timezone-info-box {
@@ -188,7 +230,13 @@
   background-color: #1a1a1a;
   padding: 1.5em;
   border-radius: 8px;
+}
+
+#wtp-rows-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .wtp-timeline-header {
@@ -199,9 +247,123 @@
 }
 
 .wtp-time-nav-controls, .wtp-date-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#wtp-date-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive date buttons */
+@media (max-width: 768px) {
+  #wtp-date-buttons {
+    gap: 6px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  #wtp-date-buttons::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .wtp-date-button {
+    padding: 6px 8px;
+    font-size: 0.7em;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  
+  /* Timeline header adjustments for small screens */
+  .wtp-timeline-header {
+    margin-bottom: 1.2em;
+    gap: 8px;
+  }
+  
+  .wtp-time-nav-controls, .wtp-date-controls {
+    gap: 8px;
+  }
+  
+  .wtp-date-button, #wtp-scroll-left-btn, #wtp-scroll-right-btn, #wtp-now-btn {
+    padding: 6px 8px;
+    font-size: 0.7em;
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+  }
+  
+  #wtp-date-picker {
+    padding: 6px 8px;
+    font-size: 0.7em;
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #wtp-date-buttons {
+    gap: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  #wtp-date-buttons::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .wtp-date-button {
+    padding: 4px 4px;
+    font-size: 0.65em;
+    flex-shrink: 0;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+  }
+  
+  /* Timeline header adjustments for very small screens */
+  .wtp-timeline-header {
+    margin-bottom: 1em;
+    gap: 5px;
+  }
+  
+  .wtp-time-nav-controls, .wtp-date-controls {
+    gap: 5px;
+  }
+  
+  .wtp-date-button, #wtp-scroll-left-btn, #wtp-scroll-right-btn, #wtp-now-btn {
+    padding: 4px 4px;
+    font-size: 0.65em;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #wtp-date-picker {
+    padding: 4px 4px;
+    font-size: 0.65em;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 #wtp-date-picker {
@@ -209,7 +371,45 @@
   color: #e0e0e0;
   border: 1px solid #555;
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1;
+  box-sizing: border-box;
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  vertical-align: top;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+  display: inline-block;
+}
+
+#wtp-date-picker:hover {
+  background-color: #444;
+  border-color: #777;
+}
+
+#wtp-date-picker:focus {
+  outline: none;
+  background-color: #444;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Style the calendar icon to be more visible */
+#wtp-date-picker::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#wtp-date-picker::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }
 
 #wtp-now-btn {
@@ -242,6 +442,21 @@
   padding: 8px 12px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1;
+  box-sizing: border-box;
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  vertical-align: top;
+  margin: 0;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .wtp-date-button.weekend {
@@ -283,18 +498,20 @@
   background-color: #ff5722;
   pointer-events: none; /* So it doesn't block mouse events on rows */
   z-index: 20;
+  left: 0;
 }
 
 .wtp-hover-time-label {
   display: none; /* Initially hidden */
   position: absolute;
   top: 0;
+  left: 0;
   transform: translate(-50%, -100%);
   background-color: #ff5722;
   color: white;
   padding: 0px 8px;
   border-radius: 4px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   white-space: nowrap;
   z-index: 22; /* Above the selector line */
   pointer-events: none;
@@ -304,7 +521,11 @@
 .wtp-timeline-row {
   display: flex;
   align-items: stretch;
-  padding-bottom: 30px; /* Space for day label, keeps row interactive */
+  padding-top: 25px; /* Space for day label above */
+  padding-bottom: 5px; /* Small bottom padding */
+  min-width: fit-content;
+  width: max-content;
+  overflow: visible; /* Ensure day labels are visible */
 }
 
 .wtp-timezone-info {
@@ -346,7 +567,7 @@
 
 /* Responsive font size for very long city names */
 .wtp-city[data-long="true"] {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .wtp-city[data-very-long="true"] {
@@ -367,6 +588,9 @@
   border-radius: 0 0 4px 4px;
   /* overflow: hidden; */ /* Removed to allow day labels to show */
   position: relative;
+  min-width: fit-content;
+  width: max-content;
+  overflow: visible; /* Ensure day labels are visible */
 }
 
 .wtp-timeline-hour {
