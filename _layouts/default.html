@@ -3,13 +3,13 @@
 
   {%- include head.html -%}
 
-  <body style="{% if page.mysetting.background-color %}background-color:{{page.mysetting.background-color}};{% endif %}">
+  <body {% if page.mysetting.background-color %}style="background-color:{{page.mysetting.background-color}};"{% endif %}>
 
     {% if page.mysetting.display != 'fullscreen' %}
       {%- include header.html -%}
     {% endif %}
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content" aria-label="Content" {% if page.mysetting.display == 'fullscreen' %}style="padding: 0;"{% endif %}>
     {% if  page.mysetting.nowrapper %}
         {{ content }}
     {% else %}

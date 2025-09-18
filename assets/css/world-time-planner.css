@@ -19,6 +19,12 @@
   margin-bottom: 0.2em;
 }
 
+.wtp-header p {
+  font-size: 1.2em;
+  color: #aaa;
+  margin: 0;
+}
+
 /* Selector Styles */
 .wtp-selectors-container {
   margin-bottom: 2em;
@@ -262,6 +268,14 @@
 
 /* Responsive date buttons */
 @media (max-width: 768px) {
+  #world-time-planner-app {
+    padding: 0.8em;
+  }
+  
+  .wtp-timeline-container {
+    padding: 1em;
+  }
+  
   #wtp-date-buttons {
     gap: 6px;
     flex-wrap: nowrap;
@@ -310,6 +324,14 @@
 }
 
 @media (max-width: 480px) {
+  #world-time-planner-app {
+    padding: 0.5em;
+  }
+  
+  .wtp-timeline-container {
+    padding: 0.8em;
+  }
+  
   #wtp-date-buttons {
     display: none;
   }
@@ -335,8 +357,8 @@
   }
   
   .wtp-date-button, #wtp-scroll-left-btn, #wtp-scroll-right-btn, #wtp-now-btn {
-    padding: 4px 4px;
-    font-size: 0.65em;
+    padding: 3px 3px;
+    font-size: 0.6em;
     height: 28px;
     min-height: 28px;
     max-height: 28px;

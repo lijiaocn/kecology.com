@@ -442,8 +442,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if (savedTab) {
             const tabButton = document.querySelector(`[data-tab="${savedTab}"]`);
             if (tabButton) {
-                tabButton.click(); // Trigger the click event to switch tabs
+                // Manually set active state without triggering click event
+                const tabButtons = document.querySelectorAll('.wtp-tab-btn');
+                const tabPanels = document.querySelectorAll('.wtp-tab-panel');
+                
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to saved tab button
+                tabButton.classList.add('active');
+                
+                // Show corresponding panel
+                let targetPanelId;
+                if (savedTab === 'popular') {
+                    targetPanelId = 'popular-cities-panel';
+                } else {
+                    targetPanelId = `${savedTab}-panel`;
+                }
+                const targetPanel = document.getElementById(targetPanelId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+                
+                // Re-populate content for the active tab
+                if (savedTab === 'popular') {
+                    populatePopularCities();
+                } else if (savedTab === 'country') {
+                    populateCountries();
+                } else if (savedTab === 'timezone') {
+                    populateTimezones();
+                }
             }
+        } else {
+            // If no saved tab, ensure all tabs are inactive
+            const tabButtons = document.querySelectorAll('.wtp-tab-btn');
+            const tabPanels = document.querySelectorAll('.wtp-tab-panel');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
         }
     }
 
