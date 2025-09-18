@@ -383,12 +383,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const tabPanels = document.querySelectorAll('.wtp-tab-panel');
         
         tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            const handleTabClick = () => {
                 const targetTab = button.dataset.tab;
                 const isCurrentlyActive = button.classList.contains('active');
                 
+                console.log('Tab clicked:', targetTab, 'isCurrentlyActive:', isCurrentlyActive);
+                
                 // If clicking the currently active tab, toggle it off
                 if (isCurrentlyActive) {
+                    console.log('Toggling off active tab');
                     // Remove active class from all buttons and panels
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     tabPanels.forEach(panel => panel.classList.remove('active'));
@@ -433,6 +436,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('Switching to timezone tab');
                     populateTimezones();
                 }
+            };
+            
+            // Add both click and touchstart events for better iOS support
+            button.addEventListener('click', handleTabClick);
+            button.addEventListener('touchstart', (e) => {
+                e.preventDefault(); // Prevent double-tap zoom
+                handleTabClick();
             });
         });
     }
