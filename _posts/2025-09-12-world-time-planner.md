@@ -21,9 +21,9 @@ mysetting:
 
   <div class="wtp-selectors-container">
     <div class="wtp-tab-buttons">
-      <button class="wtp-tab-btn active" data-tab="popular">Popular Cities</button>
-      <button class="wtp-tab-btn" data-tab="country">By Country</button>
-      <button class="wtp-tab-btn" data-tab="timezone">By Time Zone</button>
+      <button class="wtp-tab-btn active" data-tab="popular" title="Click to hide options">Popular Cities</button>
+      <button class="wtp-tab-btn" data-tab="country" title="Click to show options">By Country</button>
+      <button class="wtp-tab-btn" data-tab="timezone" title="Click to show options">By Time Zone</button>
     </div>
     
     <div class="wtp-tab-content">

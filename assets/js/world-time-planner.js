@@ -389,12 +389,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isCurrentlyActive = button.classList.contains('active');
                 
                 console.log('Tab clicked:', targetTab, 'isCurrentlyActive:', isCurrentlyActive);
+                console.log('Button element:', button);
+                console.log('Button classes:', button.className);
                 
                 // If clicking the currently active tab, toggle it off
                 if (isCurrentlyActive) {
                     console.log('Toggling off active tab');
                     // Remove active class from all buttons and panels
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.title = 'Click to show options';
+                    });
                     tabPanels.forEach(panel => panel.classList.remove('active'));
                     // Clear the saved tab selection
                     localStorage.removeItem('wtp-selected-tab');
@@ -405,11 +410,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('wtp-selected-tab', targetTab);
                 
                 // Remove active class from all buttons and panels
-                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.title = 'Click to show options';
+                });
                 tabPanels.forEach(panel => panel.classList.remove('active'));
                 
                 // Add active class to clicked button
                 button.classList.add('active');
+                button.title = 'Click to hide options';
                 
                 // Show corresponding panel
                 let targetPanelId;
@@ -439,11 +448,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
             
-            // Add both click and touchstart events for better iOS support
-            button.addEventListener('click', handleTabClick);
-            button.addEventListener('touchstart', (e) => {
-                e.preventDefault(); // Prevent double-tap zoom
+            // Use click event with proper iOS support
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 handleTabClick();
+            });
+            
+            // Add touchstart for iOS to ensure the event fires
+            button.addEventListener('touchstart', (e) => {
+                // Don't prevent default here, let the click event handle it
             });
         });
     }
