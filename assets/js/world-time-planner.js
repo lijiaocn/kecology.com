@@ -357,6 +357,81 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
         });
 
+        // Touch events for mobile devices
+        let isTouchingTimeline = false;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        
+        rowsWrapper.addEventListener('touchstart', (e) => {
+            const firstRow = timeRows.querySelector('.wtp-timeline-row');
+            if (!firstRow) return;
+
+            const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+            const trackRect = timelineTrack.getBoundingClientRect();
+            const touch = e.touches[0];
+            
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            
+            // Only prevent default if touching within the timeline track area
+            if (touch.clientX >= trackRect.left && touch.clientX <= trackRect.right) {
+                isTouchingTimeline = true;
+                e.preventDefault(); // Prevent scrolling only when touching timeline
+                handleTouchMove(e);
+            }
+        });
+
+        rowsWrapper.addEventListener('touchmove', (e) => {
+            if (isTouchingTimeline) {
+                e.preventDefault(); // Prevent scrolling only when touching timeline
+                handleTouchMove(e);
+            } else {
+                // Check if this is a horizontal scroll gesture
+                const touch = e.touches[0];
+                const deltaX = Math.abs(touch.clientX - touchStartX);
+                const deltaY = Math.abs(touch.clientY - touchStartY);
+                
+                // If horizontal movement is greater than vertical, allow scrolling
+                if (deltaX > deltaY) {
+                    // Allow horizontal scrolling
+                    return;
+                }
+            }
+        });
+
+        rowsWrapper.addEventListener('touchend', () => {
+            if (isTouchingTimeline) {
+                // Keep the time selector visible for a moment on touch end
+                setTimeout(() => {
+                    timeSelector.style.display = 'none';
+                    document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
+                }, 2000); // Hide after 2 seconds
+            }
+            isTouchingTimeline = false;
+        });
+
+        function handleTouchMove(e) {
+            const firstRow = timeRows.querySelector('.wtp-timeline-row');
+            if (!firstRow) return;
+
+            const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+            const trackRect = timelineTrack.getBoundingClientRect();
+            const wrapperRect = rowsWrapper.getBoundingClientRect();
+
+            const touch = e.touches[0];
+            if (touch.clientX >= trackRect.left && touch.clientX <= trackRect.right) {
+                timeSelector.style.display = 'block';
+                const offsetX = touch.clientX - trackRect.left;
+                const percent = (offsetX / trackRect.width) * 100;
+                // Calculate selector position relative to the wrapper, accounting for scroll
+                const selectorLeft = touch.clientX - wrapperRect.left + rowsWrapper.scrollLeft;
+
+                handleRowsMouseMove(percent, selectorLeft);
+            } else {
+                timeSelector.style.display = 'none';
+            }
+        }
+
         scrollRightBtn.addEventListener('click', () => {
             timelineStartOffsetHours += 1;
             renderAllTimelineGrids();
