@@ -51,7 +51,9 @@ mysetting:
     </div>
     <div id="wtp-rows-wrapper" style="position: relative;">
         <div id="wtp-time-rows"></div>
-        <div id="wtp-time-selector" style="display: none;"></div>
+        <div id="wtp-time-selector" style="display: none;">
+          <div id="wtp-selector-time-label"></div>
+        </div>
     </div>
   </div>
 
@@ -62,11 +64,9 @@ mysetting:
     <div class="wtp-timezone-info">
       <button class="wtp-remove-btn">&times;</button>
       <div class="wtp-city"></div>
-      <div class="wtp-country"></div>
       <div class="wtp-current-time"></div>
     </div>
     <div class="wtp-timeline-track">
-      <div class="wtp-hover-time-label"></div>
     </div>
   </div>
 </template>

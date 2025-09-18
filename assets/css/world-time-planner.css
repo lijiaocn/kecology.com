@@ -178,31 +178,29 @@
   z-index: 20;
 }
 
-.wtp-hover-time-label {
-    display: none;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 3px;
-    z-index: 21;
-    pointer-events: none;
-    transform: translateX(10px);
-    font-size: 0.85em;
-    white-space: nowrap;
+#wtp-selector-time-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%); /* Position above the line */
+  background-color: #ff5722;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  white-space: nowrap;
 }
 
 /* Timeline Row Styles */
 .wtp-timeline-row {
   display: flex;
   align-items: stretch;
-  margin-bottom: 30px; /* Increased to prevent label overlap */
+  padding-bottom: 30px; /* Space for day label, keeps row interactive */
 }
 
 .wtp-timezone-info {
   flex: 0 0 100px;
-  padding: 10px;
+  padding: 8px;
   background-color: #252525;
   border-radius: 4px 0 0 4px;
   display: flex;
@@ -223,19 +221,18 @@
 }
 
 .wtp-city {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
-}
-
-.wtp-country {
-  font-size: 0.9em;
-  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 20px; /* Space for the remove button */
 }
 
 .wtp-current-time {
   font-size: 1.1em;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 3px;
   min-height: 1.2em;
   min-width: 4ch;
 }

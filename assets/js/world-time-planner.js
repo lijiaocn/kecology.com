@@ -154,13 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
         nowBtn.addEventListener('click', goToNow);
 
         rowsWrapper.addEventListener('mousemove', (e) => {
-            const track = e.target.closest('.wtp-timeline-track');
-            if (track) {
+            const firstRow = timeRows.querySelector('.wtp-timeline-row');
+            if (!firstRow) return;
+
+            const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+            const trackRect = timelineTrack.getBoundingClientRect();
+            const wrapperRect = rowsWrapper.getBoundingClientRect();
+
+            if (e.clientX >= trackRect.left && e.clientX <= trackRect.right) {
                 timeSelector.style.display = 'block';
-                const rect = rowsWrapper.getBoundingClientRect();
-                const offsetX = e.clientX - rect.left;
-                const percent = (offsetX / rect.width) * 100;
-                handleRowsMouseMove(percent);
+                const offsetX = e.clientX - trackRect.left;
+                const percent = (offsetX / trackRect.width) * 100;
+                const selectorLeft = e.clientX - wrapperRect.left;
+
+                handleRowsMouseMove(percent, selectorLeft);
             } else {
                 timeSelector.style.display = 'none';
             }
@@ -168,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         rowsWrapper.addEventListener('mouseleave', () => {
             timeSelector.style.display = 'none';
-            document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
         });
 
         scrollRightBtn.addEventListener('click', () => {
@@ -192,20 +198,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function handleRowsMouseMove(percent) {
-        const newValue = Math.round(percent / 100 * (TIMELINE_INTERVALS - 1));
-        timeSelector.style.left = `${percent}%`;
-        if (currentTimeValue !== newValue) {
-            currentTimeValue = newValue;
-            updateAllTimeDisplays();
-        }
+    function handleRowsMouseMove(percent, selectorLeft) {
+        timeSelector.style.left = `${selectorLeft}px`;
 
-        const rows = timeRows.querySelectorAll('.wtp-timeline-row');
-        rows.forEach(row => {
-            const label = row.querySelector('.wtp-hover-time-label');
-            const timezone = row.dataset.timezone;
+        const totalMinutes = (percent / 100) * TIMELINE_HOURS * 60;
+        currentTimeValue = Math.round(totalMinutes / 30);
 
-            const totalMinutes = (percent / 100) * TIMELINE_HOURS * 60;
+        const firstRow = timeRows.querySelector('.wtp-timeline-row');
+        const selectorTimeLabel = document.getElementById('wtp-selector-time-label');
+
+        if (firstRow && selectorTimeLabel) {
+            const timezone = firstRow.dataset.timezone;
             const baseDate = parseDate(datePicker.value);
             if (!baseDate) return;
 
@@ -217,12 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 timeZone: timezone,
                 hour: 'numeric',
                 minute: 'numeric',
-                hour12: true
+                hour12: false
             });
-            label.textContent = timeFormatter.format(timeAtCursor);
-            label.style.left = `${percent}%`;
-            label.style.display = 'block';
-        });
+            selectorTimeLabel.textContent = timeFormatter.format(timeAtCursor);
+        }
     }
 
     function addTimeline(timezone, city, country) {
@@ -234,31 +235,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateSingleRowTimeDisplay(row) {
-        const baseDate = parseDate(datePicker.value);
-        if (!baseDate || !row) return;
-
-        const totalMinutes = currentTimeValue * 30;
-        const timeAtSelector = new Date(baseDate.getFullYear(), baseDate.getMonth(), baseDate.getDate(), 0, 0, 0);
-        timeAtSelector.setMinutes(totalMinutes);
-
         const timezone = row.dataset.timezone;
-        const timeFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, hour: 'numeric', minute: 'numeric', hour12: false });
-        row.querySelector('.wtp-current-time').textContent = timeFormatter.format(timeAtSelector);
+        if (!row || !timezone) return;
+
+        const now = new Date();
+
+        const timeFormatter = new Intl.DateTimeFormat('en-US', {
+            timeZone: timezone,
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false
+        });
+
+        const dateFormatter = new Intl.DateTimeFormat('en-US', {
+            timeZone: timezone,
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric'
+        });
+
+        const timeString = timeFormatter.format(now);
+        const dateString = dateFormatter.format(now);
+
+        const timeElement = row.querySelector('.wtp-current-time');
+        timeElement.title = 'Current local time'; // Hint
+        timeElement.innerHTML = `${timeString}<br><span style="font-size: 0.8em; color: #aaa;">${dateString}</span>`;
     }
 
     function updateAllTimeDisplays() {
         const rows = timeRows.querySelectorAll('.wtp-timeline-row');
         rows.forEach(updateSingleRowTimeDisplay);
-        // Also update the selector position from the state
-        const percent = (currentTimeValue / (TIMELINE_INTERVALS - 1)) * 100;
-        timeSelector.style.left = `${percent}%`;
     }
 
     // ... (other helper functions)
     function handleCheckboxChange(e) { if (e.target.type !== 'checkbox') return; const { value, checked, dataset } = e.target; if (checked) addTimeline(value, dataset.city, dataset.country); else removeTimeline(value); }
     function handleCountryClick(e) { if (e.target.classList.contains('wtp-country-item')) openCityModal(e.target.dataset.country); }
     function updateCheckbox(timezone, isChecked) { const checkbox = document.querySelector(`input[type="checkbox"][value="${timezone}"]`); if (checkbox) checkbox.checked = isChecked; }
-    function createTimelineRow(timezone, city, country) { const timelineRow = timelineRowTemplate.content.cloneNode(true).firstElementChild; timelineRow.dataset.timezone = timezone; timelineRow.querySelector('.wtp-city').textContent = city; timelineRow.querySelector('.wtp-country').textContent = country; timelineRow.querySelector('.wtp-current-time').textContent = '--:--'; timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(timezone); timeRows.appendChild(timelineRow); return timelineRow; }
+
+    function createTimelineRow(timezone, city, country) {
+        const timelineRow = timelineRowTemplate.content.cloneNode(true).firstElementChild;
+        timelineRow.dataset.timezone = timezone;
+        timelineRow.querySelector('.wtp-city').textContent = city;
+        timelineRow.querySelector('.wtp-current-time').textContent = '--:--';
+        timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(timezone);
+        timeRows.appendChild(timelineRow);
+        return timelineRow;
+    }
+
     function populatePopularCities() { popularCities.forEach(({ city, country }) => { const timezone = timezoneData[country][city]; const label = document.createElement('label'); const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.value = timezone; checkbox.dataset.city = city; checkbox.dataset.country = country; if (selectedTimezones.has(timezone)) checkbox.checked = true; label.appendChild(checkbox); label.append(`${city}, ${country}`); popularCitiesList.appendChild(label); }); }
     function populateCountries() { for (const country in timezoneData) { const countryItem = document.createElement('div'); countryItem.className = 'wtp-country-item'; countryItem.textContent = country; countryItem.dataset.country = country; countryList.appendChild(countryItem); } }
     function openCityModal(country) { modalCountryName.textContent = country; modalCityList.innerHTML = ''; const cities = timezoneData[country]; for (const city in cities) { const timezone = cities[city]; const label = document.createElement('label'); const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.value = timezone; checkbox.dataset.city = city; checkbox.dataset.country = country; if (selectedTimezones.has(timezone)) checkbox.checked = true; label.appendChild(checkbox); label.append(city); modalCityList.appendChild(label); } modal.style.display = 'block'; modalCityList.onchange = handleCheckboxChange; }
@@ -269,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const timezone = row.dataset.timezone;
         const timelineTrack = row.querySelector('.wtp-timeline-track');
         // Clear all but the first child, which is the label
-        while (timelineTrack.childNodes.length > 1) {
+        while (timelineTrack.childNodes.length > 0) {
             timelineTrack.removeChild(timelineTrack.lastChild);
         }
 
@@ -315,3 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     init();
 });
+
+
+
