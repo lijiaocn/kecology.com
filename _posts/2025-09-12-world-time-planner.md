@@ -51,9 +51,7 @@ mysetting:
     </div>
     <div id="wtp-rows-wrapper" style="position: relative;">
         <div id="wtp-time-rows"></div>
-        <div id="wtp-time-selector" style="display: none;">
-          <div id="wtp-selector-time-label"></div>
-        </div>
+        <div id="wtp-time-selector" style="display: none;"></div>
     </div>
   </div>
 
@@ -67,8 +65,9 @@ mysetting:
       <div class="wtp-current-time"></div>
     </div>
     <div class="wtp-timeline-track">
+      <div class="wtp-hover-time-label"></div>
     </div>
   </div>
 </template>
 
-<script src="/assets/js/world-time-planner.js?v=10"></script>
+<script src="/assets/js/world-time-planner.js?v=11"></script>

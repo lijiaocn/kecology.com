@@ -178,17 +178,19 @@
   z-index: 20;
 }
 
-#wtp-selector-time-label {
+.wtp-hover-time-label {
+  display: none; /* Initially hidden */
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translate(-50%, -100%); /* Position above the line */
+  transform: translate(-50%, -100%);
   background-color: #ff5722;
   color: white;
-  padding: 4px 8px;
+  padding: 0px 8px;
   border-radius: 4px;
   font-size: 0.9em;
   white-space: nowrap;
+  z-index: 22; /* Above the selector line */
+  pointer-events: none;
 }
 
 /* Timeline Row Styles */

@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function init() {
-        selectedTimezones.add('America/New_York');
+        loadSelectedTimezones();
         populatePopularCities();
         populateCountries();
         addEventListeners();
@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         rowsWrapper.addEventListener('mouseleave', () => {
             timeSelector.style.display = 'none';
+            document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
         });
 
         scrollRightBtn.addEventListener('click', () => {
@@ -204,11 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalMinutes = (percent / 100) * TIMELINE_HOURS * 60;
         currentTimeValue = Math.round(totalMinutes / 30);
 
-        const firstRow = timeRows.querySelector('.wtp-timeline-row');
-        const selectorTimeLabel = document.getElementById('wtp-selector-time-label');
+        const rows = timeRows.querySelectorAll('.wtp-timeline-row');
+        rows.forEach(row => {
+            const label = row.querySelector('.wtp-hover-time-label');
+            if (!label) return;
 
-        if (firstRow && selectorTimeLabel) {
-            const timezone = firstRow.dataset.timezone;
+            const timezone = row.dataset.timezone;
             const baseDate = parseDate(datePicker.value);
             if (!baseDate) return;
 
@@ -222,8 +224,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 minute: 'numeric',
                 hour12: false
             });
-            selectorTimeLabel.textContent = timeFormatter.format(timeAtCursor);
+
+            label.textContent = timeFormatter.format(timeAtCursor);
+            label.style.left = `${percent}%`;
+            label.style.display = 'block';
+        });
+    }
+
+    function loadSelectedTimezones() {
+        const saved = localStorage.getItem('worldTimePlanner_selected');
+        if (saved) {
+            const savedTimezones = JSON.parse(saved);
+            if (Array.isArray(savedTimezones) && savedTimezones.length > 0) {
+                selectedTimezones = new Set(savedTimezones);
+            } else {
+                selectedTimezones.add('America/New_York'); // Default if saved is empty/invalid
+            }
+        } else {
+            selectedTimezones.add('America/New_York'); // Default for first-time users
         }
+    }
+
+    function saveSelectedTimezones() {
+        localStorage.setItem('worldTimePlanner_selected', JSON.stringify(Array.from(selectedTimezones)));
     }
 
     function addTimeline(timezone, city, country) {
@@ -232,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const row = createTimelineRow(timezone, city, country);
         renderTimelineGrid(row);
         updateSingleRowTimeDisplay(row);
+        saveSelectedTimezones();
     }
 
     function updateSingleRowTimeDisplay(row) {
@@ -286,15 +310,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateCountries() { for (const country in timezoneData) { const countryItem = document.createElement('div'); countryItem.className = 'wtp-country-item'; countryItem.textContent = country; countryItem.dataset.country = country; countryList.appendChild(countryItem); } }
     function openCityModal(country) { modalCountryName.textContent = country; modalCityList.innerHTML = ''; const cities = timezoneData[country]; for (const city in cities) { const timezone = cities[city]; const label = document.createElement('label'); const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.value = timezone; checkbox.dataset.city = city; checkbox.dataset.country = country; if (selectedTimezones.has(timezone)) checkbox.checked = true; label.appendChild(checkbox); label.append(city); modalCityList.appendChild(label); } modal.style.display = 'block'; modalCityList.onchange = handleCheckboxChange; }
     function getTimeOfDay(hour) { if (hour >= 9 && hour < 17) return 'work'; if (hour >= 17 && hour < 22) return 'evening'; if (hour >= 0 && hour < 7) return 'night'; return 'day'; }
-    function removeTimeline(timezone) { selectedTimezones.delete(timezone); const row = timeRows.querySelector(`[data-timezone="${timezone}"]`); if (row) row.remove(); updateCheckbox(timezone, false); }
+    function removeTimeline(timezone) { selectedTimezones.delete(timezone); const row = timeRows.querySelector(`[data-timezone="${timezone}"]`); if (row) row.remove(); updateCheckbox(timezone, false); saveSelectedTimezones(); }
     function renderAllTimelineGrids() { const rows = timeRows.querySelectorAll('.wtp-timeline-row'); rows.forEach(renderTimelineGrid); updateAllTimeDisplays(); }
+
     function renderTimelineGrid(row) {
         const timezone = row.dataset.timezone;
         const timelineTrack = row.querySelector('.wtp-timeline-track');
-        // Clear all but the first child, which is the label
-        while (timelineTrack.childNodes.length > 0) {
-            timelineTrack.removeChild(timelineTrack.lastChild);
-        }
+        // Safer way to clear hour blocks without removing the label
+        const hourBlocks = timelineTrack.querySelectorAll('.wtp-timeline-hour');
+        hourBlocks.forEach(block => block.remove());
 
         const baseDate = parseDate(datePicker.value);
         if (!baseDate) return;
@@ -338,6 +362,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     init();
 });
-
-
-
