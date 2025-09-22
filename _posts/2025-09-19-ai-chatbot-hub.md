@@ -7,28 +7,23 @@ permalink: /tool/ai-chatbot-hub
 mysetting:
   # display: fullscreen
   nowrapper: true 
-description: "A curated list of the most popular AI chatbots, including ChatGPT, Gemini, and Grok. Access your favorite AI assistant with a single click, without searching."
+description: "Quick access to popular AI chatbots including ChatGPT, Gemini, Claude, DeepSeek, and more. Add custom AI tools for enhanced productivity. One-click access to your favorite AI assistants."
 ---
 
 <link rel="stylesheet" href="/assets/css/ai-chatbot-hub.css?v=1">
 
 <div class="ai-chatbot-hub">
   <div class="hero-section">
-    <p class="subtitle">Access all popular AI chatbots in one convenient place</p>
-    <p class="description">Save time and boost productivity by accessing the most popular AI chatbots directly. No more searching through search engines - everything you need is right here.</p>
+    <p class="subtitle">Add your own custom AI tools • One-click access to all popular chatbots</p>
   </div>
 
   <div class="chatbot-grid">
     <div class="chatbot-card" data-category="general">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/chatgpt.svg" alt="ChatGPT" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <h3>ChatGPT</h3>
-      <p>OpenAI's flagship conversational AI</p>
+      <p>OpenAI</p>
       <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Open ChatGPT
       </a>
@@ -36,13 +31,10 @@ description: "A curated list of the most popular AI chatbots, including ChatGPT,
 
     <div class="chatbot-card" data-category="general">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-          <path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/gemini.svg" alt="Gemini" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <h3>Gemini</h3>
-      <p>Google's advanced AI assistant</p>
+      <p>Google</p>
       <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Open Gemini
       </a>
@@ -50,28 +42,21 @@ description: "A curated list of the most popular AI chatbots, including ChatGPT,
 
     <div class="chatbot-card" data-category="general">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M7 10H17M7 14H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/grok.svg" alt="Grok" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <h3>Grok</h3>
-      <p>X's AI chatbot with real-time knowledge</p>
-      <a href="https://x.com/i/grok" target="_blank" rel="noopener noreferrer" class="btn-primary">
+      <p>X (Twitter)</p>
+      <a href="https://grok.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Open Grok
       </a>
     </div>
 
     <div class="chatbot-card" data-category="general">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/deepseek-color.svg" alt="DeepSeek" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <h3>DeepSeek</h3>
-      <p>Advanced AI assistant with deep reasoning</p>
+      <p>DeepSeek</p>
       <a href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Open DeepSeek
       </a>
@@ -79,29 +64,10 @@ description: "A curated list of the most popular AI chatbots, including ChatGPT,
 
     <div class="chatbot-card" data-category="general">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <h3>Claude</h3>
-      <p>Anthropic's helpful AI assistant</p>
-      <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Open Claude
-      </a>
-    </div>
-
-    <div class="chatbot-card" data-category="general">
-      <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-          <path d="M9.09 9A3 3 0 0 1 12 6A3 3 0 0 1 14.91 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M16 16H8M12 12V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/perplexity-official.svg" alt="Perplexity" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <h3>Perplexity</h3>
-      <p>AI-powered search and answer engine</p>
+      <p>Perplexity AI</p>
       <a href="https://perplexity.ai" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Open Perplexity
       </a>
@@ -109,27 +75,32 @@ description: "A curated list of the most popular AI chatbots, including ChatGPT,
 
     <div class="chatbot-card" data-category="general">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M7 10H17M7 14H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/claude-correct.svg" alt="Claude" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
-      <h3>Bing Chat</h3>
-      <p>Microsoft's AI-powered search assistant</p>
-      <a href="https://www.bing.com/chat" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Open Bing Chat
+      <h3>Claude</h3>
+      <p>Anthropic</p>
+      <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Open Claude
+      </a>
+    </div>
+
+    <div class="chatbot-card" data-category="general">
+      <div class="chatbot-icon">
+        <img src="/assets/img/ai-chatbot-hub/copilot-color.svg" alt="Copilot" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <h3>Copilot</h3>
+      <p>Microsoft</p>
+      <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Open Copilot
       </a>
     </div>
 
     <div class="chatbot-card" data-category="coding">
       <div class="chatbot-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="16,18 22,12 16,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="8,6 2,12 8,18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img src="/assets/img/ai-chatbot-hub/cursor.svg" alt="Cursor" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <h3>Cursor</h3>
-      <p>AI-powered code editor</p>
+      <p>Cursor</p>
       <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Open Cursor
       </a>

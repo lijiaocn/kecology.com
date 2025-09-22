@@ -8,8 +8,7 @@
 
 .hero-section {
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+  padding: 0rem 0 1rem 0;
 }
 
 .hero-section h1 {
@@ -32,7 +31,7 @@
 .description {
   font-size: 1.1rem;
   color: #B0BEC5;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -47,12 +46,12 @@
 .chatbot-card {
   background: #fff;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
   text-align: center;
-  width: 300px;
+  width: 250px;
   flex-shrink: 0;
 }
 
@@ -63,46 +62,55 @@
 }
 
 .chatbot-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 45px;
+  height: 45px;
+  margin: 0 auto 0.75rem;
+  background: #f8fafc;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  border: 2px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.chatbot-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .chatbot-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
 }
 
 .chatbot-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: #333;
 }
 
 .chatbot-card p {
   color: #666;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .btn-primary {
   display: inline-block;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .btn-primary:hover {
@@ -368,7 +376,7 @@
   
   .chatbot-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
   }
   
   .features-grid {
