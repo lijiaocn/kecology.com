@@ -18,10 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollLeftBtn = document.getElementById('wtp-scroll-left-btn');
     const scrollRightBtn = document.getElementById('wtp-scroll-right-btn');
     const scrollContainer = document.getElementById('wtp-scroll-container');
+    const rangeDialog = document.getElementById('wtp-range-dialog');
+    const rangeDialogClose = document.querySelector('.wtp-range-dialog-close');
+    const rangeInfo = document.getElementById('wtp-range-info');
+    const timezoneTimes = document.getElementById('wtp-timezone-times');
 
     let TIMELINE_HOURS = 24;
     let TIMELINE_INTERVALS = TIMELINE_HOURS * 2;
-    const HOUR_BLOCK_WIDTH = 50; // px
+    const HOUR_BLOCK_WIDTH = 30; // px
 
     // State
     let selectedCities = new Set(); // Store city keys like "Beijing,China" or "Label,Custom"
@@ -29,6 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTimeValue = 24; // Represents 30-min intervals from midnight
     let timelineStartOffsetHours = 0;
     let draggedElement = null;
+    
+    // Range selection state
+    let isRangeSelecting = false;
+    let isMouseDown = false; // 标记鼠标是否按下
+    let rangeStartPercent = 0;
+    let rangeEndPercent = 0;
+    let rangeOverlay = null;
+    let hasSelectedRange = false; // 标记是否已有选择的范围
+    let currentTimeRange = null; // Store current time range for editing
 
     const timezoneData = {
         'USA': {
@@ -173,8 +186,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateAndSetTimelineHours() {
         const container = document.getElementById('wtp-timeline-container');
-        const availableWidth = container.offsetWidth - 140 - (2 * 24); // container - info_box(140px) - container_padding
-        const numHours = Math.floor(availableWidth / HOUR_BLOCK_WIDTH) - 1;
+        const scrollContainer = document.getElementById('wtp-scroll-container');
+        
+        if (!container || !scrollContainer) return;
+        
+        // 获取实际可用的宽度
+        const containerWidth = scrollContainer.clientWidth;
+        const containerPadding = 48; // 1.5em * 2 = 3em ≈ 48px
+        
+        // 动态计算时区信息区域的宽度
+        const timezoneInfo = document.querySelector('.wtp-timezone-info');
+        const timezoneInfoWidth = timezoneInfo ? timezoneInfo.offsetWidth + 8 : 140; // 8px margin
+        
+        const availableWidth = containerWidth - timezoneInfoWidth - containerPadding;
+        const numHours = Math.floor(availableWidth / HOUR_BLOCK_WIDTH) - 1; // 减少一个避免滚动条
         TIMELINE_HOURS = Math.max(24, numHours);
         TIMELINE_INTERVALS = TIMELINE_HOURS * 2;
     }
@@ -186,9 +211,63 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Date(parts[0], parts[1] - 1, parts[2]);
     }
 
+    function addLocalTimezoneRow() {
+        // Get user's local timezone
+        const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const localCityName = getLocalCityName(localTimezone);
+        
+        // Add local timezone to selected cities as first item
+        const localKey = `${localCityName},Local`;
+        selectedCities.add(localKey);
+        
+        // Add to custom cities if not already there
+        const existingCustom = customCities.find(city => city.timezone === localTimezone);
+        if (!existingCustom) {
+            customCities.push({
+                label: localCityName,
+                timezone: localTimezone
+            });
+        }
+    }
+    
+    function getLocalCityName(timezone) {
+        // Convert timezone to readable city name
+        const timezoneMap = {
+            'America/New_York': 'New York',
+            'America/Chicago': 'Chicago',
+            'America/Denver': 'Denver',
+            'America/Los_Angeles': 'Los Angeles',
+            'Europe/London': 'London',
+            'Europe/Paris': 'Paris',
+            'Europe/Berlin': 'Berlin',
+            'Asia/Tokyo': 'Tokyo',
+            'Asia/Shanghai': 'Shanghai',
+            'Asia/Hong_Kong': 'Hong Kong',
+            'Asia/Singapore': 'Singapore',
+            'Australia/Sydney': 'Sydney',
+            'Australia/Melbourne': 'Melbourne',
+            'Pacific/Auckland': 'Auckland',
+            'America/Toronto': 'Toronto',
+            'America/Vancouver': 'Vancouver',
+            'Europe/Madrid': 'Madrid',
+            'Europe/Rome': 'Rome',
+            'Asia/Seoul': 'Seoul',
+            'Asia/Mumbai': 'Mumbai',
+            'America/Sao_Paulo': 'São Paulo',
+            'America/Mexico_City': 'Mexico City',
+            'Africa/Cairo': 'Cairo',
+            'Africa/Johannesburg': 'Johannesburg'
+        };
+        
+        return timezoneMap[timezone] || timezone.split('/').pop().replace('_', ' ');
+    }
+
     function init() {
         loadSelectedCities();
         loadCustomCities();
+        
+        // Add local timezone as first row
+        addLocalTimezoneRow();
         
         // Add default cities if none are selected
         if (selectedCities.size === 0) {
@@ -203,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         populateTimezones();
         addEventListeners();
         addTabListeners();
+        addDialogListeners(); // Add dialog event listeners
         loadSelectedTab(); // Load saved tab selection
         calculateAndSetTimelineHours();
         // Ensure date is set BEFORE first render so hour blocks get created
@@ -266,6 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 datePicker.value = e.currentTarget.dataset.date;
                 renderAllTimelineGrids();
                 renderDateButtons(); // Re-render to update active state
+                
+                // 滚动到最左端
+                if (scrollContainer) {
+                    scrollContainer.scrollLeft = 0;
+                }
             });
             dateButtonsContainer.appendChild(button);
         }
@@ -298,20 +383,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedOrder = loadCityOrder();
         let citiesToRender = Array.from(selectedCities);
         
-        // If we have a saved order, use it to sort the cities
+        // Separate local timezone from other cities
+        const localTimezone = citiesToRender.find(cityKey => cityKey.endsWith(',Local'));
+        const otherCities = citiesToRender.filter(cityKey => !cityKey.endsWith(',Local'));
+        
+        // If we have a saved order, use it to sort the cities (excluding local timezone)
         if (savedOrder && savedOrder.length > 0) {
-            // Filter saved order to only include currently selected cities
-            const validOrder = savedOrder.filter(cityKey => selectedCities.has(cityKey));
+            // Filter saved order to only include currently selected cities (excluding local timezone)
+            const validOrder = savedOrder.filter(cityKey => otherCities.includes(cityKey));
             // Add any new cities that weren't in the saved order
-            const newCities = citiesToRender.filter(cityKey => !validOrder.includes(cityKey));
+            const newCities = otherCities.filter(cityKey => !validOrder.includes(cityKey));
             citiesToRender = [...validOrder, ...newCities];
+        } else {
+            citiesToRender = otherCities;
+        }
+        
+        // Always put local timezone first (if not already there)
+        if (localTimezone && !citiesToRender.includes(localTimezone)) {
+            citiesToRender.unshift(localTimezone);
         }
         
         citiesToRender.forEach(cityKey => {
             const [city, country] = cityKey.split(',');
             let timezone;
             
-            if (country === 'Timezone') {
+            if (country === 'Local') {
+                // For local timezone entries, find the timezone from customCities
+                const customEntry = customCities.find(c => c.label === city);
+                timezone = customEntry ? customEntry.timezone : Intl.DateTimeFormat().resolvedOptions().timeZone;
+            } else if (country === 'Timezone') {
                 // For timezone entries, the city is actually the timezone string
                 timezone = city;
             } else if (country === 'Custom') {
@@ -348,6 +448,11 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollLeftBtn.disabled = true;
             renderAllTimelineGrids();
             renderDateButtons();
+            
+            // 滚动到最左端
+            if (scrollContainer) {
+                scrollContainer.scrollLeft = 0;
+            }
         });
         nowBtn.addEventListener('click', goToNow);
 
@@ -360,21 +465,98 @@ document.addEventListener('DOMContentLoaded', () => {
             const containerRect = scrollContainer.getBoundingClientRect();
 
             if (e.clientX >= trackRect.left && e.clientX <= trackRect.right) {
-                timeSelector.style.display = 'block';
                 const offsetX = e.clientX - trackRect.left;
                 const percent = (offsetX / trackRect.width) * 100;
-                // Calculate selector position relative to the container, accounting for scroll
-                const selectorLeft = e.clientX - containerRect.left + scrollContainer.scrollLeft;
-
-                handleRowsMouseMove(percent, selectorLeft);
+                
+                if (isRangeSelecting && isMouseDown) {
+                    // 更新范围选择
+                    updateRangeSelection(percent);
+                } else if (!isRangeSelecting && !hasSelectedRange) {
+                    // 正常的时间选择器显示
+                    timeSelector.style.display = 'block';
+                    const selectorLeft = e.clientX - containerRect.left + scrollContainer.scrollLeft;
+                    handleRowsMouseMove(percent, selectorLeft);
+                }
             } else {
-                timeSelector.style.display = 'none';
+                if (!isRangeSelecting) {
+                    timeSelector.style.display = 'none';
+                }
             }
         });
 
         scrollContainer.addEventListener('mouseleave', () => {
-            timeSelector.style.display = 'none';
-            document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
+            if (!isRangeSelecting) {
+                timeSelector.style.display = 'none';
+                document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
+                // 清理动态创建的时间选择器
+                document.querySelectorAll('.wtp-row-time-selector').forEach(selector => selector.remove());
+            }
+        });
+
+        // 添加鼠标按下事件处理范围选择
+        scrollContainer.addEventListener('mousedown', (e) => {
+            const firstRow = timeRows.querySelector('.wtp-timeline-row');
+            if (!firstRow) return;
+
+            const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+            const trackRect = timelineTrack.getBoundingClientRect();
+
+            if (e.clientX >= trackRect.left && e.clientX <= trackRect.right) {
+                // 检查是否点击在蒙罩上
+                const clickedElement = e.target;
+                const isOverlayClick = clickedElement.classList.contains('wtp-range-overlay') || 
+                                     clickedElement.closest('.wtp-range-overlay');
+                
+                if (isOverlayClick) {
+                    // 点击在蒙罩上，不执行任何操作
+                    return;
+                }
+                
+                const offsetX = e.clientX - trackRect.left;
+                const percent = (offsetX / trackRect.width) * 100;
+                
+                if (!hasSelectedRange) {
+                    // 开始范围选择
+                    isMouseDown = true;
+                    startRangeSelection(percent);
+                } else {
+                    // 清除已选择的范围
+                    clearRangeSelection();
+                }
+            }
+        });
+
+        // 添加鼠标松开事件处理
+        scrollContainer.addEventListener('mouseup', (e) => {
+            if (isRangeSelecting && isMouseDown) {
+                const firstRow = timeRows.querySelector('.wtp-timeline-row');
+                if (!firstRow) return;
+
+                const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+                const trackRect = timelineTrack.getBoundingClientRect();
+
+                if (e.clientX >= trackRect.left && e.clientX <= trackRect.right) {
+                    const offsetX = e.clientX - trackRect.left;
+                    const percent = (offsetX / trackRect.width) * 100;
+                    
+                    // 结束范围选择
+                    endRangeSelection(percent);
+                } else {
+                    // 在时间轴外部松开鼠标，也结束选择
+                    endRangeSelection(rangeEndPercent);
+                }
+                
+                isMouseDown = false;
+            }
+        });
+
+        // 添加全局鼠标松开事件，防止在时间轴外部松开鼠标时状态异常
+        document.addEventListener('mouseup', (e) => {
+            if (isRangeSelecting && isMouseDown) {
+                // 结束范围选择
+                endRangeSelection(rangeEndPercent);
+                isMouseDown = false;
+            }
         });
 
         // Touch events for mobile devices
@@ -445,6 +627,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     timeSelector.style.display = 'none';
                     document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
+                    // 清理动态创建的时间选择器
+                    document.querySelectorAll('.wtp-row-time-selector').forEach(selector => selector.remove());
                 }, 2000); // Hide after 2 seconds
             }
             isTouchingTimeline = false;
@@ -495,55 +679,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function addDialogListeners() {
+        // Close dialog when clicking close button
+        rangeDialogClose.addEventListener('click', () => {
+            rangeDialog.style.display = 'none';
+        });
+        
+        // Close dialog when clicking outside
+        rangeDialog.addEventListener('click', (e) => {
+            if (e.target === rangeDialog) {
+                rangeDialog.style.display = 'none';
+            }
+        });
+        
+        // Close dialog with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && rangeDialog.style.display === 'flex') {
+                rangeDialog.style.display = 'none';
+            }
+        });
+    }
+
     function addTabListeners() {
         const tabButtons = document.querySelectorAll('.wtp-tab-btn');
         const tabPanels = document.querySelectorAll('.wtp-tab-panel');
-        const tabHint = document.getElementById('wtp-tab-hint');
-        
-        // Function to show hint
-        function showHint() {
-            tabHint.style.display = 'block';
-        }
-        
-        // Function to hide hint
-        function hideHint() {
-            tabHint.style.display = 'none';
-        }
-        
-        // Update hint visibility based on active tab
-        function updateHintVisibility() {
-            const hasActiveTab = document.querySelector('.wtp-tab-btn.active');
-            if (hasActiveTab) {
-                showHint();
-            } else {
-                hideHint();
-            }
-        }
         
         
         tabButtons.forEach(button => {
             const handleTabClick = () => {
                 const targetTab = button.dataset.tab;
-                const isCurrentlyActive = button.classList.contains('active');
                 
-                console.log('Tab clicked:', targetTab, 'isCurrentlyActive:', isCurrentlyActive);
+                console.log('Tab clicked:', targetTab);
                 console.log('Button element:', button);
                 console.log('Button classes:', button.className);
-                
-                // If clicking the currently active tab, toggle it off
-                if (isCurrentlyActive) {
-                    console.log('Toggling off active tab');
-                    // Remove active class from all buttons and panels
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    tabPanels.forEach(panel => panel.classList.remove('active'));
-                    // Clear the saved tab selection
-                    localStorage.removeItem('wtp-selected-tab');
-                    // Update hint visibility
-                    updateHintVisibility();
-                    return;
-                }
                 
                 // Save selected tab to localStorage
                 localStorage.setItem('wtp-selected-tab', targetTab);
@@ -556,9 +724,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Add active class to clicked button
                 button.classList.add('active');
-                
-                // Update hint visibility
-                updateHintVisibility();
                 
                 // Show corresponding panel
                 let targetPanelId;
@@ -603,67 +768,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadSelectedTab() {
-        const savedTab = localStorage.getItem('wtp-selected-tab');
-        if (savedTab) {
-            const tabButton = document.querySelector(`[data-tab="${savedTab}"]`);
-            if (tabButton) {
-                // Manually set active state without triggering click event
-                const tabButtons = document.querySelectorAll('.wtp-tab-btn');
-                const tabPanels = document.querySelectorAll('.wtp-tab-panel');
-                
-                // Remove active class from all buttons and panels
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabPanels.forEach(panel => panel.classList.remove('active'));
-                
-                // Add active class to saved tab button
-                tabButton.classList.add('active');
-                
-                // Show corresponding panel
-                let targetPanelId;
-                if (savedTab === 'popular') {
-                    targetPanelId = 'popular-cities-panel';
-                } else {
-                    targetPanelId = `${savedTab}-panel`;
-                }
-                const targetPanel = document.getElementById(targetPanelId);
-                if (targetPanel) {
-                    targetPanel.classList.add('active');
-                }
-                
-                // Re-populate content for the active tab
-                if (savedTab === 'popular') {
-                    populatePopularCities();
-                } else if (savedTab === 'country') {
-                    populateCountries();
-                } else if (savedTab === 'timezone') {
-                    populateTimezones();
-                }
-            }
-        } else {
-            // If no saved tab, ensure all tabs are inactive
+        const savedTab = localStorage.getItem('wtp-selected-tab') || 'popular'; // Default to popular
+        const tabButton = document.querySelector(`[data-tab="${savedTab}"]`);
+        if (tabButton) {
+            // Manually set active state without triggering click event
             const tabButtons = document.querySelectorAll('.wtp-tab-btn');
             const tabPanels = document.querySelectorAll('.wtp-tab-panel');
+            
+            // Remove active class from all buttons and panels
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabPanels.forEach(panel => panel.classList.remove('active'));
-        }
-        
-        // Update hint visibility on page load
-        const tabHint = document.getElementById('wtp-tab-hint');
-        if (tabHint) {
-            const hasActiveTab = document.querySelector('.wtp-tab-btn.active');
-            if (hasActiveTab) {
-                tabHint.style.display = 'block';
+            
+            // Add active class to saved tab button
+            tabButton.classList.add('active');
+            
+            // Show corresponding panel
+            let targetPanelId;
+            if (savedTab === 'popular') {
+                targetPanelId = 'popular-cities-panel';
             } else {
-                tabHint.style.display = 'none';
+                targetPanelId = `${savedTab}-panel`;
+            }
+            const targetPanel = document.getElementById(targetPanelId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+            
+            // Re-populate content for the active tab
+            if (savedTab === 'popular') {
+                populatePopularCities();
+            } else if (savedTab === 'country') {
+                populateCountries();
+            } else if (savedTab === 'timezone') {
+                populateTimezones();
             }
         }
         
     }
 
     function handleRowsMouseMove(percent, selectorLeft) {
-        // Position relative to the rows wrapper, accounting for scroll
-        timeSelector.style.left = `${selectorLeft}px`;
-        timeSelector.style.transform = 'none';
+        // 隐藏原来的时间选择器
+        timeSelector.style.display = 'none';
+        
+        // 为每个时间轴行创建独立的时间选择器
+        const timelineRows = timeRows.querySelectorAll('.wtp-timeline-row');
+        timelineRows.forEach(row => {
+            // 移除之前的时间选择器
+            const existingSelector = row.querySelector('.wtp-row-time-selector');
+            if (existingSelector) {
+                existingSelector.remove();
+            }
+            
+            // 创建新的时间选择器
+            const rowSelector = document.createElement('div');
+            rowSelector.className = 'wtp-row-time-selector';
+            rowSelector.style.position = 'absolute';
+            rowSelector.style.top = '0';
+            rowSelector.style.bottom = '0';
+            rowSelector.style.width = '2px';
+            rowSelector.style.backgroundColor = '#4caf50'; // 与浮动时间相同的绿色
+            rowSelector.style.pointerEvents = 'none';
+            rowSelector.style.zIndex = '5';
+            rowSelector.style.left = `${percent}%`;
+            rowSelector.style.transform = 'translateX(-50%)';
+            
+            const timelineTrack = row.querySelector('.wtp-timeline-track');
+            if (timelineTrack) {
+                timelineTrack.appendChild(rowSelector);
+            }
+        });
 
         const totalMinutes = (percent / 100) * TIMELINE_HOURS * 60;
         currentTimeValue = Math.round(totalMinutes / 30);
@@ -860,6 +1033,24 @@ document.addEventListener('DOMContentLoaded', () => {
             displayName = city.split('/').pop();
         }
         
+        // Add special styling for local timezone
+        if (country === 'Local') {
+            timelineRow.classList.add('wtp-local-timezone');
+            displayName += ' (Local)';
+            
+            // Remove delete button for local timezone
+            const deleteBtn = timelineRow.querySelector('.wtp-remove-btn');
+            if (deleteBtn) {
+                deleteBtn.remove();
+            }
+            
+            // Make local timezone non-draggable
+            timelineRow.draggable = false;
+        } else {
+            // Set delete button click event only for non-local timezones
+            timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(cityKey);
+        }
+        
         cityElement.textContent = displayName;
         
         // Adjust font size based on display name length
@@ -870,14 +1061,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         timelineRow.querySelector('.wtp-current-time').textContent = '--:--';
-        timelineRow.querySelector('.wtp-remove-btn').onclick = () => removeTimeline(cityKey);
         
-        // Add drag functionality
-        timelineRow.draggable = true;
-        timelineRow.addEventListener('dragstart', handleDragStart);
-        timelineRow.addEventListener('dragover', handleDragOver);
-        timelineRow.addEventListener('drop', handleDrop);
-        timelineRow.addEventListener('dragend', handleDragEnd);
+        // Add drag functionality only to timezone info area
+        const timezoneInfo = timelineRow.querySelector('.wtp-timezone-info');
+        const timelineTrack = timelineRow.querySelector('.wtp-timeline-track');
+        
+        // Enable dragging only on timezone info
+        timezoneInfo.draggable = true;
+        timezoneInfo.addEventListener('dragstart', handleDragStart);
+        timezoneInfo.addEventListener('dragover', handleDragOver);
+        timezoneInfo.addEventListener('drop', handleDrop);
+        timezoneInfo.addEventListener('dragend', handleDragEnd);
+        
+        // Explicitly disable dragging on timeline track and timeline row
+        timelineTrack.draggable = false;
+        timelineRow.draggable = false;
         
         timeRows.appendChild(timelineRow);
         return timelineRow;
@@ -1025,8 +1223,13 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block'; 
         modalCityList.onchange = handleCheckboxChange; 
     }
-    function getTimeOfDay(hour) { if (hour >= 9 && hour < 17) return 'work'; if (hour >= 17 && hour < 22) return 'evening'; if (hour >= 0 && hour < 7) return 'night'; return 'day'; }
+    function getTimeOfDay(hour) { if (hour >= 9 && hour < 19) return 'work'; if (hour >= 19 && hour < 21) return 'late-work'; if (hour >= 21 && hour < 23) return 'evening'; if (hour === 23) return 'late-night'; if (hour >= 0 && hour < 7) return 'night'; return 'day'; }
     function removeTimeline(cityKey) { 
+        // Prevent removing local timezone
+        if (cityKey.endsWith(',Local')) {
+            return;
+        }
+        
         selectedCities.delete(cityKey); 
         const row = timeRows.querySelector(`[data-city-key="${cityKey}"]`); 
         if (row) row.remove(); 
@@ -1063,17 +1266,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Drag and drop functions
     function handleDragStart(e) {
-        draggedElement = this;
+        // Find the parent timeline row
+        draggedElement = this.closest('.wtp-timeline-row');
+        
+        // Prevent dragging if it's a local timezone
+        if (draggedElement && draggedElement.classList.contains('wtp-local-timezone')) {
+            e.preventDefault();
+            return false;
+        }
+        
         this.style.opacity = '0.5';
         e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/html', this.outerHTML);
+        e.dataTransfer.setData('text/html', draggedElement.outerHTML);
+        e.stopPropagation(); // Prevent event bubbling
     }
 
     function handleDragOver(e) {
         if (e.preventDefault) {
             e.preventDefault();
         }
+        
+        // Find the parent timeline row
+        const targetRow = this.closest('.wtp-timeline-row');
+        
+        // Prevent dropping on local timezone
+        if (targetRow && targetRow.classList.contains('wtp-local-timezone')) {
+            e.dataTransfer.dropEffect = 'none';
+            e.stopPropagation();
+            return false;
+        }
+        
         e.dataTransfer.dropEffect = 'move';
+        e.stopPropagation(); // Prevent event bubbling
         return false;
     }
 
@@ -1082,13 +1306,21 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
         }
 
-        if (draggedElement !== this) {
+        // Find the parent timeline row
+        const targetRow = this.closest('.wtp-timeline-row');
+        
+        // Prevent dropping on local timezone
+        if (targetRow && targetRow.classList.contains('wtp-local-timezone')) {
+            return false;
+        }
+        
+        if (draggedElement !== targetRow) {
             // Get the current order
             const currentOrder = Array.from(timeRows.children).map(row => row.dataset.cityKey);
             
             // Find positions
             const draggedIndex = currentOrder.indexOf(draggedElement.dataset.cityKey);
-            const targetIndex = currentOrder.indexOf(this.dataset.cityKey);
+            const targetIndex = currentOrder.indexOf(targetRow.dataset.cityKey);
             
             // Reorder the array
             const newOrder = [...currentOrder];
@@ -1113,11 +1345,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleDragEnd(e) {
+        // Reset opacity of the timezone info element
         this.style.opacity = '';
         draggedElement = null;
+        e.stopPropagation(); // Prevent event bubbling
     }
 
     function renderAllTimelineGrids() { 
+        // 清理动态创建的时间选择器
+        document.querySelectorAll('.wtp-row-time-selector').forEach(selector => selector.remove());
+        
         const rows = timeRows.querySelectorAll('.wtp-timeline-row'); 
         rows.forEach(renderTimelineGrid); 
         updateAllTimeDisplays();
@@ -1127,9 +1364,26 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTimelineGrid(row) {
         const timezone = row.dataset.timezone;
         const timelineTrack = row.querySelector('.wtp-timeline-track');
-        // Safer way to clear hour blocks without removing the label
-        const hourBlocks = timelineTrack.querySelectorAll('.wtp-timeline-hour');
-        hourBlocks.forEach(block => block.remove());
+        
+        // 创建或获取小时容器和日期容器
+        let hoursContainer = timelineTrack.querySelector('.wtp-timeline-hours-container');
+        let datesContainer = timelineTrack.querySelector('.wtp-timeline-dates-container');
+        
+        if (!hoursContainer) {
+            hoursContainer = document.createElement('div');
+            hoursContainer.className = 'wtp-timeline-hours-container';
+            timelineTrack.appendChild(hoursContainer);
+        }
+        
+        if (!datesContainer) {
+            datesContainer = document.createElement('div');
+            datesContainer.className = 'wtp-timeline-dates-container';
+            timelineTrack.appendChild(datesContainer);
+        }
+        
+        // 清空现有内容
+        hoursContainer.innerHTML = '';
+        datesContainer.innerHTML = '';
 
         const baseDate = parseDate(datePicker.value);
         if (!baseDate) return;
@@ -1139,7 +1393,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const hourFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, hour: 'numeric', hour12: false });
         const fullDateFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, year: 'numeric', month: 'numeric', day: 'numeric' });
         const weekdayFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, weekday: 'short' });
-        const dayLabelFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, weekday: 'short', month: 'short', day: 'numeric' });
         const ymdPartsFormatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit' });
 
         const now = new Date();
@@ -1153,7 +1406,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const currentYMD = getYMD(now);
 
+        // 首先创建所有小时日期组
+        const hourDayGroups = [];
         let lastDate = '';
+        
+        for (let i = 0; i < TIMELINE_HOURS; i++) {
+            const timeForThisBlock = new Date(startOfDisplay);
+            timeForThisBlock.setHours(startOfDisplay.getHours() + i + timelineStartOffsetHours);
+            const dateOfThisBlock = fullDateFormatter.format(timeForThisBlock);
+            
+            if (i === 0 || dateOfThisBlock !== lastDate) {
+                const hourDayGroup = document.createElement('div');
+                hourDayGroup.className = 'wtp-hour-day-group';
+                
+                // 创建上方区域 - 包含现有的小时块
+                const topArea = document.createElement('div');
+                topArea.className = 'wtp-hour-day-group-top';
+                hourDayGroup.appendChild(topArea);
+                
+                // 创建下方区域 - 显示日期
+                const bottomArea = document.createElement('div');
+                bottomArea.className = 'wtp-hour-day-group-bottom';
+                
+                // 暂时不添加日期显示，稍后根据小时数量决定
+                bottomArea.appendChild(document.createElement('div')); // 占位符
+                
+                hourDayGroup.appendChild(bottomArea);
+                hoursContainer.appendChild(hourDayGroup);
+                hourDayGroups.push(hourDayGroup);
+                lastDate = dateOfThisBlock;
+            }
+        }
+
+        // 然后创建小时块
+        lastDate = '';
+        let currentHourDayGroupIndex = 0;
 
         for (let i = 0; i < TIMELINE_HOURS; i++) {
             const timeForThisBlock = new Date(startOfDisplay);
@@ -1164,6 +1451,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const weekdayShort = weekdayFormatter.format(timeForThisBlock); // e.g., Sun, Mon, ...
             const ymdOfThisBlock = getYMD(timeForThisBlock);
 
+            // 检查是否需要切换到下一个小时日期组
+            if (i > 0 && dateOfThisBlock !== lastDate) {
+                currentHourDayGroupIndex++;
+            }
+
+            // 创建小时块
             const hourDiv = document.createElement('div');
             hourDiv.className = 'wtp-timeline-hour ' + getTimeOfDay(localHour);
             if (weekdayShort === 'Sat' || weekdayShort === 'Sun') {
@@ -1171,14 +1464,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             hourDiv.dataset.hour = localHour;
 
-            if (i === 0 || dateOfThisBlock !== lastDate) {
-                hourDiv.classList.add('wtp-day-start');
-                hourDiv.dataset.dayLabel = dayLabelFormatter.format(timeForThisBlock);
-                lastDate = dateOfThisBlock;
-            }
-
             if (dateOfThisBlock === currentDateInTimezone && localHour === currentHourInTimezone) {
                 hourDiv.classList.add('wtp-current-hour');
+                
+                // 在当前时间小时块下方添加标识
+                const currentTimeIndicator = document.createElement('div');
+                currentTimeIndicator.className = 'wtp-current-time-indicator';
+                currentTimeIndicator.textContent = 'NOW';
+                hourDiv.appendChild(currentTimeIndicator);
             }
 
             // Dim past hours (in the row's timezone)
@@ -1186,8 +1479,698 @@ document.addEventListener('DOMContentLoaded', () => {
                 hourDiv.classList.add('past-hour');
             }
 
-            timelineTrack.appendChild(hourDiv);
+            // 将小时块添加到对应的小时日期组的上方区域
+            const topArea = hourDayGroups[currentHourDayGroupIndex].querySelector('.wtp-hour-day-group-top');
+            topArea.appendChild(hourDiv);
+            lastDate = dateOfThisBlock;
         }
+        
+        // 检查每个小时日期组中的小时数量，只有大于等于2个时才显示日期
+        hourDayGroups.forEach((hourDayGroup, index) => {
+            const topArea = hourDayGroup.querySelector('.wtp-hour-day-group-top');
+            const bottomArea = hourDayGroup.querySelector('.wtp-hour-day-group-bottom');
+            const hourCount = topArea.querySelectorAll('.wtp-timeline-hour').length;
+            
+            // 清空底部区域
+            bottomArea.innerHTML = '';
+            
+            // 只有当小时数量大于等于2时才显示日期
+            if (hourCount >= 2) {
+                // 找到这个小时日期组对应的第一个小时块的时间
+                // 需要找到这个组在时间轴中的起始位置
+                const hourBlocks = topArea.querySelectorAll('.wtp-timeline-hour');
+                if (hourBlocks.length > 0) {
+                    // 找到这个组在原始时间轴中的起始索引
+                    const firstHourBlock = hourBlocks[0];
+                    const allHourBlocks = timeRows.querySelectorAll('.wtp-timeline-hour');
+                    let startIndex = -1;
+                    for (let i = 0; i < allHourBlocks.length; i++) {
+                        if (allHourBlocks[i] === firstHourBlock) {
+                            startIndex = i;
+                            break;
+                        }
+                    }
+                    
+                    if (startIndex >= 0) {
+                        // 使用与创建小时块相同的计算方式
+                        const timeForDate = new Date(startOfDisplay);
+                        timeForDate.setHours(startOfDisplay.getHours() + startIndex + timelineStartOffsetHours);
+                        
+                        // 创建日期显示元素
+                        const dateDisplay = document.createElement('div');
+                        dateDisplay.className = 'wtp-date-display';
+                        
+                        // 使用目标时区格式化日期
+                        const timezone = row.dataset.timezone;
+                        const timezoneWeekdayFormatter = new Intl.DateTimeFormat('en-US', { 
+                            timeZone: timezone, 
+                            weekday: 'short' 
+                        });
+                        const timezoneDateFormatter = new Intl.DateTimeFormat('en-US', { 
+                            timeZone: timezone, 
+                            year: 'numeric', 
+                            month: 'numeric', 
+                            day: 'numeric' 
+                        });
+                        
+                        const weekdayShort = timezoneWeekdayFormatter.format(timeForDate);
+                        const fullDate = timezoneDateFormatter.format(timeForDate);
+                        const dateParts = fullDate.split('/');
+                        const month = dateParts[0];
+                        const day = dateParts[1];
+                        const year = dateParts[2];
+                        
+                        // 创建完整的日期文本（一行显示）
+                        const dateText = document.createElement('span');
+                        dateText.className = 'wtp-date-text';
+                        dateText.textContent = `${weekdayShort} ${month}/${day}`;
+                        dateText.setAttribute('data-full-date', `${weekdayShort} ${month}/${day}/${year}`);
+                        
+                        dateDisplay.appendChild(dateText);
+                        bottomArea.appendChild(dateDisplay);
+                    }
+                }
+            }
+        });
+    }
+
+    // Range selection functions
+    function startRangeSelection(percent) {
+        isRangeSelecting = true;
+        rangeStartPercent = percent;
+        rangeEndPercent = percent;
+        
+        // 隐藏正常的时间选择器
+        timeSelector.style.display = 'none';
+        document.querySelectorAll('.wtp-hover-time-label').forEach(l => l.style.display = 'none');
+        document.querySelectorAll('.wtp-row-time-selector').forEach(selector => selector.remove());
+        
+        // 创建范围选择蒙罩
+        createRangeOverlay();
+        updateRangeSelection(percent);
+        
+        console.log('Range selection started at', percent + '%');
+    }
+    
+    function updateRangeSelection(percent) {
+        rangeEndPercent = percent;
+        
+        if (rangeOverlay && Array.isArray(rangeOverlay)) {
+            const startPercent = Math.min(rangeStartPercent, rangeEndPercent);
+            const widthPercent = Math.abs(rangeEndPercent - rangeStartPercent);
+            
+            rangeOverlay.forEach((overlay, index) => {
+                overlay.style.left = startPercent + '%';
+                overlay.style.width = widthPercent + '%';
+                
+                // 按钮现在在蒙罩上方，始终显示
+                if (index === 0) {
+                    const button = overlay.querySelector('.wtp-range-overlay-button');
+                    if (button) {
+                        button.style.display = 'block';
+                    }
+                }
+            });
+        }
+    }
+    
+    function endRangeSelection(percent) {
+        rangeEndPercent = percent;
+        isRangeSelecting = false;
+        isMouseDown = false;
+        
+        // 计算最终选择的范围
+        const startPercent = Math.min(rangeStartPercent, rangeEndPercent);
+        const endPercent = Math.max(rangeStartPercent, rangeEndPercent);
+        const widthPercent = endPercent - startPercent;
+        
+        console.log('Range selection ended:', {
+            start: startPercent + '%',
+            end: endPercent + '%',
+            width: widthPercent + '%'
+        });
+        
+        // 如果时间长度为0，不形成蒙罩，清理状态
+        if (widthPercent <= 0) {
+            console.log('Range width is 0, clearing selection');
+            clearRangeSelection();
+            hasSelectedRange = false;
+            return;
+        }
+        
+        hasSelectedRange = true; // 标记已有选择的范围
+        
+        // 显示时间范围对话框
+        showTimeRangeDialog(startPercent, endPercent);
+        
+        // 保留范围选择蒙罩，不清理
+        // 蒙罩会保留在最终选择的位置
+    }
+    
+    function clearRangeSelection() {
+        // 清理范围选择蒙罩
+        if (rangeOverlay && Array.isArray(rangeOverlay)) {
+            rangeOverlay.forEach(overlay => overlay.remove());
+            rangeOverlay = null;
+        }
+        
+        // 重置状态
+        hasSelectedRange = false;
+        isRangeSelecting = false;
+        isMouseDown = false;
+        rangeStartPercent = 0;
+        rangeEndPercent = 0;
+        
+        console.log('Range selection cleared');
+    }
+    
+    function showTimeRangeDialog(startPercent, endPercent) {
+        // 计算时间范围
+        const timeRange = calculateTimeRange(startPercent, endPercent);
+        
+        // 更新对话框信息
+        updateRangeInfo(timeRange);
+        
+        // 计算各时区的时间
+        const timezoneTimesData = calculateTimezoneTimes(timeRange);
+        
+        // 更新时区时间显示
+        updateTimezoneTimesDisplay(timezoneTimesData);
+        
+        // 显示对话框
+        rangeDialog.style.display = 'flex';
+    }
+    
+    function calculateTimeRange(startPercent, endPercent) {
+        const baseDate = parseDate(datePicker.value);
+        if (!baseDate) return null;
+        
+        const startTime = new Date(baseDate);
+        startTime.setHours(startTime.getHours() + timelineStartOffsetHours);
+        const startMinutes = (startPercent / 100) * TIMELINE_HOURS * 60;
+        startTime.setMinutes(startTime.getMinutes() + startMinutes);
+        
+        const endTime = new Date(baseDate);
+        endTime.setHours(endTime.getHours() + timelineStartOffsetHours);
+        const endMinutes = (endPercent / 100) * TIMELINE_HOURS * 60;
+        endTime.setMinutes(endTime.getMinutes() + endMinutes);
+        
+        return {
+            start: startTime,
+            end: endTime,
+            duration: endTime - startTime
+        };
+    }
+    
+    function calculateTimezoneTimes(timeRange) {
+        const timelineRows = timeRows.querySelectorAll('.wtp-timeline-row');
+        const times = [];
+        
+        timelineRows.forEach(row => {
+            const timezone = row.dataset.timezone;
+            const cityElement = row.querySelector('.wtp-city');
+            const cityName = cityElement ? cityElement.textContent : 'Unknown';
+            
+            if (timezone) {
+                const startTimeInTimezone = formatTimeInTimezone(timeRange.start, timezone);
+                const endTimeInTimezone = formatTimeInTimezone(timeRange.end, timezone);
+                
+                times.push({
+                    city: cityName,
+                    timezone: timezone,
+                    start: startTimeInTimezone,
+                    end: endTimeInTimezone
+                });
+            }
+        });
+        
+        return times;
+    }
+    
+    function formatTimeInTimezone(date, timezone) {
+        try {
+            const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            });
+            
+            return formatter.format(date);
+        } catch (error) {
+            console.warn(`Failed to format time for timezone ${timezone}:`, error);
+            return 'Invalid timezone';
+        }
+    }
+    
+    // Format time for input fields (only hours and minutes)
+    function formatTimeForInput(date) {
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        return `${hours}:${minutes}`;
+    }
+    
+    // Format date for display
+    function formatDateForDisplay(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    function updateRangeInfo(timeRange) {
+        if (!timeRange) return;
+        
+        // Store current time range for editing
+        currentTimeRange = timeRange;
+        
+        const durationHours = Math.floor(timeRange.duration / (1000 * 60 * 60));
+        const durationMinutes = Math.floor((timeRange.duration % (1000 * 60 * 60)) / (1000 * 60));
+        
+        rangeInfo.innerHTML = `
+            <h3>Fine-tune Time Range</h3>
+            <div class="wtp-range-edit-container">
+                <div class="wtp-range-edit-item">
+                    <label>Start:</label>
+                    <div class="wtp-datetime-display">
+                        <span class="wtp-date-value" id="wtp-start-date-display">${formatDateForDisplay(timeRange.start)}</span>
+                        <span class="wtp-time-value" id="wtp-start-time-display">${formatTimeForInput(timeRange.start)}</span>
+                    </div>
+                    <button class="wtp-time-btn wtp-time-decrease" data-target="start" data-direction="decrease">-</button>
+                    <button class="wtp-time-btn wtp-time-increase" data-target="start" data-direction="increase">+</button>
+                </div>
+                <div class="wtp-range-edit-item">
+                    <label>Duration:</label>
+                    <div class="wtp-datetime-display">
+                        <span class="wtp-date-value" id="wtp-duration-days-display">${Math.floor(durationHours / 24)}d</span>
+                        <span class="wtp-time-value" id="wtp-duration-display">${durationHours % 24}h ${durationMinutes}m</span>
+                    </div>
+                    <button class="wtp-time-btn wtp-time-decrease" data-target="duration" data-direction="decrease">-</button>
+                    <button class="wtp-time-btn wtp-time-increase" data-target="duration" data-direction="increase">+</button>
+                </div>
+                <div class="wtp-range-edit-item">
+                    <label>End:</label>
+                    <div class="wtp-datetime-display">
+                        <span class="wtp-date-value" id="wtp-end-date-display">${formatDateForDisplay(timeRange.end)}</span>
+                        <span class="wtp-time-value" id="wtp-end-time-display">${formatTimeForInput(timeRange.end)}</span>
+                    </div>
+                    <button class="wtp-time-btn wtp-time-decrease" data-target="end" data-direction="decrease">-</button>
+                    <button class="wtp-time-btn wtp-time-increase" data-target="end" data-direction="increase">+</button>
+                </div>
+            </div>
+        `;
+        
+        // Add event listeners for auto-calculation
+        addRangeEditListeners();
+        
+        // Add meeting link listeners
+        addMeetingLinkListeners();
+    }
+    
+    function addRangeEditListeners() {
+        // Remove existing event listeners first
+        const existingButtons = document.querySelectorAll('.wtp-time-btn');
+        existingButtons.forEach(button => {
+            button.replaceWith(button.cloneNode(true));
+        });
+        
+        // Add new event listeners
+        const buttons = document.querySelectorAll('.wtp-time-btn');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const target = button.dataset.target;
+                const direction = button.dataset.direction;
+                const isIncrease = direction === 'increase';
+                
+                console.log('Button clicked:', target, direction, isIncrease);
+                
+                if (target === 'start') {
+                    adjustStartTime(isIncrease);
+                } else if (target === 'duration') {
+                    adjustDuration(isIncrease);
+                } else if (target === 'end') {
+                    adjustEndTime(isIncrease);
+                }
+            });
+        });
+    }
+    
+    function addMeetingLinkListeners() {
+        const googleMeetingBtn = document.getElementById('wtp-google-meeting-btn');
+        if (googleMeetingBtn) {
+            googleMeetingBtn.addEventListener('click', () => {
+                generateGoogleMeetLink();
+            });
+        }
+        
+        const outlookMeetingBtn = document.getElementById('wtp-outlook-meeting-btn');
+        if (outlookMeetingBtn) {
+            outlookMeetingBtn.addEventListener('click', () => {
+                generateOutlookLink();
+            });
+        }
+        
+        
+        const yahooMeetingBtn = document.getElementById('wtp-yahoo-meeting-btn');
+        if (yahooMeetingBtn) {
+            yahooMeetingBtn.addEventListener('click', () => {
+                generateYahooCalendarLink();
+            });
+        }
+    }
+    
+    function generateGoogleMeetLink() {
+        if (!currentTimeRange) {
+            alert('No time range selected');
+            return;
+        }
+        
+        const startTime = currentTimeRange.start;
+        const endTime = currentTimeRange.end;
+        
+        // Format dates for Google Calendar (ISO 8601 format)
+        const formatGoogleDate = (date) => {
+            return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        };
+        
+        const startDate = formatGoogleDate(startTime);
+        const endDate = formatGoogleDate(endTime);
+        
+        // Format dates for display
+        const formatDisplayDate = (date) => {
+            return date.toLocaleDateString('en-US', {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        };
+        
+        const formatDisplayTime = (date) => {
+            return date.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+        };
+        
+        // Get timezone information
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const timezoneOffset = startTime.getTimezoneOffset();
+        
+        // Create event title and description
+        const eventTitle = 'Meeting';
+        const eventDescription = `Meeting scheduled via World Time Planner\n\nStart: ${formatDisplayDate(startTime)} at ${formatDisplayTime(startTime)} (${timezone})\nEnd: ${formatDisplayDate(endTime)} at ${formatDisplayTime(endTime)} (${timezone})`;
+        
+        // Create Google Calendar link with timezone
+        const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&ctz=${encodeURIComponent(timezone)}&details=${encodeURIComponent(eventDescription)}`;
+        
+        // Open calendar link directly
+        window.open(calendarUrl, '_blank');
+    }
+    
+    function showMeetingLinkNotification(message, link) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = 'wtp-meeting-notification';
+        notification.innerHTML = `
+            <div class="wtp-notification-content">
+                <p>${message}</p>
+                <a href="${link}" target="_blank" class="wtp-meeting-link">Open Calendar</a>
+            </div>
+        `;
+        
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            max-width: 300px;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 5000);
+    }
+    
+    function generateOutlookLink() {
+        if (!currentTimeRange) {
+            alert('No time range selected');
+            return;
+        }
+        
+        const startTime = currentTimeRange.start;
+        const endTime = currentTimeRange.end;
+        
+        // Format dates for Outlook (ISO 8601 format with timezone)
+        const formatOutlookDate = (date) => {
+            return date.toISOString();
+        };
+        
+        const startDate = formatOutlookDate(startTime);
+        const endDate = formatOutlookDate(endTime);
+        
+        // Get timezone information
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+        // Create event title and description
+        const eventTitle = 'Meeting';
+        const eventDescription = `Meeting scheduled via World Time Planner\n\nTimezone: ${timezone}`;
+        
+        // Create Outlook Calendar link with timezone
+        const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventTitle)}&startdt=${encodeURIComponent(startDate)}&enddt=${encodeURIComponent(endDate)}&body=${encodeURIComponent(eventDescription)}`;
+        
+        // Open calendar link directly
+        window.open(outlookUrl, '_blank');
+    }
+    
+    
+    function generateYahooCalendarLink() {
+        if (!currentTimeRange) {
+            alert('No time range selected');
+            return;
+        }
+        
+        const startTime = currentTimeRange.start;
+        const endTime = currentTimeRange.end;
+        
+        // Format dates for Yahoo Calendar (ISO 8601 format)
+        const formatYahooDate = (date) => {
+            return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        };
+        
+        const startDate = formatYahooDate(startTime);
+        const endDate = formatYahooDate(endTime);
+        
+        // Get timezone information
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+        // Create event title and description
+        const eventTitle = 'Meeting';
+        const eventDescription = `Meeting scheduled via World Time Planner\n\nTimezone: ${timezone}`;
+        
+        // Create Yahoo Calendar link
+        const yahooUrl = `https://calendar.yahoo.com/?v=60&view=d&type=20&title=${encodeURIComponent(eventTitle)}&st=${startDate}&et=${endDate}&desc=${encodeURIComponent(eventDescription)}`;
+        
+        // Open calendar link directly
+        window.open(yahooUrl, '_blank');
+    }
+    
+    function adjustStartTime(isIncrease) {
+        if (!currentTimeRange) return;
+        
+        const minutes = isIncrease ? 1 : -1;
+        const newStartTime = new Date(currentTimeRange.start.getTime() + minutes * 60 * 1000);
+        
+        // Update displays
+        document.getElementById('wtp-start-date-display').textContent = formatDateForDisplay(newStartTime);
+        document.getElementById('wtp-start-time-display').textContent = formatTimeForInput(newStartTime);
+        
+        // Calculate new end time based on duration
+        const duration = currentTimeRange.duration;
+        const newEndTime = new Date(newStartTime.getTime() + duration);
+        
+        // Update end displays
+        document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
+        document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
+        
+        // Update current time range
+        updateCurrentTimeRange(newStartTime, newEndTime);
+    }
+    
+    function adjustDuration(isIncrease) {
+        if (!currentTimeRange) return;
+        
+        const minutes = isIncrease ? 1 : -1;
+        const newDuration = currentTimeRange.duration + minutes * 60 * 1000;
+        
+        if (newDuration <= 0) return; // Prevent negative duration
+        
+        const newEndTime = new Date(currentTimeRange.start.getTime() + newDuration);
+        
+        // Calculate duration components
+        const durationHours = Math.floor(newDuration / (1000 * 60 * 60));
+        const durationMinutes = Math.floor((newDuration % (1000 * 60 * 60)) / (1000 * 60));
+        const durationDays = Math.floor(durationHours / 24);
+        const remainingHours = durationHours % 24;
+        
+        // Update displays
+        document.getElementById('wtp-duration-days-display').textContent = `${durationDays}d`;
+        document.getElementById('wtp-duration-display').textContent = `${remainingHours}h ${durationMinutes}m`;
+        document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
+        document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
+        
+        // Update current time range
+        updateCurrentTimeRange(currentTimeRange.start, newEndTime);
+    }
+    
+    function adjustEndTime(isIncrease) {
+        if (!currentTimeRange) return;
+        
+        const minutes = isIncrease ? 1 : -1;
+        const newEndTime = new Date(currentTimeRange.end.getTime() + minutes * 60 * 1000);
+        
+        if (newEndTime <= currentTimeRange.start) return; // Prevent end time before start time
+        
+        const newDuration = newEndTime.getTime() - currentTimeRange.start.getTime();
+        
+        // Calculate duration components
+        const durationHours = Math.floor(newDuration / (1000 * 60 * 60));
+        const durationMinutes = Math.floor((newDuration % (1000 * 60 * 60)) / (1000 * 60));
+        const durationDays = Math.floor(durationHours / 24);
+        const remainingHours = durationHours % 24;
+        
+        // Update displays
+        document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
+        document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
+        document.getElementById('wtp-duration-days-display').textContent = `${durationDays}d`;
+        document.getElementById('wtp-duration-display').textContent = `${remainingHours}h ${durationMinutes}m`;
+        
+        // Update current time range
+        updateCurrentTimeRange(currentTimeRange.start, newEndTime);
+    }
+    
+    function createTimeFromInput(timeString, referenceDate) {
+        if (!timeString || !referenceDate) return null;
+        
+        // Parse time string (e.g., "14:30")
+        const [hours, minutes] = timeString.split(':').map(Number);
+        if (isNaN(hours) || isNaN(minutes)) return null;
+        
+        // Create new date with same date as reference but different time
+        const newDate = new Date(referenceDate);
+        newDate.setHours(hours, minutes, 0, 0);
+        
+        return newDate;
+    }
+    
+    function parseDuration(durationStr) {
+        // Parse duration string like "2h 30m" or "2h30m" or "150m"
+        const match = durationStr.match(/(?:(\d+)h)?\s*(?:(\d+)m)?/);
+        if (!match) return 0;
+        
+        const hours = parseInt(match[1] || '0');
+        const minutes = parseInt(match[2] || '0');
+        
+        return (hours * 60 + minutes) * 60 * 1000; // Convert to milliseconds
+    }
+    
+    function formatDuration(durationMs) {
+        const totalMinutes = Math.floor(durationMs / (1000 * 60));
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+        
+        if (hours > 0) {
+            return minutes > 0 ? `${hours}h ${minutes}m` : `${hours}h`;
+        } else {
+            return `${minutes}m`;
+        }
+    }
+    
+    
+    function updateCurrentTimeRange(startTime, endTime) {
+        if (!currentTimeRange) return;
+        
+        // Update the current time range
+        currentTimeRange.start = startTime;
+        currentTimeRange.end = endTime;
+        currentTimeRange.duration = endTime.getTime() - startTime.getTime();
+        
+        // Recalculate timezone times
+        const timezoneTimesData = calculateTimezoneTimes(currentTimeRange);
+        updateTimezoneTimesDisplay(timezoneTimesData);
+    }
+    
+    function updateTimezoneTimesDisplay(timezoneTimesData) {
+        timezoneTimes.innerHTML = '';
+        
+        timezoneTimesData.forEach(timeInfo => {
+            const item = document.createElement('div');
+            item.className = 'wtp-timezone-time-item';
+            
+            item.innerHTML = `
+                <div class="wtp-timezone-name">${timeInfo.city}</div>
+                <div class="wtp-timezone-time">${timeInfo.start} - ${timeInfo.end}</div>
+            `;
+            
+            timezoneTimes.appendChild(item);
+        });
+    }
+    
+    function createRangeOverlay() {
+        // 为每个时间轴行创建范围选择蒙罩
+        const timelineRows = timeRows.querySelectorAll('.wtp-timeline-row');
+        rangeOverlay = []; // 存储所有蒙罩的引用
+        
+        timelineRows.forEach(row => {
+            const timelineTrack = row.querySelector('.wtp-timeline-track');
+            if (timelineTrack) {
+                const overlay = document.createElement('div');
+                overlay.className = 'wtp-range-overlay';
+                overlay.style.left = rangeStartPercent + '%';
+                overlay.style.width = '0%';
+                
+                // 添加点击事件处理，阻止事件冒泡
+                overlay.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // 点击蒙罩不执行任何操作，保持蒙罩存在
+                });
+                
+                timelineTrack.appendChild(overlay);
+                
+                // 创建按钮（只在第一个蒙罩上添加）
+                if (rangeOverlay.length === 0) {
+                    const button = document.createElement('button');
+                    button.className = 'wtp-range-overlay-button';
+                    button.textContent = 'View Times';
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        showTimeRangeDialog(rangeStartPercent, rangeEndPercent);
+                    });
+                    overlay.appendChild(button);
+                }
+                
+                rangeOverlay.push(overlay);
+            }
+        });
     }
 
     init();
