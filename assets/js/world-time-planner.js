@@ -526,6 +526,62 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // 添加触摸事件处理移动端 - 区分点击和滑动
+        let touchStartTime = 0;
+        let isScrolling = false;
+        
+        scrollContainer.addEventListener('touchstart', (e) => {
+            touchStartTime = Date.now();
+            const touch = e.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            isScrolling = false;
+        });
+        
+        scrollContainer.addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            const deltaX = Math.abs(touch.clientX - touchStartX);
+            const deltaY = Math.abs(touch.clientY - touchStartY);
+            
+            // 如果移动距离超过10px，认为是滑动操作
+            if (deltaX > 10 || deltaY > 10) {
+                isScrolling = true;
+            }
+        });
+        
+        scrollContainer.addEventListener('touchend', (e) => {
+            // 只有在短时间点击（不是滑动）时才显示时间选择器
+            const touchDuration = Date.now() - touchStartTime;
+            const touch = e.changedTouches[0];
+            const deltaX = Math.abs(touch.clientX - touchStartX);
+            const deltaY = Math.abs(touch.clientY - touchStartY);
+            
+            // 如果是短时间点击且移动距离小于10px，则显示时间选择器
+            if (touchDuration < 300 && deltaX < 10 && deltaY < 10 && !isScrolling) {
+                const firstRow = timeRows.querySelector('.wtp-timeline-row');
+                if (!firstRow) return;
+
+                const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+                const trackRect = timelineTrack.getBoundingClientRect();
+
+                if (touch.clientX >= trackRect.left && touch.clientX <= trackRect.right) {
+                    // 检查是否触摸在蒙罩上
+                    const clickedElement = e.target;
+                    const isOverlayClick = clickedElement.classList.contains('wtp-range-overlay') || 
+                                         clickedElement.closest('.wtp-range-overlay');
+                    
+                    if (isOverlayClick) {
+                        return;
+                    }
+                    
+                    const offsetX = touch.clientX - trackRect.left;
+                    const percent = (offsetX / trackRect.width) * 100;
+                    
+                    handleMobileTouch(percent);
+                }
+            }
+        });
+
         // 添加鼠标松开事件处理
         scrollContainer.addEventListener('mouseup', (e) => {
             if (isRangeSelecting && isMouseDown) {
@@ -682,22 +738,35 @@ document.addEventListener('DOMContentLoaded', () => {
     function addDialogListeners() {
         // Close dialog when clicking close button
         rangeDialogClose.addEventListener('click', () => {
-            rangeDialog.style.display = 'none';
+            hideDialog();
         });
         
         // Close dialog when clicking outside
         rangeDialog.addEventListener('click', (e) => {
             if (e.target === rangeDialog) {
-                rangeDialog.style.display = 'none';
+                hideDialog();
             }
         });
         
         // Close dialog with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && rangeDialog.style.display === 'flex') {
-                rangeDialog.style.display = 'none';
+            if (e.key === 'Escape' && rangeDialog.classList.contains('show')) {
+                hideDialog();
             }
         });
+    }
+    
+    function showDialog() {
+        rangeDialog.classList.add('show');
+        document.body.classList.add('dialog-open');
+    }
+    
+    function hideDialog() {
+        rangeDialog.classList.remove('show');
+        document.body.classList.remove('dialog-open');
+        // 清除PC端蒙罩和移动端垂直线
+        clearRangeSelection();
+        clearMobileSelection();
     }
 
     function addTabListeners() {
@@ -1634,6 +1703,9 @@ document.addEventListener('DOMContentLoaded', () => {
             rangeOverlay = null;
         }
         
+        // 清理移动端选择
+        clearMobileSelection();
+        
         // 重置状态
         hasSelectedRange = false;
         isRangeSelecting = false;
@@ -1642,6 +1714,178 @@ document.addEventListener('DOMContentLoaded', () => {
         rangeEndPercent = 0;
         
         console.log('Range selection cleared');
+    }
+    
+    function handleMobileTouch(percent) {
+        // 清除现有的移动端选择
+        clearMobileSelection();
+        
+        // 创建60分钟的默认时间范围
+        const startPercent = percent;
+        const endPercent = Math.min(100, percent + (60 / (24 * 60)) * 100); // 60分钟 = 4.17% of 24 hours
+        
+        // 显示垂直线和浮动时间
+        showMobileTimeIndicator(percent);
+        
+        // 创建时间范围覆盖层
+        createMobileRangeOverlay(startPercent, endPercent);
+        
+        // 设置当前时间范围
+        currentTimeRange = {
+            startPercent: startPercent,
+            endPercent: endPercent,
+            startTime: calculateTimeFromPercent(startPercent),
+            endTime: calculateTimeFromPercent(endPercent)
+        };
+    }
+    
+    function clearMobileSelection() {
+        // 清除所有时间选择器 - 使用与PC端相同的逻辑
+        document.querySelectorAll('.wtp-row-time-selector').forEach(selector => {
+            selector.remove();
+        });
+        
+        // 隐藏时间标签 - 使用与PC端相同的逻辑
+        document.querySelectorAll('.wtp-hover-time-label').forEach(label => {
+            label.style.display = 'none';
+        });
+        
+        // 清除移动端View Times按钮
+        document.querySelectorAll('.wtp-mobile-view-times-btn').forEach(button => {
+            button.remove();
+        });
+    }
+    
+    function showMobileTimeIndicator(percent) {
+        // 为每个时间轴行创建独立的时间选择器 - 完全使用PC端逻辑
+        const timelineRows = timeRows.querySelectorAll('.wtp-timeline-row');
+        timelineRows.forEach(row => {
+            // 移除之前的时间选择器
+            const existingSelector = row.querySelector('.wtp-row-time-selector');
+            if (existingSelector) {
+                existingSelector.remove();
+            }
+            
+            // 创建新的时间选择器 - 使用与PC端完全相同的逻辑
+            const rowSelector = document.createElement('div');
+            rowSelector.className = 'wtp-row-time-selector';
+            rowSelector.style.position = 'absolute';
+            rowSelector.style.top = '0';
+            rowSelector.style.bottom = '0';
+            rowSelector.style.width = '2px';
+            rowSelector.style.backgroundColor = '#4caf50';
+            rowSelector.style.pointerEvents = 'none';
+            rowSelector.style.zIndex = '5';
+            rowSelector.style.left = `${percent}%`;
+            rowSelector.style.transform = 'translateX(-50%)';
+            
+            const timelineTrack = row.querySelector('.wtp-timeline-track');
+            if (timelineTrack) {
+                timelineTrack.appendChild(rowSelector);
+            }
+        });
+
+        // 更新时间标签 - 使用与PC端完全相同的逻辑
+        const totalMinutes = (percent / 100) * TIMELINE_HOURS * 60;
+        const rows = timeRows.querySelectorAll('.wtp-timeline-row');
+        rows.forEach(row => {
+            const label = row.querySelector('.wtp-hover-time-label');
+            if (!label) return;
+
+            const timezone = row.dataset.timezone;
+            const baseDate = parseDate(datePicker.value);
+            if (!baseDate) return;
+
+            const timeAtCursor = new Date(baseDate);
+            timeAtCursor.setHours(timeAtCursor.getHours() + timelineStartOffsetHours);
+            timeAtCursor.setMinutes(timeAtCursor.getMinutes() + totalMinutes);
+
+            const timeFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: false
+            });
+
+            label.textContent = timeFormatter.format(timeAtCursor);
+            // Position relative to the timeline track using percentage
+            label.style.left = `${percent}%`;
+            label.style.transform = 'translate(-50%, -100%)';
+            label.style.display = 'block';
+        });
+    }
+    
+    function createMobileRangeOverlay(startPercent, endPercent) {
+        const firstRow = timeRows.querySelector('.wtp-timeline-row');
+        if (!firstRow) return;
+        
+        const timelineTrack = firstRow.querySelector('.wtp-timeline-track');
+        
+        // 直接创建View Times按钮，不需要overlay
+        const button = document.createElement('button');
+        button.className = 'wtp-mobile-view-times-btn';
+        button.textContent = 'View Times';
+        button.style.cssText = `
+            position: absolute;
+            top: -45px;
+            left: ${startPercent}%;
+            transform: translateX(-50%);
+            background-color: rgba(76, 175, 80, 0.95);
+            color: white;
+            border: none;
+            padding: 6px 4px;
+            border-radius: 8px;
+            font-size: 0.6em;
+            font-weight: 500;
+            cursor: pointer;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            pointer-events: auto;
+            min-width: 70px;
+            text-align: center;
+        `;
+        
+        // 添加点击事件
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // 更新垂直线位置到开始位置
+            clearMobileSelection();
+            showMobileTimeIndicator(startPercent);
+            showTimeRangeDialog(startPercent, endPercent);
+        });
+        
+        // 添加触摸事件处理
+        button.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        
+        button.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // 更新垂直线位置到开始位置
+            clearMobileSelection();
+            showMobileTimeIndicator(startPercent);
+            showTimeRangeDialog(startPercent, endPercent);
+        });
+        
+        timelineTrack.appendChild(button);
+    }
+    
+    function calculateTimeFromPercent(percent) {
+        const totalMinutes = 24 * 60;
+        const minutes = (percent / 100) * totalMinutes;
+        const hours = Math.floor(minutes / 60);
+        const mins = Math.floor(minutes % 60);
+        
+        const time = new Date();
+        time.setHours(hours, mins, 0, 0);
+        return time;
+    }
+    
+    function formatTimeForDisplay(time) {
+        return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
     
     function showTimeRangeDialog(startPercent, endPercent) {
@@ -1658,7 +1902,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimezoneTimesDisplay(timezoneTimesData);
         
         // 显示对话框
-        rangeDialog.style.display = 'flex';
+        showDialog();
     }
     
     function calculateTimeRange(startPercent, endPercent) {
@@ -1750,38 +1994,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const durationHours = Math.floor(timeRange.duration / (1000 * 60 * 60));
         const durationMinutes = Math.floor((timeRange.duration % (1000 * 60 * 60)) / (1000 * 60));
         
-        rangeInfo.innerHTML = `
-            <h3>Fine-tune Time Range</h3>
-            <div class="wtp-range-edit-container">
-                <div class="wtp-range-edit-item">
-                    <label>Start:</label>
-                    <div class="wtp-datetime-display">
-                        <span class="wtp-date-value" id="wtp-start-date-display">${formatDateForDisplay(timeRange.start)}</span>
-                        <span class="wtp-time-value" id="wtp-start-time-display">${formatTimeForInput(timeRange.start)}</span>
-                    </div>
-                    <button class="wtp-time-btn wtp-time-decrease" data-target="start" data-direction="decrease">-</button>
-                    <button class="wtp-time-btn wtp-time-increase" data-target="start" data-direction="increase">+</button>
-                </div>
-                <div class="wtp-range-edit-item">
-                    <label>Duration:</label>
-                    <div class="wtp-datetime-display">
-                        <span class="wtp-date-value" id="wtp-duration-days-display">${Math.floor(durationHours / 24)}d</span>
-                        <span class="wtp-time-value" id="wtp-duration-display">${durationHours % 24}h ${durationMinutes}m</span>
-                    </div>
-                    <button class="wtp-time-btn wtp-time-decrease" data-target="duration" data-direction="decrease">-</button>
-                    <button class="wtp-time-btn wtp-time-increase" data-target="duration" data-direction="increase">+</button>
-                </div>
-                <div class="wtp-range-edit-item">
-                    <label>End:</label>
-                    <div class="wtp-datetime-display">
-                        <span class="wtp-date-value" id="wtp-end-date-display">${formatDateForDisplay(timeRange.end)}</span>
-                        <span class="wtp-time-value" id="wtp-end-time-display">${formatTimeForInput(timeRange.end)}</span>
-                    </div>
-                    <button class="wtp-time-btn wtp-time-decrease" data-target="end" data-direction="decrease">-</button>
-                    <button class="wtp-time-btn wtp-time-increase" data-target="end" data-direction="increase">+</button>
-                </div>
-            </div>
-        `;
+        // 只更新动态内容
+        document.getElementById('wtp-start-date-display').textContent = formatDateForDisplay(timeRange.start);
+        document.getElementById('wtp-start-time-display').textContent = formatTimeForInput(timeRange.start);
+        document.getElementById('wtp-duration-display').textContent = `${durationHours}h ${durationMinutes}m`;
+        document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(timeRange.end);
+        document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(timeRange.end);
         
         // Add event listeners for auto-calculation
         addRangeEditListeners();
@@ -2029,12 +2247,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate duration components
         const durationHours = Math.floor(newDuration / (1000 * 60 * 60));
         const durationMinutes = Math.floor((newDuration % (1000 * 60 * 60)) / (1000 * 60));
-        const durationDays = Math.floor(durationHours / 24);
-        const remainingHours = durationHours % 24;
         
         // Update displays
-        document.getElementById('wtp-duration-days-display').textContent = `${durationDays}d`;
-        document.getElementById('wtp-duration-display').textContent = `${remainingHours}h ${durationMinutes}m`;
+        document.getElementById('wtp-duration-display').textContent = `${durationHours}h ${durationMinutes}m`;
         document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
         document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
         
@@ -2055,14 +2270,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate duration components
         const durationHours = Math.floor(newDuration / (1000 * 60 * 60));
         const durationMinutes = Math.floor((newDuration % (1000 * 60 * 60)) / (1000 * 60));
-        const durationDays = Math.floor(durationHours / 24);
-        const remainingHours = durationHours % 24;
         
         // Update displays
         document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
         document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
-        document.getElementById('wtp-duration-days-display').textContent = `${durationDays}d`;
-        document.getElementById('wtp-duration-display').textContent = `${remainingHours}h ${durationMinutes}m`;
+        document.getElementById('wtp-duration-display').textContent = `${durationHours}h ${durationMinutes}m`;
         
         // Update current time range
         updateCurrentTimeRange(currentTimeRange.start, newEndTime);

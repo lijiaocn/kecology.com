@@ -136,7 +136,43 @@ mysetting:
   <div id="wtp-range-dialog" class="wtp-range-dialog">
     <div class="wtp-range-dialog-content">
       <div class="wtp-range-dialog-body">
-        <div id="wtp-range-info"></div>
+        <div id="wtp-range-info">
+          <h3>Fine-tune Time Range</h3>
+          <div class="wtp-range-edit-container">
+            <div class="wtp-range-edit-item">
+              <label>Start</label>
+              <div class="wtp-datetime-display">
+                <span class="wtp-date-value" id="wtp-start-date-display">Loading...</span>
+                <span class="wtp-time-value" id="wtp-start-time-display">Loading...</span>
+              </div>
+              <div class="wtp-btn-group">
+                <button class="wtp-time-btn wtp-time-decrease" data-target="start" data-direction="decrease">-</button>
+                <button class="wtp-time-btn wtp-time-increase" data-target="start" data-direction="increase">+</button>
+              </div>
+            </div>
+            <div class="wtp-range-edit-item">
+              <label>End</label>
+              <div class="wtp-datetime-display">
+                <span class="wtp-date-value" id="wtp-end-date-display">Loading...</span>
+                <span class="wtp-time-value" id="wtp-end-time-display">Loading...</span>
+              </div>
+              <div class="wtp-btn-group">
+                <button class="wtp-time-btn wtp-time-decrease" data-target="end" data-direction="decrease">-</button>
+                <button class="wtp-time-btn wtp-time-increase" data-target="end" data-direction="increase">+</button>
+              </div>
+            </div>
+            <div class="wtp-range-edit-item">
+              <label>Duration</label>
+              <div class="wtp-datetime-display">
+                <span class="wtp-time-value" id="wtp-duration-display">Loading...</span>
+              </div>
+              <div class="wtp-btn-group">
+                <button class="wtp-time-btn wtp-time-decrease" data-target="duration" data-direction="decrease">-</button>
+                <button class="wtp-time-btn wtp-time-increase" data-target="duration" data-direction="increase">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="wtp-meeting-links">
           <label class="wtp-meeting-label">Add to Calendar</label>
           <div class="wtp-meeting-buttons">

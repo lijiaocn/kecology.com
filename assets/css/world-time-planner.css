@@ -267,6 +267,13 @@
   padding-top: 20px;
 }
 
+/* 移动端增加上方padding，确保View Times按钮完整显示 */
+@media (max-width: 768px) {
+  #wtp-scroll-container {
+    padding-top: 60px;
+  }
+}
+
 #wtp-time-rows {
   padding-top: 0.8em;
 }
@@ -608,17 +615,17 @@
   background-color: rgba(76, 175, 80, 0.9);
   border: 1px solid #4caf50;
   color: white;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 2px 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.7em;
-  font-weight: 600;
+  font-size: 0.6em;
+  font-weight: 500;
   pointer-events: auto;
   z-index: 100; /* 提高z-index确保在所有元素之上 */
   transition: all 0.2s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
-  min-width: 60px;
+  min-width: 50px;
   text-align: center;
 }
 
@@ -636,21 +643,36 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   justify-content: center;
   align-items: center;
 }
 
+.wtp-range-dialog.show {
+  display: flex;
+}
+
+/* 当对话框显示时禁止背景滚动并虚化 */
+body.dialog-open {
+  overflow: hidden;
+}
+
+body.dialog-open .wtp-container {
+  filter: blur(5px) brightness(0.7);
+  transition: filter 0.3s ease;
+}
+
 .wtp-range-dialog-content {
-  background-color: #1a1a1a;
-  border-radius: 8px;
+  background-color: #0d1117;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
   padding: 0;
   max-width: 600px;
   width: 90%;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(76, 175, 80, 0.2);
   position: relative;
 }
 
@@ -688,50 +710,42 @@
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: center;
+  gap: 8px;
 }
 
 .wtp-range-edit-item {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 8px;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 5px;
-  justify-content: space-around;
+  gap: 12px;
 }
 
 .wtp-range-edit-item label {
   font-weight: 600;
-  color: #fff;
+  color: #4caf50;
   font-size: 13px;
   min-width: 60px;
   flex-shrink: 0;
-  text-align: left;
 }
 
 .wtp-datetime-display {
   display: flex;
-  flex-direction: row;
-  gap: 6px;
-  min-width: 80px;
+  gap: 8px;
   align-items: center;
+  flex: 1;
 }
 
 .wtp-date-value {
-  padding: 6px 8px;
-  font-size: 13px;
+  padding: 4px 8px;
+  font-size: 12px;
   color: #fff;
   text-align: center;
-  flex-shrink: 0;
-  width: 10em;
   font-family: monospace;
   background-color: #333;
-  border: 2px solid #555;
-  border-radius: 6px;
+  border: 1px solid #555;
+  border-radius: 4px;
   transition: all 0.2s ease;
+  min-width: 60px;
+  flex-shrink: 0;
 }
 
 .wtp-date-value:hover {
@@ -740,17 +754,17 @@
 }
 
 .wtp-time-value {
-  padding: 6px 8px;
-  font-size: 13px;
+  padding: 4px 8px;
+  font-size: 12px;
   color: #fff;
-  text-align: left;
-  width: 6em;
-  box-sizing: border-box;
+  text-align: center;
   font-family: monospace;
   background-color: #333;
-  border: 2px solid #555;
-  border-radius: 6px;
+  border: 1px solid #555;
+  border-radius: 4px;
   transition: all 0.2s ease;
+  min-width: 50px;
+  flex-shrink: 0;
 }
 
 .wtp-time-value:hover {
@@ -759,13 +773,13 @@
 }
 
 .wtp-time-btn {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #4caf50;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #4caf50;
   background-color: #4caf50;
   color: white;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -778,19 +792,16 @@
 .wtp-time-btn:hover {
   background-color: #45a049;
   border-color: #45a049;
-  transform: scale(1.05);
 }
 
 .wtp-time-btn:active {
   transform: scale(0.95);
 }
 
-.wtp-time-decrease {
-  margin-right: 5px;
-}
-
-.wtp-time-increase {
-  margin-left: 5px;
+.wtp-btn-group {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
 #wtp-range-info {
@@ -975,11 +986,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 15px;
+  padding: 5px 5px;
   background-color: #252525;
   border-radius: 4px;
   border: 1px solid #333;
   transition: background-color 0.2s ease;
+  gap: 10px;
 }
 
 .wtp-timezone-time-item:hover {
@@ -1017,7 +1029,6 @@
 
 .wtp-local-timezone {
   background-color: rgba(76, 175, 80, 0.1);
-  border-left: 3px solid #4caf50;
 }
 
 .wtp-local-timezone .wtp-city {
