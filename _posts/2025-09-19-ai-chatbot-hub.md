@@ -2,6 +2,7 @@
 layout: page
 title: "AI Chatbot Hub: Quick Access to ChatGPT, Gemini, Grok, and More"
 date: 2025-09-19 10:00:00 +0800
+last_modified_at: "2025-09-23 10:00:00 +0800"
 categories: tool
 permalink: /tool/ai-chatbot-hub
 mysetting:
@@ -149,10 +150,6 @@ description: "Quick access to popular AI chatbots including ChatGPT, Gemini, Cla
     </div>
   </div>
 
-  <div class="cta-section">
-    <h2>Ready to Get Started?</h2>
-    <p>Choose any AI chatbot above and start your conversation. All links open in new tabs for your convenience.</p>
-  </div>
 </div>
 
 <!-- Add Custom Tool Modal -->
