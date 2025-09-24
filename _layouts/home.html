@@ -10,23 +10,51 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+    <!-- 多语言标签页 -->
+    {%- assign languages = "en,ar,de,es,fr,hi,id,it,ja,ko,pt,ru,th,tr,vi,zh-CN,zh-TW" | split: "," -%}
+    {%- assign language_names = "English,العربية,Deutsch,Español,Français,हिन्दी,Bahasa Indonesia,Italiano,日本語,한국어,Português,Русский,ไทย,Türkçe,Tiếng Việt,简体中文,繁體中文" | split: "," -%}
+    <div class="language-tabs">
+      {%- for i in (0..languages.size) -%}
+        {%- if i < languages.size -%}
+          {%- assign lang_code = languages[i] -%}
+          {%- assign lang_name = language_names[i] -%}
+          <button class="tab-button{% if lang_code == 'en' %} active{% endif %}" data-lang="{{ lang_code }}">{{ lang_name }}</button>
         {%- endif -%}
-      </li>
       {%- endfor -%}
-    </ul>
+    </div>
+
+    <!-- 引入多语言标签页样式 -->
+    <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+    
+    <!-- 引入多语言标签页脚本 -->
+    <script src="{{ '/assets/js/home.js' | relative_url }}"></script>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    
+    <!-- 动态生成所有语言的文章列表 -->
+    {%- for i in (0..languages.size) -%}
+      {%- if i < languages.size -%}
+        {%- assign lang_code = languages[i] -%}
+        <ul class="post-list" data-lang="{{ lang_code }}">
+          {%- for post in site.posts -%}
+          {%- assign post_lang = post.lang | default: "en" -%}
+          {%- if post_lang == lang_code -%}
+          <li class="post-item">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </li>
+          {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
