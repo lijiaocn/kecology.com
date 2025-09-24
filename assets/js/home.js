@@ -8,21 +8,27 @@ document.addEventListener('DOMContentLoaded', function() {
     englishList.classList.add('show');
   }
   
+  // 切换标签页函数
+  function switchTab(activeButton) {
+    // 移除所有活动状态
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    postLists.forEach(list => list.classList.remove('show'));
+    
+    // 添加当前按钮的活动状态
+    activeButton.classList.add('active');
+    
+    // 显示对应语言的文章列表
+    const selectedLang = activeButton.getAttribute('data-lang');
+    const targetList = document.querySelector(`.post-list[data-lang="${selectedLang}"]`);
+    if (targetList) {
+      targetList.classList.add('show');
+    }
+  }
+  
+  // 绑定点击事件
   tabButtons.forEach(button => {
     button.addEventListener('click', function() {
-      // 移除所有活动状态
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      postLists.forEach(list => list.classList.remove('show'));
-      
-      // 添加当前按钮的活动状态
-      this.classList.add('active');
-      
-      // 显示对应语言的文章列表
-      const selectedLang = this.getAttribute('data-lang');
-      const targetList = document.querySelector(`.post-list[data-lang="${selectedLang}"]`);
-      if (targetList) {
-        targetList.classList.add('show');
-      }
+      switchTab(this);
     });
   });
 });
