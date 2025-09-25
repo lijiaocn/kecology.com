@@ -12,7 +12,6 @@ mysetting:
 # backgroud-color: darkblue
 ---
 
-<p style="text-align:center;color:#FFE0B2">{{ page.description }} Bookmark this page if it helps you.</p>
 
 
 <style>
@@ -131,6 +130,8 @@ mysetting:
     </div>
 
 </div>
+
+<p style="text-align:center;color:#FFE0B2">{{ page.description }}</p>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

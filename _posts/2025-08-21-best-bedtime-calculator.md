@@ -13,8 +13,6 @@ mysetting:
 ---
 
 
-<p style="text-align:center;color:#FFE0B2">{{ page.description }} Bookmark this page if it helps you.</p>
-<!-- <p class="bookmark-hint">Like this tool? Press <span id="bookmark-keys"></span> to bookmark it for later.</p> -->
 <style>
     #sleep-calculator-container {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -516,3 +514,5 @@ mysetting:
 </script>
 
 
+
+<p style="text-align:center;color:#FFE0B2">{{ page.description }}</p>
