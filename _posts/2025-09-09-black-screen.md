@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Black Screen: Dead Pixel Test, Screen Cleaning (More Colors)"
+title: "Dead Pixel Test: A Black Color Screen for Monitor Test (More Colors)"
 description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
 date: "2025-09-09 20:22:14 +0800"
 last_modified_at: "2025-09-09 22:00:04 +0800"
