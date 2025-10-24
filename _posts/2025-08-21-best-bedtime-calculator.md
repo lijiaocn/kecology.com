@@ -49,6 +49,11 @@ mysetting:
         <h3>Go to bed now?</h3>
         <a href="/tool/wakeup-calculator" class="bedtime-option-btn" style="text-decoration: none;">Try Our Wakeup Time Calculator</a>
     </div>
+
+    <!-- Hidden text elements for internationalization -->
+    <div id="text-templates" style="display: none;">
+        <span id="text-sleep-duration">({duration} sleep)</span>
+    </div>
 </div>
 
 <script src="/assets/js/best-bedtime-calculator.js?v=1"></script>

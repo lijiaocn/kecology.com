@@ -240,7 +240,8 @@ function calculateBedtimes() {
         
         const durationSpan = document.createElement('span');
         durationSpan.className = 'duration-annotation';
-        durationSpan.textContent = `(${bt.duration} sleep)`;
+        const sleepDurationTemplate = document.getElementById('text-sleep-duration').textContent;
+        durationSpan.textContent = sleepDurationTemplate.replace('{duration}', bt.duration);
 
         bedtimeElement.appendChild(timeSpan);
         bedtimeElement.appendChild(durationSpan);

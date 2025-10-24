@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!wakeupOptionsContainer || !wakeupTitle || !resultsWrapper) return;
 
         resultsWrapper.style.display = 'block';
-        wakeupTitle.textContent = `If you go to bed ${startTimeString}, wake up at:`;
+        const wakeupPromptTemplate = document.getElementById('text-wakeup-prompt').textContent;
+        wakeupTitle.textContent = wakeupPromptTemplate.replace('{time}', startTimeString);
 
         // Add 15 minutes to account for the time it takes to fall asleep.
         const sleepTime = new Date(startTime.getTime() + 15 * 60 * 1000);
@@ -65,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const durationSpan = document.createElement('span');
             durationSpan.className = 'duration-annotation';
-            durationSpan.textContent = `(${wt.duration} sleep)`;
+            const sleepDurationTemplate = document.getElementById('text-sleep-duration').textContent;
+            durationSpan.textContent = sleepDurationTemplate.replace('{duration}', wt.duration);
 
             wakeupElement.appendChild(timeSpan);
             wakeupElement.appendChild(durationSpan);
@@ -103,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!timeValue) {
             // Maybe provide feedback to the user
             if (resultsWrapper) resultsWrapper.style.display = 'none';
-            wakeupTitle.textContent = 'Please select a time first.';
+            wakeupTitle.textContent = document.getElementById('text-select-time-first').textContent;
             wakeupOptionsContainer.innerHTML = '';
             return;
         }

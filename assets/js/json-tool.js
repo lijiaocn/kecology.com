@@ -84,12 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             currentJson = JSON.parse(jsonString);
-            updateStatus('Valid JSON', false);
+            updateStatus(document.getElementById('text-valid-json').textContent, false);
             renderOutputs();
             localStorage.setItem(STORAGE_KEY, jsonString);
         } catch (e) {
             currentJson = null;
-            updateStatus(`Invalid JSON: ${e.message}`, true);
+            const invalidJsonTemplate = document.getElementById('text-invalid-json').textContent;
+            updateStatus(invalidJsonTemplate.replace('{error}', e.message), true);
             for (const key in outputs) {
                 if (outputs[key]) {
                     if (key === 'tree') outputs[key].innerHTML = '';
@@ -126,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             outputs.base64.textContent = btoa(unescape(encodeURIComponent(compactString)));
         } catch (e) {
-            outputs.base64.textContent = 'Error encoding to Base64.';
+            outputs.base64.textContent = document.getElementById('text-error-encoding').textContent;
         }
 
         outputs.urlencode.textContent = encodeURIComponent(compactString);
@@ -239,17 +240,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     copyBtn.addEventListener('click', () => {
         if (currentJson === null) {
-            updateStatus('Nothing to copy.', true);
+            updateStatus(document.getElementById('text-nothing-copy').textContent, true);
             return;
         }
         let contentToCopy = activeTab === 'tree' ? JSON.stringify(currentJson, null, 4) : (outputs[activeTab]?.textContent || '');
         if (contentToCopy) {
             navigator.clipboard.writeText(contentToCopy).then(() => {
-                copyFeedback.textContent = 'Copied to clipboard!';
+                copyFeedback.textContent = document.getElementById('text-copied-clipboard').textContent;
                 copyFeedback.classList.add('show');
                 clearTimeout(copyTimeout);
                 copyTimeout = setTimeout(() => copyFeedback.classList.remove('show'), 2000);
-            }, () => updateStatus('Failed to copy.', true));
+            }, () => updateStatus(document.getElementById('text-failed-copy').textContent, true));
         }
     });
 

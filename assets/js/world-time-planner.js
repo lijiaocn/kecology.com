@@ -1057,7 +1057,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn(`Failed to format time for timezone ${timezone}:`, error);
             const timeElement = row.querySelector('.wtp-current-time');
             timeElement.title = 'Invalid timezone'; // Hint
-            timeElement.innerHTML = `Invalid<br><span style="font-size: 0.8em; color: #aaa;">Timezone</span>`;
+            const invalidText = document.getElementById('text-invalid-timezone').textContent;
+            const timezoneText = document.getElementById('text-timezone-label').textContent;
+            timeElement.innerHTML = `${invalidText}<br><span style="font-size: 0.8em; color: #aaa;">${timezoneText}</span>`;
         }
     }
 
@@ -1539,7 +1541,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 在当前时间小时块下方添加标识
                 const currentTimeIndicator = document.createElement('div');
                 currentTimeIndicator.className = 'wtp-current-time-indicator';
-                currentTimeIndicator.textContent = 'NOW';
+                currentTimeIndicator.textContent = document.getElementById('text-now').textContent;
                 hourDiv.appendChild(currentTimeIndicator);
             }
 
@@ -1824,7 +1826,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 直接创建View Times按钮，不需要overlay
         const button = document.createElement('button');
         button.className = 'wtp-mobile-view-times-btn';
-        button.textContent = 'View Times';
+        button.textContent = document.getElementById('text-view-times').textContent;
         button.style.cssText = `
             position: absolute;
             top: -45px;
@@ -1933,7 +1935,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timelineRows.forEach(row => {
             const timezone = row.dataset.timezone;
             const cityElement = row.querySelector('.wtp-city');
-            const cityName = cityElement ? cityElement.textContent : 'Unknown';
+            const cityName = cityElement ? cityElement.textContent : document.getElementById('text-unknown').textContent;
             
             if (timezone) {
                 const startTimeInTimezone = formatTimeInTimezone(timeRange.start, timezone);
@@ -2372,7 +2374,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (rangeOverlay.length === 0) {
                     const button = document.createElement('button');
                     button.className = 'wtp-range-overlay-button';
-                    button.textContent = 'View Times';
+                    button.textContent = document.getElementById('text-view-times').textContent;
                     button.addEventListener('click', (e) => {
                         e.stopPropagation();
                         showTimeRangeDialog(rangeStartPercent, rangeEndPercent);

@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         el.innerHTML = `${time}<br><small>${date}, ${timeZoneAbbreviation}</small>`;
       } catch (e) {
-        el.innerHTML = "Invalid Timezone";
+        el.innerHTML = document.getElementById('text-invalid-timezone').textContent;
         console.error(`Invalid timezone: ${timezone}`);
       }
     });

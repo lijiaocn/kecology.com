@@ -208,4 +208,13 @@ mysetting:
   </div>
 </template>
 
+<!-- Hidden text elements for internationalization -->
+<div id="text-templates" style="display: none;">
+    <span id="text-invalid-timezone">Invalid</span>
+    <span id="text-timezone-label">Timezone</span>
+    <span id="text-now">Now</span>
+    <span id="text-view-times">View Times</span>
+    <span id="text-unknown">Unknown</span>
+</div>
+
 <script src="/assets/js/world-time-planner.js?v=11"></script>

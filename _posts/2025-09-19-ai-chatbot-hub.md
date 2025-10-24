@@ -192,4 +192,10 @@ description: "Quick access to popular AI chatbots including ChatGPT, Gemini, Cla
   </div>
 </div>
 
+<!-- Hidden text elements for internationalization -->
+<div id="text-templates" style="display: none;">
+    <span id="text-open-tool">Open {name}</span>
+    <span id="text-delete-confirm">Are you sure you want to delete this custom tool?</span>
+</div>
+
 <script src="/assets/js/ai-chatbot-hub.js?v=1"></script>

@@ -74,6 +74,7 @@ function addCustomToolCard(toolData) {
   customCard.className = 'chatbot-card custom-card';
   customCard.setAttribute('data-category', toolData.category);
   
+  const openToolTemplate = document.getElementById('text-open-tool').textContent;
   customCard.innerHTML = `
     <div class="chatbot-icon">
       <img src="/assets/img/ai-chatbot-hub/custom-ai-logo.svg" alt="Custom AI Tool" style="width: 100%; height: 100%; object-fit: contain;">
@@ -81,7 +82,7 @@ function addCustomToolCard(toolData) {
     <h3>${toolData.name}</h3>
     <p>${toolData.description}</p>
     <a href="${toolData.url}" target="_blank" rel="noopener noreferrer" class="btn-primary">
-      Open ${toolData.name}
+      ${openToolTemplate.replace('{name}', toolData.name)}
     </a>
     <button class="delete-btn" onclick="deleteCustomTool('${toolData.id}', this)" title="Delete Tool">×</button>
   `;
@@ -92,7 +93,8 @@ function addCustomToolCard(toolData) {
 
 // Delete custom tool
 function deleteCustomTool(toolId, buttonElement) {
-  if (confirm('Are you sure you want to delete this custom tool?')) {
+  const deleteConfirmText = document.getElementById('text-delete-confirm').textContent;
+  if (confirm(deleteConfirmText)) {
     // Remove from local storage
     let customTools = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     customTools = customTools.filter(tool => tool.id !== toolId);

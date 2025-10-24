@@ -31,6 +31,13 @@ mysetting:
         <div id="wakeup-options"></div>
     </div>
 
+    <!-- Hidden text elements for internationalization -->
+    <div id="text-templates" style="display: none;">
+        <span id="text-wakeup-prompt">If you go to bed {time}, wake up at:</span>
+        <span id="text-select-time-first">Please select a time first.</span>
+        <span id="text-sleep-duration">({duration} sleep)</span>
+    </div>
+
     <div id="custom-time-container">
         <label for="custom-time-input">Or pick a bedtime:</label>
         <input type="time" id="custom-time-input">
