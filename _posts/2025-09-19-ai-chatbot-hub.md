@@ -2,7 +2,7 @@
 layout: page
 date: 2025-09-19 10:00:00 +0800
 categories: tool
-permalink: /:lang/tool/ai-chatbot-hub
+permalink: /tool/ai-chatbot-hub
 i18n: true
 mysetting:
   # display: fullscreen

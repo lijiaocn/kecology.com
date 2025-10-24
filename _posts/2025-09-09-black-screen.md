@@ -2,7 +2,7 @@
 layout: page
 date: "2025-09-09 20:22:14 +0800"
 categories: "tool"
-permalink: /:lang/tool/black-screen
+permalink: /tool/black-screen
 i18n: true
 comments: false
 mysetting:

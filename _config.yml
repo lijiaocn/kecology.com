@@ -38,6 +38,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+default_lang: en
 languages:
   - en
   - zh-CN

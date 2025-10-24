@@ -1,14 +1,14 @@
 ---
 layout: page
-date:   2025-08-15 17:25:46 +0800
+date:  2025-08-15 17:25:46 +0800
 categories: tool
-permalink: /:lang/tool/best-bedtime-calculator
+permalink: /tool/best-bedtime-calculator
 i18n: true
 mysetting:
   nowrapper: false
 #   display: fullscreen
 # backgroud-color: black
-title:  "Bedtime Calculator: What Time Do I Need to Go to Bed to Feel Refreshed?"
+title: "Bedtime Calculator: What Time Do I Need to Go to Bed to Feel Refreshed?"
 description: "Find the best time to go to sleep based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
 ---
 

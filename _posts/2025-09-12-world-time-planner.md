@@ -8,6 +8,7 @@ mysetting:
   nowrapper: true
   background-color: '#121212'
   # display: fullscreen
+lang: en
 title:  "World Time Planner: Directly Find Perfect Meeting Time for Global Team"
 description: "A simple tool to find the perfect meeting time across different time zones. Select cities or timezones and visualize the time overlap."
 ---

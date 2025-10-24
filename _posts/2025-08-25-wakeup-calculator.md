@@ -2,7 +2,7 @@
 layout: page
 date:   2025-08-25 10:00:00 +0800
 categories: tool
-permalink: /:lang/tool/wakeup-calculator
+permalink: /tool/wakeup-calculator
 i18n: true
 mysetting:
   nowrapper: false
