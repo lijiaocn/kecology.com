@@ -2,13 +2,12 @@
 layout: page
 date: "2025-09-15 18:08:24 +0800"
 categories: "tools"
-permalink: /:lang/tool/world-time-planner
+permalink: /tool/world-time-planner
 i18n: true
 mysetting:
   nowrapper: true
   background-color: '#121212'
   # display: fullscreen
-lang: en
 title:  "World Time Planner: Directly Find Perfect Meeting Time for Global Team"
 description: "A simple tool to find the perfect meeting time across different time zones. Select cities or timezones and visualize the time overlap."
 ---
