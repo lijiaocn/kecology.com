@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "AI Chatbot Hub: Quick Access to ChatGPT, Gemini, Grok, and More"
 date: 2025-09-19 10:00:00 +0800
-last_modified_at: "2025-09-23 10:00:00 +0800"
 categories: tool
-permalink: /tool/ai-chatbot-hub
+permalink: /:lang/tool/ai-chatbot-hub
+i18n: true
 mysetting:
   # display: fullscreen
   nowrapper: true 
+title: "AI Chatbot Hub: Quick Access to ChatGPT, Gemini, Grok, and More"
 description: "Quick access to popular AI chatbots including ChatGPT, Gemini, Claude, DeepSeek, and more. Add custom AI tools for enhanced productivity. One-click access to your favorite AI assistants."
 ---
 

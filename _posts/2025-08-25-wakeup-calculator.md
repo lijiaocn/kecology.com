@@ -1,15 +1,15 @@
 ---
 layout: page
-title:  "Wakeup Time Calculator: What Time Should I Wake Up Tomorrow?"
 date:   2025-08-25 10:00:00 +0800
-last_modified_at: 2025-09-10 09:46:00 +0800
 categories: tool
-permalink: /tool/wakeup-calculator
-description: "Find out the best times to wake up based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
+permalink: /:lang/tool/wakeup-calculator
+i18n: true
 mysetting:
   nowrapper: false
 #   display: fullscreen
 # backgroud-color: darkblue
+title:  "Wakeup Time Calculator: What Time Should I Wake Up Tomorrow?"
+description: "Find out the best times to wake up based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
 ---
 
 

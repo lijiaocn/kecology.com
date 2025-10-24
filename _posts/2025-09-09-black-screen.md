@@ -1,16 +1,16 @@
 ---
 layout: page
-title: "Dead Pixel Test: A Black Color Screen for Monitor Test (More Colors)"
-description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
 date: "2025-09-09 20:22:14 +0800"
-last_modified_at: "2025-09-09 22:00:04 +0800"
 categories: "tool"
-permalink: /tool/black-screen
+permalink: /:lang/tool/black-screen
+i18n: true
 comments: false
 mysetting:
   display: fullscreen
   nowrapper: true
   background-color: black
+title: "Dead Pixel Test: A Black Color Screen for Monitor Test (More Colors)"
+description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
 ---
 
 <link rel="stylesheet" href="/assets/css/black-screen.css?v=1">
