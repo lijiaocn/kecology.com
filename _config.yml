@@ -38,6 +38,24 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+languages:
+  - en
+  - zh-CN
+  - zh-TW
+  - es
+  - ar
+  - id
+  - pt
+  - fr
+  - ja
+  - ru
+  - de
+  - ko
+  - tr
+  - th
+  - vi
+  - hi
+  - it
 
 # Exclude from processing.
 # The following items will not be processed, by default.
