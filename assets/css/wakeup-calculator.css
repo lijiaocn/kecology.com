@@ -1,0 +1,84 @@
+#sleep-calculator-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    background: #0d1a26;
+    color: #e0e0e0;
+    text-align: center;
+}
+#sleep-calculator-container h1 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#sleep-calculator-container p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+#bedtime-options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.bedtime-option-btn {
+    background-color: #1c2b3a;
+    color: #00c7b4;
+    border: 1px solid #00c7b4;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.bedtime-option-btn:hover, .bedtime-option-btn.active {
+    background-color: #00c7b4;
+    color: #0d1a26;
+}
+#custom-time-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#custom-time-input {
+    background-color: #e0e0e0; /* Light background */
+    color: #0d1a26; /* Dark text */
+    border: 1px solid #00c7b4;
+    padding: 8px;
+    border-radius: 8px;
+}
+#wakeup-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+.bedtime {
+    background-color: #00c7b4;
+    color: #0d1a26;
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+.duration-annotation {
+    font-size: 12px;
+    color: #1c2b3a;
+    margin-top: 2px;
+    font-weight: 500;
+}
