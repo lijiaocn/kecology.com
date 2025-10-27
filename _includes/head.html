@@ -5,6 +5,26 @@
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
+  
+  {%- comment -%} Add hreflang tags for i18n pages {%- endcomment -%}
+  {%- if page.i18n and page.base_url -%}
+    {%- assign default_lang = site.default_lang -%}
+    {%- assign base_url = page.base_url -%}
+    
+    {%- comment -%} Generate hreflang links for each language {%- endcomment -%}
+    {%- for lang in site.languages -%}
+      {%- if lang == default_lang -%}
+        {%- assign alt_url = base_url -%}
+      {%- else -%}
+        {%- assign alt_url = '/' | append: lang | append: base_url -%}
+      {%- endif -%}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ alt_url }}">
+    {%- endfor -%}
+    
+    {%- comment -%} Add x-default pointing to default language {%- endcomment -%}
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ base_url }}">
+  {%- endif -%}
+  
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}

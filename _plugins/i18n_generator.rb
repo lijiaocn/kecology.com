@@ -19,6 +19,9 @@ module Jekyll
           # 记录原始 URL (例如: /tool/ai-chatbot-hub.html)
           original_permalink = template.data['permalink'] || template.url
           
+          # 保存基础 URL 到 template，用于 hreflang 标签
+          template.data['base_url'] = original_permalink
+          
           # 提取 post 名称用于 i18n 数据查找（从 permalink 或 path 中提取）
           # 例如：/tool/black-screen -> black-screen
           post_name = original_permalink.split('/').last.split('.').first
