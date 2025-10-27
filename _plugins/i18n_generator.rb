@@ -20,7 +20,6 @@ module Jekyll
           original_permalink = template.data['permalink'] || template.url
           
           languages.each do |lang|
-            
             # 2. 克隆一个新的文档对象（包括默认语言）
             post_to_add = template.dup
             
@@ -32,9 +31,13 @@ module Jekyll
             # 4. 注入新的语言代码
             post_to_add.data['lang'] = lang
             
-            # 5. 构造统一的带语言前缀的 permalink
-            # 例如：/en/tool/ai-chatbot-hub.html
-            post_to_add.data['permalink'] = "/#{lang}#{original_permalink}"
+            # 5. 构造 permalink：默认语言不添加前缀，其他语言添加语言前缀
+            if lang == default_lang
+              post_to_add.data['permalink'] = original_permalink
+            else
+              # 例如：/zh-CN/tool/ai-chatbot-hub.html
+              post_to_add.data['permalink'] = "/#{lang}#{original_permalink}"
+            end
   
             # 6. 清除并重新计算 URL/路径 (解决 URL 冲突)
             post_to_add.instance_variable_set('@url', nil) 
