@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# German (de) language
+
+# Frontmatter
+title: "Schlafenszeit-Rechner: Wann sollte ich schlafen gehen, um erholt aufzuwachen?"
+description: "Finden Sie die beste Schlafenszeit basierend auf 90-Minuten-Schlafzyklen. Hilft Ihnen, ausgeruht und energiegeladen aufzuwachen."
+
+# Page content
+h1: "Schlafenszeit-Rechner"
+intro_text: "Stellen Sie Ihre Aufwachzeit ein, um zu sehen, wann Sie schlafen gehen sollten."
+keyboard_hint: "Tastenkürzel: ↑ ↓ zum Anpassen, und ← → zum Wechseln"
+results_title_prefix: "Um um"
+results_title_suffix: " erfrischt aufzuwachen, versuchen Sie um eine dieser Zeiten einzuschlafen:"
+results_small_text: "(Inkl. 15 Min. zum Einschlafen und 90-Min.-Schlafzyklen)"
+sleep_duration_template: "({duration} Schlaf)"
+go_to_bed_now_title: "Jetzt schlafen gehen?"
+try_wakeup_calculator: "Unser Aufwachzeit-Rechner testen"
+
+# British Heart Foundation advice
+advice_title: "Ratschläge der Britischen Herz-Stiftung"
+read_more: "(mehr lesen)"
+advice_item1_prefix: "Zwischen "
+advice_item1_bold: "22-23 Uhr"
+advice_item1_suffix: " schlafen für ein gesünderes Herz."
+advice_item2_prefix: "Die meisten Erwachsenen sollten "
+advice_item2_bold: "7 bis 9 Stunden"
+advice_item2_suffix: " Schlaf pro Nacht anstreben."
+

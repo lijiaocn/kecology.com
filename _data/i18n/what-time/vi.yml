@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Vietnamese (vi) language
+
+title: "Mấy Giờ ở California, Úc, Texas, London (Thêm Nhiều Thành Phố)?"
+description: "Tìm hiểu giờ địa phương hiện tại ở California, Úc, Texas, London, Nhật Bản, New York và các thành phố và quốc gia lớn khác trên thế giới. Một công cụ đơn giản để kiểm tra giờ ở bất kỳ đâu."
+
+h1_title: "Mấy giờ ở California, Úc, Texas, London, Nhật Bản và nhiều khu vực hoặc thành phố hơn?"
+label_show_corresponding_time: "Hiển thị giờ tương ứng cho:"
+button_confirm: "Xác nhận"
+button_reset: "Đặt lại"
+label_auto_refresh: "Tự động Làm mới Giờ Trực tiếp"
+section_title: "Giờ Trên Thế Giới"
+text_invalid_timezone: "Múi giờ không hợp lệ"
+
+country_info_argentina: "Argentina sử dụng một múi giờ duy nhất và không áp dụng giờ tiết kiệm ánh sáng ban ngày."
+country_info_australia: "Úc được chia thành ba múi giờ chính. Giờ tiết kiệm ánh sáng ban ngày (DST) được áp dụng ở một số bang và vùng lãnh thổ."
+country_info_brazil: "Brazil trải dài trên nhiều múi giờ. Hầu hết đất nước sử dụng Giờ Brasília (BRT)."
+country_info_canada: "Canada trải dài trên nhiều múi giờ từ bờ biển Đại Tây Dương đến bờ biển Thái Bình Dương."
+country_info_china: "Trung Quốc sử dụng một múi giờ duy nhất (Giờ chuẩn Trung Quốc - CST) trên toàn quốc."
+country_info_egypt: "Ai Cập sử dụng Giờ Đông Âu và áp dụng giờ tiết kiệm ánh sáng ban ngày."
+country_info_france: "Pháp sử dụng Giờ Trung Âu (CET) và áp dụng giờ tiết kiệm ánh sáng ban ngày."
+country_info_germany: "Đức sử dụng Giờ Trung Âu (CET) và áp dụng giờ tiết kiệm ánh sáng ban ngày."
+country_info_india: "Ấn Độ sử dụng một múi giờ duy nhất (Giờ chuẩn Ấn Độ - IST)."
+country_info_italy: "Ý sử dụng Giờ Trung Âu (CET) và áp dụng giờ tiết kiệm ánh sáng ban ngày."
+country_info_japan: "Nhật Bản sử dụng một múi giờ duy nhất (Giờ chuẩn Nhật Bản - JST)."
+country_info_mexico: "Mexico trải dài trên nhiều múi giờ. Hầu hết đất nước sử dụng Giờ miền Trung."
+country_info_newzealand: "New Zealand sử dụng Giờ chuẩn New Zealand (NZST) và áp dụng giờ tiết kiệm ánh sáng ban ngày."
+country_info_russia: "Nga trải dài trên nhiều múi giờ từ Kaliningrad đến Vladivostok."
+country_info_singapore: "Singapore sử dụng Giờ chuẩn Singapore (SGT)."
+country_info_southafrica: "Nam Phi sử dụng Giờ chuẩn Nam Phi (SAST)."
+country_info_southkorea: "Hàn Quốc sử dụng Giờ chuẩn Hàn Quốc (KST)."
+country_info_uae: "UAE sử dụng Giờ chuẩn Vịnh (GST)."
+country_info_uk: "Vương quốc Anh sử dụng Giờ trung bình Greenwich (GMT) vào mùa đông và Giờ mùa hè Anh (BST) vào mùa hè."
+country_info_usa: "Hoa Kỳ trải dài trên sáu múi giờ. Hầu hết các bang áp dụng giờ tiết kiệm ánh sáng ban ngày."
+
+single_timezone_notice: "Quốc gia này sử dụng một múi giờ duy nhất."
+
+country_info_fiji: "Fiji có một múi giờ chính."
+country_info_hongkong: "Hồng Kông có một múi giờ chuẩn và không áp dụng giờ tiết kiệm ánh sáng ban ngày."
+
+popular_times_title: "Địa Điểm Phổ Biến"
+

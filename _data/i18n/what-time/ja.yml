@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Japanese (ja) language
+
+title: "カリフォルニア、オーストラリア、テキサス、ロンドンの現在時刻（その他の都市）"
+description: "カリフォルニア、オーストラリア、テキサス、ロンドン、日本、ニューヨーク、その他の世界の主要都市や国の現在の現地時刻を確認。どこでも簡単に時刻を確認できるツール。"
+
+h1_title: "カリフォルニア、オーストラリア、テキサス、ロンドン、日本など、各地域・都市の現在時刻は？"
+label_show_corresponding_time: "対応時間を表示:"
+button_confirm: "確認"
+button_reset: "リセット"
+label_auto_refresh: "リアルタイムを自動更新"
+section_title: "世界の時刻"
+text_invalid_timezone: "無効なタイムゾーン"
+
+country_info_argentina: "アルゼンチンは単一のタイムゾーンを使用し、夏時間を採用していません。"
+country_info_australia: "オーストラリアは3つの主要なタイムゾーンに分かれています。一部の州と地域では夏時間（DST）を採用しています。"
+country_info_brazil: "ブラジルは複数のタイムゾーンにわたっています。国内の大部分はブラジリア時間（BRT）を使用しています。"
+country_info_canada: "カナダは大西洋から太平洋岸まで複数のタイムゾーンにわたっています。"
+country_info_china: "中国は全国で単一のタイムゾーン（中国標準時 - CST）を使用しています。"
+country_info_egypt: "エジプトは東ヨーロッパ時間を使用し、夏時間を採用しています。"
+country_info_france: "フランスは中央ヨーロッパ時間（CET）を使用し、夏時間を採用しています。"
+country_info_germany: "ドイツは中央ヨーロッパ時間（CET）を使用し、夏時間を採用しています。"
+country_info_india: "インドは単一のタイムゾーン（インド標準時 - IST）を使用しています。"
+country_info_italy: "イタリアは中央ヨーロッパ時間（CET）を使用し、夏時間を採用しています。"
+country_info_japan: "日本は単一のタイムゾーン（日本標準時 - JST）を使用しています。"
+country_info_mexico: "メキシコは複数のタイムゾーンにわたっています。国内の大部分は中央時間を使用しています。"
+country_info_newzealand: "ニュージーランドはニュージーランド標準時（NZST）を使用し、夏時間を採用しています。"
+country_info_russia: "ロシアはカリーニングラードからウラジオストクまで複数のタイムゾーンにわたっています。"
+country_info_singapore: "シンガポールはシンガポール標準時（SGT）を使用しています。"
+country_info_southafrica: "南アフリカは南アフリカ標準時（SAST）を使用しています。"
+country_info_southkorea: "韓国は韓国標準時（KST）を使用しています。"
+country_info_uae: "UAEは湾岸標準時（GST）を使用しています。"
+country_info_uk: "英国は冬季にグリニッジ標準時（GMT）、夏季に英国夏時間（BST）を使用しています。"
+country_info_usa: "米国は6つのタイムゾーンにわたっています。ほとんどの州で夏時間を採用しています。"
+
+single_timezone_notice: "この国は単一のタイムゾーンを使用しています。"
+
+country_info_fiji: "フィジーは単一の主要タイムゾーンを使用しています。"
+country_info_hongkong: "香港は単一の標準タイムゾーンを使用し、夏時間を採用していません。"
+
+popular_times_title: "人気の場所"
+

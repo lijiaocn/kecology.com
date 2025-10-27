@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Turkish (tr) language
+
+title: "California, Avustralya, Texas, Londra'da Saat Kaç (Daha Fazla Şehir)?"
+description: "California, Avustralya, Texas, Londra, Japonya, New York ve dünyadaki diğer büyük şehirler ve ülkelerin güncel yerel saatini öğrenin. Her yerde saati kontrol etmek için basit bir araç."
+
+h1_title: "California, Avustralya, Texas, Londra, Japonya ve daha fazla bölge veya şehirde saat kaç?"
+label_show_corresponding_time: "Buna karşılık gelen saati göster:"
+button_confirm: "Onayla"
+button_reset: "Sıfırla"
+label_auto_refresh: "Canlı Saati Otomatik Yenile"
+section_title: "Dünyadaki Saatler"
+text_invalid_timezone: "Geçersiz Saat Dilimi"
+
+country_info_argentina: "Arjantin tek bir saat dilimi kullanır ve yaz saati uygulaması yapmaz."
+country_info_australia: "Avustralya üç ana saat dilimine ayrılmıştır. Bazı eyaletlerde ve bölgelerde yaz saati (DST) uygulanmaktadır."
+country_info_brazil: "Brezilya birden fazla saat dilimini kapsar. Ülkenin çoğu Brezilya saati (BRT) kullanır."
+country_info_canada: "Kanada Atlantik sahilinden Pasifik sahiline kadar birden fazla saat dilimini kapsar."
+country_info_china: "Çin tüm ülkede tek bir saat dilimi (Çin Standart Saati - CST) kullanır."
+country_info_egypt: "Mısır Doğu Avrupa saatini kullanır ve yaz saati uygular."
+country_info_france: "Fransa Orta Avrupa Saati (CET) kullanır ve yaz saati uygular."
+country_info_germany: "Almanya Orta Avrupa Saati (CET) kullanır ve yaz saati uygular."
+country_info_india: "Hindistan tek bir saat dilimi (Hint Standart Saati - IST) kullanır."
+country_info_italy: "İtalya Orta Avrupa Saati (CET) kullanır ve yaz saati uygular."
+country_info_japan: "Japonya tek bir saat dilimi (Japon Standart Saati - JST) kullanır."
+country_info_mexico: "Meksika birden fazla saat dilimini kapsar. Ülkenin çoğu Merkezi saati kullanır."
+country_info_newzealand: "Yeni Zelanda Yeni Zelanda Standart Saatini (NZST) kullanır ve yaz saati uygular."
+country_info_russia: "Rusya Kaliningrad'tan Vladivostok'a kadar birden fazla saat dilimini kapsar."
+country_info_singapore: "Singapur Singapur Standart Saatini (SGT) kullanır."
+country_info_southafrica: "Güney Afrika Güney Afrika Standart Saatini (SAST) kullanır."
+country_info_southkorea: "Güney Kore Kore Standart Saatini (KST) kullanır."
+country_info_uae: "BAE Körfez Standart Saatini (GST) kullanır."
+country_info_uk: "İngiltere kışın Greenwich Ortalama Saatini (GMT) kullanır ve yazın İngiliz Yaz Saatini (BST) kullanır."
+country_info_usa: "Amerika Birleşik Devletleri altı saat dilimini kapsar. Çoğu eyalette yaz saati uygulanır."
+
+single_timezone_notice: "Bu ülke tek bir saat dilimi kullanır."
+
+country_info_fiji: "Fiji'nin bir ana saat dilimi vardır."
+country_info_hongkong: "Hong Kong'un bir standart saat dilimi var ve yaz saati uygulaması yapmıyor."
+
+popular_times_title: "Popüler Konumlar"
+

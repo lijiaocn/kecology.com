@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Indonesian (id) language
+
+# Frontmatter
+title: "Kalkulator Waktu Tidur: Jam Berapa Saya Perlu Tidur Agar Bangun Segar?"
+description: "Temukan waktu terbaik untuk tidur berdasarkan siklus tidur 90 menit. Dapat membantu Anda bangun merasa segar dan bertenaga."
+
+# Page content
+h1: "Kalkulator Waktu Tidur"
+intro_text: "Atur waktu bangun Anda untuk melihat kapan harus tidur."
+keyboard_hint: "Pintasan: ↑ ↓ untuk menyesuaikan, dan ← → untuk beralih"
+results_title_prefix: "Untuk bangun segar pada"
+results_title_suffix: ", coba tidur pada salah satu waktu ini:"
+results_small_text: "(Termasuk 15 menit untuk tertidur & siklus tidur 90 menit)"
+sleep_duration_template: "({duration} tidur)"
+go_to_bed_now_title: "Tidur sekarang?"
+try_wakeup_calculator: "Coba Kalkulator Waktu Bangun Kami"
+
+# British Heart Foundation advice
+advice_title: "Saran Yayasan Jantung Britania"
+read_more: "(baca lebih lanjut)"
+advice_item1_prefix: "Tidur antara "
+advice_item1_bold: "22:00-23:00"
+advice_item1_suffix: " untuk jantung yang lebih sehat."
+advice_item2_prefix: "Kebanyakan orang dewasa harus menargetkan "
+advice_item2_bold: "7 hingga 9 jam"
+advice_item2_suffix: " tidur per malam."
+

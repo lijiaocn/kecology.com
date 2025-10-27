@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Turkish (tr) language
+
+# Frontmatter
+title: "Uyanma Zamanı Hesaplayıcı: Yarın Saat Kaçta Uyanmalıyım?"
+description: "90 dakikalık uyku döngülerine göre en iyi uyanma zamanlarını bulun. Dinlenmiş ve enerjik uyanmanıza yardımcı olur."
+
+# Page content
+h3: "Uyanma Zamanı Hesaplayıcı"
+intro_text: "Ne zaman uyuyacağınızı seçin, en iyi uyanma zamanlarını sizin için hesaplayacağız. Hesaplama ortalama 15 dakika uykuya dalma süresi içerir."
+button_go_to_bed_now: "Şimdi yat"
+button_15_min: "15 dakika sonra"
+button_30_min: "30 dakika sonra"
+label_or_pick_bedtime: "Ya da bir yatma saati seçin:"
+button_calculate: "Hesapla"
+link_try_bedtime_calculator: "Yatma Zamanı Hesaplayıcımızı Deneyin"
+want_to_calculate_bedtime: "Uyanma saatinizden yatma saatinizi hesaplamak ister misiniz?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Saati {time} yatarsanız, saat şu saatte uyanın:"
+text_select_time_first: "Lütfen önce bir saat seçin."
+text_sleep_duration: "({duration} uyku)"
+
+# FAQ section
+faq_q1: "Yarın harika hissetmek ve bulanık olmamak için saat kaçta uyanmalıyım?"
+faq_quote: "Bazı sabahlar yataktan atlayarak ferah hissediyorum ama diğer günler gerçek bir mücadele ve saatlerce halsiz hissediyorum. Sürekli enerjik uyanmanın sırrı nedir? Yarın saat kaçta uyanmalıyım?"
+faq_ans_title: "Hile, bir uyku döngüsünün sonunda uyanmaktır."
+faq_ans_explanation: "O bulanık his? Bu, alarmınızın sizi derin uyku sırasında uyandırmasından kaynaklanıyor. Vücudlarımız 90 dakikalık uyku döngüleri kullanır. Dinç hissetmek için, uykunun en hafif olduğu bir döngünün sonunda uyanın. En iyi uyanma saatlerinizi bulmak için yukarıdaki hesaplayıcıyı kullanın. Aşağıdaki diyagram bunun nasıl çalıştığını gösterir."
+faq_recommended_sleep_title: "Yaşa Göre Önerilen Uyku"
+faq_sleep_needs_intro: "Farklı yaş grupları farklı uyku ihtiyaçlarına sahiptir. Genellikle kaç saat uyku ve kaç uyku döngüsü önerildiğine dair kısa bir kılavuz:"
+faq_sleep_table_note: "Not: Uyku ihtiyaçları kişiden kişiye değişebilir. Bu tablo genel bir kılavuzdur."
+faq_table_age_group: "Yaş Grubu"
+faq_table_hours: "Uyku Saatleri"
+faq_table_cycles: "Uyku Döngüleri"
+

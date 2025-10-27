@@ -1,0 +1,56 @@
+# i18n data for json post
+# Turkish (tr) language
+
+# Frontmatter
+title: "JSON Formatı, Doğrulayıcı, Düzenleyici - XML, YAML'e Çevrimi Çevrimiçi"
+description: "JSON verilerini formatlamak, doğrulamak ve dönüştürmek için ücretsiz çevrimiçi JSON aracı. JSON'unuzu güzelleştirin, küçültün veya ağaç yapısında görüntüleyin. JSON'u XML, YAML ve daha fazlasına dönüştürün."
+
+# UI elements
+json_input: "JSON Girdisi"
+upload_file: "Dosya Yükle"
+copy_output: "Çıktıyı Kopyala"
+format_btn: "Formatla"
+compact_btn: "Sıkıştır"
+clear_btn: "Temizle"
+tab_tree_view: "Ağaç Görünümü"
+tab_format: "Format"
+tab_compact: "Sıkıştırılmış"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "URL Kodla"
+
+# Button titles
+title_format: "JSON girdisini formatla"
+title_compact: "JSON girdisini sıkıştır"
+title_clear: "İçeriği ve yerel depolamayı temizle"
+
+# Placeholder and status messages
+placeholder: "JSON'unuzu buraya yapıştırın. Otomatik olarak doğrulanacaktır. Dönüştürmek için sağdaki sekmeleri kullanın."
+text_error_encoding: "Base64'e kodlamada hata."
+text_copied_clipboard: "Panoya kopyalandı!"
+text_nothing_copy: "Kopyalanacak bir şey yok."
+text_failed_copy: "Kopyalama başarısız oldu."
+text_valid_json: "Geçerli JSON"
+text_invalid_json: "Geçersiz JSON: {error}"
+
+# About section
+about_title: "Çevrimiçi JSON Aracımız Hakkında"
+about_intro: "Bu güçlü çevrimiçi araç, geliştiricilere, veri analistlerine ve JSON verileriyle çalışan herkese yardımcı olmak için tasarlanmıştır. İşinizi daha kolay ve daha verimli hale getirmek için kapsamlı bir özellik seti sağlar. JSON verilerinizi formatlamak, doğrulamak, düzenlemek veya dönüştürmek istiyorsanız, bu araç sizi kapsar."
+
+# Key features
+key_features_title: "Ana Özellikler:"
+feature_format_beautifier: "**JSON Formatlayıcı ve Güzelleyici:** Tek bir tıklamayla JSON verilerinizi formatlayıp güzelleştirebilir, okunmasını ve anlaşılmasını kolaylaştırabilirsiniz. Dağınık veya minifikasyondan geçirilmiş JSON'a uygun girintiler ve satır sonları ekler."
+feature_validator: "**JSON Doğrulayıcı:** Aracımız yazdığınızda veya yapıştırdığınızda JSON'unuzu otomatik olarak doğrular. Sözdizimi hatalarında anında geri bildirim sağlar, sorunları hızlıca belirlemenize ve düzeltmenize yardımcı olur."
+feature_editor: "**İnteraktif JSON Editörü:** Yerleşik editör, JSON verilerinizi tarayıcınızda doğrudan düzenlemenize olanak tanır. Daha iyi bir düzenleme deneyimi için sözdizimi vurgulama ve satır numaraları gibi özellikler içerir."
+feature_minifier: "**JSON Küçültücü/Sıkıştırıcı:** Gereksiz boşlukları ve satır sonlarını kaldırarak JSON verilerinizin boyutunu azaltın. Bu, verilerinizi ağ üzerinden aktarım için optimize etmek için kullanışlıdır."
+feature_conversion_title: "**Veri Dönüştürme:**"
+feature_conversion_json_xml: "**JSON'u XML'e:** JSON nesnelerinizi sorunsuz bir şekilde XML formatına dönüştürün."
+feature_conversion_json_yaml: "**JSON'u YAML'e:** JSON'u insanların okuduğu YAML formatına dönüştürün."
+feature_conversion_base64: "**Base64 Kodlama:** JSON dizginizi Base64 dizgisine kodlayın."
+feature_conversion_url: "**URL Kodlama:** JSON dizginizi URL'lerde güvenli aktarım için URL ile kodlayın."
+feature_tree_viewer: "**Ağaç Görüntüleyici:** JSON verilerinizi katlanabilir bir ağaç yapısında görselleştirin. Bu, karmaşık ve iç içe JSON nesnelerinde gezinmeyi kolaylaştırır."
+feature_file_handling: "**Dosya İşleme:** Bilgisayarınızdan doğrudan bir JSON dosyası yükleyebilir veya tek bir tıklama ile editörü temizleyebilirsiniz."
+feature_copy_go: "**Kopyala ve Kullan:** Formatlanmış veya dönüştürülmüş çıktıyı panonuza kolayca kopyalayın."
+feature_conclusion: "Bu araç, \"JSON formatlayıcı\", \"JSON doğrulayıcı\", \"JSON editör\", \"JSON'dan XML'e dönüştürücü\" veya \"JSON'dan YAML'e dönüştürücü\" arayan herkes için mükemmeldir. JSON ile ilgili tüm görevleriniz için ücretsiz, hızlı ve güvenilir bir çözümdür."
+

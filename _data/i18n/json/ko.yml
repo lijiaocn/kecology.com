@@ -1,0 +1,56 @@
+# i18n data for json post
+# Korean (ko) language
+
+# Frontmatter
+title: "JSON 포맷터, 검증기, 에디터 - 온라인에서 XML, YAML로 변환"
+description: "JSON 데이터를 포맷팅, 검증 및 변환하는 무료 온라인 도구. JSON을 예쁘게 만들고, 최소화하거나 트리 구조로 볼 수 있습니다. JSON을 XML, YAML 등으로 변환합니다."
+
+# UI elements
+json_input: "JSON 입력"
+upload_file: "파일 업로드"
+copy_output: "출력 복사"
+format_btn: "포맷"
+compact_btn: "압축"
+clear_btn: "지우기"
+tab_tree_view: "트리 뷰"
+tab_format: "포맷"
+tab_compact: "압축"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "URL 인코드"
+
+# Button titles
+title_format: "JSON 입력 포맷팅"
+title_compact: "JSON 입력 압축"
+title_clear: "내용 및 로컬 저장소 지우기"
+
+# Placeholder and status messages
+placeholder: "여기에 JSON을 붙여넣으세요. 자동으로 검증됩니다. 오른쪽 탭을 사용하여 변환하세요."
+text_error_encoding: "Base64 인코딩 오류."
+text_copied_clipboard: "클립보드에 복사되었습니다!"
+text_nothing_copy: "복사할 내용이 없습니다."
+text_failed_copy: "복사에 실패했습니다."
+text_valid_json: "유효한 JSON"
+text_invalid_json: "잘못된 JSON: {error}"
+
+# About section
+about_title: "온라인 JSON 도구에 대해"
+about_intro: "이 강력한 온라인 도구는 개발자, 데이터 분석가 및 JSON 데이터를 다루는 모든 사람을 돕도록 설계되었습니다. 작업을 더 쉽고 효율적으로 만들기 위한 포괄적인 기능 모음을 제공합니다. JSON 데이터를 포맷팅, 검증, 편집 또는 변환해야 하는 경우 이 도구가 도와드립니다."
+
+# Key features
+key_features_title: "주요 기능:"
+feature_format_beautifier: "**JSON 포맷터 및 보기 좋게 만들기:** 한 번의 클릭으로 JSON 데이터를 포맷팅하고 예쁘게 만들어 읽고 이해하기 쉽게 만듭니다. 혼잡하거나 최소화된 JSON에 적절한 들여쓰기와 줄바꿈을 추가합니다."
+feature_validator: "**JSON 검증기:** 우리 도구는 입력하거나 붙여넣을 때 JSON을 자동으로 검증합니다. 구문 오류에 대한 즉각적인 피드백을 제공하여 문제를 빠르게 식별하고 수정하는 데 도움이 됩니다."
+feature_editor: "**대화형 JSON 편집기:** 내장 편집기를 사용하면 브라우저에서 직접 JSON 데이터를 수정할 수 있습니다. 더 나은 편집 경험을 위해 구문 강조 및 줄 번호와 같은 기능이 포함되어 있습니다."
+feature_minifier: "**JSON 압축기:** 불필요한 공백과 줄바꿈을 제거하여 JSON 데이터의 크기를 줄입니다. 네트워크를 통해 전송할 데이터를 최적화하는 데 유용합니다."
+feature_conversion_title: "**데이터 변환:**"
+feature_conversion_json_xml: "**JSON을 XML로:** JSON 객체를 XML 형식으로 원활하게 변환합니다."
+feature_conversion_json_yaml: "**JSON을 YAML로:** JSON을 사람이 읽기 쉬운 YAML 형식으로 변환합니다."
+feature_conversion_base64: "**Base64 인코딩:** JSON 문자열을 Base64 문자열로 인코딩합니다."
+feature_conversion_url: "**URL 인코딩:** URL로 안전하게 전송하기 위해 JSON 문자열을 URL 인코딩합니다."
+feature_tree_viewer: "**트리 뷰어:** 접을 수 있는 트리 구조로 JSON 데이터를 시각화합니다. 복잡하고 중첩된 JSON 객체를 쉽게 탐색할 수 있습니다."
+feature_file_handling: "**파일 처리:** 컴퓨터에서 JSON 파일을 직접 업로드하거나 한 번의 클릭으로 편집기를 지울 수 있습니다."
+feature_copy_go: "**복사 및 사용:** 포맷팅되거나 변환된 출력을 클립보드에 쉽게 복사할 수 있습니다."
+feature_conclusion: "이 도구는 \"JSON 포맷터\", \"JSON 검증기\", \"JSON 편집기\", \"JSON을 XML 변환기\" 또는 \"JSON을 YAML 변환기\"를 찾는 모든 사람에게 완벽합니다. JSON 관련 작업을 위한 무료, 빠르고 안정적인 솔루션입니다."
+

@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Traditional Chinese (zh-TW) language
+
+# Frontmatter
+title: "起床時間計算器：明天幾點起床最好？"
+description: "基於90分鐘睡眠週期，找到最佳起床時間，幫您醒來時精神飽滿、精力充沛。"
+
+# Page content
+h3: "起床時間計算器"
+intro_text: "選擇您計劃入睡的時間，我們將為您計算出最佳的起床時間。計算包含平均15分鐘的入睡時間。"
+button_go_to_bed_now: "現在就睡"
+button_15_min: "15分鐘後"
+button_30_min: "30分鐘後"
+label_or_pick_bedtime: "或者自訂睡覺時間："
+button_calculate: "計算"
+link_try_bedtime_calculator: "試試我們的入睡時間計算器"
+want_to_calculate_bedtime: "想從起床時間計算睡覺時間？"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "如果您{time}睡覺，請在以下時間起床："
+text_select_time_first: "請先選擇一個時間。"
+text_sleep_duration: "（{duration} 睡眠）"
+
+# FAQ section
+faq_q1: "明天幾點起床才能神清氣爽、不昏昏沉沉？"
+faq_quote: "有些早上我能一躍而起、精神煥發，但有些日子卻困難重重，好幾個小時都感覺昏昏沉沉。一直能精力充沛地醒來的秘訣是什麼？明天幾點起床？"
+faq_ans_title: "訣竅是在睡眠週期結束時醒來。"
+faq_ans_explanation: "那種昏昏沉沉的感覺？是因為鬧鐘在您深睡眠時叫醒了您。我們的身體使用90分鐘的睡眠週期。要感覺精神煥發，就在週期結束時醒來，此時睡眠最淺。使用上面的計算器找到您的最佳起床時間。下面的圖表顯示了它的工作原理。"
+faq_recommended_sleep_title: "按年齡推薦的睡眠時間"
+faq_sleep_needs_intro: "不同年齡段有不同的睡眠需求。以下是如何正確規劃睡眠的快速指南："
+faq_sleep_table_note: "注：睡眠需求可能因人而異。此表僅供參考。"
+faq_table_age_group: "年齡段"
+faq_table_hours: "睡眠時長"
+faq_table_cycles: "睡眠週期數"
+

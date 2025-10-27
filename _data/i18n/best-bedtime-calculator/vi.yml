@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Vietnamese (vi) language
+
+# Frontmatter
+title: "Máy Tính Giờ Ngủ: Mấy Giờ Tôi Nên Đi Ngủ Để Thức Dậy Tỉnh Táo?"
+description: "Tìm giờ ngủ tốt nhất dựa trên chu kỳ giấc ngủ 90 phút. Giúp bạn thức dậy sảng khoái và đầy năng lượng."
+
+# Page content
+h1: "Máy Tính Giờ Ngủ"
+intro_text: "Đặt giờ thức dậy để xem bạn nên đi ngủ lúc mấy giờ."
+keyboard_hint: "Phím tắt: ↑ ↓ để điều chỉnh, và ← → để chuyển"
+results_title_prefix: "Để thức dậy tỉnh táo lúc"
+results_title_suffix: ", hãy thử ngủ vào một trong những thời điểm này:"
+results_small_text: "(Bao gồm 15 phút để ngủ thiếp đi & chu kỳ ngủ 90 phút)"
+sleep_duration_template: "({duration} ngủ)"
+go_to_bed_now_title: "Đi ngủ ngay bây giờ?"
+try_wakeup_calculator: "Thử Máy Tính Giờ Thức Dậy"
+
+# British Heart Foundation advice
+advice_title: "Lời Khuyên từ Quỹ Tim Mạch Anh"
+read_more: "(đọc thêm)"
+advice_item1_prefix: "Ngủ từ "
+advice_item1_bold: "22h-23h"
+advice_item1_suffix: " để có trái tim khỏe mạnh hơn."
+advice_item2_prefix: "Hầu hết người lớn nên ngủ "
+advice_item2_bold: "7-9 tiếng"
+advice_item2_suffix: " mỗi đêm."
+

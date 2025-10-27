@@ -1,0 +1,44 @@
+# i18n data for what-time post
+# French (fr) language
+
+# Frontmatter
+title: "Quelle heure est-il en Californie, Australie, Texas, Londres (Plus de Villes)?"
+description: "Découvrez l'heure locale actuelle en Californie, Australie, Texas, Londres, Japon, New York et dans d'autres villes et pays majeurs du monde. Un outil simple pour vérifier l'heure n'importe où."
+
+# UI elements
+h1_title: "Quelle heure est-il en Californie, Australie, Texas, Londres, Japon et plus de régions ou villes?"
+label_show_corresponding_time: "Afficher l'heure correspondante pour:"
+button_confirm: "Confirmer"
+button_reset: "Réinitialiser"
+label_auto_refresh: "Actualiser l'heure en direct automatiquement"
+section_title: "Heures à travers le monde"
+text_invalid_timezone: "Fuseau horaire invalide"
+
+country_info_argentina: "L'Argentine utilise un seul fuseau horaire et n'observe pas l'heure d'été."
+country_info_australia: "L'Australie est divisée en trois fuseaux horaires principaux. L'heure d'été est observée dans certains États et territoires."
+country_info_brazil: "Le Brésil couvre plusieurs fuseaux horaires. La majeure partie du pays utilise l'heure de Brasília (BRT)."
+country_info_canada: "Le Canada s'étend sur plusieurs fuseaux horaires, de la côte Atlantique à la côte Pacifique."
+country_info_china: "La Chine utilise un seul fuseau horaire (heure standard de Chine - CST) dans tout le pays."
+country_info_egypt: "L'Égypte utilise l'heure d'Europe de l'Est et observe l'heure d'été."
+country_info_france: "La France utilise l'heure d'Europe centrale (CET) et observe l'heure d'été."
+country_info_germany: "L'Allemagne utilise l'heure d'Europe centrale (CET) et observe l'heure d'été."
+country_info_india: "L'Inde utilise un seul fuseau horaire (heure standard de l'Inde - IST)."
+country_info_italy: "L'Italie utilise l'heure d'Europe centrale (CET) et observe l'heure d'été."
+country_info_japan: "Le Japon utilise un seul fuseau horaire (heure standard du Japon - JST)."
+country_info_mexico: "Le Mexique s'étend sur plusieurs fuseaux horaires. La majeure partie du pays utilise l'heure centrale."
+country_info_newzealand: "La Nouvelle-Zélande utilise l'heure standard de Nouvelle-Zélande (NZST) et observe l'heure d'été."
+country_info_russia: "La Russie s'étend sur plusieurs fuseaux horaires de Kaliningrad à Vladivostok."
+country_info_singapore: "Singapour utilise l'heure standard de Singapour (SGT)."
+country_info_southafrica: "L'Afrique du Sud utilise l'heure standard d'Afrique du Sud (SAST)."
+country_info_southkorea: "La Corée du Sud utilise l'heure standard de Corée (KST)."
+country_info_uae: "Les EAU utilisent l'heure standard du Golfe (GST)."
+country_info_uk: "Le Royaume-Uni utilise l'heure moyenne de Greenwich (GMT) en hiver et l'heure d'été britannique (BST) en été."
+country_info_usa: "Les États-Unis s'étendent sur six fuseaux horaires. L'heure d'été est observée dans la plupart des États."
+
+single_timezone_notice: "Ce pays utilise un seul fuseau horaire."
+
+country_info_fiji: "Les Fidji ont un fuseau horaire principal."
+country_info_hongkong: "Hong Kong a un fuseau horaire standard et n'observe pas l'heure d'été."
+
+popular_times_title: "Emplacements Populaires"
+

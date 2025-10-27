@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Vietnamese (vi) language
+
+# Frontmatter
+title: "Máy Tính Giờ Thức Dậy: Tôi Nên Thức Dậy Lúc Mấy Giờ Ngày Mai?"
+description: "Tìm ra thời điểm tốt nhất để thức dậy dựa trên chu kỳ giấc ngủ 90 phút. Giúp bạn thức dậy sảng khoái và đầy năng lượng."
+
+# Page content
+h3: "Máy Tính Giờ Thức Dậy"
+intro_text: "Chọn khi bạn dự định đi ngủ, và chúng tôi sẽ tính toán thời điểm thức dậy tốt nhất cho bạn. Việc tính toán bao gồm trung bình 15 phút để ngủ thiếp đi."
+button_go_to_bed_now: "Đi ngủ ngay"
+button_15_min: "Sau 15 phút"
+button_30_min: "Sau 30 phút"
+label_or_pick_bedtime: "Hoặc chọn giờ đi ngủ:"
+button_calculate: "Tính"
+link_try_bedtime_calculator: "Thử Máy Tính Giờ Đi Ngủ"
+want_to_calculate_bedtime: "Muốn tính giờ đi ngủ từ giờ thức dậy?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Nếu bạn đi ngủ {time}, thức dậy lúc:"
+text_select_time_first: "Vui lòng chọn giờ trước."
+text_sleep_duration: "({duration} ngủ)"
+
+# FAQ section
+faq_q1: "Tôi nên thức dậy lúc mấy giờ ngày mai để cảm thấy tuyệt và không bị choáng váng?"
+faq_quote: "Một số buổi sáng tôi nhảy ra khỏi giường cảm thấy sảng khoái, nhưng những ngày khác là một cuộc chiến thực sự và tôi cảm thấy uể oải trong nhiều giờ. Bí mật để liên tục thức dậy đầy năng lượng là gì? Tôi nên thức dậy lúc mấy giờ ngày mai?"
+faq_ans_title: "Bí quyết là thức dậy vào cuối chu kỳ giấc ngủ."
+faq_ans_explanation: "Cảm giác choáng váng đó? Nó đến từ báo thức đánh thức bạn trong khi ngủ say. Cơ thể chúng ta sử dụng chu kỳ giấc ngủ 90 phút. Để cảm thấy sảng khoái, thức dậy vào cuối chu kỳ khi giấc ngủ nhẹ nhất. Sử dụng máy tính ở trên để tìm thời điểm thức dậy tốt nhất của bạn. Biểu đồ bên dưới cho thấy cách hoạt động."
+faq_recommended_sleep_title: "Giấc Ngủ Được Khuyến Nghị Theo Độ Tuổi"
+faq_sleep_needs_intro: "Các nhóm tuổi khác nhau có nhu cầu ngủ khác nhau. Đây là hướng dẫn nhanh về bao nhiêu giờ ngủ và bao nhiêu chu kỳ ngủ thường được khuyến nghị:"
+faq_sleep_table_note: "Lưu ý: Nhu cầu ngủ có thể khác nhau tùy từng người. Bảng này là hướng dẫn chung."
+faq_table_age_group: "Nhóm Tuổi"
+faq_table_hours: "Giờ Ngủ"
+faq_table_cycles: "Chu Kỳ Ngủ"
+

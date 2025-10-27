@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# French (fr) language
+
+title: "Hub de Chatbots IA : Accès Rapide à ChatGPT, Gemini, Grok et Plus"
+description: "Accès rapide aux chatbots IA populaires incluant ChatGPT, Gemini, Claude, DeepSeek et plus. Ajoutez des outils IA personnalisés pour améliorer la productivité. Accès en un clic à vos assistants IA préférés."
+
+subtitle: "Ajoutez vos propres outils IA personnalisés • Accès en un clic à tous les chatbots populaires"
+
+button_open: "Ouvrir {name}"
+button_add_custom: "Ajouter Personnalisé"
+button_add_custom_title: "Ajoutez vos propres outils IA"
+button_add_new_tool: "Ajouter Un Nouvel Outil"
+
+modal_title: "Ajouter Un Outil IA Personnalisé"
+label_tool_name: "Nom de l'outil *"
+placeholder_tool_name: "ex: Mon IA Personnalisée"
+label_tool_description: "Description de l'outil *"
+placeholder_tool_description: "ex: Mon assistant IA personnalisé"
+label_tool_url: "URL de l'outil *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Catégorie"
+option_category_general: "Général"
+option_category_coding: "Programmation"
+option_category_writing: "Rédaction"
+option_category_design: "Conception"
+option_category_other: "Autre"
+button_cancel: "Annuler"
+button_add_tool: "Ajouter l'outil"
+
+why_title: "Pourquoi Utiliser le Hub de Chatbots IA ?"
+feature_quick_access_title: "Accès Rapide"
+feature_quick_access_desc: "Plus besoin de chercher dans les moteurs de recherche. Accès direct à tous les chatbots IA populaires."
+feature_organized_title: "Organisé"
+feature_organized_desc: "Tous les chatbots sont organisés et catégorisés pour faciliter la navigation."
+feature_updated_title: "Toujours Mis à Jour"
+feature_updated_desc: "Nous mettons régulièrement à jour la liste avec de nouveaux chatbots IA populaires."
+feature_productivity_title: "Augmentation de la Productivité"
+feature_productivity_desc: "Gagnez du temps et augmentez votre productivité avec un accès instantané aux outils IA."
+
+text_open_tool: "Ouvrir {name}"
+text_delete_confirm: "Êtes-vous sûr de vouloir supprimer cet outil personnalisé ?"
+

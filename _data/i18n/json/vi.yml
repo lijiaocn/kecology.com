@@ -1,0 +1,56 @@
+# i18n data for json post
+# Vietnamese (vi) language
+
+# Frontmatter
+title: "Trình Định Dạng, Xác Thực, Chỉnh Sửa JSON - Chuyển Đổi Sang XML, YAML Trực Tuyến"
+description: "Công cụ JSON trực tuyến miễn phí để định dạng, xác thực và chuyển đổi dữ liệu JSON. Làm đẹp, minify hoặc xem JSON của bạn trong cấu trúc cây. Chuyển đổi JSON sang XML, YAML và nhiều hơn nữa."
+
+# UI elements
+json_input: "Đầu Vào JSON"
+upload_file: "Tải Lên Tệp"
+copy_output: "Sao Chép Đầu Ra"
+format_btn: "Định Dạng"
+compact_btn: "Nén"
+clear_btn: "Xóa"
+tab_tree_view: "Chế Độ Xem Cây"
+tab_format: "Định Dạng"
+tab_compact: "Nén"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "Mã Hóa URL"
+
+# Button titles
+title_format: "Định dạng đầu vào JSON"
+title_compact: "Nén đầu vào JSON"
+title_clear: "Xóa nội dung và lưu trữ cục bộ"
+
+# Placeholder and status messages
+placeholder: "Dán JSON của bạn vào đây. Nó sẽ được xác thực tự động. Sử dụng các tab bên phải để chuyển đổi."
+text_error_encoding: "Lỗi mã hóa sang Base64."
+text_copied_clipboard: "Đã sao chép vào clipboard!"
+text_nothing_copy: "Không có gì để sao chép."
+text_failed_copy: "Sao chép thất bại."
+text_valid_json: "JSON Hợp Lệ"
+text_invalid_json: "JSON Không Hợp Lệ: {error}"
+
+# About section
+about_title: "Về Công Cụ JSON Trực Tuyến Của Chúng Tôi"
+about_intro: "Công cụ trực tuyến mạnh mẽ này được thiết kế để giúp các nhà phát triển, nhà phân tích dữ liệu và bất kỳ ai làm việc với dữ liệu JSON. Nó cung cấp một bộ tính năng toàn diện để làm cho công việc của bạn dễ dàng và hiệu quả hơn. Cho dù bạn cần định dạng, xác thực, chỉnh sửa hay chuyển đổi dữ liệu JSON, công cụ này phục vụ bạn."
+
+# Key features
+key_features_title: "Tính Năng Chính:"
+feature_format_beautifier: "**Trình Định Dạng & Làm Đẹp JSON:** Chỉ với một cú nhấp chuột, bạn có thể định dạng và làm đẹp dữ liệu JSON của mình, làm cho nó dễ đọc và hiểu. Nó thêm thụt lề và ngắt dòng phù hợp cho JSON lộn xộn hoặc được rút gọn."
+feature_validator: "**Trình Xác Thực JSON:** Công cụ của chúng tôi tự động xác thực JSON của bạn khi bạn nhập hoặc dán. Nó cung cấp phản hồi tức thì về lỗi cú pháp, giúp bạn nhanh chóng xác định và sửa các vấn đề."
+feature_editor: "**Trình Chỉnh Sửa JSON Tương Tác:** Trình chỉnh sửa tích hợp cho phép bạn chỉnh sửa dữ liệu JSON trực tiếp trong trình duyệt. Nó bao gồm các tính năng như tô sáng cú pháp và số dòng để có trải nghiệm chỉnh sửa tốt hơn."
+feature_minifier: "**Trình Rút Gọn/Nén JSON:** Giảm kích thước dữ liệu JSON bằng cách xóa khoảng trắng và ngắt dòng không cần thiết. Điều này hữu ích để tối ưu hóa dữ liệu để truyền qua mạng."
+feature_conversion_title: "**Chuyển Đổi Dữ Liệu:**"
+feature_conversion_json_xml: "**JSON sang XML:** Chuyển đổi các đối tượng JSON của bạn sang định dạng XML một cách liền mạch."
+feature_conversion_json_yaml: "**JSON sang YAML:** Chuyển đổi JSON sang định dạng YAML dễ đọc."
+feature_conversion_base64: "**Mã Hóa Base64:** Mã hóa chuỗi JSON của bạn thành chuỗi Base64."
+feature_conversion_url: "**Mã Hóa URL:** Mã hóa URL cho chuỗi JSON của bạn để truyền an toàn trong URL."
+feature_tree_viewer: "**Trình Xem Cây:** Trực quan hóa dữ liệu JSON của bạn trong cấu trúc cây có thể thu gọn. Điều này giúp dễ dàng điều hướng các đối tượng JSON phức tạp và lồng nhau."
+feature_file_handling: "**Xử Lý Tệp:** Bạn có thể trực tiếp tải lên tệp JSON từ máy tính của mình hoặc xóa trình chỉnh sửa bằng một cú nhấp chuột."
+feature_copy_go: "**Sao Chép & Sử Dụng:** Dễ dàng sao chép đầu ra đã định dạng hoặc đã chuyển đổi vào clipboard của bạn."
+feature_conclusion: "Công cụ này hoàn hảo cho bất kỳ ai đang tìm kiếm \"trình định dạng JSON\", \"trình xác thực JSON\", \"trình chỉnh sửa JSON\", \"bộ chuyển đổi JSON sang XML\" hoặc \"bộ chuyển đổi JSON sang YAML\". Đây là một giải pháp miễn phí, nhanh chóng và đáng tin cậy cho tất cả các tác vụ liên quan đến JSON của bạn."
+

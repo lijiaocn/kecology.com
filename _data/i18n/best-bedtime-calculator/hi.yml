@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Hindi (hi) language
+
+# Frontmatter
+title: "सोने का समय कैलकुलेटर: तरोताजा महसूस करने के लिए मुझे कितने बजे सोना चाहिए?"
+description: "90 मिनट के स्लीप साइकल के आधार पर सोने का सबसे अच्छा समय खोजें। यह आपको तरोताजा और ऊर्जावान महसूस कराते हुए उठाने में मदद कर सकता है।"
+
+# Page content
+h1: "सोने का समय कैलकुलेटर"
+intro_text: "आपका जागने का समय सेट करें कि आपको कब सोना चाहिए।"
+keyboard_hint: "शॉर्टकट: ↑ ↓ समायोजन के लिए, और ← → स्विच करने के लिए"
+results_title_prefix: "पर तरोताजा उठने के लिए"
+results_title_suffix: ", इन समयों में से किसी एक समय पर सोने की कोशिश करें:"
+results_small_text: "(15 मिनट सोने और 90 मिनट स्लीप साइकल शामिल हैं)"
+sleep_duration_template: "({duration} स्लीप)"
+go_to_bed_now_title: "अभी सो जाएं?"
+try_wakeup_calculator: "हमारा वेकअप टाइम कैलकुलेटर आज़माएं"
+
+# British Heart Foundation advice
+advice_title: "ब्रिटिश हार्ट फाउंडेशन सलाह"
+read_more: "(और पढ़ें)"
+advice_item1_prefix: "स्वस्थ दिल के लिए "
+advice_item1_bold: "रात 10-11 बजे"
+advice_item1_suffix: " के बीच सोएं।"
+advice_item2_prefix: "अधिकांश वयस्कों को रात में "
+advice_item2_bold: "7-9 घंटे"
+advice_item2_suffix: " सोना चाहिए।"
+

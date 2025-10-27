@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Italian (it) language
+
+title: "Che Ore Sono in California, Australia, Texas, Londra (Altre Città)?"
+description: "Scopri l'ora locale attuale in California, Australia, Texas, Londra, Giappone, New York e altre città e paesi importanti nel mondo. Uno strumento semplice per verificare l'ora ovunque."
+
+h1_title: "Che ore sono in California, Australia, Texas, Londra, Giappone e altre regioni o città?"
+label_show_corresponding_time: "Mostra ora corrispondente per:"
+button_confirm: "Conferma"
+button_reset: "Reimposta"
+label_auto_refresh: "Aggiorna Ora in Diretta Automaticamente"
+section_title: "Ore nel Mondo"
+text_invalid_timezone: "Fuso Orario Non Valido"
+
+country_info_argentina: "L'Argentina usa un solo fuso orario e non osserva l'ora legale."
+country_info_australia: "L'Australia è divisa in tre fusi orari principali. L'ora legale (DST) è osservata in alcuni stati e territori."
+country_info_brazil: "Il Brasile copre più fusi orari. La maggior parte del paese usa l'ora di Brasília (BRT)."
+country_info_canada: "Il Canada copre più fusi orari dalla costa atlantica alla costa del Pacifico."
+country_info_china: "La Cina usa un unico fuso orario (ora standard cinese - CST) a livello nazionale."
+country_info_egypt: "L'Egitto usa l'ora dell'Europa orientale e osserva l'ora legale."
+country_info_france: "La Francia usa l'ora dell'Europa centrale (CET) e osserva l'ora legale."
+country_info_germany: "La Germania usa l'ora dell'Europa centrale (CET) e osserva l'ora legale."
+country_info_india: "L'India usa un unico fuso orario (ora standard indiana - IST)."
+country_info_italy: "L'Italia usa l'ora dell'Europa centrale (CET) e osserva l'ora legale."
+country_info_japan: "Il Giappone usa un unico fuso orario (ora standard del Giappone - JST)."
+country_info_mexico: "Il Messico copre più fusi orari. La maggior parte del paese usa l'ora centrale."
+country_info_newzealand: "La Nuova Zelanda usa l'ora standard della Nuova Zelanda (NZST) e osserva l'ora legale."
+country_info_russia: "La Russia copre più fusi orari da Kaliningrad a Vladivostok."
+country_info_singapore: "Singapore usa l'ora standard di Singapore (SGT)."
+country_info_southafrica: "Il Sud Africa usa l'ora standard sudafricana (SAST)."
+country_info_southkorea: "La Corea del Sud usa l'ora standard coreana (KST)."
+country_info_uae: "Gli EAU usano l'ora standard del Golfo (GST)."
+country_info_uk: "Il Regno Unito usa il tempo medio di Greenwich (GMT) in inverno e l'ora legale britannica (BST) in estate."
+country_info_usa: "Gli Stati Uniti coprono sei fusi orari. L'ora legale è osservata nella maggior parte degli stati."
+
+single_timezone_notice: "Questo paese usa un unico fuso orario."
+
+country_info_fiji: "Le Fiji hanno un fuso orario principale."
+country_info_hongkong: "Hong Kong ha un fuso orario standard e non osserva l'ora legale."
+
+popular_times_title: "Posizioni Popolari"
+

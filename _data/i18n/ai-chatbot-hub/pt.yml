@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Portuguese (pt) language
+
+title: "Hub de Chatbots AI: Acesso Rápido a ChatGPT, Gemini, Grok e Mais"
+description: "Acesso rápido a chatbots AI populares, incluindo ChatGPT, Gemini, Claude, DeepSeek e mais. Adicione ferramentas AI personalizadas para aumentar a produtividade. Acesso com um clique aos seus assistentes AI favoritos."
+
+subtitle: "Adicione suas próprias ferramentas AI personalizadas • Acesso com um clique a todos os chatbots populares"
+
+button_open: "Abrir {name}"
+button_add_custom: "Adicionar Personalizado"
+button_add_custom_title: "Adicione suas próprias ferramentas AI"
+button_add_new_tool: "Adicionar Nova Ferramenta"
+
+modal_title: "Adicionar Ferramenta AI Personalizada"
+label_tool_name: "Nome da Ferramenta *"
+placeholder_tool_name: "ex: Minha IA Personalizada"
+label_tool_description: "Descrição da Ferramenta *"
+placeholder_tool_description: "ex: Meu assistente de IA personalizado"
+label_tool_url: "URL da Ferramenta *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Categoria"
+option_category_general: "Geral"
+option_category_coding: "Codificação"
+option_category_writing: "Escrita"
+option_category_design: "Design"
+option_category_other: "Outro"
+button_cancel: "Cancelar"
+button_add_tool: "Adicionar Ferramenta"
+
+why_title: "Por Que Usar o Hub de Chatbots AI?"
+feature_quick_access_title: "Acesso Rápido"
+feature_quick_access_desc: "Não há mais necessidade de pesquisar em motores de busca. Acesso direto a todos os chatbots AI populares."
+feature_organized_title: "Organizado"
+feature_organized_desc: "Todos os chatbots estão organizados e categorizados para fácil navegação."
+feature_updated_title: "Sempre Atualizado"
+feature_updated_desc: "Atualizamos regularmente a lista com novos e populares chatbots AI."
+feature_productivity_title: "Aumento de Produtividade"
+feature_productivity_desc: "Economize tempo e aumente sua produtividade com acesso instantâneo a ferramentas AI."
+
+text_open_tool: "Abrir {name}"
+text_delete_confirm: "Tem certeza de que deseja excluir esta ferramenta personalizada?"
+

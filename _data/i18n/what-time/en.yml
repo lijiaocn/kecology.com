@@ -1,0 +1,48 @@
+# i18n data for what-time post
+# English (en) language
+
+# Frontmatter
+title: "What Time is it in California, Australia, Texas, London (More Cities)"
+description: "Find out the current local time in California, Australia, Texas, London, Japan, New York, and other major cities and countries around the world. A simple tool to check what time it is anywhere."
+
+# UI elements
+h1_title: "What Time is it in California, Australia, Texas, London, Japan And More Regions or Cities"
+label_show_corresponding_time: "Show corresponding time for:"
+button_confirm: "Confirm"
+button_reset: "Reset"
+label_auto_refresh: "Auto-Refresh Live Time"
+section_title: "Times Around The World"
+text_invalid_timezone: "Invalid Timezone"
+
+# Country info descriptions
+country_info_argentina: "Argentina uses a single time zone and does not observe Daylight Saving Time."
+country_info_australia: "Australia is divided into three main time zones. Daylight Saving Time (DST) is observed in some states and territories."
+country_info_brazil: "Brazil spans multiple time zones. Most of the country uses Brasília Time (BRT)."
+country_info_canada: "Canada spans multiple time zones from the Atlantic to the Pacific coast."
+country_info_china: "China uses a single time zone (China Standard Time - CST) nationwide."
+country_info_egypt: "Egypt uses Eastern European Time and observes Daylight Saving Time."
+country_info_france: "France uses Central European Time (CET) and observes Daylight Saving Time."
+country_info_germany: "Germany uses Central European Time (CET) and observes Daylight Saving Time."
+country_info_india: "India uses a single time zone (Indian Standard Time - IST)."
+country_info_italy: "Italy uses Central European Time (CET) and observes Daylight Saving Time."
+country_info_japan: "Japan uses a single time zone (Japan Standard Time - JST)."
+country_info_mexico: "Mexico spans multiple time zones. Most of the country uses Central Time."
+country_info_newzealand: "New Zealand uses New Zealand Standard Time (NZST) and observes Daylight Saving Time."
+country_info_russia: "Russia spans multiple time zones from Kaliningrad to Vladivostok."
+country_info_singapore: "Singapore uses Singapore Standard Time (SGT)."
+country_info_southafrica: "South Africa uses South African Standard Time (SAST)."
+country_info_southkorea: "South Korea uses Korean Standard Time (KST)."
+country_info_uae: "The UAE uses Gulf Standard Time (GST)."
+country_info_uk: "The UK uses Greenwich Mean Time (GMT) in winter and British Summer Time (BST) in summer."
+country_info_usa: "The United States spans six time zones. Daylight Saving Time is observed in most states."
+
+# Notice texts
+single_timezone_notice: "This country uses a single time zone."
+
+# Additional countries (Fiji, Hong Kong)
+country_info_fiji: "Fiji has one primary time zone."
+country_info_hongkong: "Hong Kong has one standard time zone and does not observe Daylight Saving Time."
+
+# Popular times section
+popular_times_title: "Popular Locations"
+

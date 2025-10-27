@@ -1,0 +1,56 @@
+# i18n data for json post
+# Indonesian (id) language
+
+# Frontmatter
+title: "Pemformat, Validator, Editor JSON - Konversi ke XML, YAML Online"
+description: "Alat JSON online gratis untuk memformat, memvalidasi, dan mengonversi data JSON. Cantikkan, minify, atau lihat JSON Anda dalam struktur pohon. Konversi JSON ke XML, YAML, dan lainnya."
+
+# UI elements
+json_input: "Input JSON"
+upload_file: "Unggah File"
+copy_output: "Salin Output"
+format_btn: "Format"
+compact_btn: "Ringkas"
+clear_btn: "Bersihkan"
+tab_tree_view: "Tampilan Pohon"
+tab_format: "Format"
+tab_compact: "Ringkas"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "Enkode URL"
+
+# Button titles
+title_format: "Format input JSON"
+title_compact: "Ringkas input JSON"
+title_clear: "Bersihkan konten dan penyimpanan lokal"
+
+# Placeholder and status messages
+placeholder: "Tempel JSON Anda di sini. Akan divalidasi secara otomatis. Gunakan tab di kanan untuk mengonversinya."
+text_error_encoding: "Kesalahan mengonversi ke Base64."
+text_copied_clipboard: "Disalin ke papan klip!"
+text_nothing_copy: "Tidak ada yang bisa disalin."
+text_failed_copy: "Gagal menyalin."
+text_valid_json: "JSON Valid"
+text_invalid_json: "JSON Tidak Valid: {error}"
+
+# About section
+about_title: "Tentang Alat JSON Online Kami"
+about_intro: "Alat online yang kuat ini dirancang untuk membantu pengembang, analis data, dan siapa pun yang bekerja dengan data JSON. Ini menyediakan suite fitur lengkap untuk membuat pekerjaan Anda lebih mudah dan efisien. Baik Anda perlu memformat, memvalidasi, mengedit, atau mengonversi data JSON, alat ini telah mencakup semuanya."
+
+# Key features
+key_features_title: "Fitur Utama:"
+feature_format_beautifier: "**Pemformat & Perecantik JSON:** Dengan satu klik, Anda dapat memformat dan mempercantik data JSON Anda, membuatnya mudah dibaca dan dipahami. Ini menambahkan indentasi dan jeda baris yang tepat ke JSON yang berantakan atau diminified."
+feature_validator: "**Validator JSON:** Alat kami memvalidasi JSON Anda secara otomatis saat Anda mengetik atau menempelkannya. Ini memberikan umpan balik instan tentang kesalahan sintaks, membantu Anda mengidentifikasi dan memperbaiki masalah dengan cepat."
+feature_editor: "**Editor JSON Interaktif:** Editor bawaan memungkinkan Anda memodifikasi data JSON langsung di browser. Ini mencakup fitur seperti syntax highlighting dan nomor baris untuk pengalaman pengeditan yang lebih baik."
+feature_minifier: "**Minifier/Pemadat JSON:** Kurangi ukuran data JSON dengan menghapus spasi putih dan jeda baris yang tidak perlu. Ini berguna untuk mengoptimalkan data untuk transmisi melalui jaringan."
+feature_conversion_title: "**Konversi Data:**"
+feature_conversion_json_xml: "**JSON ke XML:** Konversi objek JSON Anda ke format XML dengan mulus."
+feature_conversion_json_yaml: "**JSON ke YAML:** Konversi JSON ke format YAML yang ramah manusia."
+feature_conversion_base64: "**Enkode Base64:** Enkode string JSON Anda menjadi string Base64."
+feature_conversion_url: "**Enkode URL:** URL-encode string JSON Anda untuk transmisi yang aman di URL."
+feature_tree_viewer: "**Penampil Pohon:** Visualisasikan data JSON Anda dalam struktur pohon yang dapat digulung. Ini memudahkan navigasi objek JSON yang kompleks dan bertingkat."
+feature_file_handling: "**Penanganan File:** Anda dapat langsung mengunggah file JSON dari komputer atau membersihkan editor dengan satu klik."
+feature_copy_go: "**Salin & Gunakan:** Salin dengan mudah output yang diformat atau dikonversi ke papan klip."
+feature_conclusion: "Alat ini sempurna untuk siapa saja yang mencari \"pemformat JSON\", \"validator JSON\", \"editor JSON\", \"konverter JSON ke XML\", atau \"konverter JSON ke YAML\". Ini adalah solusi gratis, cepat, dan andal untuk semua tugas JSON Anda."
+

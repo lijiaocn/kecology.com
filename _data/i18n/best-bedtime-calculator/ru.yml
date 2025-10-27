@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Russian (ru) language
+
+# Frontmatter
+title: "Калькулятор времени сна: Во сколько мне нужно лечь спать, чтобы проснуться бодрым?"
+description: "Найдите лучшее время для сна на основе 90-минутных циклов. Поможет вам просыпаться отдохнувшим и энергичным."
+
+# Page content
+h1: "Калькулятор Времени Сна"
+intro_text: "Установите время пробуждения, чтобы узнать, когда нужно ложиться спать."
+keyboard_hint: "Горячие клавиши: ↑ ↓ для настройки, и ← → для переключения"
+results_title_prefix: "Чтобы проснуться бодрым в"
+results_title_suffix: ", попробуйте уснуть в одно из этих времён:"
+results_small_text: "(Включает 15 мин на засыпание и 90-мин циклы сна)"
+sleep_duration_template: "({duration} сна)"
+go_to_bed_now_title: "Ложиться спать сейчас?"
+try_wakeup_calculator: "Попробуйте Наш Калькулятор Времени Пробуждения"
+
+# British Heart Foundation advice
+advice_title: "Советы Британского Фонда Сердца"
+read_more: "(читать далее)"
+advice_item1_prefix: "Спать с "
+advice_item1_bold: "22:00 до 23:00"
+advice_item1_suffix: " для более здорового сердца."
+advice_item2_prefix: "Большинству взрослых следует спать "
+advice_item2_bold: "7–9 часов"
+advice_item2_suffix: " в сутки."
+

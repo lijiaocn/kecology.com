@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Arabic (ar) language
+
+# Frontmatter
+title: "حاسبة وقت النوم: متى يجب أن أنام لأستيقظ منتعشًا؟"
+description: "اكتشف أفضل وقت للنوم اعتمادًا على دورات النوم لمدة 90 دقيقة. يساعدك على الاستيقاظ بكل نشاط وحيوية."
+
+# Page content
+h1: "حاسبة وقت النوم"
+intro_text: "حدد وقت استيقاظك لمعرفة متى يجب أن تنام."
+keyboard_hint: "اختصارات: ↑ ↓ للتعديل، و ← → للتبديل"
+results_title_prefix: "للاستيقاظ منتعشًا في"
+results_title_suffix: "، حاول النوم في إحدى هذه الأوقات:"
+results_small_text: "(يشمل 15 دقيقة للنوم ودورات 90 دقيقة)"
+sleep_duration_template: "({duration} نوم)"
+go_to_bed_now_title: "هل تريد الذهاب للنوم الآن؟"
+try_wakeup_calculator: "جرب حاسبة وقت الاستيقاظ"
+
+# British Heart Foundation advice
+advice_title: "نصائح مؤسسة القلب البريطانية"
+read_more: "(اقرأ المزيد)"
+advice_item1_prefix: "النوم بين "
+advice_item1_bold: "10 مساءً-11 مساءً"
+advice_item1_suffix: " لقلب أكثر صحة."
+advice_item2_prefix: "يجب أن يهدف معظم البالغين لـ "
+advice_item2_bold: "7 إلى 9 ساعات"
+advice_item2_suffix: " من النوم كل ليلة."
+

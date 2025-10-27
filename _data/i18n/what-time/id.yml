@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Indonesian (id) language
+
+title: "Jam Berapa di California, Australia, Texas, London (Lebih Banyak Kota)?"
+description: "Cari tahu waktu lokal saat ini di California, Australia, Texas, London, Jepang, New York, dan kota dan negara besar lainnya di seluruh dunia. Alat sederhana untuk memeriksa jam berapa di mana saja."
+
+h1_title: "Jam berapa di California, Australia, Texas, London, Jepang dan lebih banyak wilayah atau kota?"
+label_show_corresponding_time: "Tampilkan waktu yang sesuai untuk:"
+button_confirm: "Konfirmasi"
+button_reset: "Atur Ulang"
+label_auto_refresh: "Perbarui Waktu Langsung Otomatis"
+section_title: "Waktu di Seluruh Dunia"
+text_invalid_timezone: "Zona Waktu Tidak Valid"
+
+country_info_argentina: "Argentina menggunakan satu zona waktu dan tidak menerapkan Waktu Musim Panas."
+country_info_australia: "Australia dibagi menjadi tiga zona waktu utama. Daylight Saving Time (DST) diamati di beberapa negara bagian dan wilayah."
+country_info_brazil: "Brasil mencakup beberapa zona waktu. Sebagian besar negara menggunakan Waktu Brasília (BRT)."
+country_info_canada: "Kanada mencakup beberapa zona waktu dari pantai Atlantik hingga pantai Pasifik."
+country_info_china: "China menggunakan satu zona waktu (Waktu Standar China - CST) di seluruh negeri."
+country_info_egypt: "Mesir menggunakan Waktu Eropa Timur dan menerapkan Waktu Musim Panas."
+country_info_france: "Prancis menggunakan Waktu Eropa Tengah (CET) dan menerapkan Waktu Musim Panas."
+country_info_germany: "Jerman menggunakan Waktu Eropa Tengah (CET) dan menerapkan Waktu Musim Panas."
+country_info_india: "India menggunakan satu zona waktu (Waktu Standar India - IST)."
+country_info_italy: "Italia menggunakan Waktu Eropa Tengah (CET) dan menerapkan Waktu Musim Panas."
+country_info_japan: "Jepang menggunakan satu zona waktu (Waktu Standar Jepang - JST)."
+country_info_mexico: "Meksiko mencakup beberapa zona waktu. Sebagian besar negara menggunakan Waktu Tengah."
+country_info_newzealand: "Selandia Baru menggunakan Waktu Standar Selandia Baru (NZST) dan menerapkan Waktu Musim Panas."
+country_info_russia: "Rusia mencakup beberapa zona waktu dari Kaliningrad hingga Vladivostok."
+country_info_singapore: "Singapura menggunakan Waktu Standar Singapura (SGT)."
+country_info_southafrica: "Afrika Selatan menggunakan Waktu Standar Afrika Selatan (SAST)."
+country_info_southkorea: "Korea Selatan menggunakan Waktu Standar Korea (KST)."
+country_info_uae: "UAE menggunakan Waktu Standar Teluk (GST)."
+country_info_uk: "Inggris menggunakan Greenwich Mean Time (GMT) di musim dingin dan British Summer Time (BST) di musim panas."
+country_info_usa: "Amerika Serikat mencakup enam zona waktu. Daylight Saving Time diamati di sebagian besar negara bagian."
+
+single_timezone_notice: "Negara ini menggunakan satu zona waktu."
+
+country_info_fiji: "Fiji memiliki satu zona waktu utama."
+country_info_hongkong: "Hong Kong memiliki satu zona waktu standar dan tidak menerapkan Waktu Musim Panas."
+
+popular_times_title: "Lokasi Populer"
+

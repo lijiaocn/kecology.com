@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Korean (ko) language
+
+title: "AI 챗봇 허브: ChatGPT, Gemini, Grok 등의 빠른 접근"
+description: "ChatGPT, Gemini, Claude, DeepSeek 등 인기 있는 AI 챗봇에 빠르게 접근하세요. 생산성 향상을 위해 맞춤형 AI 도구를 추가하세요. 좋아하는 AI 어시스턴트에 원클릭으로 접근하세요."
+
+subtitle: "자신만의 맞춤형 AI 도구 추가 • 인기 있는 모든 챗봇에 원클릭 접근"
+
+button_open: "{name} 열기"
+button_add_custom: "맞춤형 추가"
+button_add_custom_title: "자신만의 AI 도구 추가"
+button_add_new_tool: "새 도구 추가"
+
+modal_title: "맞춤형 AI 도구 추가"
+label_tool_name: "도구 이름 *"
+placeholder_tool_name: "예: 내 맞춤형 AI"
+label_tool_description: "도구 설명 *"
+placeholder_tool_description: "예: 내 맞춤형 AI 어시스턴트"
+label_tool_url: "도구 URL *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "카테고리"
+option_category_general: "일반"
+option_category_coding: "코딩"
+option_category_writing: "작문"
+option_category_design: "디자인"
+option_category_other: "기타"
+button_cancel: "취소"
+button_add_tool: "도구 추가"
+
+why_title: "AI 챗봇 허브를 사용하는 이유는?"
+feature_quick_access_title: "빠른 접근"
+feature_quick_access_desc: "더 이상 검색 엔진을 통해 검색할 필요가 없습니다. 인기 있는 모든 AI 챗봇에 직접 접근하세요."
+feature_organized_title: "정리됨"
+feature_organized_desc: "모든 챗봇이 깔끔하게 정리되고 분류되어 쉽게 탐색할 수 있습니다."
+feature_updated_title: "항상 업데이트됨"
+feature_updated_desc: "새롭고 인기 있는 AI 챗봇으로 목록을 정기적으로 업데이트합니다."
+feature_productivity_title: "생산성 향상"
+feature_productivity_desc: "AI 도구에 즉시 접근하여 시간을 절약하고 생산성을 높이세요."
+
+text_open_tool: "{name} 열기"
+text_delete_confirm: "이 맞춤형 도구를 삭제하시겠습니까?"
+

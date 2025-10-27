@@ -1,0 +1,56 @@
+# i18n data for json post
+# Portuguese (pt) language
+
+# Frontmatter
+title: "Formatador, Validador e Editor de JSON - Converter para XML, YAML Online"
+description: "Uma ferramenta gratuita online para formatar, validar e converter dados JSON. Embelezar, minificar ou visualizar seu JSON em uma estrutura de árvore. Converter JSON para XML, YAML e muito mais."
+
+# UI elements
+json_input: "Entrada JSON"
+upload_file: "Carregar Arquivo"
+copy_output: "Copiar Saída"
+format_btn: "Formatar"
+compact_btn: "Compactar"
+clear_btn: "Limpar"
+tab_tree_view: "Visualização em Árvore"
+tab_format: "Formato"
+tab_compact: "Compacto"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "Codificar URL"
+
+# Button titles
+title_format: "Formatar a entrada JSON"
+title_compact: "Compactar a entrada JSON"
+title_clear: "Limpar conteúdo e armazenamento local"
+
+# Placeholder and status messages
+placeholder: "Cole seu JSON aqui. Será validado automaticamente. Use as abas à direita para convertê-lo."
+text_error_encoding: "Erro ao codificar para Base64."
+text_copied_clipboard: "Copiado para a área de transferência!"
+text_nothing_copy: "Nada para copiar."
+text_failed_copy: "Falha ao copiar."
+text_valid_json: "JSON Válido"
+text_invalid_json: "JSON Inválido: {error}"
+
+# About section
+about_title: "Sobre Nossa Ferramenta JSON Online"
+about_intro: "Esta poderosa ferramenta online foi projetada para ajudar desenvolvedores, analistas de dados e qualquer pessoa que trabalha com dados JSON. Fornece um conjunto abrangente de recursos para tornar seu trabalho mais fácil e eficiente. Se você precisa formatar, validar, editar ou converter seus dados JSON, esta ferramenta tem você coberto."
+
+# Key features
+key_features_title: "Principais Recursos:"
+feature_format_beautifier: "**Formatador e Embelezador de JSON:** Com um único clique, você pode formatar e embelezar seus dados JSON, tornando-os fáceis de ler e entender. Adiciona indentação e quebras de linha apropriadas a JSON desordenado ou minificado."
+feature_validator: "**Validador de JSON:** Nossa ferramenta valida automaticamente seu JSON conforme você digita ou cola. Fornece feedback instantâneo sobre erros de sintaxe, ajudando você a identificar e corrigir problemas rapidamente."
+feature_editor: "**Editor Interativo de JSON:** O editor integrado permite modificar seus dados JSON diretamente no navegador. Inclui recursos como destaque de sintaxe e números de linha para uma melhor experiência de edição."
+feature_minifier: "**Minificador/Compactador de JSON:** Reduza o tamanho de seus dados JSON removendo espaços em branco e quebras de linha desnecessários. Isso é útil para otimizar dados para transmissão por rede."
+feature_conversion_title: "**Conversão de Dados:**"
+feature_conversion_json_xml: "**JSON para XML:** Converta seus objetos JSON para formato XML sem problemas."
+feature_conversion_json_yaml: "**JSON para YAML:** Converta JSON para o formato YAML fácil de ler."
+feature_conversion_base64: "**Codificação Base64:** Codifique sua string JSON em uma string Base64."
+feature_conversion_url: "**Codificação URL:** Codifique sua string JSON para transmissão segura em URLs."
+feature_tree_viewer: "**Visualizador de Árvore:** Visualize seus dados JSON em uma estrutura de árvore recolhível. Isso facilita a navegação de objetos JSON complexos e aninhados."
+feature_file_handling: "**Manipulação de Arquivos:** Você pode fazer upload diretamente de um arquivo JSON do seu computador ou limpar o editor com um único clique."
+feature_copy_go: "**Copiar e Usar:** Copie facilmente a saída formatada ou convertida para sua área de transferência."
+feature_conclusion: "Esta ferramenta é perfeita para qualquer pessoa procurando por um \"formatador JSON\", \"validador JSON\", \"editor JSON\", \"conversor JSON para XML\" ou \"conversor JSON para YAML\". É uma solução gratuita, rápida e confiável para todas as suas tarefas relacionadas a JSON."
+

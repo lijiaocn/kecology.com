@@ -12,6 +12,11 @@ title:  "World Time Planner: Directly Find Perfect Meeting Time for Global Team"
 description: "A simple tool to find the perfect meeting time across different time zones. Select cities or timezones and visualize the time overlap."
 ---
 
+{% assign i18n_data = site.data.i18n['world-time-planner'][page.lang] %}
+{% if i18n_data == nil %}
+  {% assign i18n_data = site.data.i18n['world-time-planner']['en'] %}
+{% endif %}
+
 <link rel="stylesheet" href="/assets/css/world-time-planner.css?v=11">
 
 <div id="world-time-planner-app">
@@ -23,9 +28,9 @@ description: "A simple tool to find the perfect meeting time across different ti
         <input type="date" id="wtp-date-picker">
       </div>
       <div class="wtp-time-nav-controls">
-        <button id="wtp-scroll-left-btn" title="Scroll left">&lt;</button>
-        <button id="wtp-now-btn" title="Go to current time">Now</button>
-        <button id="wtp-scroll-right-btn" title="Scroll right">&gt;</button>
+        <button id="wtp-scroll-left-btn" title="{{ i18n_data.button_scroll_left }}">&lt;</button>
+        <button id="wtp-now-btn" title="{{ i18n_data.button_now }}">{{ i18n_data.button_now }}</button>
+        <button id="wtp-scroll-right-btn" title="{{ i18n_data.button_scroll_right }}">&gt;</button>
       </div>
     </div>
         <div id="wtp-scroll-container">
@@ -39,9 +44,9 @@ description: "A simple tool to find the perfect meeting time across different ti
   <div class="wtp-selectors-container">
     <div class="wtp-tab-buttons">
       <div class="wtp-tab-btn-container">
-        <button class="wtp-tab-btn active" data-tab="popular">Popular Cities</button>
-        <button class="wtp-tab-btn" data-tab="country">By Country</button>
-        <button class="wtp-tab-btn" data-tab="timezone">By Time Zone</button>
+        <button class="wtp-tab-btn active" data-tab="popular">{{ i18n_data.tab_popular }}</button>
+        <button class="wtp-tab-btn" data-tab="country">{{ i18n_data.tab_country }}</button>
+        <button class="wtp-tab-btn" data-tab="timezone">{{ i18n_data.tab_timezone }}</button>
       </div>
     </div>
     
@@ -68,65 +73,65 @@ description: "A simple tool to find the perfect meeting time across different ti
   </div>
 
   <div class="wtp-features-section">
-    <h2>World Time Planner</h2>
+    <h2>{{ i18n_data.features_title }}</h2>
     <p class="wtp-features-intro">
-      Plan meetings across time zones without the confusion. This tool helps you find the best meeting times for global teams and clients.
+      {{ i18n_data.features_intro }}
     </p>
     
     <div class="wtp-features-grid">
       <div class="wtp-feature-item">
-        <h3>Your Local Time First</h3>
-        <p>See your local time at the top automatically. No need to figure out what time it is where you are.</p>
+        <h3>{{ i18n_data.feature_local_time_title }}</h3>
+        <p>{{ i18n_data.feature_local_time_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>Easy Time Zone Addition</h3>
-        <p>Add any city or time zone with one click. Compare times across the world instantly.</p>
+        <h3>{{ i18n_data.feature_easy_add_title }}</h3>
+        <p>{{ i18n_data.feature_easy_add_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>Visual Time Planning</h3>
-        <p>Drag to select time ranges and see how they look in different time zones. Perfect for scheduling meetings.</p>
+        <h3>{{ i18n_data.feature_visual_title }}</h3>
+        <p>{{ i18n_data.feature_visual_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>Direct Calendar Integration</h3>
-        <p>Create calendar events directly in Google Calendar, Outlook, or Yahoo Calendar. No copy-paste needed.</p>
+        <h3>{{ i18n_data.feature_calendar_title }}</h3>
+        <p>{{ i18n_data.feature_calendar_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>No Registration Required</h3>
-        <p>Start planning immediately. No accounts, no downloads, no setup required.</p>
+        <h3>{{ i18n_data.feature_no_registration_title }}</h3>
+        <p>{{ i18n_data.feature_no_registration_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>Works Offline</h3>
-        <p>Once loaded, works without internet. Great for travel or unreliable connections.</p>
+        <h3>{{ i18n_data.feature_offline_title }}</h3>
+        <p>{{ i18n_data.feature_offline_desc }}</p>
       </div>
     </div>
     
     <div class="wtp-use-cases">
-      <h3>Perfect For:</h3>
+      <h3>{{ i18n_data.use_cases_title }}</h3>
       <ul>
         <li>
-          <strong>Remote teams across different countries</strong><br>
-          Sarah in New York needs to schedule a team meeting with colleagues in London, Tokyo, and Sydney. She drags to select 2-4 PM her time and instantly sees it's 7-9 PM in London, 4-6 AM next day in Tokyo, and 6-8 AM next day in Sydney.
+          <strong>{{ i18n_data.use_case_remote_teams_title }}</strong><br>
+          {{ i18n_data.use_case_remote_teams_desc }}
         </li>
         <li>
-          <strong>Client meetings with international partners</strong><br>
-          A marketing agency in Berlin needs to present to a client in San Francisco. They select 3-4 PM Berlin time and see it's 6-7 AM in San Francisco - too early. They adjust to 5-6 PM Berlin time for a better 8-9 AM San Francisco slot.
+          <strong>{{ i18n_data.use_case_client_title }}</strong><br>
+          {{ i18n_data.use_case_client_desc }}
         </li>
         <li>
-          <strong>Webinar scheduling for global audiences</strong><br>
-          A tech company wants to host a webinar for users worldwide. They select 2-3 PM EST and immediately see it works for Europe (7-8 PM) and Asia (3-4 AM next day). They create calendar invites for all time zones with one click.
+          <strong>{{ i18n_data.use_case_webinar_title }}</strong><br>
+          {{ i18n_data.use_case_webinar_desc }}
         </li>
         <li>
-          <strong>Personal travel planning</strong><br>
-          Mike is traveling from Chicago to Paris for business. He needs to call his family back home during his trip. He selects 7-8 PM Paris time and sees it's 1-2 PM in Chicago - perfect for a lunch break call.
+          <strong>{{ i18n_data.use_case_travel_title }}</strong><br>
+          {{ i18n_data.use_case_travel_desc }}
         </li>
         <li>
-          <strong>Family calls across time zones</strong><br>
-          A family has members in Los Angeles, New York, and London. They want to find a time that works for everyone. They try different time slots and discover 10 AM LA time works for 1 PM New York and 6 PM London - everyone can join.
+          <strong>{{ i18n_data.use_case_family_title }}</strong><br>
+          {{ i18n_data.use_case_family_desc }}
         </li>
       </ul>
     </div>
@@ -137,10 +142,10 @@ description: "A simple tool to find the perfect meeting time across different ti
     <div class="wtp-range-dialog-content">
       <div class="wtp-range-dialog-body">
         <div id="wtp-range-info">
-          <h3>Fine-tune Time Range</h3>
+          <h3>{{ i18n_data.dialog_title }}</h3>
           <div class="wtp-range-edit-container">
             <div class="wtp-range-edit-item">
-              <label>Start</label>
+              <label>{{ i18n_data.dialog_label_start }}</label>
               <div class="wtp-datetime-display">
                 <span class="wtp-date-value" id="wtp-start-date-display">Loading...</span>
                 <span class="wtp-time-value" id="wtp-start-time-display">Loading...</span>
@@ -151,7 +156,7 @@ description: "A simple tool to find the perfect meeting time across different ti
               </div>
             </div>
             <div class="wtp-range-edit-item">
-              <label>End</label>
+              <label>{{ i18n_data.dialog_label_end }}</label>
               <div class="wtp-datetime-display">
                 <span class="wtp-date-value" id="wtp-end-date-display">Loading...</span>
                 <span class="wtp-time-value" id="wtp-end-time-display">Loading...</span>
@@ -162,7 +167,7 @@ description: "A simple tool to find the perfect meeting time across different ti
               </div>
             </div>
             <div class="wtp-range-edit-item">
-              <label>Duration</label>
+              <label>{{ i18n_data.dialog_label_duration }}</label>
               <div class="wtp-datetime-display">
                 <span class="wtp-time-value" id="wtp-duration-display">Loading...</span>
               </div>
@@ -174,16 +179,16 @@ description: "A simple tool to find the perfect meeting time across different ti
           </div>
         </div>
         <div class="wtp-meeting-links">
-          <label class="wtp-meeting-label">Add to Calendar</label>
+          <label class="wtp-meeting-label">{{ i18n_data.dialog_label_add_calendar }}</label>
           <div class="wtp-meeting-buttons">
             <button class="wtp-meeting-btn" id="wtp-google-meeting-btn">
-              Google Calendar
+              {{ i18n_data.button_google_calendar }}
             </button>
             <button class="wtp-meeting-btn" id="wtp-outlook-meeting-btn">
-              Outlook
+              {{ i18n_data.button_outlook }}
             </button>
             <button class="wtp-meeting-btn" id="wtp-yahoo-meeting-btn">
-              Yahoo Calendar
+              {{ i18n_data.button_yahoo_calendar }}
             </button>
           </div>
         </div>
@@ -210,11 +215,11 @@ description: "A simple tool to find the perfect meeting time across different ti
 
 <!-- Hidden text elements for internationalization -->
 <div id="text-templates" style="display: none;">
-    <span id="text-invalid-timezone">Invalid</span>
-    <span id="text-timezone-label">Timezone</span>
-    <span id="text-now">Now</span>
-    <span id="text-view-times">View Times</span>
-    <span id="text-unknown">Unknown</span>
+    <span id="text-invalid-timezone">{{ i18n_data.text_invalid_timezone }}</span>
+    <span id="text-timezone-label">{{ i18n_data.text_timezone_label }}</span>
+    <span id="text-now">{{ i18n_data.text_now }}</span>
+    <span id="text-view-times">{{ i18n_data.text_view_times }}</span>
+    <span id="text-unknown">{{ i18n_data.text_unknown }}</span>
 </div>
 
 <script src="/assets/js/world-time-planner.js?v=11"></script>

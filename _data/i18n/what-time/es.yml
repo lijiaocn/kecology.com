@@ -1,0 +1,45 @@
+# i18n data for what-time post
+# Spanish (es) language
+
+# Frontmatter
+title: "¿Qué hora es en California, Australia, Texas, Londres (Más Ciudades)?"
+description: "Descubre la hora local actual en California, Australia, Texas, Londres, Japón, Nueva York y otras ciudades y países importantes del mundo. Una herramienta sencilla para verificar qué hora es en cualquier lugar."
+
+# UI elements
+h1_title: "¿Qué hora es en California, Australia, Texas, Londres, Japón y más regiones o ciudades?"
+label_show_corresponding_time: "Mostrar hora correspondiente para:"
+button_confirm: "Confirmar"
+button_reset: "Restablecer"
+label_auto_refresh: "Actualizar Hora en Vivo Automáticamente"
+section_title: "Horas del Mundo"
+text_invalid_timezone: "Zona Horaria Inválida"
+
+# Country info - simplified, focus on key points
+country_info_argentina: "Argentina usa una sola zona horaria y no observa horario de verano."
+country_info_australia: "Australia se divide en tres zonas horarias principales. Algunos estados y territorios observan el horario de verano (DST)."
+country_info_brazil: "Brasil abarca múltiples zonas horarias. La mayor parte del país usa la hora de Brasilia (BRT)."
+country_info_canada: "Canadá abarca múltiples zonas horarias desde la costa atlántica hasta la costa del Pacífico."
+country_info_china: "China usa una sola zona horaria (Hora estándar de China - CST) en todo el país."
+country_info_egypt: "Egipto usa la hora de Europa del Este y observa el horario de verano."
+country_info_france: "Francia usa la hora de Europa Central (CET) y observa el horario de verano."
+country_info_germany: "Alemania usa la hora de Europa Central (CET) y observa el horario de verano."
+country_info_india: "India usa una sola zona horaria (Hora estándar de la India - IST)."
+country_info_italy: "Italia usa la hora de Europa Central (CET) y observa el horario de verano."
+country_info_japan: "Japón usa una sola zona horaria (Hora estándar de Japón - JST)."
+country_info_mexico: "México abarca múltiples zonas horarias. La mayor parte del país usa la hora central."
+country_info_newzealand: "Nueva Zelanda usa la hora estándar de Nueva Zelanda (NZST) y observa el horario de verano."
+country_info_russia: "Rusia abarca múltiples zonas horarias desde Kaliningrado hasta Vladivostok."
+country_info_singapore: "Singapur usa la hora estándar de Singapur (SGT)."
+country_info_southafrica: "Sudáfrica usa la hora estándar de Sudáfrica (SAST)."
+country_info_southkorea: "Corea del Sur usa la hora estándar de Corea (KST)."
+country_info_uae: "Los EAU usan la hora estándar del Golfo (GST)."
+country_info_uk: "El Reino Unido usa la hora media de Greenwich (GMT) en invierno y la hora de verano británica (BST) en verano."
+country_info_usa: "Estados Unidos abarca seis zonas horarias. La mayoría de los estados observan el horario de verano."
+
+single_timezone_notice: "Este país usa una sola zona horaria."
+
+country_info_fiji: "Fiyi tiene una zona horaria principal."
+country_info_hongkong: "Hong Kong tiene una zona horaria estándar y no observa el horario de verano."
+
+popular_times_title: "Ubicaciones Populares"
+

@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Simplified Chinese (zh-CN) language
+
+# Frontmatter
+title: "最佳入睡时间计算器：几点睡觉最合适？"
+description: "基于90分钟睡眠周期，找到最佳入睡时间，帮您醒来时精神饱满、精力充沛。"
+
+# Page content
+h1: "最佳入睡时间计算器"
+intro_text: "设置您的起床时间，查看应该几点睡觉。"
+keyboard_hint: "快捷键：↑ ↓ 调整时间，← → 切换"
+results_title_prefix: "为了在"
+results_title_suffix: "醒来时精神饱满，建议在这个时间入睡："
+results_small_text: "（包含15分钟入睡时间 & 90分钟睡眠周期）"
+sleep_duration_template: "（{duration} 睡眠）"
+go_to_bed_now_title: "现在就去睡觉？"
+try_wakeup_calculator: "试试我们的起床时间计算器"
+
+# British Heart Foundation advice
+advice_title: "英国心脏基金会建议"
+read_more: "（了解更多）"
+advice_item1_prefix: "晚上"
+advice_item1_bold: "10点到11点"
+advice_item1_suffix: "睡觉对心脏更健康。"
+advice_item2_prefix: "大多数成年人应该每晚睡"
+advice_item2_bold: "7到9小时"
+advice_item2_suffix: "。"
+

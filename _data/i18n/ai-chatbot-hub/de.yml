@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# German (de) language
+
+title: "KI-Chatbot-Hub: Schneller Zugriff auf ChatGPT, Gemini, Grok und Mehr"
+description: "Schneller Zugriff auf beliebte KI-Chatbots, einschließlich ChatGPT, Gemini, Claude, DeepSeek und mehr. Fügen Sie benutzerdefinierte KI-Tools für verbesserte Produktivität hinzu. Ein-Klick-Zugriff auf Ihre bevorzugten KI-Assistenten."
+
+subtitle: "Fügen Sie Ihre eigenen benutzerdefinierten KI-Tools hinzu • Ein-Klick-Zugriff auf alle beliebten Chatbots"
+
+button_open: "{name} Öffnen"
+button_add_custom: "Benutzerdefiniert Hinzufügen"
+button_add_custom_title: "Fügen Sie Ihre eigenen KI-Tools hinzu"
+button_add_new_tool: "Neues Tool Hinzufügen"
+
+modal_title: "Benutzerdefiniertes KI-Tool Hinzufügen"
+label_tool_name: "Tool-Name *"
+placeholder_tool_name: "z. B. Mein Benutzerdefiniertes KI"
+label_tool_description: "Tool-Beschreibung *"
+placeholder_tool_description: "z. B. Mein benutzerdefinierter KI-Assistent"
+label_tool_url: "Tool-URL *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Kategorie"
+option_category_general: "Allgemein"
+option_category_coding: "Programmierung"
+option_category_writing: "Schreiben"
+option_category_design: "Design"
+option_category_other: "Sonstiges"
+button_cancel: "Abbrechen"
+button_add_tool: "Tool Hinzufügen"
+
+why_title: "Warum KI-Chatbot-Hub Verwenden?"
+feature_quick_access_title: "Schneller Zugriff"
+feature_quick_access_desc: "Keine Suche mehr über Suchmaschinen. Direkter Zugriff auf alle beliebten KI-Chatbots."
+feature_organized_title: "Organisiert"
+feature_organized_desc: "Alle Chatbots sind übersichtlich organisiert und kategorisiert für einfache Navigation."
+feature_updated_title: "Immer Aktualisiert"
+feature_updated_desc: "Wir aktualisieren die Liste regelmäßig mit neuen und beliebten KI-Chatbots."
+feature_productivity_title: "Produktivitätssteigerung"
+feature_productivity_desc: "Sparen Sie Zeit und steigern Sie Ihre Produktivität mit sofortigem Zugriff auf KI-Tools."
+
+text_open_tool: "{name} Öffnen"
+text_delete_confirm: "Sind Sie sicher, dass Sie dieses benutzerdefinierte Tool löschen möchten?"
+

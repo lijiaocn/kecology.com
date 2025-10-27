@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# German (de) language
+
+# Frontmatter
+title: "Aufwachzeit-Rechner: Um wie viel Uhr sollte ich morgen aufwachen?"
+description: "Finden Sie die besten Aufwachzeiten basierend auf 90-Minuten-Schlafzyklen heraus. Hilft Ihnen, ausgeruht und energiegeladen aufzuwachen."
+
+# Page content
+h3: "Aufwachzeit-Rechner"
+intro_text: "Wählen Sie, wann Sie schlafen gehen möchten, und wir berechnen die besten Aufwachzeiten für Sie. Die Berechnung schließt durchschnittlich 15 Minuten zum Einschlafen ein."
+button_go_to_bed_now: "Jetzt schlafen gehen"
+button_15_min: "In 15 Minuten"
+button_30_min: "In 30 Minuten"
+label_or_pick_bedtime: "Oder wählen Sie eine Schlafenszeit:"
+button_calculate: "Berechnen"
+link_try_bedtime_calculator: "Unseren Schlafenszeit-Rechner testen"
+want_to_calculate_bedtime: "Möchten Sie Ihre Schlafenszeit anhand Ihrer Aufwachzeit berechnen?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Wenn Sie um {time} schlafen gehen, wachen Sie auf um:"
+text_select_time_first: "Bitte wählen Sie zuerst eine Zeit aus."
+text_sleep_duration: "({duration} Schlaf)"
+
+# FAQ section
+faq_q1: "Um wie viel Uhr sollte ich morgen aufwachen, um mich großartig und nicht schlafrig zu fühlen?"
+faq_quote: "Manche Morgen springe ich erfrischt aus dem Bett, aber an anderen Tagen ist es ein echter Kampf und ich fühle mich stundenlang träge. Was ist das Geheimnis, um konsequent energiegeladen aufzuwachen? Um wie viel Uhr sollte ich morgen aufwachen?"
+faq_ans_title: "Der Trick ist, am Ende eines Schlafzyklus aufzuwachen."
+faq_ans_explanation: "Dieses benommene Gefühl? Das kommt daher, dass Ihr Wecker Sie während des Tiefschlafs weckt. Unsere Körper nutzen 90-Minuten-Schlafzyklen. Um sich erfrischt zu fühlen, wachen Sie am Ende eines Zyklus auf, wenn der Schlaf am leichtesten ist. Verwenden Sie den obigen Rechner, um Ihre besten Aufwachzeiten zu finden. Das Diagramm unten zeigt, wie das funktioniert."
+faq_recommended_sleep_title: "Empfohlene Schlafdauer nach Alter"
+faq_sleep_needs_intro: "Verschiedene Altersgruppen haben unterschiedliche Schlafbedürfnisse. Hier ist ein kurzer Leitfaden, wie viele Stunden Schlaf und wie viele Schlafzyklen allgemein empfohlen werden:"
+faq_sleep_table_note: "Hinweis: Die Schlafbedürfnisse können von Person zu Person unterschiedlich sein. Diese Tabelle ist eine allgemeine Richtlinie."
+faq_table_age_group: "Altersgruppe"
+faq_table_hours: "Schlafstunden"
+faq_table_cycles: "Schlafzyklen"
+

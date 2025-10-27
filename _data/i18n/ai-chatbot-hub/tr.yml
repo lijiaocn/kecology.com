@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Turkish (tr) language
+
+title: "AI Sohbet Botu Merkezi: ChatGPT, Gemini, Grok ve Daha Fazlasına Hızlı Erişim"
+description: "ChatGPT, Gemini, Claude, DeepSeek ve daha fazlası dahil popüler AI sohbet botlarına hızlı erişim. Verimliliği artırmak için özel AI araçları ekleyin. Favori AI asistanlarınıza tek tıkla erişim."
+
+subtitle: "Kendi özel AI araçlarınızı ekleyin • Tüm popüler sohbet botlarına tek tıkla erişim"
+
+button_open: "{name} Aç"
+button_add_custom: "Özel Ekle"
+button_add_custom_title: "Kendi AI araçlarınızı ekleyin"
+button_add_new_tool: "Yeni Araç Ekle"
+
+modal_title: "Özel AI Aracı Ekle"
+label_tool_name: "Araç Adı *"
+placeholder_tool_name: "örn: Özel AI'ım"
+label_tool_description: "Araç Açıklaması *"
+placeholder_tool_description: "örn: Özel AI asistanım"
+label_tool_url: "Araç URL *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Kategori"
+option_category_general: "Genel"
+option_category_coding: "Kodlama"
+option_category_writing: "Yazma"
+option_category_design: "Tasarım"
+option_category_other: "Diğer"
+button_cancel: "İptal"
+button_add_tool: "Araç Ekle"
+
+why_title: "Neden AI Sohbet Botu Merkezini Kullanmalısınız?"
+feature_quick_access_title: "Hızlı Erişim"
+feature_quick_access_desc: "Arama motorlarında arama yapmaya gerek yok. Tüm popüler AI sohbet botlarına doğrudan erişim."
+feature_organized_title: "Düzenli"
+feature_organized_desc: "Tüm sohbet botları kolay navigasyon için düzenli bir şekilde organize ve kategorize edilmiştir."
+feature_updated_title: "Her Zaman Güncel"
+feature_updated_desc: "Listeyi yeni ve popüler AI sohbet botlarıyla düzenli olarak güncelliyoruz."
+feature_productivity_title: "Üretkenlik Artışı"
+feature_productivity_desc: "AI araçlarına anında erişimle zaman kazanın ve üretkenliğinizi artırın."
+
+text_open_tool: "{name} Aç"
+text_delete_confirm: "Bu özel aracı silmek istediğinizden emin misiniz?"
+

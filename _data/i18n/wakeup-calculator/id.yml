@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Indonesian (id) language
+
+# Frontmatter
+title: "Kalkulator Waktu Bangun: Jam Berapa Saya Harus Bangun Besok?"
+description: "Temukan waktu terbaik untuk bangun berdasarkan siklus tidur 90 menit. Dapat membantu Anda bangun merasa segar dan bertenaga."
+
+# Page content
+h3: "Kalkulator Waktu Bangun"
+intro_text: "Pilih kapan Anda berencana tidur, dan kami akan menghitung waktu bangun terbaik untuk Anda. Perhitungan mencakup rata-rata 15 menit untuk tertidur."
+button_go_to_bed_now: "Tidur sekarang"
+button_15_min: "Dalam 15 menit"
+button_30_min: "Dalam 30 menit"
+label_or_pick_bedtime: "Atau pilih waktu tidur:"
+button_calculate: "Hitung"
+link_try_bedtime_calculator: "Coba Kalkulator Waktu Tidur Kami"
+want_to_calculate_bedtime: "Ingin menghitung waktu tidur dari waktu bangun Anda?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Jika Anda tidur {time}, bangun pukul:"
+text_select_time_first: "Harap pilih waktu terlebih dahulu."
+text_sleep_duration: "({duration} tidur)"
+
+# FAQ section
+faq_q1: "Jam berapa saya harus bangun besok untuk merasa hebat dan tidak pusing?"
+faq_quote: "Beberapa pagi saya bangun dari tempat tidur merasa segar, tetapi hari lain itu adalah perjuangan nyata dan saya merasa lesu selama berjam-jam. Apa rahasia untuk bangun dengan konsisten merasa berenergi? Jam berapa saya harus bangun besok?"
+faq_ans_title: "Triknya adalah bangun di akhir siklus tidur."
+faq_ans_explanation: "Perasaan pusing itu? Itu karena alarm Anda membangunkan Anda selama tidur nyenyak. Tubuh kita menggunakan siklus tidur 90 menit. Untuk merasa segar, bangun di akhir siklus saat tidur paling ringan. Gunakan kalkulator di atas untuk menemukan waktu bangun terbaik Anda. Diagram di bawah menunjukkan cara kerjanya."
+faq_recommended_sleep_title: "Tidur yang Direkomendasikan Menurut Usia"
+faq_sleep_needs_intro: "Kelompok usia yang berbeda memiliki kebutuhan tidur yang berbeda. Berikut panduan singkat tentang berapa jam tidur dan berapa banyak siklus tidur yang biasanya direkomendasikan:"
+faq_sleep_table_note: "Catatan: Kebutuhan tidur dapat bervariasi dari orang ke orang. Tabel ini adalah panduan umum."
+faq_table_age_group: "Kelompok Usia"
+faq_table_hours: "Jam Tidur"
+faq_table_cycles: "Siklus Tidur"
+

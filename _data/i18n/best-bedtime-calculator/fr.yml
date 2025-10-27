@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# French (fr) language
+
+# Frontmatter
+title: "Calculateur de sommeil: À quelle heure dois-je me coucher pour me sentir reposé ?"
+description: "Trouvez le meilleur moment pour dormir basé sur des cycles de sommeil de 90 minutes. Cela peut vous aider à vous réveiller en vous sentant frais et énergique."
+
+# Page content
+h1: "Calculateur de Sommeil"
+intro_text: "Définissez votre heure de réveil pour savoir quand vous devriez vous coucher."
+keyboard_hint: "Raccourcis: ↑ ↓ pour ajuster, et ← → pour changer"
+results_title_prefix: "Pour vous réveiller reposé à"
+results_title_suffix: ", essayez de vous endormir à l'une de ces heures:"
+results_small_text: "(Inclut 15 min pour s'endormir et cycles de 90 min)"
+sleep_duration_template: "({duration} de sommeil)"
+go_to_bed_now_title: "Aller se coucher maintenant?"
+try_wakeup_calculator: "Essayez Notre Calculateur d'Heure de Réveil"
+
+# British Heart Foundation advice
+advice_title: "Conseils de la Fondation Britannique du Cœur"
+read_more: "(lire plus)"
+advice_item1_prefix: "Dormir entre "
+advice_item1_bold: "22h-23h"
+advice_item1_suffix: " pour un cœur plus sain."
+advice_item2_prefix: "La plupart des adultes devraient viser "
+advice_item2_bold: "7 à 9 heures"
+advice_item2_suffix: " de sommeil par nuit."
+

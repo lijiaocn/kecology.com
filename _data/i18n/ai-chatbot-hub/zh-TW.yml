@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Traditional Chinese (zh-TW) language
+
+title: "AI 聊天機器人中心：快速訪問 ChatGPT、Gemini、Grok 等"
+description: "快速訪問流行的 AI 聊天機器人，包括 ChatGPT、Gemini、Claude、DeepSeek 等。添加自定義 AI 工具以提高生產力。一鍵訪問您喜愛的 AI 助手。"
+
+subtitle: "添加您自己的自定義 AI 工具 • 一鍵訪問所有流行的聊天機器人"
+
+button_open: "打開 {name}"
+button_add_custom: "添加自定義"
+button_add_custom_title: "添加您自己的 AI 工具"
+button_add_new_tool: "添加新工具"
+
+modal_title: "添加自定義 AI 工具"
+label_tool_name: "工具名稱 *"
+placeholder_tool_name: "例如：我的自定義 AI"
+label_tool_description: "工具描述 *"
+placeholder_tool_description: "例如：我的自定義 AI 助手"
+label_tool_url: "工具網址 *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "類別"
+option_category_general: "通用"
+option_category_coding: "編程"
+option_category_writing: "寫作"
+option_category_design: "設計"
+option_category_other: "其他"
+button_cancel: "取消"
+button_add_tool: "添加工具"
+
+why_title: "為什麼使用 AI 聊天機器人中心？"
+feature_quick_access_title: "快速訪問"
+feature_quick_access_desc: "無需通過搜索引擎搜索。直接訪問所有流行的 AI 聊天機器人。"
+feature_organized_title: "組織有序"
+feature_organized_desc: "所有聊天機器人都經過整齊組織和分類，便於導航。"
+feature_updated_title: "持續更新"
+feature_updated_desc: "我們定期更新列表，添加新的和流行的 AI 聊天機器人。"
+feature_productivity_title: "提高生產力"
+feature_productivity_desc: "通過即時訪問 AI 工具節省時間並提高生產力。"
+
+text_open_tool: "打開 {name}"
+text_delete_confirm: "您確定要刪除此自定義工具嗎？"
+

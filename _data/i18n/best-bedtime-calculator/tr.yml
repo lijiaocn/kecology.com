@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Turkish (tr) language
+
+# Frontmatter
+title: "Yatma Zamanı Hesaplayıcı: Dinç Uyanmak İçin Saat Kaçta Uyumalıyım?"
+description: "90 dakikalık uyku döngülerine göre en iyi uyuma zamanını bulun. Dinlenmiş ve enerjik uyanmanıza yardımcı olur."
+
+# Page content
+h1: "Yatma Zamanı Hesaplayıcı"
+intro_text: "Kalkma saatinizi ayarlayın, ne zaman uyumanız gerektiğini görün."
+keyboard_hint: "Kısayollar: ↑ ↓ ayarlamak için, ve ← → geçiş için"
+results_title_prefix: "Saat"
+results_title_suffix: "te dinç uyanmak için, bu saatlerden birinde uyuyun:"
+results_small_text: "(15 dk uykuya dalma ve 90 dk uyku döngüleri dahil)"
+sleep_duration_template: "({duration} uyku)"
+go_to_bed_now_title: "Şimdi yatmak ister misiniz?"
+try_wakeup_calculator: "Uyanma Zamanı Hesaplayıcımızı Deneyin"
+
+# British Heart Foundation advice
+advice_title: "İngiliz Kalp Vakfı Tavsiyesi"
+read_more: "(daha fazla oku)"
+advice_item1_prefix: "Daha sağlıklı bir kalp için "
+advice_item1_bold: "22:00-23:00"
+advice_item1_suffix: " arası uyuyun."
+advice_item2_prefix: "Çoğu yetişkin gecede "
+advice_item2_bold: "7-9 saat"
+advice_item2_suffix: " uyku hedeflemelidir."
+

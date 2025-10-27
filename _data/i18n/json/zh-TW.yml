@@ -1,0 +1,56 @@
+# i18n data for json post
+# Traditional Chinese (zh-TW) language
+
+# Frontmatter
+title: "JSON 格式化、驗證、編輯器 - 線上轉換為 XML、YAML"
+description: "免費線上 JSON 工具，用於格式化、驗證和轉換 JSON 資料。美化、壓縮或以樹狀結構檢視 JSON。將 JSON 轉換為 XML、YAML 等格式。"
+
+# UI elements
+json_input: "JSON 輸入"
+upload_file: "上傳檔案"
+copy_output: "複製輸出"
+format_btn: "格式化"
+compact_btn: "壓縮"
+clear_btn: "清除"
+tab_tree_view: "樹狀檢視"
+tab_format: "格式化"
+tab_compact: "壓縮"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "URL 編碼"
+
+# Button titles
+title_format: "格式化 JSON 輸入"
+title_compact: "壓縮 JSON 輸入"
+title_clear: "清除內容和本地儲存"
+
+# Placeholder and status messages
+placeholder: "在此貼上 JSON。將自動驗證。使用右側標籤頁進行轉換。"
+text_error_encoding: "Base64 編碼錯誤。"
+text_copied_clipboard: "已複製到剪貼簿！"
+text_nothing_copy: "沒有內容可複製。"
+text_failed_copy: "複製失敗。"
+text_valid_json: "有效的 JSON"
+text_invalid_json: "無效的 JSON：{error}"
+
+# About section
+about_title: "關於我們的線上 JSON 工具"
+about_intro: "這個強大的線上工具專為幫助開發者、資料分析師以及任何處理 JSON 資料的人員而設計。它提供了一套全面的功能，讓您的工作更輕鬆、更高效。無論您需要格式化、驗證、編輯或轉換 JSON 資料，這個工具都能滿足您的需求。"
+
+# Key features
+key_features_title: "主要功能："
+feature_format_beautifier: "**JSON 格式化器和美化器：** 只需點擊一下，即可格式化和美化您的 JSON 資料，使其易於閱讀和理解。它為雜亂或壓縮的 JSON 添加適當的縮排和換行。"
+feature_validator: "**JSON 驗證器：** 我們的工具會在您輸入或貼上時自動驗證 JSON。它提供語法錯誤的即時回饋，幫助您快速識別和修復問題。"
+feature_editor: "**互動式 JSON 編輯器：** 內建編輯器允許您直接在瀏覽器中修改 JSON 資料。它包含語法高亮和行號等功能，提供更好的編輯體驗。"
+feature_minifier: "**JSON 壓縮器/精簡器：** 通過刪除不必要的空格和換行來減小 JSON 資料的大小。這對於優化網路傳輸的資料非常有用。"
+feature_conversion_title: "**資料轉換：**"
+feature_conversion_json_xml: "**JSON 轉 XML：** 將 JSON 物件無縫轉換為 XML 格式。"
+feature_conversion_json_yaml: "**JSON 轉 YAML：** 將 JSON 轉換為人類友善的 YAML 格式。"
+feature_conversion_base64: "**Base64 編碼：** 將 JSON 字串編碼為 Base64 字串。"
+feature_conversion_url: "**URL 編碼：** 將 JSON 字串進行 URL 編碼，以便在 URL 中安全傳輸。"
+feature_tree_viewer: "**樹狀檢視器：** 以可折疊的樹狀結構視覺化 JSON 資料。這使得瀏覽複雜和巢狀的 JSON 物件變得容易。"
+feature_file_handling: "**檔案處理：** 您可以直接從電腦上傳 JSON 檔案，或一鍵清除編輯器。"
+feature_copy_go: "**複製輸出：** 輕鬆將格式化或轉換的輸出複製到剪貼簿。"
+feature_conclusion: "這個工具非常適合尋找\"JSON 格式化器\"、\"JSON 驗證器\"、\"JSON 編輯器\"、\"JSON 轉 XML 轉換器\"或\"JSON 轉 YAML 轉換器\"的使用者。它是解決所有 JSON 相關任務的免費、快速且可靠的解決方案。"
+

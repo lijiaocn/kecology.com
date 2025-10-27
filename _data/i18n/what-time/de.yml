@@ -1,0 +1,43 @@
+# i18n data for what-time post
+# German (de) language
+
+# Frontmatter
+title: "Wie spät ist es in Kalifornien, Australien, Texas, London (Mehr Städte)?"
+description: "Finden Sie die aktuelle Ortszeit in Kalifornien, Australien, Texas, London, Japan, New York und anderen wichtigen Städten und Ländern der Welt heraus. Ein einfaches Tool, um die Uhrzeit überall zu überprüfen."
+
+h1_title: "Wie spät ist es in Kalifornien, Australien, Texas, London, Japan und weiteren Regionen oder Städten?"
+label_show_corresponding_time: "Entsprechende Zeit anzeigen für:"
+button_confirm: "Bestätigen"
+button_reset: "Zurücksetzen"
+label_auto_refresh: "Echtzeit automatisch aktualisieren"
+section_title: "Zeiten rund um die Welt"
+text_invalid_timezone: "Ungültige Zeitzone"
+
+country_info_argentina: "Argentinien verwendet eine einzige Zeitzone und befolgt keine Sommerzeit."
+country_info_australia: "Australien ist in drei Hauptzeitzonen unterteilt. In einigen Bundesstaaten und Territorien wird die Sommerzeit (DST) befolgt."
+country_info_brazil: "Brasilien erstreckt sich über mehrere Zeitzonen. Der größte Teil des Landes nutzt die Brasília-Zeit (BRT)."
+country_info_canada: "Kanada erstreckt sich über mehrere Zeitzonen von der Atlantik- bis zur Pazifikküste."
+country_info_china: "China verwendet landesweit eine einzige Zeitzone (China Standard Time - CST)."
+country_info_egypt: "Ägypten verwendet Osteuropäische Zeit und befolgt die Sommerzeit."
+country_info_france: "Frankreich verwendet Mitteleuropäische Zeit (MEZ) und befolgt die Sommerzeit."
+country_info_germany: "Deutschland verwendet Mitteleuropäische Zeit (MEZ) und befolgt die Sommerzeit."
+country_info_india: "Indien verwendet eine einzige Zeitzone (Indian Standard Time - IST)."
+country_info_italy: "Italien verwendet Mitteleuropäische Zeit (MEZ) und befolgt die Sommerzeit."
+country_info_japan: "Japan verwendet eine einzige Zeitzone (Japan Standard Time - JST)."
+country_info_mexico: "Mexiko erstreckt sich über mehrere Zeitzonen. Der größte Teil des Landes nutzt die Zentralzeit."
+country_info_newzealand: "Neuseeland verwendet Neuseeland Standard Time (NZST) und befolgt die Sommerzeit."
+country_info_russia: "Russland erstreckt sich über mehrere Zeitzonen von Kaliningrad bis Wladiwostok."
+country_info_singapore: "Singapur verwendet Singapore Standard Time (SGT)."
+country_info_southafrica: "Südafrika verwendet Südafrikanische Standard Time (SAST)."
+country_info_southkorea: "Südkorea verwendet Koreanische Standard Time (KST)."
+country_info_uae: "Die VAE verwenden Gulf Standard Time (GST)."
+country_info_uk: "Das Vereinigte Königreich verwendet Greenwich Mean Time (GMT) im Winter und British Summer Time (BST) im Sommer."
+country_info_usa: "Die Vereinigten Staaten erstrecken sich über sechs Zeitzonen. Die Sommerzeit wird in den meisten Bundesstaaten befolgt."
+
+single_timezone_notice: "Dieses Land verwendet eine einzige Zeitzone."
+
+country_info_fiji: "Fidschi hat eine hauptsächliche Zeitzone."
+country_info_hongkong: "Hongkong hat eine Standardzeitzone und befolgt keine Sommerzeit."
+
+popular_times_title: "Beliebte Orte"
+

@@ -1,0 +1,48 @@
+# i18n data for what-time post
+# Simplified Chinese (zh-CN) language
+
+# Frontmatter
+title: "加利福尼亚、澳大利亚、德克萨斯、伦敦现在几点？（更多城市）"
+description: "查询加利福尼亚、澳大利亚、德克萨斯、伦敦、日本、纽约及世界其他主要城市和国家的当前本地时间。简单易用的全球时间查询工具。"
+
+# UI elements
+h1_title: "加利福尼亚、澳大利亚、德克萨斯、伦敦、日本等地区或城市现在几点？"
+label_show_corresponding_time: "显示对应时间："
+button_confirm: "确认"
+button_reset: "重置"
+label_auto_refresh: "自动刷新实时时间"
+section_title: "世界时间"
+text_invalid_timezone: "无效时区"
+
+# Country info descriptions
+country_info_argentina: "阿根廷使用单一时区，不实行夏令时。"
+country_info_australia: "澳大利亚分为三个主要时区，部分州和领地实行夏令时。"
+country_info_brazil: "巴西跨越多个时区，大部分地区使用巴西利亚时间（BRT）。"
+country_info_canada: "加拿大从大西洋沿岸到太平洋沿岸跨越多个时区。"
+country_info_china: "中国全国统一使用单一时区（中国标准时间 - CST）。"
+country_info_egypt: "埃及使用东欧时间，实行夏令时。"
+country_info_france: "法国使用中欧时间（CET），实行夏令时。"
+country_info_germany: "德国使用中欧时间（CET），实行夏令时。"
+country_info_india: "印度使用单一时区（印度标准时间 - IST）。"
+country_info_italy: "意大利使用中欧时间（CET），实行夏令时。"
+country_info_japan: "日本使用单一时区（日本标准时间 - JST）。"
+country_info_mexico: "墨西哥跨越多个时区，大部分地区使用中部时间。"
+country_info_newzealand: "新西兰使用新西兰标准时间（NZST），实行夏令时。"
+country_info_russia: "俄罗斯从加里宁格勒到符拉迪沃斯托克跨越多个时区。"
+country_info_singapore: "新加坡使用新加坡标准时间（SGT）。"
+country_info_southafrica: "南非使用南非标准时间（SAST）。"
+country_info_southkorea: "韩国使用韩国标准时间（KST）。"
+country_info_uae: "阿联酋使用海湾标准时间（GST）。"
+country_info_uk: "英国冬季使用格林威治标准时间（GMT），夏季使用英国夏令时（BST）。"
+country_info_usa: "美国跨越六个时区，大部分州实行夏令时。"
+
+# Notice texts
+single_timezone_notice: "该国使用单一时区。"
+
+# Additional countries (Fiji, Hong Kong)
+country_info_fiji: "斐济使用单一主要时区。"
+country_info_hongkong: "香港使用单一标准时区，不实行夏令时。"
+
+# Popular times section
+popular_times_title: "热门地点"
+

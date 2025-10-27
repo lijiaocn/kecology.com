@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Arabic (ar) language
+
+title: "مركز محادثة الذكاء الاصطناعي: الوصول السريع إلى ChatGPT و Gemini و Grok والمزيد"
+description: "الوصول السريع إلى روبوتات المحادثة الذكية الشائعة بما في ذلك ChatGPT و Gemini و Claude و DeepSeek والمزيد. أضف أدوات ذكاء اصطناعي مخصصة لتعزيز الإنتاجية. الوصول بنقرة واحدة إلى مساعدي الذكاء الاصطناعي المفضلين لديك."
+
+subtitle: "أضف أدوات الذكاء الاصطناعي المخصصة الخاصة بك • الوصول بنقرة واحدة إلى جميع روبوتات المحادثة الشائعة"
+
+button_open: "فتح {name}"
+button_add_custom: "إضافة مخصص"
+button_add_custom_title: "أضف أدوات الذكاء الاصطناعي الخاصة بك"
+button_add_new_tool: "إضافة أداة جديدة"
+
+modal_title: "إضافة أداة ذكاء اصطناعي مخصصة"
+label_tool_name: "اسم الأداة *"
+placeholder_tool_name: "مثال: ذكائي المخصص"
+label_tool_description: "وصف الأداة *"
+placeholder_tool_description: "مثال: مساعدي الذكي المخصص"
+label_tool_url: "رابط الأداة *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "الفئة"
+option_category_general: "عام"
+option_category_coding: "البرمجة"
+option_category_writing: "الكتابة"
+option_category_design: "التصميم"
+option_category_other: "أخرى"
+button_cancel: "إلغاء"
+button_add_tool: "إضافة أداة"
+
+why_title: "لماذا تستخدم مركز محادثة الذكاء الاصطناعي؟"
+feature_quick_access_title: "الوصول السريع"
+feature_quick_access_desc: "لا مزيد من البحث عبر محركات البحث. الوصول المباشر إلى جميع روبوتات المحادثة الذكية الشائعة."
+feature_organized_title: "منظم"
+feature_organized_desc: "جميع روبوتات المحادثة منظمة ومصنفة بعناية لسهولة التنقل."
+feature_updated_title: "محدث دائماً"
+feature_updated_desc: "نقوم بتحديث القائمة بانتظام بروبوتات محادثة ذكية جديدة وشائعة."
+feature_productivity_title: "زيادة الإنتاجية"
+feature_productivity_desc: "وفر الوقت وزد إنتاجيتك مع الوصول الفوري إلى أدوات الذكاء الاصطناعي."
+
+text_open_tool: "فتح {name}"
+text_delete_confirm: "هل أنت متأكد من أنك تريد حذف هذه الأداة المخصصة؟"
+

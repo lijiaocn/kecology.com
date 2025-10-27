@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Japanese (ja) language
+
+# Frontmatter
+title: "就寝時間計算機：何時に寝ればスッキリ起きられる？"
+description: "90分の睡眠サイクルに基づいて、最適な就寝時間を見つけます。すっきり目覚めて元気になれます。"
+
+# Page content
+h1: "就寝時間計算機"
+intro_text: "起床時刻を設定して、いつ寝るべきか確認しましょう。"
+keyboard_hint: "ショートカット: ↑ ↓ で調整、← → で切替"
+results_title_prefix: "午前"
+results_title_suffix: "にスッキリ起きるには、次の時間帯に眠りにつきましょう："
+results_small_text: "（入眠15分 + 90分睡眠サイクルを含む）"
+sleep_duration_template: "（{duration} 睡眠）"
+go_to_bed_now_title: "今すぐ寝ますか？"
+try_wakeup_calculator: "起床時刻計算機を試す"
+
+# British Heart Foundation advice
+advice_title: "英国心臓財団のアドバイス"
+read_more: "（詳細）"
+advice_item1_prefix: "心臓の健康のためには "
+advice_item1_bold: "22時～23時"
+advice_item1_suffix: " に就寝しましょう。"
+advice_item2_prefix: "大人は "
+advice_item2_bold: "7～9時間"
+advice_item2_suffix: " の睡眠を目指すべきです。"
+

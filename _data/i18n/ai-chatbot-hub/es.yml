@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Spanish (es) language
+
+title: "Centro de Chatbots de IA: Acceso Rápido a ChatGPT, Gemini, Grok y Más"
+description: "Acceso rápido a populares chatbots de IA incluyendo ChatGPT, Gemini, Claude, DeepSeek y más. Añade herramientas de IA personalizadas para mejorar la productividad. Acceso con un clic a tus asistentes de IA favoritos."
+
+subtitle: "Añade tus propias herramientas de IA personalizadas • Acceso con un clic a todos los chatbots populares"
+
+button_open: "Abrir {name}"
+button_add_custom: "Añadir Personalizado"
+button_add_custom_title: "Añade tus propias herramientas de IA"
+button_add_new_tool: "Añadir Nueva Herramienta"
+
+modal_title: "Añadir Herramienta de IA Personalizada"
+label_tool_name: "Nombre de la Herramienta *"
+placeholder_tool_name: "ej., Mi IA Personalizada"
+label_tool_description: "Descripción de la Herramienta *"
+placeholder_tool_description: "ej., Mi asistente de IA personalizado"
+label_tool_url: "URL de la Herramienta *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Categoría"
+option_category_general: "General"
+option_category_coding: "Programación"
+option_category_writing: "Escritura"
+option_category_design: "Diseño"
+option_category_other: "Otro"
+button_cancel: "Cancelar"
+button_add_tool: "Añadir Herramienta"
+
+why_title: "¿Por Qué Usar el Centro de Chatbots de IA?"
+feature_quick_access_title: "Acceso Rápido"
+feature_quick_access_desc: "No más búsquedas en motores de búsqueda. Acceso directo a todos los chatbots de IA populares."
+feature_organized_title: "Organizado"
+feature_organized_desc: "Todos los chatbots están organizados y categorizados para facilitar la navegación."
+feature_updated_title: "Siempre Actualizado"
+feature_updated_desc: "Actualizamos regularmente la lista con nuevos y populares chatbots de IA."
+feature_productivity_title: "Impulso de Productividad"
+feature_productivity_desc: "Ahorra tiempo y aumenta tu productividad con acceso instantáneo a herramientas de IA."
+
+text_open_tool: "Abrir {name}"
+text_delete_confirm: "¿Estás seguro de que quieres eliminar esta herramienta personalizada?"
+

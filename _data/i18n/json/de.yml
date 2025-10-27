@@ -1,0 +1,56 @@
+# i18n data for json post
+# German (de) language
+
+# Frontmatter
+title: "JSON-Formatierer, -Validator, -Editor - Online zu XML, YAML konvertieren"
+description: "Ein kostenloses Online-Tool zum Formatieren, Validieren und Konvertieren von JSON-Daten. Verschönern, Minifizieren oder Anzeigen Ihrer JSON in einer Baumstruktur. JSON zu XML, YAML und mehr konvertieren."
+
+# UI elements
+json_input: "JSON-Eingabe"
+upload_file: "Datei Hochladen"
+copy_output: "Ausgabe Kopieren"
+format_btn: "Formatieren"
+compact_btn: "Verdichten"
+clear_btn: "Löschen"
+tab_tree_view: "Baumansicht"
+tab_format: "Format"
+tab_compact: "Kompakt"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "URL Kodieren"
+
+# Button titles
+title_format: "JSON-Eingabe formatieren"
+title_compact: "JSON-Eingabe verdichten"
+title_clear: "Inhalt und lokalen Speicher löschen"
+
+# Placeholder and status messages
+placeholder: "Fügen Sie Ihr JSON hier ein. Es wird automatisch validiert. Verwenden Sie die Tabs rechts, um es zu konvertieren."
+text_error_encoding: "Fehler beim Kodieren zu Base64."
+text_copied_clipboard: "In die Zwischenablage kopiert!"
+text_nothing_copy: "Nichts zu kopieren."
+text_failed_copy: "Kopieren fehlgeschlagen."
+text_valid_json: "Gültiges JSON"
+text_invalid_json: "Ungültiges JSON: {error}"
+
+# About section
+about_title: "Über Unser Online-JSON-Tool"
+about_intro: "Dieses leistungsstarke Online-Tool wurde entwickelt, um Entwicklern, Datenanalysten und allen, die mit JSON-Daten arbeiten, zu helfen. Es bietet eine umfassende Palette von Funktionen, die Ihre Arbeit einfacher und effizienter gestalten. Ob Sie JSON-Daten formatieren, validieren, bearbeiten oder konvertieren müssen, dieses Tool hat alles, was Sie brauchen."
+
+# Key features
+key_features_title: "Hauptfunktionen:"
+feature_format_beautifier: "**JSON-Formatierer & Verschönerer:** Mit einem einzigen Klick können Sie Ihre JSON-Daten formatieren und verschönern und so leicht lesbar und verständlich machen. Es fügt eine ordentliche Einrückung und Zeilenumbrüche zu unübersichtlichem oder minifiziertem JSON hinzu."
+feature_validator: "**JSON-Validator:** Unser Tool validiert automatisch Ihr JSON, während Sie es eingeben oder einfügen. Es bietet sofortiges Feedback zu Syntaxfehlern und hilft Ihnen, Probleme schnell zu identifizieren und zu beheben."
+feature_editor: "**Interaktiver JSON-Editor:** Der integrierte Editor ermöglicht es Ihnen, JSON-Daten direkt in Ihrem Browser zu bearbeiten. Er enthält Funktionen wie Syntaxhervorhebung und Zeilennummern für ein besseres Bearbeitungserlebnis."
+feature_minifier: "**JSON-Minifier/Verdichter:** Reduzieren Sie die Größe Ihrer JSON-Daten, indem Sie unnötige Leerzeichen und Zeilenumbrüche entfernen. Dies ist nützlich, um Daten für die Übertragung über ein Netzwerk zu optimieren."
+feature_conversion_title: "**Datenkonvertierung:**"
+feature_conversion_json_xml: "**JSON zu XML:** Konvertieren Sie nahtlos Ihre JSON-Objekte in XML-Format."
+feature_conversion_json_yaml: "**JSON zu YAML:** Konvertieren Sie JSON in das benutzerfreundliche YAML-Format."
+feature_conversion_base64: "**Base64-Kodierung:** Kodieren Sie Ihre JSON-Zeichenfolge in eine Base64-Zeichenfolge."
+feature_conversion_url: "**URL-Kodierung:** URL-kodieren Sie Ihre JSON-Zeichenfolge für eine sichere Übertragung in URLs."
+feature_tree_viewer: "**Baumansicht:** Visualisieren Sie Ihre JSON-Daten in einer zusammenklappbaren Baumstruktur. Dies erleichtert die Navigation durch komplexe und verschachtelte JSON-Objekte."
+feature_file_handling: "**Dateiverwaltung:** Sie können direkt eine JSON-Datei von Ihrem Computer hochladen oder den Editor mit einem Klick löschen."
+feature_copy_go: "**Kopieren & Verwenden:** Kopieren Sie einfach die formatierte oder konvertierte Ausgabe in Ihre Zwischenablage."
+feature_conclusion: "Dieses Tool ist perfekt für alle, die nach einem \"JSON-Formatierer\", \"JSON-Validator\", \"JSON-Editor\", \"JSON-zu-XML-Konverter\" oder \"JSON-zu-YAML-Konverter\" suchen. Es ist eine kostenlose, schnelle und zuverlässige Lösung für alle Ihre JSON-bezogenen Aufgaben."
+

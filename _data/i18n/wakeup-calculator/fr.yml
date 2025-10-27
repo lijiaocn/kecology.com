@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# French (fr) language
+
+# Frontmatter
+title: "Calculateur d'heure de réveil: À quelle heure devrais-je me réveiller demain?"
+description: "Découvrez les meilleurs moments pour vous réveiller selon les cycles de sommeil de 90 minutes. Vous aide à vous réveiller reposé et énergique."
+
+# Page content
+h3: "Calculateur d'Heure de Réveil"
+intro_text: "Sélectionnez quand vous prévoyez de vous coucher, et nous calculerons les meilleures heures de réveil pour vous. Le calcul inclut une moyenne de 15 minutes pour s'endormir."
+button_go_to_bed_now: "Se coucher maintenant"
+button_15_min: "Dans 15 minutes"
+button_30_min: "Dans 30 minutes"
+label_or_pick_bedtime: "Ou choisissez une heure de coucher:"
+button_calculate: "Calculer"
+link_try_bedtime_calculator: "Essayez notre Calculateur d'Heure de Coucher"
+want_to_calculate_bedtime: "Voulez-vous calculer votre heure de coucher à partir de votre heure de réveil?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Si vous vous couchez {time}, réveillez-vous à:"
+text_select_time_first: "Veuillez sélectionner une heure d'abord."
+text_sleep_duration: "({duration} sommeil)"
+
+# FAQ section
+faq_q1: "À quelle heure devrais-je me réveiller demain pour me sentir bien et pas groggy?"
+faq_quote: "Certains matins je saute du lit en me sentant frais, mais d'autres jours c'est un vrai combat et je me sens lent pendant des heures. Quel est le secret pour se réveiller constamment énergisé? À quelle heure devrais-je me réveiller demain?"
+faq_ans_title: "L'astuce est de se réveiller à la fin d'un cycle de sommeil."
+faq_ans_explanation: "Ce sentiment de groggy? C'est votre réveil qui vous réveille pendant le sommeil profond. Nos corps utilisent des cycles de sommeil de 90 minutes. Pour se sentir frais, réveillez-vous à la fin d'un cycle quand le sommeil est le plus léger. Utilisez la calculatrice ci-dessus pour trouver vos meilleures heures de réveil. Le diagramme ci-dessous montre comment cela fonctionne."
+faq_recommended_sleep_title: "Sommeil Recommandé par Âge"
+faq_sleep_needs_intro: "Différents groupes d'âge ont différents besoins de sommeil. Voici un guide rapide sur combien d'heures de sommeil et combien de cycles de sommeil sont généralement recommandés:"
+faq_sleep_table_note: "Note: Les besoins de sommeil peuvent varier d'une personne à l'autre. Ce tableau est un guide général."
+faq_table_age_group: "Groupe d'Âge"
+faq_table_hours: "Heures de Sommeil"
+faq_table_cycles: "Cycles de Sommeil"
+

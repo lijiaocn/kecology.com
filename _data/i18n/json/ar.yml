@@ -1,0 +1,56 @@
+# i18n data for json post
+# Arabic (ar) language
+
+# Frontmatter
+title: "منسق، مدقق، محرر JSON - تحويل إلى XML، YAML على الإنترنت"
+description: "أداة JSON مجانية على الإنترنت لتنسيق البيانات والتحقق منها وتحويلها. تجميل، تصغير، أو عرض JSON الخاص بك في هيكل شجرة. تحويل JSON إلى XML، YAML والمزيد."
+
+# UI elements
+json_input: "إدخال JSON"
+upload_file: "رفع ملف"
+copy_output: "نسخ الإخراج"
+format_btn: "تنسيق"
+compact_btn: "ضغط"
+clear_btn: "مسح"
+tab_tree_view: "عرض الشجرة"
+tab_format: "تنسيق"
+tab_compact: "ضغط"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "ترميز URL"
+
+# Button titles
+title_format: "تنسيق إدخال JSON"
+title_compact: "ضغط إدخال JSON"
+title_clear: "مسح المحتوى والتخزين المحلي"
+
+# Placeholder and status messages
+placeholder: "الصق JSON الخاص بك هنا. سيتم التحقق تلقائياً. استخدم علامات التبويب على اليمين لتحويله."
+text_error_encoding: "خطأ في الترميز إلى Base64."
+text_copied_clipboard: "تم النسخ إلى الحافظة!"
+text_nothing_copy: "لا شيء للنسخ."
+text_failed_copy: "فشل النسخ."
+text_valid_json: "JSON صالح"
+text_invalid_json: "JSON غير صالح: {error}"
+
+# About section
+about_title: "حول أداة JSON على الإنترنت"
+about_intro: "هذه الأداة القوية على الإنترنت مصممة لمساعدة المطورين ومحللي البيانات وأي شخص يعمل مع بيانات JSON. توفر مجموعة شاملة من الميزات لجعل عملك أسهل وأكثر كفاءة. سواء كنت بحاجة إلى تنسيق أو التحقق من أو تحرير أو تحويل بيانات JSON، هذه الأداة تغطيك."
+
+# Key features
+key_features_title: "الميزات الرئيسية:"
+feature_format_beautifier: "**منسق ومجمل JSON:** بنقرة واحدة، يمكنك تنسيق وتجميل بيانات JSON الخاصة بك، مما يجعلها سهلة القراءة والفهم. يضيف المسافات البادئة وسطور الرأس المناسبة إلى JSON المبعثر أو المصغر."
+feature_validator: "**محقق JSON:** أداةنا تتحقق تلقائياً من JSON أثناء الكتابة أو اللصق. توفر ملاحظات فورية حول أخطاء بناء الجملة، مما يساعدك على التعرف على المشاكل وإصلاحها بسرعة."
+feature_editor: "**محرر JSON تفاعلي:** يتيح لك المحرر المدمج تعديل بيانات JSON مباشرة في المتصفح. يتضمن ميزات مثل تمييز بناء الجملة وأرقام الأسطر لتجربة تحرير أفضل."
+feature_minifier: "**مصغر/مضغوط JSON:** قلل حجم بيانات JSON بإزالة المسافات الفارغة وسطور الرأس غير الضرورية. هذا مفيد لتحسين البيانات للنقل عبر الشبكة."
+feature_conversion_title: "**تحويل البيانات:**"
+feature_conversion_json_xml: "**JSON إلى XML:** حول كائنات JSON الخاصة بك إلى تنسيق XML بسلاسة."
+feature_conversion_json_yaml: "**JSON إلى YAML:** حول JSON إلى تنسيق YAML سهل القراءة."
+feature_conversion_base64: "**ترميز Base64:** رمز سلسلة JSON الخاصة بك إلى سلسلة Base64."
+feature_conversion_url: "**ترميز URL:** رمز سلسلة JSON الخاصة بك للنقل الآمن في عناوين URL."
+feature_tree_viewer: "**عارض الشجرة:** تصور بيانات JSON في بنية شجرة قابلة للطي. هذا يجعل من السهل التنقل في كائنات JSON المعقدة والمتداخلة."
+feature_file_handling: "**معالجة الملفات:** يمكنك رفع ملف JSON مباشرة من جهاز الكمبيوتر أو مسح المحرر بنقرة واحدة."
+feature_copy_go: "**نسخ واستخدام:** انسخ بسهولة الإخراج المنسق أو المحول إلى الحافظة."
+feature_conclusion: "هذه الأداة مثالية لأي شخص يبحث عن \"منسق JSON\"، \"محقق JSON\"، \"محرر JSON\"، \"محول JSON إلى XML\" أو \"محول JSON إلى YAML\". إنها حل مجاني وسريع وموثوق لجميع مهام JSON الخاصة بك."
+

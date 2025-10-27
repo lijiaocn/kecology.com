@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# English (en) language
+
+# Frontmatter
+title: "Bedtime Calculator: What Time Do I Need to Go to Bed to Feel Refreshed?"
+description: "Find the best time to go to sleep based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
+
+# Page content
+h1: "Bedtime Calculator"
+intro_text: "Set your wake-up time to see when you should go to sleep."
+keyboard_hint: "Shortcuts: ↑ ↓ to adjust, and ← → to switch"
+results_title_prefix: "To wake up refreshed at"
+results_title_suffix: ", try to fall asleep at one of these times:"
+results_small_text: "(Includes 15 mins to fall asleep & 90-min sleep cycles)"
+sleep_duration_template: "({duration} sleep)"
+go_to_bed_now_title: "Go to bed now?"
+try_wakeup_calculator: "Try Our Wakeup Time Calculator"
+
+# British Heart Foundation advice
+advice_title: "British Heart Foundation Advice"
+read_more: "(read more)"
+advice_item1_prefix: "Sleep between "
+advice_item1_bold: "10pm-11pm"
+advice_item1_suffix: " for a healthier heart."
+advice_item2_prefix: "Most adults should aim for "
+advice_item2_bold: "7 to 9 hours"
+advice_item2_suffix: " of sleep per night."
+

@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Spanish (es) language
+
+# Frontmatter
+title: "Calculadora de hora de dormir: ¿A qué hora debo acostarme para despertar descansado?"
+description: "Encuentra el mejor momento para dormir basado en ciclos de sueño de 90 minutos. Te ayuda a despertar sintiéndote fresco y enérgico."
+
+# Page content
+h1: "Calculadora de Hora de Dormir"
+intro_text: "Establece tu hora de despertar para ver cuándo deberías dormir."
+keyboard_hint: "Atajos: ↑ ↓ para ajustar, y ← → para cambiar"
+results_title_prefix: "Para despertar descansado a las"
+results_title_suffix: ", intenta dormir a una de estas horas:"
+results_small_text: "(Incluye 15 min para conciliar el sueño y ciclos de 90 min)"
+sleep_duration_template: "({duration} de sueño)"
+go_to_bed_now_title: "¿Ir a dormir ahora?"
+try_wakeup_calculator: "Prueba Nuestra Calculadora de Hora de Despertar"
+
+# British Heart Foundation advice
+advice_title: "Consejos de la Fundación Británica del Corazón"
+read_more: "(leer más)"
+advice_item1_prefix: "Dormir entre las "
+advice_item1_bold: "10pm-11pm"
+advice_item1_suffix: " para un corazón más saludable."
+advice_item2_prefix: "La mayoría de adultos debe aspirar a "
+advice_item2_bold: "7 a 9 horas"
+advice_item2_suffix: " de sueño por noche."
+

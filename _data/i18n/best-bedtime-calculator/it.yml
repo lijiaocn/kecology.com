@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Italian (it) language
+
+# Frontmatter
+title: "Calcolatore dell'Ora di Coricarsi: A Che Ora Devo Andare a Letto per Sentirmi Riposato?"
+description: "Trova il momento migliore per dormire basato sui cicli di sonno di 90 minuti. Può aiutarti a svegliarti sentendoti fresco ed energetico."
+
+# Page content
+h1: "Calcolatore dell'Ora di Coricarsi"
+intro_text: "Imposta la tua ora di sveglia per vedere quando dovresti andare a letto."
+keyboard_hint: "Scorciatoie: ↑ ↓ per regolare, e ← → per cambiare"
+results_title_prefix: "Per svegliarsi riposato alle"
+results_title_suffix: ", prova ad addormentarti a una di queste ore:"
+results_small_text: "(Include 15 min per addormentarsi e cicli di 90 min)"
+sleep_duration_template: "({duration} sonno)"
+go_to_bed_now_title: "Andare a letto ora?"
+try_wakeup_calculator: "Prova il Nostro Calcolatore dell'Ora di Sveglia"
+
+# British Heart Foundation advice
+advice_title: "Consigli della Fondazione Britannica per il Cuore"
+read_more: "(leggi di più)"
+advice_item1_prefix: "Dormire tra le "
+advice_item1_bold: "22:00-23:00"
+advice_item1_suffix: " per un cuore più sano."
+advice_item2_prefix: "La maggior parte degli adulti dovrebbe puntare a "
+advice_item2_bold: "7-9 ore"
+advice_item2_suffix: " di sonno per notte."
+

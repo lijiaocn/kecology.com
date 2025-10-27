@@ -1,0 +1,56 @@
+# i18n data for json post
+# Japanese (ja) language
+
+# Frontmatter
+title: "JSON フォーマッター、バリデーター、エディター - オンラインで XML、YAML に変換"
+description: "JSON データのフォーマット、検証、変換用の無料オンラインツール。JSON を美化、圧縮、またはツリー構造で表示。JSON を XML、YAML などに変換。"
+
+# UI elements
+json_input: "JSON 入力"
+upload_file: "ファイルアップロード"
+copy_output: "出力をコピー"
+format_btn: "フォーマット"
+compact_btn: "圧縮"
+clear_btn: "クリア"
+tab_tree_view: "ツリービュー"
+tab_format: "フォーマット"
+tab_compact: "圧縮"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "URL エンコード"
+
+# Button titles
+title_format: "JSON 入力をフォーマット"
+title_compact: "JSON 入力を圧縮"
+title_clear: "コンテンツとローカルストレージをクリア"
+
+# Placeholder and status messages
+placeholder: "ここに JSON を貼り付けます。自動的に検証されます。右側のタブを使用して変換します。"
+text_error_encoding: "Base64 エンコードエラー。"
+text_copied_clipboard: "クリップボードにコピーしました！"
+text_nothing_copy: "コピーするものはありません。"
+text_failed_copy: "コピーに失敗しました。"
+text_valid_json: "有効な JSON"
+text_invalid_json: "無効な JSON：{error}"
+
+# About section
+about_title: "オンライン JSON ツールについて"
+about_intro: "この強力なオンラインツールは、開発者、データアナリスト、JSON データを扱うすべての人を支援するように設計されています。仕事をより簡単かつ効率的にするための包括的な機能スイートを提供します。JSON データのフォーマット、検証、編集、または変換が必要な場合でも、このツールが対応します。"
+
+# Key features
+key_features_title: "主な機能："
+feature_format_beautifier: "**JSON フォーマッターと美化ツール：** ワンクリックで JSON データをフォーマットして美化し、読みやすく理解しやすくします。乱雑または圧縮された JSON に適切なインデントと改行を追加します。"
+feature_validator: "**JSON バリデーター：** このツールは、入力または貼り付け時に JSON を自動的に検証します。構文エラーに関する即座のフィードバックを提供し、問題をすばやく特定して修正するのに役立ちます。"
+feature_editor: "**インタラクティブ JSON エディター：** 組み込みエディターを使用すると、ブラウザー内で直接 JSON データを変更できます。より良い編集体験のために、構文ハイライトや行番号などの機能が含まれています。"
+feature_minifier: "**JSON 圧縮ツール：** 不要な空白と改行を削除して JSON データのサイズを削減します。これは、ネットワーク経由でデータを送信するためにデータを最適化するのに役立ちます。"
+feature_conversion_title: "**データ変換：**"
+feature_conversion_json_xml: "**JSON から XML：** JSON オブジェクトを XML 形式にシームレスに変換します。"
+feature_conversion_json_yaml: "**JSON から YAML：** JSON を人間が読みやすい YAML 形式に変換します。"
+feature_conversion_base64: "**Base64 エンコード：** JSON 文字列を Base64 文字列にエンコードします。"
+feature_conversion_url: "**URL エンコード：** JSON 文字列を URL エンコードして、URL での安全な送信を行います。"
+feature_tree_viewer: "**ツリービューアー：** 折りたたみ可能なツリー構造で JSON データを可視化します。これにより、複雑でネストされた JSON オブジェクトを簡単にナビゲートできます。"
+feature_file_handling: "**ファイル処理：** コンピューターから JSON ファイルを直接アップロードするか、ワンクリックでエディターをクリアできます。"
+feature_copy_go: "**コピーして使用：** フォーマットまたは変換された出力をクリップボードに簡単にコピーします。"
+feature_conclusion: "このツールは、「JSON フォーマッター」、「JSON バリデーター」、「JSON エディター」、「JSON から XML 変換器」、または「JSON から YAML 変換器」を探しているすべての人に最適です。JSON 関連のすべてのタスクに対する無料、高速、信頼性の高いソリューションです。"
+

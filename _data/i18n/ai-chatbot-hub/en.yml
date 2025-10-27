@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# English (en) language
+
+title: "AI Chatbot Hub: Quick Access to ChatGPT, Gemini, Grok, and More"
+description: "Quick access to popular AI chatbots including ChatGPT, Gemini, Claude, DeepSeek, and more. Add custom AI tools for enhanced productivity. One-click access to your favorite AI assistants."
+
+subtitle: "Add your own custom AI tools • One-click access to all popular chatbots"
+
+button_open: "Open {name}"
+button_add_custom: "Add Custom"
+button_add_custom_title: "Add your own AI tools"
+button_add_new_tool: "Add New Tool"
+
+modal_title: "Add Custom AI Tool"
+label_tool_name: "Tool Name *"
+placeholder_tool_name: "e.g., My Custom AI"
+label_tool_description: "Tool Description *"
+placeholder_tool_description: "e.g., My custom AI assistant"
+label_tool_url: "Tool URL *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Category"
+option_category_general: "General"
+option_category_coding: "Coding"
+option_category_writing: "Writing"
+option_category_design: "Design"
+option_category_other: "Other"
+button_cancel: "Cancel"
+button_add_tool: "Add Tool"
+
+why_title: "Why Use AI Chatbot Hub?"
+feature_quick_access_title: "Quick Access"
+feature_quick_access_desc: "No more searching through search engines. Direct access to all popular AI chatbots."
+feature_organized_title: "Organized"
+feature_organized_desc: "All chatbots are neatly organized and categorized for easy navigation."
+feature_updated_title: "Always Updated"
+feature_updated_desc: "We regularly update the list with new and popular AI chatbots."
+feature_productivity_title: "Productivity Boost"
+feature_productivity_desc: "Save time and increase your productivity with instant access to AI tools."
+
+text_open_tool: "Open {name}"
+text_delete_confirm: "Are you sure you want to delete this custom tool?"
+

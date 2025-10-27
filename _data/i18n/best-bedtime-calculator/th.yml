@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Thai (th) language
+
+# Frontmatter
+title: "เครื่องคำนวณเวลานอน: ควรนอนกี่โมงถึงจะตื่นมาสดชื่น?"
+description: "หาช่วงเวลานอนที่เหมาะสมตามวงจรการนอน 90 นาที  ช่วยให้ตื่นขึ้นมาสดชื่นและกระฉับกระเฉง"
+
+# Page content
+h1: "เครื่องคำนวณเวลานอน"
+intro_text: "ตั้งเวลาตื่นของคุณ เพื่อดูว่าควรนอนกี่โมง"
+keyboard_hint: "ปุ่มลัด: ↑ ↓ ปรับค่า และ ← → สลับ"
+results_title_prefix: "เพื่อให้ตื่นขึ้นมาสดชื่นเวลา"
+results_title_suffix: " ลองเข้านอนในช่วงเวลานี้:"
+results_small_text: "（รวมเวลาหลับ 15 นาที และรอบการนอน 90 นาที）"
+sleep_duration_template: "（นอน {duration}）"
+go_to_bed_now_title: "นอนเลยตอนนี้เลยหรือเปล่า?"
+try_wakeup_calculator: "ลองใช้เครื่องคำนวณเวลาตื่นของเรา"
+
+# British Heart Foundation advice
+advice_title: "คำแนะนำจากมูลนิธิโรคหัวใจแห่งสหราชอาณาจักร"
+read_more: "（อ่านเพิ่มเติม）"
+advice_item1_prefix: "นอนระหว่าง "
+advice_item1_bold: "22:00-23:00"
+advice_item1_suffix: " น. เพื่อสุขภาพหัวใจที่ดีกว่า"
+advice_item2_prefix: "ผู้ใหญ่ส่วนใหญ่ควรนอน "
+advice_item2_bold: "7-9 ชั่วโมง"
+advice_item2_suffix: " ต่อคืน"
+

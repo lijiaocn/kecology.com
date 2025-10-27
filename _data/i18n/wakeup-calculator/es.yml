@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Spanish (es) language
+
+# Frontmatter
+title: "Calculadora de hora de despertar: ¿A qué hora debería despertarme mañana?"
+description: "Descubre las mejores horas para despertarte según ciclos de sueño de 90 minutos. Te ayuda a despertar sintiéndote fresco y enérgico."
+
+# Page content
+h3: "Calculadora de Hora de Despertar"
+intro_text: "Selecciona cuándo planeas dormir, y calcularemos las mejores horas de despertar para ti. El cálculo incluye un promedio de 15 minutos para conciliar el sueño."
+button_go_to_bed_now: "Ir a dormir ahora"
+button_15_min: "En 15 minutos"
+button_30_min: "En 30 minutos"
+label_or_pick_bedtime: "O elige una hora de dormir:"
+button_calculate: "Calcular"
+link_try_bedtime_calculator: "Prueba nuestra Calculadora de Hora de Dormir"
+want_to_calculate_bedtime: "¿Quieres calcular tu hora de dormir desde tu hora de despertar?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Si te duermes {time}, despierta a las:"
+text_select_time_first: "Por favor selecciona una hora primero."
+text_sleep_duration: "({duration} sueño)"
+
+# FAQ section
+faq_q1: "¿A qué hora debo despertarme mañana para sentirme genial y no aturdido?"
+faq_quote: "Algunas mañanas salto de la cama sintiéndome fresco, pero otros días es una verdadera lucha y me siento lento por horas. ¿Cuál es el secreto para despertar consistentemente sintiéndose energizado? ¿A qué hora debería despertarme mañana?"
+faq_ans_title: "El truco es despertar al final de un ciclo de sueño."
+faq_ans_explanation: "¿Esa sensación de aturdimiento? Es porque tu alarma te despierta durante el sueño profundo. Nuestros cuerpos usan ciclos de sueño de 90 minutos. Para sentirte fresco, despierta al final de un ciclo cuando el sueño es más ligero. Usa la calculadora de arriba para encontrar tus mejores horas de despertar. El diagrama de abajo muestra cómo funciona esto."
+faq_recommended_sleep_title: "Sueño Recomendado por Edad"
+faq_sleep_needs_intro: "Diferentes grupos de edad tienen diferentes necesidades de sueño. Aquí hay una guía rápida sobre cuántas horas de sueño y cuántos ciclos de sueño se recomiendan generalmente:"
+faq_sleep_table_note: "Nota: Las necesidades de sueño pueden variar de persona a persona. Esta tabla es una guía general."
+faq_table_age_group: "Grupo de Edad"
+faq_table_hours: "Horas de Sueño"
+faq_table_cycles: "Ciclos de Sueño"
+

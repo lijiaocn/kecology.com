@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Korean (ko) language
+
+title: "캘리포니아, 호주, 텍사스, 런던의 현재 시간은?（더 많은 도시）"
+description: "캘리포니아, 호주, 텍사스, 런던, 일본, 뉴욕 및 전 세계 주요 도시와 국가의 현재 현지 시간을 확인하세요. 어디에서나 시간을 쉽게 확인할 수 있는 간단한 도구입니다."
+
+h1_title: "캘리포니아, 호주, 텍사스, 런던, 일본 등 지역 또는 도시의 현재 시간은?"
+label_show_corresponding_time: "해당 시간 표시:"
+button_confirm: "확인"
+button_reset: "재설정"
+label_auto_refresh: "실시간 자동 새로고침"
+section_title: "세계 시간"
+text_invalid_timezone: "잘못된 시간대"
+
+country_info_argentina: "아르헨티나는 단일 시간대를 사용하며 서머타임을 관찰하지 않습니다."
+country_info_australia: "호주는 세 개의 주요 시간대로 나뉩니다. 일부 주와 영토에서 서머타임(DST)을 관찰합니다."
+country_info_brazil: "브라질은 여러 시간대에 걸쳐 있습니다. 대부분의 국가는 브라질리아 시간(BRT)을 사용합니다."
+country_info_canada: "캐나다는 대서양에서 태평양까지 여러 시간대에 걸쳐 있습니다."
+country_info_china: "중국은 전국에서 단일 시간대(중국 표준시 - CST)를 사용합니다."
+country_info_egypt: "이집트는 동유럽 시간을 사용하며 서머타임을 관찰합니다."
+country_info_france: "프랑스는 중앙유럽 시간(CET)을 사용하며 서머타임을 관찰합니다."
+country_info_germany: "독일은 중앙유럽 시간(CET)을 사용하며 서머타임을 관찰합니다."
+country_info_india: "인도는 단일 시간대(인도 표준시 - IST)를 사용합니다."
+country_info_italy: "이탈리아는 중앙유럽 시간(CET)을 사용하며 서머타임을 관찰합니다."
+country_info_japan: "일본은 단일 시간대(일본 표준시 - JST)를 사용합니다."
+country_info_mexico: "멕시코는 여러 시간대에 걸쳐 있습니다. 대부분의 국가는 중앙 시간을 사용합니다."
+country_info_newzealand: "뉴질랜드는 뉴질랜드 표준시(NZST)를 사용하며 서머타임을 관찰합니다."
+country_info_russia: "러시아는 칼리닌그라드에서 블라디보스토크까지 여러 시간대에 걸쳐 있습니다."
+country_info_singapore: "싱가포르는 싱가포르 표준시(SGT)를 사용합니다."
+country_info_southafrica: "남아프리카는 남아프리카 표준시(SAST)를 사용합니다."
+country_info_southkorea: "한국은 한국 표준시(KST)를 사용합니다."
+country_info_uae: "UAE는 걸프 표준시(GST)를 사용합니다."
+country_info_uk: "영국은 겨울에 그리니치 평균시(GMT)를 사용하고 여름에 영국 서머타임(BST)을 사용합니다."
+country_info_usa: "미국은 6개의 시간대에 걸쳐 있으며 대부분의 주에서 서머타임을 관찰합니다."
+
+single_timezone_notice: "이 국가는 단일 시간대를 사용합니다."
+
+country_info_fiji: "피지는 단일 주요 시간대를 사용합니다."
+country_info_hongkong: "홍콩은 단일 표준 시간대를 사용하며 서머타임을 관찰하지 않습니다."
+
+popular_times_title: "인기 위치"
+

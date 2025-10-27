@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Japanese (ja) language
+
+title: "AIチャットボットハブ：ChatGPT、Gemini、Grokなどへのクイックアクセス"
+description: "ChatGPT、Gemini、Claude、DeepSeekなど、人気のAIチャットボットへの素早いアクセス。生産性向上のためにカスタムAIツールを追加。お気に入りのAIアシスタントへのワンクリックアクセス。"
+
+subtitle: "独自のカスタムAIツールを追加 • すべての人気チャットボットへのワンクリックアクセス"
+
+button_open: "{name}を開く"
+button_add_custom: "カスタムを追加"
+button_add_custom_title: "独自のAIツールを追加"
+button_add_new_tool: "新しいツールを追加"
+
+modal_title: "カスタムAIツールを追加"
+label_tool_name: "ツール名 *"
+placeholder_tool_name: "例：マイカスタムAI"
+label_tool_description: "ツールの説明 *"
+placeholder_tool_description: "例：マイカスタムAIアシスタント"
+label_tool_url: "ツールのURL *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "カテゴリ"
+option_category_general: "一般"
+option_category_coding: "コーディング"
+option_category_writing: "ライティング"
+option_category_design: "デザイン"
+option_category_other: "その他"
+button_cancel: "キャンセル"
+button_add_tool: "ツールを追加"
+
+why_title: "なぜAIチャットボットハブを使うのか？"
+feature_quick_access_title: "クイックアクセス"
+feature_quick_access_desc: "検索エンジンを検索する必要はありません。人気のAIチャットボットへの直接アクセス。"
+feature_organized_title: "整理された"
+feature_organized_desc: "すべてのチャットボットは整然と整理され、カテゴリー分けされており、簡単にナビゲートできます。"
+feature_updated_title: "常に更新"
+feature_updated_desc: "新しい人気のAIチャットボットでリストを定期的に更新しています。"
+feature_productivity_title: "生産性の向上"
+feature_productivity_desc: "AIツールへの即座のアクセスで時間を節約し、生産性を向上させます。"
+
+text_open_tool: "{name}を開く"
+text_delete_confirm: "このカスタムツールを削除してもよろしいですか？"
+

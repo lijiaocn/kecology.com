@@ -1,0 +1,56 @@
+# i18n data for json post
+# Simplified Chinese (zh-CN) language
+
+# Frontmatter
+title: "JSON 格式化、验证、编辑器 - 在线转换为 XML、YAML"
+description: "免费在线 JSON 工具，用于格式化、验证和转换 JSON 数据。美化、压缩或以树形结构查看 JSON。将 JSON 转换为 XML、YAML 等格式。"
+
+# UI elements
+json_input: "JSON 输入"
+upload_file: "上传文件"
+copy_output: "复制输出"
+format_btn: "格式化"
+compact_btn: "压缩"
+clear_btn: "清空"
+tab_tree_view: "树形视图"
+tab_format: "格式化"
+tab_compact: "压缩"
+tab_yaml: "YAML"
+tab_xml: "XML"
+tab_base64: "Base64"
+tab_url_encode: "URL 编码"
+
+# Button titles
+title_format: "格式化 JSON 输入"
+title_compact: "压缩 JSON 输入"
+title_clear: "清空内容和本地存储"
+
+# Placeholder and status messages
+placeholder: "在此粘贴 JSON。将自动验证。使用右侧标签页进行转换。"
+text_error_encoding: "Base64 编码错误。"
+text_copied_clipboard: "已复制到剪贴板！"
+text_nothing_copy: "没有内容可复制。"
+text_failed_copy: "复制失败。"
+text_valid_json: "有效的 JSON"
+text_invalid_json: "无效的 JSON：{error}"
+
+# About section
+about_title: "关于我们的在线 JSON 工具"
+about_intro: "这个强大的在线工具专为帮助开发者、数据分析师以及任何处理 JSON 数据的人员而设计。它提供了一套全面的功能，让您的工作更轻松、更高效。无论您需要格式化、验证、编辑或转换 JSON 数据，这个工具都能满足您的需求。"
+
+# Key features
+key_features_title: "主要功能："
+feature_format_beautifier: "**JSON 格式化器和美化器：** 只需点击一下，即可格式化和美化您的 JSON 数据，使其易于阅读和理解。它为杂乱或压缩的 JSON 添加适当的缩进和换行。"
+feature_validator: "**JSON 验证器：** 我们的工具会在您输入或粘贴时自动验证 JSON。它提供语法错误的即时反馈，帮助您快速识别和修复问题。"
+feature_editor: "**交互式 JSON 编辑器：** 内置编辑器允许您直接在浏览器中修改 JSON 数据。它包含语法高亮和行号等功能，提供更好的编辑体验。"
+feature_minifier: "**JSON 压缩器/精简器：** 通过删除不必要的空格和换行来减小 JSON 数据的大小。这对于优化网络传输的数据非常有用。"
+feature_conversion_title: "**数据转换：**"
+feature_conversion_json_xml: "**JSON 转 XML：** 将 JSON 对象无缝转换为 XML 格式。"
+feature_conversion_json_yaml: "**JSON 转 YAML：** 将 JSON 转换为人类友好的 YAML 格式。"
+feature_conversion_base64: "**Base64 编码：** 将 JSON 字符串编码为 Base64 字符串。"
+feature_conversion_url: "**URL 编码：** 将 JSON 字符串进行 URL 编码，以便在 URL 中安全传输。"
+feature_tree_viewer: "**树形查看器：** 以可折叠的树形结构可视化 JSON 数据。这使得浏览复杂和嵌套的 JSON 对象变得容易。"
+feature_file_handling: "**文件处理：** 您可以直接从计算机上传 JSON 文件，或一键清空编辑器。"
+feature_copy_go: "**复制输出：** 轻松将格式化或转换的输出复制到剪贴板。"
+feature_conclusion: "这个工具非常适合寻找\"JSON 格式化器\"、\"JSON 验证器\"、\"JSON 编辑器\"、\"JSON 转 XML 转换器\"或\"JSON 转 YAML 转换器\"的用户。它是解决所有 JSON 相关任务的免费、快速且可靠的解决方案。"
+

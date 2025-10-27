@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Japanese (ja) language
+
+# Frontmatter
+title: "起床時間計算機：明日は何時に起きるべきか？"
+description: "90分の睡眠サイクルに基づいた最適な起床時刻を見つけます。すっきり目覚めて元気になれます。"
+
+# Page content
+h3: "起床時間計算機"
+intro_text: "就寝予定時刻を選択すると、最適な起床時刻を計算します。計算には平均15分の入眠時間が含まれます。"
+button_go_to_bed_now: "今すぐ眠る"
+button_15_min: "15分後"
+button_30_min: "30分後"
+label_or_pick_bedtime: "または就寝時刻を選択："
+button_calculate: "計算"
+link_try_bedtime_calculator: "就寝時間計算機を試す"
+want_to_calculate_bedtime: "起床時刻から就寝時刻を計算しますか？"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "{time}に就寝する場合、次の時間に起きましょう："
+text_select_time_first: "先に時刻を選択してください。"
+text_sleep_duration: "（{duration} 睡眠）"
+
+# FAQ section
+faq_q1: "明日何時に起きればスッキリ元気な状態になれる？"
+faq_quote: "朝によってはすっきり目覚めますが、他の日はなかなか起きられず、何時間もだるい感じが続きます。いつも元気に目覚めるコツは？明日何時に起きるべきか？"
+faq_ans_title: "コツは睡眠サイクルの終わりに起きること。"
+faq_ans_explanation: "そのだるい感じは、深い睡眠中にアラームで起こされたのが原因です。私たちの体は90分の睡眠サイクルを使用します。すっきり目覚めるには、睡眠が最も浅いサイクルの終わりに起きるのがベスト。上の計算機で最適な起床時刻を見つけてください。下の図がその仕組みを示しています。"
+faq_recommended_sleep_title: "年齢別推奨睡眠時間"
+faq_sleep_needs_intro: "年齢層によって睡眠の必要量は異なります。以下は推奨される睡眠時間とサイクル数のガイドです："
+faq_sleep_table_note: "注意：睡眠必要量は個人差があります。この表は一般的な目安です。"
+faq_table_age_group: "年齢層"
+faq_table_hours: "睡眠時間"
+faq_table_cycles: "睡眠サイクル数"
+

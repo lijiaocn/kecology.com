@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Portuguese (pt) language
+
+# Frontmatter
+title: "Calculadora de Horário de Acordar: Que Horas Devo Acordar Amanhã?"
+description: "Descubra os melhores horários para acordar baseados em ciclos de 90 minutos. Pode ajudá-lo a acordar se sentindo renovado e energético."
+
+# Page content
+h3: "Calculadora de Horário de Acordar"
+intro_text: "Selecione quando planeja dormir, e calcularemos os melhores horários de acordar para você. O cálculo inclui uma média de 15 minutos para adormecer."
+button_go_to_bed_now: "Ir dormir agora"
+button_15_min: "Em 15 minutos"
+button_30_min: "Em 30 minutos"
+label_or_pick_bedtime: "Ou escolha um horário de dormir:"
+button_calculate: "Calcular"
+link_try_bedtime_calculator: "Experimente Nossa Calculadora de Horário de Dormir"
+want_to_calculate_bedtime: "Quer calcular seu horário de dormir a partir do seu horário de acordar?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Se você for dormir {time}, acorde às:"
+text_select_time_first: "Por favor, selecione um horário primeiro."
+text_sleep_duration: "({duration} sono)"
+
+# FAQ section
+faq_q1: "Que horas devo acordar amanhã para me sentir ótimo e não grogue?"
+faq_quote: "Algumas manhãs pulo da cama me sentindo renovado, mas outros dias é uma verdadeira luta e me sinto letárgico por horas. Qual é o segredo para acordar consistentemente energizado? Que horas devo acordar amanhã?"
+faq_ans_title: "O truque é acordar no final de um ciclo de sono."
+faq_ans_explanation: "Aquela sensação de grogue? É do seu despertador te acordando durante o sono profundo. Nossos corpos usam ciclos de 90 minutos. Para se sentir renovado, acorde no final de um ciclo quando o sono está mais leve. Use a calculadora acima para encontrar seus melhores horários de acordar. O diagrama abaixo mostra como isso funciona."
+faq_recommended_sleep_title: "Sono Recomendado por Idade"
+faq_sleep_needs_intro: "Diferentes grupos etários têm diferentes necessidades de sono. Aqui está um guia rápido sobre quantas horas de sono e quantos ciclos são geralmente recomendados:"
+faq_sleep_table_note: "Nota: As necessidades de sono podem variar de pessoa para pessoa. Esta tabela é uma diretriz geral."
+faq_table_age_group: "Grupo Etário"
+faq_table_hours: "Horas de Sono"
+faq_table_cycles: "Ciclos de Sono"
+

@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Thai (th) language
+
+title: "ศูนย์แชทบอท AI: เข้าถึงรวดเร็วไปยัง ChatGPT, Gemini, Grok และอื่นๆ"
+description: "เข้าถึงแชทบอท AI ที่เป็นที่นิยมอย่างรวดเร็ว รวมถึง ChatGPT, Gemini, Claude, DeepSeek และอื่นๆ เพิ่มเครื่องมือ AI ที่กำหนดเองเพื่อเพิ่มประสิทธิภาพการทำงาน เข้าถึงผู้ช่วย AI ที่คุณชื่นชอบด้วยคลิกเดียว"
+
+subtitle: "เพิ่มเครื่องมือ AI ที่กำหนดเองของคุณ • เข้าถึงแชทบอทยอดนิยมทั้งหมดด้วยคลิกเดียว"
+
+button_open: "เปิด {name}"
+button_add_custom: "เพิ่มกำหนดเอง"
+button_add_custom_title: "เพิ่มเครื่องมือ AI ของคุณเอง"
+button_add_new_tool: "เพิ่มเครื่องมือใหม่"
+
+modal_title: "เพิ่มเครื่องมือ AI ที่กำหนดเอง"
+label_tool_name: "ชื่อเครื่องมือ *"
+placeholder_tool_name: "เช่น: AI กำหนดเองของฉัน"
+label_tool_description: "คำอธิบายเครื่องมือ *"
+placeholder_tool_description: "เช่น: ผู้ช่วย AI กำหนดเองของฉัน"
+label_tool_url: "URL เครื่องมือ *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "หมวดหมู่"
+option_category_general: "ทั่วไป"
+option_category_coding: "การเขียนโปรแกรม"
+option_category_writing: "การเขียน"
+option_category_design: "การออกแบบ"
+option_category_other: "อื่นๆ"
+button_cancel: "ยกเลิก"
+button_add_tool: "เพิ่มเครื่องมือ"
+
+why_title: "ทำไมต้องใช้ศูนย์แชทบอท AI?"
+feature_quick_access_title: "เข้าถึงรวดเร็ว"
+feature_quick_access_desc: "ไม่ต้องค้นหาผ่านเครื่องมือค้นหาแล้ว เข้าถึงแชทบอท AI ที่เป็นที่นิยมทั้งหมดโดยตรง"
+feature_organized_title: "จัดระเบียบ"
+feature_organized_desc: "แชทบอททั้งหมดได้รับการจัดระเบียบและจัดหมวดหมู่อย่างเรียบร้อยเพื่อการนำทางที่ง่าย"
+feature_updated_title: "อัปเดตอยู่เสมอ"
+feature_updated_desc: "เราอัปเดตรายการเป็นประจำด้วยแชทบอท AI ใหม่และที่เป็นที่นิยม"
+feature_productivity_title: "เพิ่มประสิทธิภาพ"
+feature_productivity_desc: "ประหยัดเวลาและเพิ่มประสิทธิภาพการทำงานด้วยการเข้าถึงเครื่องมือ AI ได้ทันที"
+
+text_open_tool: "เปิด {name}"
+text_delete_confirm: "คุณแน่ใจหรือไม่ว่าต้องการลบเครื่องมือที่กำหนดเองนี้?"
+

@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Vietnamese (vi) language
+
+title: "Trung Tâm Chatbot AI: Truy Cập Nhanh Đến ChatGPT, Gemini, Grok và Hơn Nữa"
+description: "Truy cập nhanh đến các chatbot AI phổ biến bao gồm ChatGPT, Gemini, Claude, DeepSeek và hơn nữa. Thêm công cụ AI tùy chỉnh để nâng cao năng suất. Truy cập bằng một cú nhấp vào các trợ lý AI yêu thích của bạn."
+
+subtitle: "Thêm công cụ AI tùy chỉnh của riêng bạn • Truy cập bằng một cú nhấp vào tất cả các chatbot phổ biến"
+
+button_open: "Mở {name}"
+button_add_custom: "Thêm Tùy Chỉnh"
+button_add_custom_title: "Thêm công cụ AI của riêng bạn"
+button_add_new_tool: "Thêm Công Cụ Mới"
+
+modal_title: "Thêm Công Cụ AI Tùy Chỉnh"
+label_tool_name: "Tên Công Cụ *"
+placeholder_tool_name: "ví dụ: AI Tùy Chỉnh Của Tôi"
+label_tool_description: "Mô Tả Công Cụ *"
+placeholder_tool_description: "ví dụ: Trợ lý AI tùy chỉnh của tôi"
+label_tool_url: "URL Công Cụ *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Danh Mục"
+option_category_general: "Chung"
+option_category_coding: "Lập Trình"
+option_category_writing: "Viết"
+option_category_design: "Thiết Kế"
+option_category_other: "Khác"
+button_cancel: "Hủy"
+button_add_tool: "Thêm Công Cụ"
+
+why_title: "Tại Sao Sử Dụng Trung Tâm Chatbot AI?"
+feature_quick_access_title: "Truy Cập Nhanh"
+feature_quick_access_desc: "Không cần tìm kiếm qua công cụ tìm kiếm nữa. Truy cập trực tiếp đến tất cả các chatbot AI phổ biến."
+feature_organized_title: "Được Tổ Chức"
+feature_organized_desc: "Tất cả các chatbot được tổ chức và phân loại gọn gàng để dễ dàng điều hướng."
+feature_updated_title: "Luôn Được Cập Nhật"
+feature_updated_desc: "Chúng tôi thường xuyên cập nhật danh sách bằng các chatbot AI mới và phổ biến."
+feature_productivity_title: "Tăng Năng Suất"
+feature_productivity_desc: "Tiết kiệm thời gian và tăng năng suất của bạn với truy cập tức thì vào các công cụ AI."
+
+text_open_tool: "Mở {name}"
+text_delete_confirm: "Bạn có chắc chắn muốn xóa công cụ tùy chỉnh này không?"
+

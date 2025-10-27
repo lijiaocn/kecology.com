@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Russian (ru) language
+
+title: "Хаб AI Чатботов: Быстрый Доступ к ChatGPT, Gemini, Grok и Больше"
+description: "Быстрый доступ к популярным AI чатботам, включая ChatGPT, Gemini, Claude, DeepSeek и другие. Добавьте пользовательские AI инструменты для повышения продуктивности. Доступ одним кликом к вашим любимым AI помощникам."
+
+subtitle: "Добавьте свои пользовательские AI инструменты • Доступ одним кликом ко всем популярным чатботам"
+
+button_open: "Открыть {name}"
+button_add_custom: "Добавить Пользовательский"
+button_add_custom_title: "Добавьте свои AI инструменты"
+button_add_new_tool: "Добавить Новый Инструмент"
+
+modal_title: "Добавить Пользовательский AI Инструмент"
+label_tool_name: "Название инструмента *"
+placeholder_tool_name: "например, Мой Пользовательский AI"
+label_tool_description: "Описание инструмента *"
+placeholder_tool_description: "например, Мой пользовательский AI помощник"
+label_tool_url: "URL инструмента *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Категория"
+option_category_general: "Общее"
+option_category_coding: "Программирование"
+option_category_writing: "Писательство"
+option_category_design: "Дизайн"
+option_category_other: "Другое"
+button_cancel: "Отмена"
+button_add_tool: "Добавить Инструмент"
+
+why_title: "Почему Использовать Хаб AI Чатботов?"
+feature_quick_access_title: "Быстрый Доступ"
+feature_quick_access_desc: "Больше не нужно искать через поисковые системы. Прямой доступ ко всем популярным AI чатботам."
+feature_organized_title: "Организовано"
+feature_organized_desc: "Все чатботы аккуратно организованы и классифицированы для легкой навигации."
+feature_updated_title: "Всегда Обновляется"
+feature_updated_desc: "Мы регулярно обновляем список новыми и популярными AI чатботами."
+feature_productivity_title: "Увеличение Продуктивности"
+feature_productivity_desc: "Экономьте время и повышайте свою продуктивность с мгновенным доступом к AI инструментам."
+
+text_open_tool: "Открыть {name}"
+text_delete_confirm: "Вы уверены, что хотите удалить этот пользовательский инструмент?"
+

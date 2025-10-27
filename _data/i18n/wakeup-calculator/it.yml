@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# Italian (it) language
+
+# Frontmatter
+title: "Calcolatore dell'Ora di Sveglia: A Che Ora Dovrei Svegliarmi Domani?"
+description: "Scopri i momenti migliori per svegliarti basati su cicli di sonno di 90 minuti. Ti aiuta a svegliarti sentendoti fresco ed energetico."
+
+# Page content
+h3: "Calcolatore dell'Ora di Sveglia"
+intro_text: "Seleziona quando prevedi di andare a letto, e calcoleremo le migliori ore di sveglia per te. Il calcolo include una media di 15 minuti per addormentarsi."
+button_go_to_bed_now: "Andare a letto ora"
+button_15_min: "Tra 15 minuti"
+button_30_min: "Tra 30 minuti"
+label_or_pick_bedtime: "O scegli un'ora di coricarsi:"
+button_calculate: "Calcola"
+link_try_bedtime_calculator: "Prova il Nostro Calcolatore dell'Ora di Coricarsi"
+want_to_calculate_bedtime: "Vuoi calcolare la tua ora di coricarsi dalla tua ora di sveglia?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "Se vai a letto {time}, svegliati alle:"
+text_select_time_first: "Per favore seleziona prima un'ora."
+text_sleep_duration: "({duration} sonno)"
+
+# FAQ section
+faq_q1: "A che ora dovrei svegliarmi domani per sentirmi benissimo e non intontito?"
+faq_quote: "Alcune mattine salto dal letto sentendomi fresco, ma altri giorni è una vera lotta e mi sento lento per ore. Qual è il segreto per svegliarsi costantemente energizzati? A che ora dovrei svegliarmi domani?"
+faq_ans_title: "Il trucco è svegliarsi alla fine di un ciclo di sonno."
+faq_ans_explanation: "Quella sensazione di intontimento? È la tua sveglia che ti sveglia durante il sonno profondo. I nostri corpi usano cicli di sonno di 90 minuti. Per sentirsi fresco, svegliati alla fine di un ciclo quando il sonno è più leggero. Usa il calcolatore sopra per trovare le tue migliori ore di sveglia. Il diagramma sotto mostra come funziona."
+faq_recommended_sleep_title: "Sonno Raccomandato per Età"
+faq_sleep_needs_intro: "Diverse fasce d'età hanno diverse esigenze di sonno. Ecco una guida rapida su quante ore di sonno e quanti cicli di sonno sono generalmente raccomandati:"
+faq_sleep_table_note: "Nota: Le esigenze di sonno possono variare da persona a persona. Questa tabella è una guida generale."
+faq_table_age_group: "Fascia d'Età"
+faq_table_hours: "Ore di Sonno"
+faq_table_cycles: "Cicli di Sonno"
+

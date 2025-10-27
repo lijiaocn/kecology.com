@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Italian (it) language
+
+title: "Hub Chatbot AI: Accesso Rapido a ChatGPT, Gemini, Grok e Altri"
+description: "Accesso rapido a chatbot AI popolari come ChatGPT, Gemini, Claude, DeepSeek e altri. Aggiungi strumenti AI personalizzati per aumentare la produttività. Accesso con un clic ai tuoi assistenti AI preferiti."
+
+subtitle: "Aggiungi i tuoi strumenti AI personalizzati • Accesso con un clic a tutti i chatbot popolari"
+
+button_open: "Apri {name}"
+button_add_custom: "Aggiungi Personalizzato"
+button_add_custom_title: "Aggiungi i tuoi strumenti AI"
+button_add_new_tool: "Aggiungi Nuovo Strumento"
+
+modal_title: "Aggiungi Strumento AI Personalizzato"
+label_tool_name: "Nome Strumento *"
+placeholder_tool_name: "es. La Mia AI Personalizzata"
+label_tool_description: "Descrizione Strumento *"
+placeholder_tool_description: "es. Il mio assistente AI personalizzato"
+label_tool_url: "URL Strumento *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Categoria"
+option_category_general: "Generale"
+option_category_coding: "Programmazione"
+option_category_writing: "Scrittura"
+option_category_design: "Design"
+option_category_other: "Altro"
+button_cancel: "Annulla"
+button_add_tool: "Aggiungi Strumento"
+
+why_title: "Perché Usare l'Hub Chatbot AI?"
+feature_quick_access_title: "Accesso Rapido"
+feature_quick_access_desc: "Non cercare più tramite i motori di ricerca. Accesso diretto a tutti i chatbot AI popolari."
+feature_organized_title: "Organizzato"
+feature_organized_desc: "Tutti i chatbot sono ordinati e categorizzati per una facile navigazione."
+feature_updated_title: "Sempre Aggiornato"
+feature_updated_desc: "Aggiorniamo regolarmente l'elenco con nuovi chatbot AI popolari."
+feature_productivity_title: "Aumento della Produttività"
+feature_productivity_desc: "Risparmia tempo e aumenta la tua produttività con accesso istantaneo agli strumenti AI."
+
+text_open_tool: "Apri {name}"
+text_delete_confirm: "Sei sicuro di voler eliminare questo strumento personalizzato?"
+

@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Indonesian (id) language
+
+title: "Hub Chatbot AI: Akses Cepat ke ChatGPT, Gemini, Grok, dan Lainnya"
+description: "Akses cepat ke chatbot AI populer termasuk ChatGPT, Gemini, Claude, DeepSeek, dan lainnya. Tambahkan alat AI kustom untuk meningkatkan produktivitas. Akses satu klik ke asisten AI favorit Anda."
+
+subtitle: "Tambahkan alat AI kustom Anda sendiri • Akses satu klik ke semua chatbot populer"
+
+button_open: "Buka {name}"
+button_add_custom: "Tambah Kustom"
+button_add_custom_title: "Tambahkan alat AI Anda sendiri"
+button_add_new_tool: "Tambah Alat Baru"
+
+modal_title: "Tambah Alat AI Kustom"
+label_tool_name: "Nama Alat *"
+placeholder_tool_name: "mis., AI Kustom Saya"
+label_tool_description: "Deskripsi Alat *"
+placeholder_tool_description: "mis., Asisten AI kustom saya"
+label_tool_url: "URL Alat *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "Kategori"
+option_category_general: "Umum"
+option_category_coding: "Koding"
+option_category_writing: "Menulis"
+option_category_design: "Desain"
+option_category_other: "Lainnya"
+button_cancel: "Batal"
+button_add_tool: "Tambah Alat"
+
+why_title: "Mengapa Menggunakan Hub Chatbot AI?"
+feature_quick_access_title: "Akses Cepat"
+feature_quick_access_desc: "Tidak perlu lagi mencari melalui mesin pencari. Akses langsung ke semua chatbot AI populer."
+feature_organized_title: "Terorganisir"
+feature_organized_desc: "Semua chatbot diatur dan dikategorikan dengan rapi untuk navigasi yang mudah."
+feature_updated_title: "Selalu Diperbarui"
+feature_updated_desc: "Kami secara teratur memperbarui daftar dengan chatbot AI baru dan populer."
+feature_productivity_title: "Peningkatan Produktivitas"
+feature_productivity_desc: "Hemat waktu dan tingkatkan produktivitas Anda dengan akses instan ke alat AI."
+
+text_open_tool: "Buka {name}"
+text_delete_confirm: "Apakah Anda yakin ingin menghapus alat kustom ini?"
+

@@ -1,0 +1,28 @@
+# i18n data for best-bedtime-calculator post
+# Portuguese (pt) language
+
+# Frontmatter
+title: "Calculadora de Horário de Dormir: Que Horas Preciso Dormir para Acordar Descansado?"
+description: "Encontre o melhor horário para dormir baseado em ciclos de 90 minutos. Pode ajudá-lo a acordar se sentindo renovado e energético."
+
+# Page content
+h1: "Calculadora de Horário de Dormir"
+intro_text: "Defina seu horário de acordar para ver quando deve dormir."
+keyboard_hint: "Atalhos: ↑ ↓ para ajustar, e ← → para mudar"
+results_title_prefix: "Para acordar descansado às"
+results_title_suffix: ", tente dormir em um destes horários:"
+results_small_text: "(Inclui 15 min para adormecer e ciclos de 90 min)"
+sleep_duration_template: "({duration} de sono)"
+go_to_bed_now_title: "Ir dormir agora?"
+try_wakeup_calculator: "Experimente Nossa Calculadora de Horário de Acordar"
+
+# British Heart Foundation advice
+advice_title: "Conselhos da Fundação Britânica do Coração"
+read_more: "(ler mais)"
+advice_item1_prefix: "Durma entre "
+advice_item1_bold: "22h-23h"
+advice_item1_suffix: " para um coração mais saudável."
+advice_item2_prefix: "A maioria dos adultos deve visar "
+advice_item2_bold: "7 a 9 horas"
+advice_item2_suffix: " de sono por noite."
+

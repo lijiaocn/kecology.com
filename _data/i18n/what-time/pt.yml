@@ -1,0 +1,42 @@
+# i18n data for what-time post
+# Portuguese (pt) language
+
+title: "Que Horas São na Califórnia, Austrália, Texas, Londres (Mais Cidades)?"
+description: "Descubra a hora local atual na Califórnia, Austrália, Texas, Londres, Japão, Nova York e outras cidades e países importantes do mundo. Uma ferramenta simples para verificar as horas em qualquer lugar."
+
+h1_title: "Que horas são na Califórnia, Austrália, Texas, Londres, Japão e mais regiões ou cidades?"
+label_show_corresponding_time: "Mostrar hora correspondente para:"
+button_confirm: "Confirmar"
+button_reset: "Redefinir"
+label_auto_refresh: "Atualizar Hora ao Vivo Automaticamente"
+section_title: "Horas do Mundo"
+text_invalid_timezone: "Fuso Horário Inválido"
+
+country_info_argentina: "A Argentina usa um único fuso horário e não observa o horário de verão."
+country_info_australia: "A Austrália é dividida em três fusos horários principais. O horário de verão (DST) é observado em alguns estados e territórios."
+country_info_brazil: "O Brasil abrange vários fusos horários. A maior parte do país usa o horário de Brasília (BRT)."
+country_info_canada: "O Canadá abrange vários fusos horários da costa do Atlântico à costa do Pacífico."
+country_info_china: "A China usa um único fuso horário (Horário Padrão da China - CST) em todo o país."
+country_info_egypt: "O Egito usa o horário da Europa Oriental e observa o horário de verão."
+country_info_france: "A França usa o Horário da Europa Central (CET) e observa o horário de verão."
+country_info_germany: "A Alemanha usa o Horário da Europa Central (CET) e observa o horário de verão."
+country_info_india: "A Índia usa um único fuso horário (Horário Padrão da Índia - IST)."
+country_info_italy: "A Itália usa o Horário da Europa Central (CET) e observa o horário de verão."
+country_info_japan: "O Japão usa um único fuso horário (Horário Padrão do Japão - JST)."
+country_info_mexico: "O México abrange vários fusos horários. A maior parte do país usa o horário central."
+country_info_newzealand: "A Nova Zelândia usa o Horário Padrão da Nova Zelândia (NZST) e observa o horário de verão."
+country_info_russia: "A Rússia abrange vários fusos horários de Kaliningrado a Vladivostok."
+country_info_singapore: "Cingapura usa o Horário Padrão de Cingapura (SGT)."
+country_info_southafrica: "A África do Sul usa o Horário Padrão da África do Sul (SAST)."
+country_info_southkorea: "A Coreia do Sul usa o Horário Padrão da Coreia (KST)."
+country_info_uae: "Os EAU usam o Horário Padrão do Golfo (GST)."
+country_info_uk: "O Reino Unido usa o Horário Médio de Greenwich (GMT) no inverno e o Horário de Verão Britânico (BST) no verão."
+country_info_usa: "Os Estados Unidos abrangem seis fusos horários. O horário de verão é observado na maioria dos estados."
+
+single_timezone_notice: "Este país usa um único fuso horário."
+
+country_info_fiji: "Fiji tem um fuso horário principal."
+country_info_hongkong: "Hong Kong tem um fuso horário padrão e não observa o horário de verão."
+
+popular_times_title: "Locais Populares"
+

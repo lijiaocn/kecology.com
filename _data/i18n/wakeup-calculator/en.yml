@@ -1,0 +1,35 @@
+# i18n data for wakeup-calculator post
+# English (en) language
+
+# Frontmatter
+title: "Wakeup Time Calculator: What Time Should I Wake Up Tomorrow?"
+description: "Find out the best times to wake up based on 90-minute sleep cycles. It can help you wake up feeling refreshed and energetic."
+
+# Page content
+h3: "Wakeup Time Calculator"
+intro_text: "Select when you plan to go to sleep, and we'll calculate the best wake-up times for you. The calculation includes an average of 15 minutes to fall asleep."
+button_go_to_bed_now: "Go to bed now"
+button_15_min: "In 15 minutes"
+button_30_min: "In 30 minutes"
+label_or_pick_bedtime: "Or pick a bedtime:"
+button_calculate: "Calculate"
+link_try_bedtime_calculator: "Try our Bedtime Calculator"
+want_to_calculate_bedtime: "Want to calculate your bedtime from your wake-up time?"
+
+# Text templates for JavaScript
+text_wakeup_prompt: "If you go to bed {time}, wake up at:"
+text_select_time_first: "Please select a time first."
+text_sleep_duration: "({duration} sleep)"
+
+# FAQ section
+faq_q1: "What time should I wake up tomorrow to feel great and not groggy?"
+faq_quote: "Some mornings I jump out of bed feeling refreshed, but other days it's a real struggle and I feel sluggish for hours. What's the secret to consistently waking up feeling energized? What time should i wake up tomorrow？"
+faq_ans_title: "The trick is to wake up at the end of a sleep cycle."
+faq_ans_explanation: "That groggy feeling? It's from your alarm waking you during deep sleep. Our bodies use 90-minute sleep cycles. To feel refreshed, wake up at the end of a cycle when sleep is lightest. Use the calculator above to find your best wake-up times. The diagram below shows how this works."
+faq_recommended_sleep_title: "Recommended Sleep by Age"
+faq_sleep_needs_intro: "Different age groups have different sleep needs. Here's a quick guide to how many hours of sleep and how many sleep cycles are generally recommended:"
+faq_sleep_table_note: "Note: Sleep needs can vary from person to person. This table is a general guideline."
+faq_table_age_group: "Age Group"
+faq_table_hours: "Hours of Sleep"
+faq_table_cycles: "Sleep Cycles"
+

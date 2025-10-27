@@ -1,0 +1,42 @@
+# i18n data for ai-chatbot-hub post
+# Hindi (hi) language
+
+title: "AI चैटबॉट हब: ChatGPT, Gemini, Grok और अधिक तक त्वरित पहुंच"
+description: "ChatGPT, Gemini, Claude, DeepSeek और अधिक सहित लोकप्रिय AI चैटबॉट तक त्वरित पहुंच। उत्पादकता बढ़ाने के लिए कस्टम AI उपकरण जोड़ें। अपने पसंदीदा AI सहायकों तक एक-क्लिक पहुंच।"
+
+subtitle: "अपने स्वयं के कस्टम AI उपकरण जोड़ें • सभी लोकप्रिय चैटबॉट तक एक-क्लिक पहुंच"
+
+button_open: "{name} खोलें"
+button_add_custom: "कस्टम जोड़ें"
+button_add_custom_title: "अपने स्वयं के AI उपकरण जोड़ें"
+button_add_new_tool: "नया उपकरण जोड़ें"
+
+modal_title: "कस्टम AI उपकरण जोड़ें"
+label_tool_name: "उपकरण नाम *"
+placeholder_tool_name: "उदा: मेरा कस्टम AI"
+label_tool_description: "उपकरण विवरण *"
+placeholder_tool_description: "उदा: मेरा कस्टम AI सहायक"
+label_tool_url: "उपकरण URL *"
+placeholder_tool_url: "https://example.com"
+label_tool_category: "श्रेणी"
+option_category_general: "सामान्य"
+option_category_coding: "कोडिंग"
+option_category_writing: "लेखन"
+option_category_design: "डिज़ाइन"
+option_category_other: "अन्य"
+button_cancel: "रद्द करें"
+button_add_tool: "उपकरण जोड़ें"
+
+why_title: "AI चैटबॉट हब का उपयोग क्यों करें?"
+feature_quick_access_title: "त्वरित पहुंच"
+feature_quick_access_desc: "अब और खोज इंजन के माध्यम से खोजने की आवश्यकता नहीं है। सभी लोकप्रिय AI चैटबॉट तक प्रत्यक्ष पहुंच।"
+feature_organized_title: "संगठित"
+feature_organized_desc: "सभी चैटबॉट आसान नेविगेशन के लिए साफ-सुथरे संगठित और वर्गीकृत हैं।"
+feature_updated_title: "हमेशा अपडेट"
+feature_updated_desc: "हम नियमित रूप से नए और लोकप्रिय AI चैटबॉट के साथ सूची अपडेट करते हैं।"
+feature_productivity_title: "उत्पादकता बढ़ाएं"
+feature_productivity_desc: "AI उपकरणों तक तत्काल पहुंच के साथ समय बचाएं और अपनी उत्पादकता बढ़ाएं।"
+
+text_open_tool: "{name} खोलें"
+text_delete_confirm: "क्या आप वाकई इस कस्टम उपकरण को हटाना चाहते हैं?"
+
