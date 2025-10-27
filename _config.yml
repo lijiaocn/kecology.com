@@ -58,25 +58,6 @@ languages:
   - hi
   - it
 
-language_names:
-  - English
-  - 简体中文
-  - 繁體中文
-  - Español
-  - العربية
-  - Bahasa Indonesia
-  - Português
-  - Français
-  - 日本語
-  - Русский
-  - Deutsch
-  - 한국어
-  - Türkçe
-  - ไทย
-  - Tiếng Việt
-  - हिन्दी
-  - Italiano
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

@@ -10,12 +10,14 @@ i18n: true
 {%- comment -%} 多语言标签页 {%- endcomment -%}
 {%- assign default_lang = site.default_lang | default: "en" -%}
 {%- assign current_lang = page.lang | default: default_lang -%}
+{%- comment -%} 从 _data/index/[current_lang].yml 读取语言名称数据 {%- endcomment -%}
+{%- assign lang_data = site.data.index[current_lang] -%}
 
 <div class="language-tabs">
 {%- for i in (0..site.languages.size) -%}
     {%- if i < site.languages.size -%}
     {%- assign lang_code = site.languages[i] -%}
-    {%- assign lang_name = site.language_names[i] -%}
+    {%- assign lang_name = lang_data[lang_code] -%}
     {%- if lang_code == default_lang -%}
         {%- assign lang_url = "/" -%}
     {%- else -%}
