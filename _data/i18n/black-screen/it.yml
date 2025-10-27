@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Italian (it) language
+
+# Frontmatter
+title: "Test pixel morti: Schermo nero per test monitor (Più colori)"
+description: "Usa questo schermo completamente nero per rilevare pixel morti, verificare la perdita di retroilluminazione, pulire lo schermo e ridurre l'affaticamento degli occhi. Uno strumento versatile per il tuo monitor."
+
+# Page content
+h1: "Schermo nero: Test pixel morti e pulizia schermo"
+intro_text: "Uno strumento semplice per rendere lo schermo completamente nero."
+useful_text: "Utile per molte cose:"
+dead_pixels: "Trova pixel morti"
+dead_pixels_desc: "Uno schermo nero facilita l'identificazione di pixel bloccati accesi o spenti."
+clean_screen: "Pulisci lo schermo"
+clean_screen_desc: "Facile vedere polvere e macchie su uno sfondo nero."
+backlight_bleed: "Verifica la perdita di retroilluminazione"
+backlight_bleed_desc: "In una stanza buia, uno schermo nero aiuta a vedere la luce che fuoriesce dai bordi dello schermo."
+color_palette_text: "Clicca su un colore per riempire lo schermo:"
+
+# Color names
+white_screen: "Schermo bianco"
+black_screen: "Schermo nero"
+red_screen: "Schermo rosso"
+yellow_screen: "Schermo giallo"
+blue_screen: "Schermo blu"
+green_screen: "Schermo verde"
+

@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Japanese (ja) language
+
+# Frontmatter
+title: "ドット抜け検査：モニター用黒画面ツール（複数カラー対応）"
+description: "完全に黒い画面で、ドット抜けの確認、バックライト漏れのチェック、画面の清掃ができます。モニター検査に役立つ便利なツールです。"
+
+# Page content
+h1: "黒画面：ドット抜け検査と画面清掃"
+intro_text: "画面を完全に黒にするシンプルなツールです。"
+useful_text: "様々な用途に使えます："
+dead_pixels: "ドット抜けの検出"
+dead_pixels_desc: "黒画面で、点滅や固定化したドット抜けが簡単に見つかります。"
+clean_screen: "画面の清掃"
+clean_screen_desc: "黒背景でホコリや汚れがよく見えます。"
+backlight_bleed: "バックライト漏れの確認"
+backlight_bleed_desc: "暗い部屋で、画面端からの光漏れが簡単に確認できます。"
+color_palette_text: "色を選択して画面を塗りつぶします："
+
+# Color names
+white_screen: "白画面"
+black_screen: "黒画面"
+red_screen: "赤画面"
+yellow_screen: "黄画面"
+blue_screen: "青画面"
+green_screen: "緑画面"
+

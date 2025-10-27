@@ -13,30 +13,33 @@ title: "Dead Pixel Test: A Black Color Screen for Monitor Test (More Colors)"
 description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
 ---
 
+{% assign i18n_data = site.data.i18n['black-screen'][page.lang] %}
+{% if i18n_data == nil %}
+  {% assign i18n_data = site.data.i18n['black-screen']['en'] %}
+{% endif %}
+
 <link rel="stylesheet" href="/assets/css/black-screen.css?v=1">
 
 <div id="content">
-  <h1>Black Screen: Dead Pixel Test, Screen Cleaning</h1>
-  <p>A simple tool to turn your screen completely black.</p>
+  <h1>{{ i18n_data.h1 }}</h1>
+  <p>{{ i18n_data.intro_text }}</p>
   <div id="more-info">
-    <p>Useful for many things:</p>
+    <p>{{ i18n_data.useful_text }}</p>
     <ul>
-      <li><b>Find dead pixels:</b> A black screen makes it easy to spot pixels that are stuck on or off.</li>
-      <li><b>Clean your screen:</b> See dust and smudges easily on a black background.</li>
-      <li><b>Check for backlight bleed:</b> In a dark room, a black screen helps you see light leaking from the edges of your screen.</li>
-      <li><b>Save battery (OLED/AMOLED):</b> These screens use less power when displaying black.</li>
-      <li><b>Reduce eye strain:</b> A black screen is easier on your eyes in the dark.</li>
+      <li><b>{{ i18n_data.dead_pixels }}:</b> {{ i18n_data.dead_pixels_desc }}</li>
+      <li><b>{{ i18n_data.clean_screen }}:</b> {{ i18n_data.clean_screen_desc }}</li>
+      <li><b>{{ i18n_data.backlight_bleed }}:</b> {{ i18n_data.backlight_bleed_desc }}</li>
     </ul>
   </div>
   <div id="color-palette-container">
-    <p>Click a color to fill the screen:</p>
+    <p>{{ i18n_data.color_palette_text }}</p>
     <div id="color-palette">
-      <div class="color-swatch" style="background-color: white;" data-color="white" title="White Screen"></div>
-      <div class="color-swatch" style="background-color: black;" data-color="black" title="Black Screen"></div>
-      <div class="color-swatch" style="background-color: red;" data-color="red" title="Red Screen"></div>
-      <div class="color-swatch" style="background-color: yellow;" data-color="yellow" title="Yellow Screen"></div>
-      <div class="color-swatch" style="background-color: blue;" data-color="blue" title="Blue Screen"></div>
-      <div class="color-swatch" style="background-color: green;" data-color="green" title="Green Screen"></div>
+      <div class="color-swatch" style="background-color: white;" data-color="white" title="{{ i18n_data.white_screen }}"></div>
+      <div class="color-swatch" style="background-color: black;" data-color="black" title="{{ i18n_data.black_screen }}"></div>
+      <div class="color-swatch" style="background-color: red;" data-color="red" title="{{ i18n_data.red_screen }}"></div>
+      <div class="color-swatch" style="background-color: yellow;" data-color="yellow" title="{{ i18n_data.yellow_screen }}"></div>
+      <div class="color-swatch" style="background-color: blue;" data-color="blue" title="{{ i18n_data.blue_screen }}"></div>
+      <div class="color-swatch" style="background-color: green;" data-color="green" title="{{ i18n_data.green_screen }}"></div>
     </div>
   </div>
 </div>

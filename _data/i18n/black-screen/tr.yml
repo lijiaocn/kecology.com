@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Turkish (tr) language
+
+# Frontmatter
+title: "Ölü piksel testi: Ekran testi için siyah ekran (Daha fazla renk)"
+description: "Ölü pikselleri tespit etmek, arka ışık sızıntısını kontrol etmek, ekranınızı temizlemek ve göz yorgunluğunu azaltmak için bu tamamen siyah ekranı kullanın. Monitörünüz için çok amaçlı bir araç."
+
+# Page content
+h1: "Siyah Ekran: Ölü Piksel Testi ve Ekran Temizliği"
+intro_text: "Ekranı tamamen siyaha dönüştüren basit bir araç."
+useful_text: "Birçok şey için kullanışlı:"
+dead_pixels: "Ölü pikselleri bulun"
+dead_pixels_desc: "Siyah ekran, sıkışmış veya kapatılmış pikselleri tespit etmeyi kolaylaştırır."
+clean_screen: "Ekranı temizleyin"
+clean_screen_desc: "Siyah arka planda toz ve leke kolayca görülebilir."
+backlight_bleed: "Arka ışık sızıntısını kontrol edin"
+backlight_bleed_desc: "Karanlık bir odada, siyah ekran ekran kenarlarından sızan ışığı görmenize yardımcı olur."
+color_palette_text: "Ekranı doldurmak için bir renge tıklayın:"
+
+# Color names
+white_screen: "Beyaz Ekran"
+black_screen: "Siyah Ekran"
+red_screen: "Kırmızı Ekran"
+yellow_screen: "Sarı Ekran"
+blue_screen: "Mavi Ekran"
+green_screen: "Yeşil Ekran"
+

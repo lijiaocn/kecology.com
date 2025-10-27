@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# German (de) language
+
+# Frontmatter
+title: "Toter Pixel Test: Schwarzer Bildschirm für Monitor Test (Mehr Farben)"
+description: "Verwenden Sie diesen vollständig schwarzen Bildschirm, um tote Pixel zu testen, Backlight-Bleeding zu überprüfen, Ihren Bildschirm zu reinigen und die Augenbelastung zu reduzieren. Ein vielseitiges Tool für Ihren Monitor."
+
+# Page content
+h1: "Schwarzer Bildschirm: Toter Pixel Test und Bildschirmreinigung"
+intro_text: "Ein einfaches Tool, um den Bildschirm vollständig schwarz zu machen."
+useful_text: "Nützlich für viele Dinge:"
+dead_pixels: "Tote Pixel finden"
+dead_pixels_desc: "Ein schwarzer Bildschirm erleichtert das Erkennen von Pixeln, die eingeschaltet oder ausgeschaltet stecken geblieben sind."
+clean_screen: "Bildschirm reinigen"
+clean_screen_desc: "Staub und Schmutz sind auf schwarzem Hintergrund leicht zu sehen."
+backlight_bleed: "Backlight-Bleeding prüfen"
+backlight_bleed_desc: "In einem dunklen Raum hilft ein schwarzer Bildschirm, Lichtleckagen an den Bildschirmrändern zu erkennen."
+color_palette_text: "Klicken Sie auf eine Farbe, um den Bildschirm zu füllen:"
+
+# Color names
+white_screen: "Weißer Bildschirm"
+black_screen: "Schwarzer Bildschirm"
+red_screen: "Roter Bildschirm"
+yellow_screen: "Gelber Bildschirm"
+blue_screen: "Blauer Bildschirm"
+green_screen: "Grüner Bildschirm"
+

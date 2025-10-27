@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Spanish (es) language
+
+# Frontmatter
+title: "Prueba de píxeles muertos: Pantalla negra para probar monitor (Más colores)"
+description: "Usa esta pantalla completamente negra para detectar píxeles muertos, revisar fugas de luz, limpiar tu pantalla y reducir la fatiga visual. Una herramienta versátil para tu monitor."
+
+# Page content
+h1: "Pantalla negra: Prueba de píxeles muertos y limpieza"
+intro_text: "Una herramienta sencilla para dejar la pantalla completamente negra."
+useful_text: "Útil para muchas cosas:"
+dead_pixels: "Detectar píxeles muertos"
+dead_pixels_desc: "Con una pantalla negra es fácil identificar píxeles que están atascados encendidos o apagados."
+clean_screen: "Limpiar la pantalla"
+clean_screen_desc: "Se ven fácilmente el polvo y las manchas sobre un fondo negro."
+backlight_bleed: "Revisar fugas de luz"
+backlight_bleed_desc: "En una habitación oscura, una pantalla negra te ayuda a ver la luz que se filtra por los bordes."
+color_palette_text: "Haz clic en un color para llenar la pantalla:"
+
+# Color names
+white_screen: "Pantalla blanca"
+black_screen: "Pantalla negra"
+red_screen: "Pantalla roja"
+yellow_screen: "Pantalla amarilla"
+blue_screen: "Pantalla azul"
+green_screen: "Pantalla verde"
+

@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Vietnamese (vi) language
+
+# Frontmatter
+title: "Kiểm tra điểm chết: Màn hình đen để test màn hình (Nhiều màu hơn)"
+description: "Sử dụng màn hình đen hoàn toàn này để phát hiện điểm chết, kiểm tra rò rỉ ánh sáng nền, vệ sinh màn hình và giảm mỏi mắt. Công cụ đa năng cho màn hình của bạn."
+
+# Page content
+h1: "Màn hình đen: Kiểm tra điểm chết và vệ sinh màn hình"
+intro_text: "Công cụ đơn giản để làm màn hình hoàn toàn đen."
+useful_text: "Hữu ích cho nhiều việc:"
+dead_pixels: "Tìm điểm chết"
+dead_pixels_desc: "Màn hình đen giúp dễ dàng phát hiện các điểm bị kẹt sáng hoặc tối."
+clean_screen: "Vệ sinh màn hình"
+clean_screen_desc: "Dễ dàng nhìn thấy bụi và vết bẩn trên nền đen."
+backlight_bleed: "Kiểm tra rò rỉ ánh sáng nền"
+backlight_bleed_desc: "Trong phòng tối, màn hình đen giúp bạn nhìn thấy ánh sáng rò rỉ từ các cạnh màn hình."
+color_palette_text: "Nhấp vào màu để lấp đầy màn hình:"
+
+# Color names
+white_screen: "Màn hình trắng"
+black_screen: "Màn hình đen"
+red_screen: "Màn hình đỏ"
+yellow_screen: "Màn hình vàng"
+blue_screen: "Màn hình xanh lam"
+green_screen: "Màn hình xanh lá"
+

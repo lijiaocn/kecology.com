@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Indonesian (id) language
+
+# Frontmatter
+title: "Tes Pixel Mati: Layar Hitam untuk Tes Monitor (Lebih Banyak Warna)"
+description: "Gunakan layar hitam penuh ini untuk mendeteksi pixel mati, memeriksa kebocoran backlight, membersihkan layar, dan mengurangi ketegangan mata. Alat serbaguna untuk monitor Anda."
+
+# Page content
+h1: "Layar Hitam: Tes Pixel Mati dan Pembersihan Layar"
+intro_text: "Alat sederhana untuk membuat layar benar-benar hitam."
+useful_text: "Berguna untuk banyak hal:"
+dead_pixels: "Temukan pixel mati"
+dead_pixels_desc: "Layar hitam memudahkan melihat pixel yang macet menyala atau mati."
+clean_screen: "Bersihkan layar"
+clean_screen_desc: "Mudah melihat debu dan noda pada latar belakang hitam."
+backlight_bleed: "Periksa kebocoran backlight"
+backlight_bleed_desc: "Di ruangan gelap, layar hitam membantu melihat cahaya yang bocor dari tepi layar."
+color_palette_text: "Klik warna untuk mengisi layar:"
+
+# Color names
+white_screen: "Layar Putih"
+black_screen: "Layar Hitam"
+red_screen: "Layar Merah"
+yellow_screen: "Layar Kuning"
+blue_screen: "Layar Biru"
+green_screen: "Layar Hijau"
+

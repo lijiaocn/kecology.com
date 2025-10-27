@@ -19,6 +19,10 @@ module Jekyll
           # 记录原始 URL (例如: /tool/ai-chatbot-hub.html)
           original_permalink = template.data['permalink'] || template.url
           
+          # 提取 post 名称用于 i18n 数据查找（从 permalink 或 path 中提取）
+          # 例如：/tool/black-screen -> black-screen
+          post_name = original_permalink.split('/').last.split('.').first
+          
           languages.each do |lang|
             # 2. 克隆一个新的文档对象（包括默认语言）
             post_to_add = template.dup
@@ -31,7 +35,14 @@ module Jekyll
             # 4. 注入新的语言代码
             post_to_add.data['lang'] = lang
             
-            # 5. 构造 permalink：默认语言不添加前缀，其他语言添加语言前缀
+            # 5. 从 i18n 数据文件读取并替换 title 和 description
+            if site.data['i18n'] && site.data['i18n'][post_name] && site.data['i18n'][post_name][lang]
+              i18n_data = site.data['i18n'][post_name][lang]
+              post_to_add.data['title'] = i18n_data['title'] if i18n_data['title']
+              post_to_add.data['description'] = i18n_data['description'] if i18n_data['description']
+            end
+            
+            # 6. 构造 permalink：默认语言不添加前缀，其他语言添加语言前缀
             if lang == default_lang
               post_to_add.data['permalink'] = original_permalink
             else
@@ -39,17 +50,17 @@ module Jekyll
               post_to_add.data['permalink'] = "/#{lang}#{original_permalink}"
             end
   
-            # 6. 清除并重新计算 URL/路径 (解决 URL 冲突)
+            # 7. 清除并重新计算 URL/路径 (解决 URL 冲突)
             post_to_add.instance_variable_set('@url', nil) 
             post_to_add.instance_variable_set('@destination', nil)
             post_to_add.url # 触发 URL 重新计算
-  
-            # 7. 将文章添加到最终列表
+
+            # 8. 将文章添加到最终列表
             final_posts << post_to_add
           end
         end
         
-        # 8. 加入最终处理过的所有语言版本的文章
+        # 9. 加入最终处理过的所有语言版本的文章
         site.posts.docs.concat(final_posts)
       end
     end

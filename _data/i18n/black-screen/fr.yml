@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# French (fr) language
+
+# Frontmatter
+title: "Test de pixels morts: Écran noir pour tester l'écran (Plus de couleurs)"
+description: "Utilisez cet écran entièrement noir pour détecter les pixels morts, vérifier la fuite de rétroéclairage, nettoyer votre écran et réduire la fatigue oculaire. Un outil polyvalent pour votre écran."
+
+# Page content
+h1: "Écran noir: Détection de pixels morts et nettoyage"
+intro_text: "Un outil simple pour rendre l'écran complètement noir."
+useful_text: "Utile pour plusieurs choses:"
+dead_pixels: "Détecter les pixels morts"
+dead_pixels_desc: "Un écran noir facilite l'identification des pixels coincés allumés ou éteints."
+clean_screen: "Nettoyer l'écran"
+clean_screen_desc: "Facile de voir la poussière et les taches sur un fond noir."
+backlight_bleed: "Vérifier la fuite de rétroéclairage"
+backlight_bleed_desc: "Dans une pièce sombre, un écran noir aide à voir la lumière qui s'échappe des bords de l'écran."
+color_palette_text: "Cliquez sur une couleur pour remplir l'écran:"
+
+# Color names
+white_screen: "Écran blanc"
+black_screen: "Écran noir"
+red_screen: "Écran rouge"
+yellow_screen: "Écran jaune"
+blue_screen: "Écran bleu"
+green_screen: "Écran vert"
+

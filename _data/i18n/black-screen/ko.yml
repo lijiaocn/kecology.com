@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Korean (ko) language
+
+# Frontmatter
+title: "불량 픽셀 테스트: 모니터용 검은 화면 도구 (다양한 색상)"
+description: "완전히 검은 화면으로 불량 픽셀을 확인하고, 백라이트 누수를 점검하며, 화면을 청소할 수 있습니다. 모니터를 위한 다양하게 활용 가능한 도구입니다."
+
+# Page content
+h1: "검은 화면: 불량 픽셀 테스트 및 화면 청소"
+intro_text: "화면을 완전히 검게 만드는 간단한 도구입니다."
+useful_text: "여러 가지 용도로 활용할 수 있습니다:"
+dead_pixels: "불량 픽셀 찾기"
+dead_pixels_desc: "검은 화면에서 고착된 픽셀을 쉽게 찾을 수 있습니다."
+clean_screen: "화면 청소"
+clean_screen_desc: "검은 배경에서 먼지와 얼룩을 쉽게 발견할 수 있습니다."
+backlight_bleed: "백라이트 누수 확인"
+backlight_bleed_desc: "어두운 방에서 검은 화면으로 화면 가장자리의 빛 누출을 확인할 수 있습니다."
+color_palette_text: "색상을 클릭하여 화면을 채우세요:"
+
+# Color names
+white_screen: "흰색 화면"
+black_screen: "검은 화면"
+red_screen: "빨간 화면"
+yellow_screen: "노란 화면"
+blue_screen: "파란 화면"
+green_screen: "초록 화면"
+

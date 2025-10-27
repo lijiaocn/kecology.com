@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Portuguese (pt) language
+
+# Frontmatter
+title: "Teste de pixel morto: Tela preta para testar monitor (Mais cores)"
+description: "Use esta tela completamente preta para detectar pixels mortos, verificar vazamento de luz de fundo, limpar sua tela e reduzir a fadiga ocular. Uma ferramenta versátil para seu monitor."
+
+# Page content
+h1: "Tela Preta: Teste de Pixel Morto e Limpeza"
+intro_text: "Uma ferramenta simples para deixar a tela completamente preta."
+useful_text: "Útil para várias coisas:"
+dead_pixels: "Encontrar pixels mortos"
+dead_pixels_desc: "Uma tela preta facilita identificar pixels que estão travados ligados ou desligados."
+clean_screen: "Limpar a tela"
+clean_screen_desc: "Fácil ver poeira e manchas em um fundo preto."
+backlight_bleed: "Verificar vazamento de luz"
+backlight_bleed_desc: "Em um quarto escuro, uma tela preta ajuda a ver luz vazando pelas bordas da tela."
+color_palette_text: "Clique em uma cor para preencher a tela:"
+
+# Color names
+white_screen: "Tela Branca"
+black_screen: "Tela Preta"
+red_screen: "Tela Vermelha"
+yellow_screen: "Tela Amarela"
+blue_screen: "Tela Azul"
+green_screen: "Tela Verde"
+

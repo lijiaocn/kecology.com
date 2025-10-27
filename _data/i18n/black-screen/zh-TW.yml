@@ -1,0 +1,27 @@
+# i18n data for black-screen post
+# Traditional Chinese (zh-TW) language
+
+# Frontmatter
+title: "壞點測試：顯示器黑屏工具（多顏色可選）"
+description: "使用全黑螢幕測試顯示器壞點、檢查背光漏光、清潔螢幕。在OLED/AMOLED螢幕上可省電並護眼。一款實用的顯示器檢測工具。"
+
+# Page content
+h1: "黑屏工具：壞點測試與螢幕清潔"
+intro_text: "一個簡單實用的工具，可以將螢幕完全變黑。"
+useful_text: "用途廣泛："
+dead_pixels: "檢測壞點"
+dead_pixels_desc: "黑屏狀態下可以清晰看到螢幕上的壞點或亮點。"
+clean_screen: "清潔螢幕"
+clean_screen_desc: "黑色背景更容易發現螢幕上的灰塵和污漬。"
+backlight_bleed: "檢測漏光"
+backlight_bleed_desc: "在暗環境下使用，可以清楚看到螢幕四角是否漏光。"
+color_palette_text: "點擊下方顏色可全螢幕顯示："
+
+# Color names
+white_screen: "白屏"
+black_screen: "黑屏"
+red_screen: "紅屏"
+yellow_screen: "黃屏"
+blue_screen: "藍屏"
+green_screen: "綠屏"
+
