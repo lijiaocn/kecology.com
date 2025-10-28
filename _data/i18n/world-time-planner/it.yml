@@ -3,6 +3,9 @@
 
 title: "Pianificatore Orario Mondiale: Trova Direttamente il Momento Perfetto per Team Globali"
 description: "Un semplice strumento per trovare il momento perfetto per riunioni tra diversi fusi orari. Seleziona città o fusi orari e visualizza la sovrapposizione degli orari."
+main_title: "Pianificatore Orario Mondiale"
+subtitle: "Trova Direttamente il Momento Perfetto per Team Globali"
+user_feedback_tip: "Hai problemi o suggerimenti? Lascia un commento in fondo alla pagina, e lo prenderò sul serio."
 
 tab_popular: "Città Popolari"
 tab_country: "Per Paese"
@@ -52,4 +55,3 @@ text_timezone_label: "Fuso Orario"
 text_now: "Adesso"
 text_view_times: "Visualizza Orari"
 text_unknown: "Sconosciuto"
-

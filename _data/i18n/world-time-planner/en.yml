@@ -4,6 +4,9 @@
 # Frontmatter
 title: "World Time Planner: Directly Find Perfect Meeting Time for Global Team"
 description: "A simple tool to find the perfect meeting time across different time zones. Select cities or timezones and visualize the time overlap."
+main_title: "World Time Planner"
+subtitle: "Directly Find Perfect Meeting Time for Global Team"
+user_feedback_tip: "Having issues or suggestions? Leave a comment at the bottom of the page, and I'll take it seriously."
 
 # UI elements
 tab_popular: "Popular Cities"

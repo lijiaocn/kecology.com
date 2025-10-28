@@ -5,6 +5,7 @@ categories: "tools"
 permalink: /tool/world-time-planner
 i18n: true
 mysetting:
+  display: fullscreen
   nowrapper: true
   background-color: '#121212'
   # display: fullscreen
@@ -17,9 +18,23 @@ description: "A simple tool to find the perfect meeting time across different ti
   {% assign i18n_data = site.data.i18n['world-time-planner']['en'] %}
 {% endif %}
 
+
 <link rel="stylesheet" href="/assets/css/world-time-planner.css?v=11">
 
+<div class="wtp-header">
+  <h1>
+    {{ i18n_data.main_title }}
+    {% if i18n_data.subtitle %}
+    <span class="wtp-subtitle">{{ i18n_data.subtitle }}</span>
+    {% endif %}
+  </h1>
+  {% if i18n_data.user_feedback_tip %}
+  <p class="wtp-feedback-tip">{{ i18n_data.user_feedback_tip }}</p>
+  {% endif %}
+</div>
+
 <div id="world-time-planner-app">
+
 
   <div id="wtp-timeline-container" class="wtp-timeline-container">
     <div class="wtp-timeline-header">

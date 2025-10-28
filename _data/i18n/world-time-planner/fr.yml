@@ -3,6 +3,9 @@
 
 title: "Planificateur d'Heure Mondiale: Trouvez le Meilleur Moment pour Réunions d'Équipes Globales"
 description: "Un outil simple pour trouver le moment parfait pour des réunions entre différentes fuseaux horaires. Sélectionnez des villes ou des fuseaux horaires et visualisez le chevauchement des horaires."
+main_title: "Planificateur d'Heure Mondiale"
+subtitle: "Trouvez le Meilleur Moment pour Réunions d'Équipes Globales"
+user_feedback_tip: "Vous rencontrez des problèmes ou avez des suggestions ? Laissez un commentaire en bas de la page, et je le prendrai au sérieux."
 
 tab_popular: "Villes Populaires"
 tab_country: "Par Pays"
@@ -52,4 +55,3 @@ text_timezone_label: "Fuseau Horaire"
 text_now: "Maintenant"
 text_view_times: "Voir Heures"
 text_unknown: "Inconnu"
-

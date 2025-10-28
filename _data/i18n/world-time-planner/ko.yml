@@ -3,6 +3,9 @@
 
 title: "세계 시간 기획자: 글로벌 팀을 위한 완벽한 회의 시간을 직접 찾기"
 description: "다른 시간대로 완벽한 회의 시간을 찾는 간단한 도구입니다. 도시나 시간대를 선택하고 시간 겹침을 시각화합니다."
+main_title: "세계 시간 기획자"
+subtitle: "글로벌 팀을 위한 완벽한 회의 시간을 직접 찾기"
+user_feedback_tip: "문제가 발생하거나 제안이 있으신가요? 페이지 하단에 댓글을 남겨주시면 진지하게 검토하겠습니다."
 
 tab_popular: "인기 도시"
 tab_country: "국가별"
@@ -52,4 +55,3 @@ text_timezone_label: "시간대"
 text_now: "지금"
 text_view_times: "시간 보기"
 text_unknown: "알 수 없음"
-

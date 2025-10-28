@@ -10,19 +10,41 @@
 
 .wtp-header {
   text-align: center;
-  margin-bottom: 2em;
+  padding: 2em 1em 0.5em 1em
 }
 
 .wtp-header h1 {
   font-size: 2.5em;
   font-weight: 600;
-  margin-bottom: 0.2em;
+  padding-bottom: 0.2em;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  display: block;
+}
+
+.wtp-header h1 .wtp-subtitle {
+  display: block;
+  font-size: 0.8em;
+  /* font-weight: 400; */
+  /* color: #bbb; */
+  letter-spacing: 0.01em;
+  padding-top: 0.3em;
+  opacity: 0.9;
 }
 
 .wtp-header p {
-  font-size: 1.2em;
+  font-size: 0.9em;
   color: #aaa;
   margin: 0;
+}
+
+.wtp-feedback-tip {
+  font-size: 0.85em;
+  color: #999;
+  font-style: italic;
+  margin-top: 1em;
+  text-align: center;
 }
 
 /* Selector Styles */

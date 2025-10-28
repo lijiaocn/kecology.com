@@ -3,6 +3,9 @@
 
 title: "Dünya Zaman Planlayıcısı: Küresel Ekipler için Mükemmel Toplantı Zamanını Doğrudan Bulun"
 description: "Farklı saat dilimleri arasında mükemmel toplantı zamanını bulmak için basit bir araç. Şehirleri veya saat dilimlerini seçin ve zaman örtüşmesini görselleştirin."
+main_title: "Dünya Zaman Planlayıcısı"
+subtitle: "Küresel Ekipler için Mükemmel Toplantı Zamanını Doğrudan Bulun"
+user_feedback_tip: "Sorun mu yaşıyorsunuz veya öneriniz var mı? Sayfanın alt kısmına yorum bırakın, ciddiye alacağım."
 
 tab_popular: "Popüler Şehirler"
 tab_country: "Ülkeye Göre"
@@ -52,4 +55,3 @@ text_timezone_label: "Saat Dilimi"
 text_now: "Şimdi"
 text_view_times: "Saatleri Görüntüle"
 text_unknown: "Bilinmeyen"
-

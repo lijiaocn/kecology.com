@@ -3,6 +3,9 @@
 
 title: "Planejador de Horário Mundial: Encontre Diretamente o Momento Perfeito para Equipes Globais"
 description: "Uma ferramenta simples para encontrar o momento perfeito para reuniões em diferentes fusos horários. Selecione cidades ou fusos horários e visualize a sobreposição de horários."
+main_title: "Planejador de Horário Mundial"
+subtitle: "Encontre Diretamente o Momento Perfeito para Equipes Globais"
+user_feedback_tip: "Problemas ou sugestões? Deixe um comentário na parte inferior da página, e eu o levarei a sério."
 
 tab_popular: "Cidades Populares"
 tab_country: "Por País"
@@ -52,4 +55,3 @@ text_timezone_label: "Fuso Horário"
 text_now: "Agora"
 text_view_times: "Ver Horários"
 text_unknown: "Desconhecido"
-

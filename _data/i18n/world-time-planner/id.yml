@@ -3,6 +3,9 @@
 
 title: "Perencana Waktu Dunia: Langsung Temukan Waktu Meeting Sempurna untuk Tim Global"
 description: "Alat sederhana untuk menemukan waktu meeting yang sempurna di berbagai zona waktu. Pilih kota atau zona waktu dan visualisasikan tumpang tindih waktu."
+main_title: "Perencana Waktu Dunia"
+subtitle: "Langsung Temukan Waktu Meeting Sempurna untuk Tim Global"
+user_feedback_tip: "Mengalami masalah atau punya saran? Tinggalkan komentar di bagian bawah halaman, dan saya akan memperhatikannya dengan serius."
 
 tab_popular: "Kota Populer"
 tab_country: "Menurut Negara"
@@ -52,4 +55,3 @@ text_timezone_label: "Zona Waktu"
 text_now: "Sekarang"
 text_view_times: "Lihat Waktu"
 text_unknown: "Tidak Diketahui"
-

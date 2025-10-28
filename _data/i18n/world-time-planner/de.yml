@@ -3,6 +3,9 @@
 
 title: "Weltzeitplaner: Finden Sie die perfekte Besprechungszeit für globale Teams"
 description: "Ein einfaches Tool, um die perfekte Besprechungszeit in verschiedenen Zeitzonen zu finden. Wählen Sie Städte oder Zeitzonen und visualisieren Sie die Zeitüberschneidung."
+main_title: "Weltzeitplaner"
+subtitle: "Finden Sie die perfekte Besprechungszeit für globale Teams"
+user_feedback_tip: "Haben Sie Probleme oder Vorschläge? Hinterlassen Sie einen Kommentar am Ende der Seite, und ich werde es ernst nehmen."
 
 tab_popular: "Beliebte Städte"
 tab_country: "Nach Land"
@@ -52,4 +55,3 @@ text_timezone_label: "Zeitzone"
 text_now: "Jetzt"
 text_view_times: "Zeiten anzeigen"
 text_unknown: "Unbekannt"
-
