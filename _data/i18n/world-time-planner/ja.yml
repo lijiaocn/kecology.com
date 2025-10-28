@@ -7,6 +7,7 @@ main_title: "世界時間プランナー"
 subtitle: "グローバルチームのための完璧な会議時間を直接見つける"
 user_feedback_tip: "問題が発生した場合や改善提案がある場合、ページ下部にコメントを残してください。真摯に対応いたします。"
 
+add_city_title: "都市を追加"
 tab_popular: "人気の都市"
 tab_country: "国別"
 tab_timezone: "タイムゾーン別"

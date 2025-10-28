@@ -9,6 +9,7 @@ subtitle: "Directly Find Perfect Meeting Time for Global Team"
 user_feedback_tip: "Having issues or suggestions? Leave a comment at the bottom of the page, and I'll take it seriously."
 
 # UI elements
+add_city_title: "Add Cities"
 tab_popular: "Popular Cities"
 tab_country: "By Country"
 tab_timezone: "By Time Zone"

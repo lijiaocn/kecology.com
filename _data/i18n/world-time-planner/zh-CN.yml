@@ -7,6 +7,7 @@ main_title: "世界时间规划器"
 subtitle: "为全球团队直接找到完美会议时间"
 user_feedback_tip: "遇到问题或有建议？在页面底部留言，我会认真对待每一个反馈。"
 
+add_city_title: "添加城市"
 tab_popular: "热门城市"
 tab_country: "按国家"
 tab_timezone: "按时区"

@@ -7,6 +7,7 @@ main_title: "Planificateur d'Heure Mondiale"
 subtitle: "Trouvez le Meilleur Moment pour Réunions d'Équipes Globales"
 user_feedback_tip: "Vous rencontrez des problèmes ou avez des suggestions ? Laissez un commentaire en bas de la page, et je le prendrai au sérieux."
 
+add_city_title: "Ajouter des Villes"
 tab_popular: "Villes Populaires"
 tab_country: "Par Pays"
 tab_timezone: "Par Fuseau Horaire"

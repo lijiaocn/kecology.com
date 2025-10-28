@@ -34,8 +34,6 @@ description: "A simple tool to find the perfect meeting time across different ti
 </div>
 
 <div id="world-time-planner-app">
-
-
   <div id="wtp-timeline-container" class="wtp-timeline-container">
     <div class="wtp-timeline-header">
       <div class="wtp-date-controls">
@@ -59,6 +57,7 @@ description: "A simple tool to find the perfect meeting time across different ti
   <div class="wtp-selectors-container">
     <div class="wtp-tab-buttons">
       <div class="wtp-tab-btn-container">
+        <span class="wtp-add-city-title">{{ i18n_data.add_city_title }}</span>
         <button class="wtp-tab-btn active" data-tab="popular">{{ i18n_data.tab_popular }}</button>
         <button class="wtp-tab-btn" data-tab="country">{{ i18n_data.tab_country }}</button>
         <button class="wtp-tab-btn" data-tab="timezone">{{ i18n_data.tab_timezone }}</button>
@@ -86,6 +85,8 @@ description: "A simple tool to find the perfect meeting time across different ti
       </div>
     </div>
   </div>
+
+
 
   <div class="wtp-features-section">
     <h2>{{ i18n_data.features_title }}</h2>
