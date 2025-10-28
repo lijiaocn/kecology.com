@@ -7,7 +7,8 @@ description: "Descubra os melhores horários para acordar baseados em ciclos de 
 
 # Page content
 h3: "Calculadora de Horário de Acordar"
-intro_text: "Selecione quando planeja dormir, e calcularemos os melhores horários de acordar para você. O cálculo inclui uma média de 15 minutos para adormecer."
+intro_text: "Selecione quando planeja dormir, e calcularemos os melhores horários de acordar para você."
+
 button_go_to_bed_now: "Ir dormir agora"
 button_15_min: "Em 15 minutos"
 button_30_min: "Em 30 minutos"

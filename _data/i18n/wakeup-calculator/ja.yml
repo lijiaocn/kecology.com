@@ -7,7 +7,8 @@ description: "90分の睡眠サイクルに基づいた最適な起床時刻を�
 
 # Page content
 h3: "起床時間計算機"
-intro_text: "就寝予定時刻を選択すると、最適な起床時刻を計算します。計算には平均15分の入眠時間が含まれます。"
+intro_text: "就寝予定時刻を選択すると、最適な起床時刻を計算します。"
+
 button_go_to_bed_now: "今すぐ眠る"
 button_15_min: "15分後"
 button_30_min: "30分後"

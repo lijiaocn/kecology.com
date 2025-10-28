@@ -7,7 +7,8 @@ description: "Descubre las mejores horas para despertarte según ciclos de sueñ
 
 # Page content
 h3: "Calculadora de Hora de Despertar"
-intro_text: "Selecciona cuándo planeas dormir, y calcularemos las mejores horas de despertar para ti. El cálculo incluye un promedio de 15 minutos para conciliar el sueño."
+intro_text: "Selecciona cuándo planeas dormir, y calcularemos las mejores horas de despertar para ti."
+
 button_go_to_bed_now: "Ir a dormir ahora"
 button_15_min: "En 15 minutos"
 button_30_min: "En 30 minutos"

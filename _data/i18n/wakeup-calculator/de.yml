@@ -7,7 +7,8 @@ description: "Finden Sie die besten Aufwachzeiten basierend auf 90-Minuten-Schla
 
 # Page content
 h3: "Aufwachzeit-Rechner"
-intro_text: "Wählen Sie, wann Sie schlafen gehen möchten, und wir berechnen die besten Aufwachzeiten für Sie. Die Berechnung schließt durchschnittlich 15 Minuten zum Einschlafen ein."
+intro_text: "Wählen Sie, wann Sie schlafen gehen möchten, und wir berechnen die besten Aufwachzeiten für Sie."
+
 button_go_to_bed_now: "Jetzt schlafen gehen"
 button_15_min: "In 15 Minuten"
 button_30_min: "In 30 Minuten"

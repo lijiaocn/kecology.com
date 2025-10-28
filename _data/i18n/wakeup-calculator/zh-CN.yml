@@ -7,7 +7,7 @@ description: "基于90分钟睡眠周期，找到最佳起床时间，帮您醒�
 
 # Page content
 h3: "起床时间计算器"
-intro_text: "选择您计划入睡的时间，我们将为您计算出最佳的起床时间。计算包含平均15分钟的入睡时间。"
+intro_text: "选择您计划入睡的时间，我们将为您计算出最佳的起床时间。"
 button_go_to_bed_now: "现在就睡"
 button_15_min: "15分钟后"
 button_30_min: "30分钟后"

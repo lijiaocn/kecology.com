@@ -7,7 +7,8 @@ description: "Scopri i momenti migliori per svegliarti basati su cicli di sonno 
 
 # Page content
 h3: "Calcolatore dell'Ora di Sveglia"
-intro_text: "Seleziona quando prevedi di andare a letto, e calcoleremo le migliori ore di sveglia per te. Il calcolo include una media di 15 minuti per addormentarsi."
+intro_text: "Seleziona quando prevedi di andare a letto, e calcoleremo le migliori ore di sveglia per te."
+
 button_go_to_bed_now: "Andare a letto ora"
 button_15_min: "Tra 15 minuti"
 button_30_min: "Tra 30 minuti"

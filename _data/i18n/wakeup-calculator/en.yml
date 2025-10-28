@@ -7,7 +7,7 @@ description: "Find out the best times to wake up based on 90-minute sleep cycles
 
 # Page content
 h3: "Wakeup Time Calculator"
-intro_text: "Select when you plan to go to sleep, and we'll calculate the best wake-up times for you. The calculation includes an average of 15 minutes to fall asleep."
+intro_text: "Select when you plan to go to sleep, and we'll calculate the best wake-up times for you."
 button_go_to_bed_now: "Go to bed now"
 button_15_min: "In 15 minutes"
 button_30_min: "In 30 minutes"

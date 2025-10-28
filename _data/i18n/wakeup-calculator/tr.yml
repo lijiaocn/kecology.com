@@ -7,7 +7,8 @@ description: "90 dakikalık uyku döngülerine göre en iyi uyanma zamanlarını
 
 # Page content
 h3: "Uyanma Zamanı Hesaplayıcı"
-intro_text: "Ne zaman uyuyacağınızı seçin, en iyi uyanma zamanlarını sizin için hesaplayacağız. Hesaplama ortalama 15 dakika uykuya dalma süresi içerir."
+intro_text: "Ne zaman uyuyacağınızı seçin, en iyi uyanma zamanlarını sizin için hesaplayacağız."
+
 button_go_to_bed_now: "Şimdi yat"
 button_15_min: "15 dakika sonra"
 button_30_min: "30 dakika sonra"

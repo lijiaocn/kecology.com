@@ -7,7 +7,8 @@ description: "基於90分鐘睡眠週期，找到最佳起床時間，幫您醒�
 
 # Page content
 h3: "起床時間計算器"
-intro_text: "選擇您計劃入睡的時間，我們將為您計算出最佳的起床時間。計算包含平均15分鐘的入睡時間。"
+intro_text: "選擇您計劃入睡的時間，我們將為您計算出最佳的起床時間。"
+
 button_go_to_bed_now: "現在就睡"
 button_15_min: "15分鐘後"
 button_30_min: "30分鐘後"

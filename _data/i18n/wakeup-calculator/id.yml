@@ -7,7 +7,8 @@ description: "Temukan waktu terbaik untuk bangun berdasarkan siklus tidur 90 men
 
 # Page content
 h3: "Kalkulator Waktu Bangun"
-intro_text: "Pilih kapan Anda berencana tidur, dan kami akan menghitung waktu bangun terbaik untuk Anda. Perhitungan mencakup rata-rata 15 menit untuk tertidur."
+intro_text: "Pilih kapan Anda berencana tidur, dan kami akan menghitung waktu bangun terbaik untuk Anda."
+
 button_go_to_bed_now: "Tidur sekarang"
 button_15_min: "Dalam 15 menit"
 button_30_min: "Dalam 30 menit"

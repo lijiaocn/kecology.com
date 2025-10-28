@@ -5,6 +5,7 @@ categories: tool
 permalink: /tool/wakeup-calculator
 i18n: true
 mysetting:
+  noheader: true
   nowrapper: false
 #   display: fullscreen
 # backgroud-color: darkblue
@@ -20,7 +21,7 @@ description: "Find out the best times to wake up based on 90-minute sleep cycles
 <link rel="stylesheet" href="/assets/css/wakeup-calculator.css?v=1">
 
 <div id="sleep-calculator-container">
-    <h3>{{ i18n_data.h3 }}</h3>
+    <!-- <h3>{{ i18n_data.h3 }}</h3> -->
     <p>{{ i18n_data.intro_text }}</p>
     
     <div id="bedtime-options-container">
@@ -51,7 +52,7 @@ description: "Find out the best times to wake up based on 90-minute sleep cycles
 
     <div style="margin-top: 20px;">
         <p style="margin-bottom: 15px;">{{ i18n_data.want_to_calculate_bedtime }}</p>
-        <a href="/tool/best-bedtime-calculator" class="bedtime-option-btn" style="text-decoration: none;">{{ i18n_data.link_try_bedtime_calculator }}</a>
+        <a href="/{{page.lang}}/tool/best-bedtime-calculator" class="bedtime-option-btn" style="text-decoration: none;">{{ i18n_data.link_try_bedtime_calculator }}</a>
     </div>
 
 </div>

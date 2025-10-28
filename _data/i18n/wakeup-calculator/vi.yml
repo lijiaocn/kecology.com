@@ -7,7 +7,8 @@ description: "Tìm ra thời điểm tốt nhất để thức dậy dựa trên
 
 # Page content
 h3: "Máy Tính Giờ Thức Dậy"
-intro_text: "Chọn khi bạn dự định đi ngủ, và chúng tôi sẽ tính toán thời điểm thức dậy tốt nhất cho bạn. Việc tính toán bao gồm trung bình 15 phút để ngủ thiếp đi."
+intro_text: "Chọn khi bạn dự định đi ngủ, và chúng tôi sẽ tính toán thời điểm thức dậy tốt nhất cho bạn."
+
 button_go_to_bed_now: "Đi ngủ ngay"
 button_15_min: "Sau 15 phút"
 button_30_min: "Sau 30 phút"
