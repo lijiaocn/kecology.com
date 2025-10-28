@@ -5,7 +5,7 @@ categories: tool
 permalink: /tool/wakeup-calculator
 i18n: true
 mysetting:
-  noheader: true
+  header: hidden
   nowrapper: false
 #   display: fullscreen
 # backgroud-color: darkblue

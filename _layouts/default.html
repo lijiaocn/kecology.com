@@ -10,7 +10,7 @@
     {% endif %}
 
     <main class="page-content" aria-label="Content" {% if page.mysetting.display == 'fullscreen' %}style="padding: 0;"{% endif %}>
-    {% if  page.mysetting.nowrapper %}
+    {% if page.mysetting.nowrapper %}
         {{ content }}
     {% else %}
       <div class="wrapper">

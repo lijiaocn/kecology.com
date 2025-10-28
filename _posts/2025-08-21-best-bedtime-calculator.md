@@ -5,6 +5,7 @@ categories: tool
 permalink: /tool/best-bedtime-calculator
 i18n: true
 mysetting:
+  header: hidden
   nowrapper: false
 #   display: fullscreen
 # backgroud-color: black
