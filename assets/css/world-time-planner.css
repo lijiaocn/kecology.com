@@ -4,14 +4,69 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: 1em;
-  background-color: #121212;
-  background-image: radial-gradient(circle at top center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-  color: #e0e0e0;
+  background-image: 
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+  color: #1f2937;
+  border-radius: 16px;
+  position: relative;
+}
+
+/* Fullscreen Button */
+.wtp-fullscreen-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  transition: all 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.wtp-fullscreen-btn:hover {
+  background-color: #f1f5f9;
+  border-color: #c7d2fe;
+  color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: scale(1.05);
+}
+
+.wtp-fullscreen-btn:active {
+  transform: scale(0.95);
+}
+
+/* Fullscreen mode styles */
+#world-time-planner-app.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0.5em;
+  border-radius: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .wtp-header {
   text-align: center;
-  padding: 4em 1em 2em 1em;
+  padding: 2em 1em 2em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +76,10 @@
   font-size: 3.2em;
   font-weight: 800;
   padding-bottom: 0.2em;
-  color: #ffffff;
   letter-spacing: -0.04em;
   line-height: 1.2;
   display: block;
-  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #6366f1;
   margin-bottom: 0.2em;
 }
 
@@ -37,8 +89,7 @@
   font-weight: 500;
   letter-spacing: 0.05em;
   padding-top: 0.5em;
-  opacity: 0.85;
-  color: #c7d2fe;
+  color: #6366f1;
   -webkit-text-fill-color: initial;
   background: none;
   text-transform: uppercase;
@@ -46,24 +97,22 @@
 
 .wtp-usage-tip {
   font-size: 1.05em;
-  color: #c7d2fe;
-  /* margin-top: 1.5em;
-  margin-bottom: 1.5em; */
+  color: #475569;
   text-align: center;
   line-height: 1.6;
   padding: 1.2em 1.2em;
-  background-color: rgba(99, 102, 241, 0.08);
-  background-image: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.05), transparent);
+  /* 柔和的蓝色背景，在浅色背景下更友好 */
+  background-color: #eff6ff;
+  background-image: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.08), transparent);
   border-radius: 16px;
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  /* max-width: 850px; */
+  border: 1px solid #dbeafe;
   width: 95%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.1);
 }
 
 .wtp-usage-tip::before {
@@ -73,7 +122,7 @@
 
 .wtp-feedback-tip {
   font-size: 0.85em;
-  color: #999;
+  color: #64748b;
   font-style: italic;
   margin-top: 1em;
   text-align: center;
@@ -113,25 +162,26 @@
 .wtp-tab-btn {
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #64748b;
   padding: 12px 24px;
   cursor: pointer;
   font-size: 1em;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom: 3px solid transparent;
+  border-radius: 8px;
   position: relative;
 }
 
 .wtp-tab-btn:hover {
-  color: #e2e8f0;
-  background-color: rgba(99, 102, 241, 0.05);
+  color: #475569;
+  background-color: #f1f5f9;
 }
 
 .wtp-tab-btn.active {
-  color: #818cf8;
+  color: #6366f1;
   border-bottom-color: #6366f1;
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: #eef2ff;
 }
 
 .wtp-tab-hint {
@@ -228,33 +278,42 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #333;
+  background-color: #ffffff;
+  color: #475569;
   padding: 8px 12px;
   border-radius: 16px;
+  border: 1px solid #e2e8f0;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .wtp-city-grid label:hover, .wtp-country-grid .wtp-country-item:hover {
-  background-color: #444;
+  background-color: #f1f5f9;
+  border-color: #c7d2fe;
+  color: #6366f1;
 }
 
 /* Add custom timezone button */
 .wtp-add-custom-btn {
-  background-color: #2a2a2a;
-  color: #e0e0e0;
-  border: 1px dashed #555;
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px dashed #cbd5e1;
   border-radius: 20px;
   padding: 10px 16px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
+
 .wtp-add-custom-btn:hover {
-  background-color: #3a3a3a;
+  background-color: #f1f5f9;
+  border-color: #6366f1;
+  color: #6366f1;
 }
 
 .wtp-hint-text {
   margin-top: 8px;
-  color: #aaa;
+  color: #64748b;
   font-size: 0.8em;
 }
 
@@ -277,20 +336,27 @@
 }
 
 .wtp-modal-content {
-  background-color: #2c2c2c;
+  background-color: #ffffff;
   margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
+  padding: 30px;
+  border: 1px solid #e2e8f0;
   width: 80%;
   max-width: 600px;
-  border-radius: 8px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .wtp-modal-close {
-  color: #aaa;
+  color: #64748b;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wtp-modal-close:hover {
+  color: #1e293b;
 }
 
 /* Country timezone information styles */
@@ -647,13 +713,16 @@
   top: 0;
   left: 0;
   transform: translate(-50%, -100%);
-  background-color: #4caf50; /* 绿色背景 */
-  color: white; /* 白色文字 */
-  padding: 0px 8px;
-  border-radius: 4px;
-  font-size: 0.8em;
+  background-color: #1e293b; /* 深色背景 */
+  color: #ffffff; /* 白色文字 */
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85em;
   white-space: nowrap;
   pointer-events: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #475569;
 }
 
 /* Range selection overlay */
@@ -704,10 +773,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(4px);
 }
 
 .wtp-range-dialog.show {
@@ -725,45 +795,45 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-range-dialog-content {
-  background-color: #0d1117;
-  border: 2px solid #4caf50;
-  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
   padding: 0;
   max-width: 600px;
   width: 90%;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
   position: relative;
 }
 
 .wtp-range-dialog-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  top: 12px;
+  right: 12px;
+  background: #f1f5f9;
   border: none;
-  color: #aaa;
+  color: #64748b;
   font-size: 24px;
   cursor: pointer;
   padding: 0;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   z-index: 10;
 }
 
 .wtp-range-dialog-close:hover {
-  background-color: #333;
-  color: #fff;
+  background-color: #e2e8f0;
+  color: #1e293b;
 }
 
 .wtp-range-dialog-body {
-  padding: 15px;
+  padding: 24px;
 }
 
 /* Range edit container */
@@ -782,7 +852,7 @@ body.dialog-open .wtp-container {
 
 .wtp-range-edit-item label {
   font-weight: 600;
-  color: #4caf50;
+  color: #6366f1;
   font-size: 13px;
   min-width: 60px;
   flex-shrink: 0;
@@ -796,51 +866,53 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-date-value {
-  padding: 4px 8px;
+  padding: 6px 10px;
   font-size: 12px;
-  color: #fff;
+  color: #1e293b;
   text-align: center;
   font-family: monospace;
-  background-color: #333;
-  border: 1px solid #555;
-  border-radius: 4px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   transition: all 0.2s ease;
   min-width: 60px;
   flex-shrink: 0;
+  font-weight: 500;
 }
 
 .wtp-date-value:hover {
-  border-color: #4caf50;
-  background-color: #404040;
+  border-color: #6366f1;
+  background-color: #f1f5f9;
 }
 
 .wtp-time-value {
-  padding: 4px 8px;
+  padding: 6px 10px;
   font-size: 12px;
-  color: #fff;
+  color: #1e293b;
   text-align: center;
   font-family: monospace;
-  background-color: #333;
-  border: 1px solid #555;
-  border-radius: 4px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   transition: all 0.2s ease;
   min-width: 50px;
   flex-shrink: 0;
+  font-weight: 500;
 }
 
 .wtp-time-value:hover {
-  border-color: #4caf50;
-  background-color: #404040;
+  border-color: #6366f1;
+  background-color: #f1f5f9;
 }
 
 .wtp-time-btn {
-  width: 24px;
-  height: 24px;
-  border: 1px solid #4caf50;
-  background-color: #4caf50;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #6366f1;
+  background-color: #6366f1;
   color: white;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 6px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -851,8 +923,9 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-time-btn:hover {
-  background-color: #45a049;
-  border-color: #45a049;
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+  transform: scale(1.05);
 }
 
 .wtp-time-btn:active {
@@ -872,25 +945,26 @@ body.dialog-open .wtp-container {
 #wtp-range-info h3 {
   text-align: center;
   margin: 0 0 20px 0;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* Features Section Styles */
 .wtp-features-section {
   margin: 60px auto;
   padding: 50px 30px;
-  background-color: #1a1a1a;
-  background-image: linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(20, 20, 20, 1) 100%);
+  /* 柔和的白色背景，带轻微阴影 */
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
   border-radius: 24px;
-  border: 1px solid #2d2d2d;
+  border: 1px solid #e2e8f0;
   max-width: 1200px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
 }
 
 .wtp-features-section h2 {
-  color: #fff;
+  color: #1e293b;
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 20px;
@@ -899,7 +973,7 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-features-intro {
-  color: #94a3b8;
+  color: #475569;
   font-size: 1.1em;
   line-height: 1.7;
   text-align: center;
@@ -917,10 +991,10 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-feature-item {
-  background-color: #262626;
+  background-color: #f8fafc;
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid #333;
+  border: 1px solid #e2e8f0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
@@ -935,15 +1009,15 @@ body.dialog-open .wtp-container {
   left: 0;
   width: 4px;
   height: 0;
-  background: #6366f1;
+  background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
   transition: height 0.4s ease;
 }
 
 .wtp-feature-item:hover {
-  background-color: #2d2d2d;
-  border-color: #4f46e5;
+  background-color: #ffffff;
+  border-color: #6366f1;
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
 }
 
 .wtp-feature-item:hover::before {
@@ -951,7 +1025,7 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-feature-item h3 {
-  color: #a5b4fc;
+  color: #6366f1;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -961,21 +1035,21 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-feature-item p {
-  color: #94a3b8;
+  color: #475569;
   font-size: 15px;
   line-height: 1.6;
   margin: 0;
 }
 
 .wtp-use-cases {
-  background-color: #262626;
+  background-color: #f8fafc;
   padding: 40px;
   border-radius: 24px;
-  border: 1px solid #333;
+  border: 1px solid #e2e8f0;
 }
 
 .wtp-use-cases h3 {
-  color: #fff;
+  color: #1e293b;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25px;
@@ -983,7 +1057,7 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-use-cases ul {
-  color: #94a3b8;
+  color: #475569;
   list-style: none;
   padding: 0;
   display: grid;
@@ -993,14 +1067,20 @@ body.dialog-open .wtp-container {
 
 .wtp-use-cases li {
   margin-bottom: 0;
-  background: rgba(255, 255, 255, 0.03);
+  background: #ffffff;
   padding: 20px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.wtp-use-cases li:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
 }
 
 .wtp-use-cases li strong {
-  color: #818cf8;
+  color: #6366f1;
   font-size: 1.1em;
   display: block;
   margin-bottom: 10px;
@@ -1018,8 +1098,8 @@ body.dialog-open .wtp-container {
 .wtp-meeting-label {
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
-  margin-bottom: 5px;
+  color: #1e293b;
+  margin-bottom: 8px;
 }
 
 .wtp-meeting-buttons {
@@ -1030,23 +1110,23 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-meeting-btn {
-  padding: 8px 12px;
-  background-color: #4caf50;
+  padding: 10px 16px;
+  background-color: #6366f1;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
   white-space: nowrap;
 }
 
 .wtp-meeting-btn:hover {
-  background-color: #45a049;
+  background-color: #4f46e5;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .wtp-meeting-btn:active {
@@ -1082,63 +1162,70 @@ body.dialog-open .wtp-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 5px;
-  background-color: #252525;
-  border-radius: 4px;
-  border: 1px solid #333;
-  transition: background-color 0.2s ease;
+  padding: 8px 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   gap: 10px;
 }
 
 .wtp-timezone-time-item:hover {
-  background-color: #333;
+  background-color: #f1f5f9;
+  border-color: #c7d2fe;
 }
 
 .wtp-timezone-name {
   font-weight: 600;
-  color: #e0e0e0;
+  color: #1e293b;
 }
 
 .wtp-timezone-time {
-  color: #4caf50;
+  color: #6366f1;
   font-family: 'Courier New', monospace;
   font-size: 0.9em;
+  font-weight: 600;
 }
 
 /* Timeline Row Styles */
 .wtp-timeline-row {
   display: flex;
   align-items: stretch;
-  /* padding-top: 20px; Reduced space for day label above */
-  padding-bottom: 8px; /* Reduced bottom padding */
-  margin-bottom: 12px; /* 增加行间距 */
+  padding-bottom: 8px;
+  margin-bottom: 12px;
   min-width: fit-content;
   width: max-content;
-  overflow: visible; /* Ensure day labels are visible */
+  overflow: visible;
   transition: opacity 0.2s ease;
-  height: 80px; /* 增加高度以适应内容 */
-  min-height: 85px; /* 确保最小高度 */
-  box-sizing: border-box; /* 确保padding包含在高度内 */
-  position: relative; /* 创建定位上下文 */
-  z-index: 1; /* 确保时间标签在正确的堆叠上下文中 */
+  height: 80px;
+  min-height: 85px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  /* 配色优化：添加背景色、内边距和圆角 */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 .wtp-local-timezone {
-  background-color: rgba(76, 175, 80, 0.1);
+  background-color: #f0fdf4;
+  border-color: #86efac;
 }
 
 .wtp-local-timezone .wtp-city {
-  color: #4caf50;
+  color: #16a34a;
   font-weight: 600;
 }
 
 .wtp-local-timezone .wtp-timezone-info {
   cursor: default;
-  opacity: 0.8;
+  background-color: #dcfce7;
+  border: 1px solid #86efac;
 }
 
 .wtp-local-timezone .wtp-timezone-info:hover {
-  background-color: rgba(76, 175, 80, 0.1);
+  background-color: #dcfce7;
   transform: none;
 }
 
@@ -1150,9 +1237,10 @@ body.dialog-open .wtp-container {
 
 .wtp-timezone-info {
   flex: 0 0 auto;
-  padding: 6px 8px;
-  background-color: #252525;
-  border-radius: 4px 0 0 4px;
+  padding: 8px 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1160,35 +1248,51 @@ body.dialog-open .wtp-container {
   overflow: hidden;
   white-space: nowrap;
   cursor: move;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   min-width: 0;
-  height: 100%; /* 与父容器等高 */
-  box-sizing: border-box; /* 确保padding包含在高度内 */
-  margin-right: 8px; /* 与时间轴轨道之间的空隙 */
+  height: 100%;
+  box-sizing: border-box;
+  margin-right: 8px;
 }
 
 .wtp-timezone-info:hover {
-  background-color: #333;
+  background-color: #f1f5f9;
+  border-color: #c7d2fe;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.1);
 }
 
 .wtp-remove-btn {
   position: absolute;
   top: 5px;
   right: 5px;
-  background: none;
+  background: rgba(239, 68, 68, 0.1);
   border: none;
-  color: #888;
+  color: #ef4444;
   font-size: 1.2em;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.wtp-remove-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+  transform: scale(1.1);
 }
 
 .wtp-city {
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 600;
+  color: #1e293b;
   white-space: nowrap;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
-  padding-right: 20px; /* Space for the remove button */
+  padding-right: 20px;
   max-width: 100%;
   word-break: break-all;
   line-height: 1.1;
@@ -1204,9 +1308,10 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-current-time {
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: 500;
-  margin-top: 2px;
+  color: #6366f1;
+  margin-top: 4px;
   min-height: 1.1em;
   min-width: 4ch;
 }
@@ -1237,13 +1342,13 @@ body.dialog-open .wtp-container {
 /* 小时日期组样式 */
 .wtp-hour-day-group {
   display: flex;
-  flex: 1 1 auto; /* 占据全部垂直空间 */
+  flex: 1 1 auto;
   position: relative;
-  flex-direction: column; /* 垂直布局 */
-  height: 100%; /* 占据父容器的所有高度 */
-  min-width: 0; /* 防止被内容撑宽 */
-  overflow: hidden; /* 隐藏超出部分 */
-  border-right: 1px solid #444; /* 右侧边框分割线 */
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-right: 1px solid #e2e8f0;
 }
 
 /* 最后一个日期组不需要右边框 */
@@ -1275,7 +1380,8 @@ body.dialog-open .wtp-container {
 
 /* 统一背景色 */
 .wtp-hour-day-group-bottom {
-  background-color: #2a2a2a; /* 统一的背景色 */
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
 }
 
 /* 日期显示容器 */
@@ -1299,17 +1405,16 @@ body.dialog-open .wtp-container {
 .wtp-date-text {
   font-size: 0.65em;
   font-weight: 600;
-  color: #e0e0e0;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+  color: #64748b;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
   width: 100%;
-  min-width: 0; /* 防止被内容撑宽 */
+  min-width: 0;
   display: block;
   text-align: left;
-  box-sizing: border-box; /* 确保padding包含在宽度内 */
+  box-sizing: border-box;
 }
 
 /* 小时日期组之间的分割线 - 已移除边框 */
@@ -1337,11 +1442,11 @@ body.dialog-open .wtp-container {
 
 .wtp-timeline-hour {
   width: 30px;
-  height: 100%; /* 占据父容器的全部高度 */
+  height: 100%;
   text-align: center;
   font-size: 0.8em;
-  color: #aaa; /* fallback for any inline text */
-  border-left: 1px solid #333;
+  color: #64748b;
+  border-left: 1px solid #e2e8f0;
   padding: 0;
   position: relative;
   display: flex;
@@ -1351,14 +1456,22 @@ body.dialog-open .wtp-container {
 
 .wtp-timeline-hour::after {
     content: attr(data-hour);
-    color: rgba(255, 255, 255, 0.96);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,0.5);
+    color: #1e293b;
+    font-weight: 600;
+    text-shadow: none;
 }
 
 /* Time of Day Colors */
-/* 深夜到黎明 - 深蓝紫色 */
+/* 深夜到黎明 - 深灰色表示不可用时间 */
 .wtp-timeline-hour.night {
-  background-color: #2c3e50;
+  background-color: #6b7280;
+  opacity: 0.6;
+}
+
+.wtp-timeline-hour.night::after {
+  color: #9ca3af;
+  font-weight: 500;
+  text-shadow: none;
 }
 
 /* 早晨 - 明亮的淡黄色 */
@@ -1366,9 +1479,19 @@ body.dialog-open .wtp-container {
   background-color: #f1c40f;
 }
 
-/* 工作时间 - 带绿色感觉的白色 */
+.wtp-timeline-hour.day::after {
+  color: #1e293b;
+}
+
+/* 工作时间 - 纯绿色背景表示可用时间 */
 .wtp-timeline-hour.work {
-  background-color: #d5dbdb;
+  background-color: #22c55e;
+}
+
+.wtp-timeline-hour.work::after {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* 晚班工作时间 - 与day接近的暖黄色 */
@@ -1376,14 +1499,27 @@ body.dialog-open .wtp-container {
   background-color: #f4d03f;
 }
 
+.wtp-timeline-hour.late-work::after {
+  color: #1e293b;
+}
+
 /* 傍晚 - 比late-work稍微浓一点的黄色 */
 .wtp-timeline-hour.evening {
   background-color: #f1c40f;
 }
 
+.wtp-timeline-hour.evening::after {
+  color: #1e293b;
+}
+
 /* 深夜前 - 浓黄色和深蓝紫色之间的过渡色 */
 .wtp-timeline-hour.late-night {
   background-color: #c0392b;
+}
+
+.wtp-timeline-hour.late-night::after {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Past hours styling with diagonal stripes to indicate unavailable time */
@@ -1440,7 +1576,7 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-timeline-hour.wtp-day-start {
-    border-left: 2px solid #000; /* Separator */
+    border-left: 2px solid #cbd5e1;
     position: relative;
 }
 

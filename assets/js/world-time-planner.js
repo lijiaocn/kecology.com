@@ -4,6 +4,72 @@ document.addEventListener('DOMContentLoaded', () => {
     const countryList = document.getElementById('country-list');
     const timezoneList = document.getElementById('timezone-list');
     const modal = document.getElementById('city-modal');
+    const appContainer = document.getElementById('world-time-planner-app');
+    const fullscreenBtn = document.getElementById('wtp-fullscreen-btn');
+    
+    // Fullscreen functionality
+    if (fullscreenBtn && appContainer) {
+        let isFullscreen = false;
+        const header = document.querySelector('.wtp-header');
+        const featuresSection = document.querySelector('.wtp-features-section');
+        const siteHeader = document.querySelector('header, .site-header, .page-header');
+        const siteFooter = document.querySelector('footer, .site-footer, .page-footer');
+        
+        const enterFullscreen = () => {
+            // Enter fullscreen
+            appContainer.classList.add('fullscreen');
+            document.body.style.overflow = 'hidden';
+            isFullscreen = true;
+            
+            // Hide other content
+            if (header) header.style.display = 'none';
+            if (featuresSection) featuresSection.style.display = 'none';
+            if (siteHeader) siteHeader.style.display = 'none';
+            if (siteFooter) siteFooter.style.display = 'none';
+            
+            // Update button icon to exit fullscreen
+            fullscreenBtn.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+                </svg>
+            `;
+        };
+        
+        const exitFullscreen = () => {
+            // Exit fullscreen
+            appContainer.classList.remove('fullscreen');
+            document.body.style.overflow = '';
+            isFullscreen = false;
+            
+            // Show other content
+            if (header) header.style.display = '';
+            if (featuresSection) featuresSection.style.display = '';
+            if (siteHeader) siteHeader.style.display = '';
+            if (siteFooter) siteFooter.style.display = '';
+            
+            // Update button icon to enter fullscreen
+            fullscreenBtn.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            `;
+        };
+        
+        fullscreenBtn.addEventListener('click', () => {
+            if (!isFullscreen) {
+                enterFullscreen();
+            } else {
+                exitFullscreen();
+            }
+        });
+        
+        // Handle ESC key to exit fullscreen
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isFullscreen) {
+                exitFullscreen();
+            }
+        });
+    }
     const modalCountryName = document.getElementById('modal-country-name');
     const modalCountryInfo = document.getElementById('modal-country-info');
     const modalCityList = document.getElementById('modal-city-list');

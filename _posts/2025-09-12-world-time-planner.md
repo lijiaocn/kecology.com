@@ -19,7 +19,7 @@ description: "The best visual meeting time planner for global teams. Easily plan
 {% endif %}
 
 
-<link rel="stylesheet" href="/assets/css/world-time-planner.css?v=12">
+<link rel="stylesheet" href="/assets/css/world-time-planner.css?v=14">
 
 <div class="wtp-header">
   <h1>
@@ -37,8 +37,11 @@ description: "The best visual meeting time planner for global teams. Easily plan
 </div>
 
 <div id="world-time-planner-app">
-
-
+  <button class="wtp-fullscreen-btn" id="wtp-fullscreen-btn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+    </svg>
+  </button>
   <div class="wtp-selectors-container">
     <div class="wtp-tab-buttons">
       <div class="wtp-tab-btn-container">
@@ -93,6 +96,83 @@ description: "The best visual meeting time planner for global teams. Easily plan
   </div>
 
 
+
+
+
+  <!-- Time Range Selection Dialog -->
+  <div id="wtp-range-dialog" class="wtp-range-dialog">
+    <div class="wtp-range-dialog-content">
+      <div class="wtp-range-dialog-body">
+        <div id="wtp-range-info">
+          <h3>{{ i18n_data.dialog_title }}</h3>
+          <div class="wtp-range-edit-container">
+            <div class="wtp-range-edit-item">
+              <label>{{ i18n_data.dialog_label_start }}</label>
+              <div class="wtp-datetime-display">
+                <span class="wtp-date-value" id="wtp-start-date-display">Loading...</span>
+                <span class="wtp-time-value" id="wtp-start-time-display">Loading...</span>
+              </div>
+              <div class="wtp-btn-group">
+                <button class="wtp-time-btn wtp-time-decrease" data-target="start" data-direction="decrease">-</button>
+                <button class="wtp-time-btn wtp-time-increase" data-target="start" data-direction="increase">+</button>
+              </div>
+            </div>
+            <div class="wtp-range-edit-item">
+              <label>{{ i18n_data.dialog_label_end }}</label>
+              <div class="wtp-datetime-display">
+                <span class="wtp-date-value" id="wtp-end-date-display">Loading...</span>
+                <span class="wtp-time-value" id="wtp-end-time-display">Loading...</span>
+              </div>
+              <div class="wtp-btn-group">
+                <button class="wtp-time-btn wtp-time-decrease" data-target="end" data-direction="decrease">-</button>
+                <button class="wtp-time-btn wtp-time-increase" data-target="end" data-direction="increase">+</button>
+              </div>
+            </div>
+            <div class="wtp-range-edit-item">
+              <label>{{ i18n_data.dialog_label_duration }}</label>
+              <div class="wtp-datetime-display">
+                <span class="wtp-time-value" id="wtp-duration-display">Loading...</span>
+              </div>
+              <div class="wtp-btn-group">
+                <button class="wtp-time-btn wtp-time-decrease" data-target="duration" data-direction="decrease">-</button>
+                <button class="wtp-time-btn wtp-time-increase" data-target="duration" data-direction="increase">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wtp-meeting-links">
+          <label class="wtp-meeting-label">{{ i18n_data.dialog_label_add_calendar }}</label>
+          <div class="wtp-meeting-buttons">
+            <button class="wtp-meeting-btn" id="wtp-google-meeting-btn">
+              {{ i18n_data.button_google_calendar }}
+            </button>
+            <button class="wtp-meeting-btn" id="wtp-outlook-meeting-btn">
+              {{ i18n_data.button_outlook }}
+            </button>
+            <button class="wtp-meeting-btn" id="wtp-yahoo-meeting-btn">
+              {{ i18n_data.button_yahoo_calendar }}
+            </button>
+          </div>
+        </div>
+        <div id="wtp-timezone-times"></div>
+      </div>
+      <button class="wtp-range-dialog-close">&times;</button>
+    </div>
+  </div>
+</div>
+
+<template id="wtp-timeline-row-template">
+  <div class="wtp-timeline-row">
+    <div class="wtp-timezone-info">
+      <button class="wtp-remove-btn">&times;</button>
+      <div class="wtp-city"></div>
+      <div class="wtp-current-time"></div>
+    </div>
+    <div class="wtp-timeline-track">
+      <div class="wtp-hover-time-label"></div>
+    </div>
+  </div>
+</template>
 
 
   <div class="wtp-features-section">
@@ -178,82 +258,6 @@ description: "The best visual meeting time planner for global teams. Easily plan
     </div>
   </div>
 
-  <!-- Time Range Selection Dialog -->
-  <div id="wtp-range-dialog" class="wtp-range-dialog">
-    <div class="wtp-range-dialog-content">
-      <div class="wtp-range-dialog-body">
-        <div id="wtp-range-info">
-          <h3>{{ i18n_data.dialog_title }}</h3>
-          <div class="wtp-range-edit-container">
-            <div class="wtp-range-edit-item">
-              <label>{{ i18n_data.dialog_label_start }}</label>
-              <div class="wtp-datetime-display">
-                <span class="wtp-date-value" id="wtp-start-date-display">Loading...</span>
-                <span class="wtp-time-value" id="wtp-start-time-display">Loading...</span>
-              </div>
-              <div class="wtp-btn-group">
-                <button class="wtp-time-btn wtp-time-decrease" data-target="start" data-direction="decrease">-</button>
-                <button class="wtp-time-btn wtp-time-increase" data-target="start" data-direction="increase">+</button>
-              </div>
-            </div>
-            <div class="wtp-range-edit-item">
-              <label>{{ i18n_data.dialog_label_end }}</label>
-              <div class="wtp-datetime-display">
-                <span class="wtp-date-value" id="wtp-end-date-display">Loading...</span>
-                <span class="wtp-time-value" id="wtp-end-time-display">Loading...</span>
-              </div>
-              <div class="wtp-btn-group">
-                <button class="wtp-time-btn wtp-time-decrease" data-target="end" data-direction="decrease">-</button>
-                <button class="wtp-time-btn wtp-time-increase" data-target="end" data-direction="increase">+</button>
-              </div>
-            </div>
-            <div class="wtp-range-edit-item">
-              <label>{{ i18n_data.dialog_label_duration }}</label>
-              <div class="wtp-datetime-display">
-                <span class="wtp-time-value" id="wtp-duration-display">Loading...</span>
-              </div>
-              <div class="wtp-btn-group">
-                <button class="wtp-time-btn wtp-time-decrease" data-target="duration" data-direction="decrease">-</button>
-                <button class="wtp-time-btn wtp-time-increase" data-target="duration" data-direction="increase">+</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wtp-meeting-links">
-          <label class="wtp-meeting-label">{{ i18n_data.dialog_label_add_calendar }}</label>
-          <div class="wtp-meeting-buttons">
-            <button class="wtp-meeting-btn" id="wtp-google-meeting-btn">
-              {{ i18n_data.button_google_calendar }}
-            </button>
-            <button class="wtp-meeting-btn" id="wtp-outlook-meeting-btn">
-              {{ i18n_data.button_outlook }}
-            </button>
-            <button class="wtp-meeting-btn" id="wtp-yahoo-meeting-btn">
-              {{ i18n_data.button_yahoo_calendar }}
-            </button>
-          </div>
-        </div>
-        <div id="wtp-timezone-times"></div>
-      </div>
-      <button class="wtp-range-dialog-close">&times;</button>
-    </div>
-  </div>
-
-</div>
-
-<template id="wtp-timeline-row-template">
-  <div class="wtp-timeline-row">
-    <div class="wtp-timezone-info">
-      <button class="wtp-remove-btn">&times;</button>
-      <div class="wtp-city"></div>
-      <div class="wtp-current-time"></div>
-    </div>
-    <div class="wtp-timeline-track">
-      <div class="wtp-hover-time-label"></div>
-    </div>
-  </div>
-</template>
-
 <!-- Hidden text elements for internationalization -->
 <div id="text-templates" style="display: none;">
     <span id="text-invalid-timezone">{{ i18n_data.text_invalid_timezone }}</span>
@@ -263,4 +267,4 @@ description: "The best visual meeting time planner for global teams. Easily plan
     <span id="text-unknown">{{ i18n_data.text_unknown }}</span>
 </div>
 
-<script src="/assets/js/world-time-planner.js?v=11"></script>
+<script src="/assets/js/world-time-planner.js?v=14"></script>
