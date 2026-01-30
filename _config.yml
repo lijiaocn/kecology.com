@@ -29,8 +29,9 @@ url: "https://www.kecology.com" # the base hostname & protocol for your site, e.
 #twitter_username: jekyllrb
 #github_username:  jekyll
 google_analytics: G-V0BJCWKN8Y
-disqus:
-  shortname: Kecology
+# 关闭评论，没有什么评论。。反而影响网页加载
+# disqus:
+#   shortname: Kecology
 
 # Build settings
 theme: minima
