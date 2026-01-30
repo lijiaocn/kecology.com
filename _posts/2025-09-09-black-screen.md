@@ -9,8 +9,8 @@ mysetting:
   display: fullscreen
   nowrapper: true
   background-color: black
-title: "Dead Pixel Test: A Black Color Screen for Monitor Test (More Colors)"
-description: "Use this full black screen to test for dead pixels, check for backlight bleed, clean your screen, save power on OLED/AMOLED displays, and reduce eye strain. A versatile tool for your monitor."
+title: "Online Black Screen: Monitor Backlight Bleed, IPS Glow & Dead Pixel Test"
+description: "the best online black screen tool for instant full-screen testing. Check your monitor for backlight bleed, IPS glow, and dead pixels. Perfect for new displays, OLED burn-in prevention, and dark room setup. No download required."
 ---
 
 {% assign i18n_data = site.data.i18n['black-screen'][page.lang] %}
@@ -21,7 +21,7 @@ description: "Use this full black screen to test for dead pixels, check for back
 <link rel="stylesheet" href="/assets/css/black-screen.css?v=1">
 
 <div id="content">
-  <h1>{{ i18n_data.h1 }}</h1>
+  <h1>{{ i18n_data.title }}</h1>
   <p>{{ i18n_data.intro_text }}</p>
   <div id="more-info">
     <p>{{ i18n_data.useful_text }}</p>
