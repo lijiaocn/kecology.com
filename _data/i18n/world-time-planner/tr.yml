@@ -74,6 +74,12 @@ text_timezone_label: Saat Dilimi
 text_now: Şimdi
 text_view_times: Saatleri Görüntüle
 text_unknown: Bilinmeyen
-usage_tip: 'Nasıl kullanılır: Toplantı saatlerini seçmek için zaman çizelgesinin üzerine
-  gelin veya bir zaman aralığı seçmek için sürükleyin. Aşağıdaki onay kutularını kullanarak
-  şehirler veya saat dilimleri ekleyin.'
+usage_tip: Her bölge için saatleri görüntülemek için zaman çizelgesinin üzerine gelin.
+  Bir zaman aralığı seçmek ve toplantı oluşturma penceresini açmak için tıklayın ve
+  sürükleyin. Şehirler veya saat dilimleri eklemek için onay kutularını kullanın.
+use_case_course_title: Saat dilimleri arasında çevrimiçi kurs planlama
+use_case_course_desc: Çevrimiçi bir kurs veren bir üniversite profesörü, Kuzey Amerika,
+  Avrupa ve Asya'daki öğrenciler için canlı oturumlar planlamalıdır. Bu toplantı planlayıcısını
+  kullanarak 9-10 AM EST seçerler ve hemen Avrupa (14-15) ve Asya (22-23) için çalıştığını
+  görürler. Tek tıkla tüm öğrenciler için takvim davetiyeleri oluştururlar.
+dialog_label_timezone_times: Tüm saat dilimlerindeki saatler

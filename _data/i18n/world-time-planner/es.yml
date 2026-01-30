@@ -77,6 +77,13 @@ text_timezone_label: Zona Horaria
 text_now: Ahora
 text_view_times: Ver Tiempos
 text_unknown: Desconocido
-usage_tip: 'Cómo usar: Pase el mouse sobre la línea de tiempo para seleccionar horarios
-  de reunión, o arrastre para elegir un rango de tiempo. Utilice nuestro planificador
-  de reuniones con reloj mundial para agregar ciudades o zonas horarias a continuación.'
+usage_tip: Pasa el mouse sobre la línea de tiempo para ver las horas de cada región.
+  Haz clic y arrastra para seleccionar un rango de tiempo y abrir la ventana de creación
+  de reuniones. Usa las casillas de verificación para agregar ciudades o zonas horarias.
+use_case_course_title: Programación de cursos en línea entre zonas horarias
+use_case_course_desc: Un profesor universitario que imparte un curso en línea necesita
+  programar sesiones en vivo para estudiantes en América del Norte, Europa y Asia.
+  Usando este planificador de reuniones, seleccionan 9-10 AM EST y ven inmediatamente
+  que funciona para Europa (2-3 PM) y Asia (10-11 PM). Crean invitaciones de calendario
+  para todos los estudiantes con un clic.
+dialog_label_timezone_times: Horas en todas las zonas horarias

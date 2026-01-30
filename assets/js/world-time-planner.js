@@ -260,9 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const containerWidth = scrollContainer.clientWidth;
         const containerPadding = 48; // 1.5em * 2 = 3em ≈ 48px
         
-        // 动态计算时区信息区域的宽度
-        const timezoneInfo = document.querySelector('.wtp-timezone-info');
-        const timezoneInfoWidth = timezoneInfo ? timezoneInfo.offsetWidth + 8 : 140; // 8px margin
+        // 使用固定的时区信息区域宽度（150px + 8px margin）
+        const timezoneInfoWidth = 150 + 8; // 固定150px宽度 + 8px margin
         
         const availableWidth = containerWidth - timezoneInfoWidth - containerPadding;
         const numHours = Math.floor(availableWidth / HOUR_BLOCK_WIDTH) - 1; // 减少一个避免滚动条
@@ -996,7 +995,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 hour12: false
             });
 
-            label.textContent = timeFormatter.format(timeAtCursor);
+            const weekdayFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                weekday: 'long'
+            });
+
+            // Get weekday in the target timezone
+            const weekdayParts = weekdayFormatter.formatToParts(timeAtCursor);
+            const weekdayString = weekdayParts.find(part => part.type === 'weekday').value;
+            
+            // Check if it's weekend (Saturday or Sunday)
+            const isWeekend = weekdayString === 'Saturday' || weekdayString === 'Sunday';
+
+            const timeString = timeFormatter.format(timeAtCursor);
+            
+            if (isWeekend) {
+                label.innerHTML = `${timeString}, <span style="color: #ef4444;">${weekdayString}</span>`;
+            } else {
+                label.textContent = `${timeString}, ${weekdayString}`;
+            }
             // Position relative to the timeline track using percentage
             label.style.left = `${percent}%`;
             label.style.transform = 'translate(-50%, -100%)';
@@ -1079,12 +1096,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedCities.has(cityKey)) return;
         selectedCities.add(cityKey);
         const row = createTimelineRow(timezone, city, country);
-        // Ensure TIMELINE_HOURS is calculated before rendering
-        calculateAndSetTimelineHours();
-        renderTimelineGrid(row);
         updateSingleRowTimeDisplay(row);
         // Align widths after adding new row
-        setTimeout(() => alignTimezoneInfoWidths(), 0);
+        setTimeout(() => {
+            // Ensure TIMELINE_HOURS is calculated after DOM is updated
+            calculateAndSetTimelineHours();
+            // Re-render all rows to ensure consistent timeline length
+            renderAllTimelineGrids();
+            alignTimezoneInfoWidths();
+        }, 0);
         saveSelectedCities();
         
         // Save the new order (new city will be at the end)
@@ -1360,7 +1380,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block'; 
         modalCityList.onchange = handleCheckboxChange; 
     }
-    function getTimeOfDay(hour) { if (hour >= 9 && hour < 19) return 'work'; if (hour >= 19 && hour < 21) return 'late-work'; if (hour >= 21 && hour < 23) return 'evening'; if (hour === 23) return 'late-night'; if (hour >= 0 && hour < 7) return 'night'; return 'day'; }
+    function getTimeOfDay(hour) { if (hour >= 9 && hour < 19) return 'work'; if (hour >= 19 && hour < 21) return 'late-work'; if (hour >= 21 && hour < 23) return 'evening'; if (hour === 23) return 'evening'; if (hour >= 0 && hour < 7) return 'night'; if (hour >= 7 && hour < 9) return 'morning'; return 'day'; }
     function removeTimeline(cityKey) { 
         // Prevent removing local timezone
         if (cityKey.endsWith(',Local')) {
@@ -1543,8 +1563,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const currentYMD = getYMD(now);
 
-        // 首先创建所有小时日期组
+        // 首先创建所有小时日期组，并记录每个组的起始索引
         const hourDayGroups = [];
+        const hourDayGroupStartIndices = []; // 记录每个组的起始小时索引
         let lastDate = '';
         
         for (let i = 0; i < TIMELINE_HOURS; i++) {
@@ -1571,6 +1592,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hourDayGroup.appendChild(bottomArea);
                 hoursContainer.appendChild(hourDayGroup);
                 hourDayGroups.push(hourDayGroup);
+                hourDayGroupStartIndices.push(i); // 记录这个组的起始索引
                 lastDate = dateOfThisBlock;
             }
         }
@@ -1633,59 +1655,49 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 只有当小时数量大于等于2时才显示日期
             if (hourCount >= 2) {
-                // 找到这个小时日期组对应的第一个小时块的时间
-                // 需要找到这个组在时间轴中的起始位置
-                const hourBlocks = topArea.querySelectorAll('.wtp-timeline-hour');
-                if (hourBlocks.length > 0) {
-                    // 找到这个组在原始时间轴中的起始索引
-                    const firstHourBlock = hourBlocks[0];
-                    const allHourBlocks = timeRows.querySelectorAll('.wtp-timeline-hour');
-                    let startIndex = -1;
-                    for (let i = 0; i < allHourBlocks.length; i++) {
-                        if (allHourBlocks[i] === firstHourBlock) {
-                            startIndex = i;
-                            break;
-                        }
-                    }
+                // 使用记录的起始索引，而不是在所有行中查找
+                const startIndex = hourDayGroupStartIndices[index];
+                
+                if (startIndex >= 0) {
+                    // 使用与创建小时块相同的计算方式
+                    const timeForDate = new Date(startOfDisplay);
+                    timeForDate.setHours(startOfDisplay.getHours() + startIndex + timelineStartOffsetHours);
                     
-                    if (startIndex >= 0) {
-                        // 使用与创建小时块相同的计算方式
-                        const timeForDate = new Date(startOfDisplay);
-                        timeForDate.setHours(startOfDisplay.getHours() + startIndex + timelineStartOffsetHours);
-                        
-                        // 创建日期显示元素
-                        const dateDisplay = document.createElement('div');
-                        dateDisplay.className = 'wtp-date-display';
-                        
-                        // 使用目标时区格式化日期
-                        const timezone = row.dataset.timezone;
-                        const timezoneWeekdayFormatter = new Intl.DateTimeFormat('en-US', { 
-                            timeZone: timezone, 
-                            weekday: 'short' 
-                        });
-                        const timezoneDateFormatter = new Intl.DateTimeFormat('en-US', { 
-                            timeZone: timezone, 
-                            year: 'numeric', 
-                            month: 'numeric', 
-                            day: 'numeric' 
-                        });
-                        
-                        const weekdayShort = timezoneWeekdayFormatter.format(timeForDate);
-                        const fullDate = timezoneDateFormatter.format(timeForDate);
-                        const dateParts = fullDate.split('/');
-                        const month = dateParts[0];
-                        const day = dateParts[1];
-                        const year = dateParts[2];
-                        
-                        // 创建完整的日期文本（一行显示）
-                        const dateText = document.createElement('span');
-                        dateText.className = 'wtp-date-text';
-                        dateText.textContent = `${weekdayShort} ${month}/${day}`;
-                        dateText.setAttribute('data-full-date', `${weekdayShort} ${month}/${day}/${year}`);
-                        
-                        dateDisplay.appendChild(dateText);
-                        bottomArea.appendChild(dateDisplay);
-                    }
+                    // 创建日期显示元素
+                    const dateDisplay = document.createElement('div');
+                    dateDisplay.className = 'wtp-date-display';
+                    
+                    // 使用目标时区格式化日期
+                    const timezone = row.dataset.timezone;
+                    const timezoneWeekdayFormatter = new Intl.DateTimeFormat('en-US', { 
+                        timeZone: timezone, 
+                        weekday: 'short' 
+                    });
+                    const timezoneDateFormatter = new Intl.DateTimeFormat('en-US', { 
+                        timeZone: timezone, 
+                        year: 'numeric', 
+                        month: 'numeric', 
+                        day: 'numeric' 
+                    });
+                    
+                    const weekdayShort = timezoneWeekdayFormatter.format(timeForDate);
+                    const fullDate = timezoneDateFormatter.format(timeForDate);
+                    const dateParts = fullDate.split('/');
+                    const month = dateParts[0];
+                    const day = dateParts[1];
+                    const year = dateParts[2];
+                    
+                    // 检查是否是周末
+                    const isWeekend = weekdayShort === 'Sat' || weekdayShort === 'Sun';
+                    
+                    // 创建完整的日期文本（一行显示）
+                    const dateText = document.createElement('span');
+                    dateText.className = isWeekend ? 'wtp-date-text weekend' : 'wtp-date-text';
+                    dateText.textContent = `${weekdayShort} ${month}/${day}`;
+                    dateText.setAttribute('data-full-date', `${weekdayShort} ${month}/${day}/${year}`);
+                    
+                    dateDisplay.appendChild(dateText);
+                    bottomArea.appendChild(dateDisplay);
                 }
             }
         });
@@ -1875,7 +1887,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 hour12: false
             });
 
-            label.textContent = timeFormatter.format(timeAtCursor);
+            const weekdayFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                weekday: 'long'
+            });
+
+            // Get weekday in the target timezone
+            const weekdayParts = weekdayFormatter.formatToParts(timeAtCursor);
+            const weekdayString = weekdayParts.find(part => part.type === 'weekday').value;
+            
+            // Check if it's weekend (Saturday or Sunday)
+            const isWeekend = weekdayString === 'Saturday' || weekdayString === 'Sunday';
+
+            const timeString = timeFormatter.format(timeAtCursor);
+            
+            if (isWeekend) {
+                label.innerHTML = `${timeString}, <span style="color: #ef4444;">${weekdayString}</span>`;
+            } else {
+                label.textContent = `${timeString}, ${weekdayString}`;
+            }
             // Position relative to the timeline track using percentage
             label.style.left = `${percent}%`;
             label.style.transform = 'translate(-50%, -100%)';
@@ -2059,13 +2089,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Store current time range for editing
         currentTimeRange = timeRange;
         
-        const durationHours = Math.floor(timeRange.duration / (1000 * 60 * 60));
-        const durationMinutes = Math.floor((timeRange.duration % (1000 * 60 * 60)) / (1000 * 60));
+        // Calculate duration in minutes
+        const durationMinutes = Math.floor(timeRange.duration / (1000 * 60));
         
         // 只更新动态内容
         document.getElementById('wtp-start-date-display').textContent = formatDateForDisplay(timeRange.start);
         document.getElementById('wtp-start-time-display').textContent = formatTimeForInput(timeRange.start);
-        document.getElementById('wtp-duration-display').textContent = `${durationHours}h ${durationMinutes}m`;
+        const durationInput = document.getElementById('wtp-duration-display');
+        if (durationInput && durationInput.tagName === 'INPUT') {
+            durationInput.value = durationMinutes;
+        } else {
+            durationInput.textContent = durationMinutes;
+        }
         document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(timeRange.end);
         document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(timeRange.end);
         
@@ -2106,6 +2141,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+        
+        // Add event listener for duration input manual editing
+        const durationInput = document.getElementById('wtp-duration-display');
+        if (durationInput && durationInput.tagName === 'INPUT') {
+            // Remove existing listeners by cloning
+            const newInput = durationInput.cloneNode(true);
+            durationInput.parentNode.replaceChild(newInput, durationInput);
+            
+            // Add event listeners for manual input
+            // Use 'input' event for real-time updates while typing (allows empty input)
+            newInput.addEventListener('input', handleDurationInputChange);
+            
+            // On blur/change, set empty input to 0
+            const handleBlurOrChange = () => {
+                if (newInput.value === '' || isNaN(parseInt(newInput.value, 10))) {
+                    newInput.value = '0';
+                }
+                handleDurationInputChange();
+            };
+            
+            newInput.addEventListener('change', handleBlurOrChange);
+            newInput.addEventListener('blur', handleBlurOrChange);
+            newInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleBlurOrChange();
+                    newInput.blur();
+                }
+            });
+        }
     }
     
     function addMeetingLinkListeners() {
@@ -2308,16 +2373,52 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = isIncrease ? 1 : -1;
         const newDuration = currentTimeRange.duration + minutes * 60 * 1000;
         
-        if (newDuration <= 0) return; // Prevent negative duration
+        if (newDuration < 0) return; // Prevent negative duration (allow 0)
         
         const newEndTime = new Date(currentTimeRange.start.getTime() + newDuration);
         
-        // Calculate duration components
-        const durationHours = Math.floor(newDuration / (1000 * 60 * 60));
-        const durationMinutes = Math.floor((newDuration % (1000 * 60 * 60)) / (1000 * 60));
+        // Calculate duration in minutes
+        const durationMinutes = Math.floor(newDuration / (1000 * 60));
         
         // Update displays
-        document.getElementById('wtp-duration-display').textContent = `${durationHours}h ${durationMinutes}m`;
+        const durationInput = document.getElementById('wtp-duration-display');
+        if (durationInput && durationInput.tagName === 'INPUT') {
+            durationInput.value = durationMinutes;
+        } else {
+            durationInput.textContent = durationMinutes;
+        }
+        document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
+        document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
+        
+        // Update current time range
+        updateCurrentTimeRange(currentTimeRange.start, newEndTime);
+    }
+    
+    function handleDurationInputChange() {
+        if (!currentTimeRange) return;
+        
+        const durationInput = document.getElementById('wtp-duration-display');
+        if (!durationInput || durationInput.tagName !== 'INPUT') return;
+        
+        // Allow empty input during typing
+        if (durationInput.value === '') {
+            // Don't update end time when input is empty, allow user to continue typing
+            return;
+        }
+        
+        let minutes = parseInt(durationInput.value, 10);
+        
+        // Allow 0 and validate input
+        if (isNaN(minutes) || minutes < 0) {
+            minutes = 0;
+            // Don't force update the input value to 0 during typing, only validate on blur/change
+        }
+        
+        // Calculate new duration in milliseconds
+        const newDuration = minutes * 60 * 1000;
+        const newEndTime = new Date(currentTimeRange.start.getTime() + newDuration);
+        
+        // Update displays
         document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
         document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
         
@@ -2335,14 +2436,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const newDuration = newEndTime.getTime() - currentTimeRange.start.getTime();
         
-        // Calculate duration components
-        const durationHours = Math.floor(newDuration / (1000 * 60 * 60));
-        const durationMinutes = Math.floor((newDuration % (1000 * 60 * 60)) / (1000 * 60));
+        // Calculate duration in minutes
+        const durationMinutes = Math.floor(newDuration / (1000 * 60));
         
         // Update displays
         document.getElementById('wtp-end-date-display').textContent = formatDateForDisplay(newEndTime);
         document.getElementById('wtp-end-time-display').textContent = formatTimeForInput(newEndTime);
-        document.getElementById('wtp-duration-display').textContent = `${durationHours}h ${durationMinutes}m`;
+        const durationInput = document.getElementById('wtp-duration-display');
+        if (durationInput && durationInput.tagName === 'INPUT') {
+            durationInput.value = durationMinutes;
+        } else {
+            durationInput.textContent = durationMinutes;
+        }
         
         // Update current time range
         updateCurrentTimeRange(currentTimeRange.start, newEndTime);

@@ -73,6 +73,13 @@ text_timezone_label: Zona Waktu
 text_now: Sekarang
 text_view_times: Lihat Waktu
 text_unknown: Tidak Diketahui
-usage_tip: 'Cara menggunakan: Arahkan mouse ke timeline waktu untuk memilih waktu
-  rapat, atau seret untuk memilih rentang waktu. Tambahkan kota atau zona waktu menggunakan
-  kotak centang di bawah ini.'
+usage_tip: Arahkan mouse ke timeline untuk melihat waktu setiap wilayah. Klik dan
+  seret untuk memilih rentang waktu dan membuka jendela pembuatan rapat. Gunakan kotak
+  centang untuk menambahkan kota atau zona waktu.
+use_case_course_title: Penjadwalan kursus online lintas zona waktu
+use_case_course_desc: Seorang profesor universitas yang mengajar kursus online perlu
+  menjadwalkan sesi langsung untuk siswa di Amerika Utara, Eropa, dan Asia. Menggunakan
+  perencana rapat ini, mereka memilih 9-10 AM EST dan segera melihat bahwa itu bekerja
+  untuk Eropa (2-3 PM) dan Asia (10-11 PM). Mereka membuat undangan kalender untuk
+  semua siswa dengan satu klik.
+dialog_label_timezone_times: Waktu di semua zona waktu

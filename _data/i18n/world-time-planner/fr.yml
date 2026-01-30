@@ -78,6 +78,14 @@ text_timezone_label: Fuseau Horaire
 text_now: Maintenant
 text_view_times: Voir Heures
 text_unknown: Inconnu
-usage_tip: 'Comment utiliser : Survolez la chronologie pour sélectionner les heures
-  de réunion, ou faites glisser pour choisir une plage horaire. Utilisez notre planificateur
-  de réunions horloge mondiale pour ajouter des villes ou des fuseaux horaires ci-dessous.'
+usage_tip: Survolez la ligne de temps pour voir les heures de chaque région. Cliquez
+  et faites glisser pour sélectionner une plage horaire et ouvrir la fenêtre de création
+  de réunion. Utilisez les cases à cocher pour ajouter des villes ou des fuseaux horaires.
+use_case_course_title: Planification de cours en ligne entre fuseaux horaires
+use_case_course_desc: Un professeur d'université enseignant un cours en ligne doit
+  planifier des sessions en direct pour des étudiants en Amérique du Nord, en Europe
+  et en Asie. En utilisant ce planificateur de réunions, ils sélectionnent 9-10 h
+  HNE et voient immédiatement que cela fonctionne pour l'Europe (14-15 h) et l'Asie
+  (22-23 h). Ils créent des invitations de calendrier pour tous les étudiants en un
+  clic.
+dialog_label_timezone_times: Heures dans tous les fuseaux horaires

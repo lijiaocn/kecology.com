@@ -73,6 +73,13 @@ text_timezone_label: Múi Giờ
 text_now: Bây giờ
 text_view_times: Xem Giờ
 text_unknown: Không Xác Định
-usage_tip: 'Cách sử dụng: Di chuột qua dòng thời gian để chọn thời gian họp hoặc kéo
-  để chọn khoảng thời gian. Thêm thành phố hoặc múi giờ bằng cách sử dụng các hộp
-  kiểm bên dưới.'
+usage_tip: Di chuột qua dòng thời gian để xem thời gian của từng khu vực. Nhấp và
+  kéo để chọn khoảng thời gian và mở cửa sổ tạo cuộc họp. Sử dụng các hộp kiểm để
+  thêm thành phố hoặc múi giờ.
+use_case_course_title: Lập lịch khóa học trực tuyến giữa các múi giờ
+use_case_course_desc: Một giáo sư đại học dạy khóa học trực tuyến cần lập lịch các
+  buổi học trực tiếp cho sinh viên ở Bắc Mỹ, Châu Âu và Châu Á. Sử dụng công cụ lập
+  kế hoạch cuộc họp này, họ chọn 9-10 giờ sáng EST và ngay lập tức thấy nó hoạt động
+  cho Châu Âu (2-3 giờ chiều) và Châu Á (10-11 giờ tối). Họ tạo lời mời lịch cho tất
+  cả sinh viên chỉ bằng một cú nhấp chuột.
+dialog_label_timezone_times: Thời gian ở tất cả các múi giờ

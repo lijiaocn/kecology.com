@@ -54,4 +54,7 @@ text_timezone_label: 时区
 text_now: 现在
 text_view_times: 查看时间
 text_unknown: 未知
-usage_tip: 使用方法：将鼠标悬停在时间轴上选择会议时间，或拖动选择时间范围。使用下方的世界时钟会议规划器添加城市或时区。
+usage_tip: 将鼠标悬停在时间轴上可查看各地区的对应时间。点击并拖动可选择时间段并打开会议创建窗口。使用复选框添加城市或时区。
+use_case_course_title: 跨时区在线课程安排
+use_case_course_desc: 一位大学教授需要为北美、欧洲和亚洲的学生安排在线课程的实时授课时间。使用此会议规划器，他们选择东部时间上午9-10点，立即看到欧洲是下午2-3点，亚洲是晚上10-11点。一键为所有学生创建日历邀请。
+dialog_label_timezone_times: 所有时区的时间

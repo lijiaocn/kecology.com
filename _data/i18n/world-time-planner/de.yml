@@ -74,6 +74,14 @@ text_timezone_label: Zeitzone
 text_now: Jetzt
 text_view_times: Zeiten anzeigen
 text_unknown: Unbekannt
-usage_tip: 'Anwendung: Bewegen Sie den Mauszeiger über die Zeitachse, um Besprechungszeiten
-  auszuwählen, oder ziehen Sie, um einen Zeitbereich zu wählen. Verwenden Sie unseren
-  Weltuhr-Meeting-Planer, um unten Städte oder Zeitzonen hinzuzufügen.'
+usage_tip: Bewegen Sie die Maus über die Zeitachse, um die Zeiten für jede Region
+  anzuzeigen. Klicken und ziehen Sie, um einen Zeitbereich auszuwählen und das Fenster
+  zur Erstellung von Besprechungen zu öffnen. Verwenden Sie Kontrollkästchen, um Städte
+  oder Zeitzonen hinzuzufügen.
+use_case_course_title: Online-Kursplanung über Zeitzonen
+use_case_course_desc: Ein Universitätsprofessor, der einen Online-Kurs unterrichtet,
+  muss Live-Sitzungen für Studenten in Nordamerika, Europa und Asien planen. Mit diesem
+  Meeting-Planer wählen sie 9-10 Uhr EST und sehen sofort, dass es für Europa (14-15
+  Uhr) und Asien (22-23 Uhr) funktioniert. Sie erstellen Kalendereinladungen für alle
+  Studenten mit einem Klick.
+dialog_label_timezone_times: Zeiten in allen Zeitzonen

@@ -54,4 +54,7 @@ text_timezone_label: 時區
 text_now: 現在
 text_view_times: 查看時間
 text_unknown: 未知
-usage_tip: 使用方法：將滑鼠懸停在時間軸上選擇會議時間，或拖動選擇時間範圍。使用下方的世界時鐘會議規劃器添加城市或時區。
+usage_tip: 將滑鼠懸停在時間軸上可查看各地區的對應時間。點擊並拖動可選擇時間段並打開會議創建窗口。使用複選框添加城市或時區。
+use_case_course_title: 跨時區在線課程安排
+use_case_course_desc: 一位大學教授需要為北美、歐洲和亞洲的學生安排在線課程的實時授課時間。使用此會議規劃器，他們選擇東部時間上午9-10點，立即看到歐洲是下午2-3點，亞洲是晚上10-11點。一鍵為所有學生創建日曆邀請。
+dialog_label_timezone_times: 所有時區的時間

@@ -64,6 +64,7 @@ dialog_label_start: Start
 dialog_label_end: End
 dialog_label_duration: Duration
 dialog_label_add_calendar: Add to Calendar
+dialog_label_timezone_times: Times in All Time Zones
 button_google_calendar: Google Calendar
 button_outlook: Outlook
 button_yahoo_calendar: Yahoo Calendar
@@ -72,6 +73,11 @@ text_timezone_label: Timezone
 text_now: Now
 text_view_times: View Times
 text_unknown: Unknown
-usage_tip: 'How to use: Hover over the timeline to select meeting times, or drag to
-  choose a time range. Use our world clock meeting planner to add cities or time zones
-  below.'
+usage_tip: Hover over the timeline to view times for each region. Click and drag to
+  select a time range and open the meeting creation window. Use checkboxes to add
+  cities or time zones.
+use_case_course_title: Online course scheduling across time zones
+use_case_course_desc: A university professor teaching an online course needs to schedule
+  live sessions for students in North America, Europe, and Asia. Using this meeting
+  planner, they select 9-10 AM EST and instantly see it works for Europe (2-3 PM)
+  and Asia (10-11 PM). They create calendar invites for all students with one click.

@@ -74,6 +74,13 @@ text_timezone_label: Fuso Horário
 text_now: Agora
 text_view_times: Ver Horários
 text_unknown: Desconhecido
-usage_tip: 'Como usar: Passe o mouse sobre a linha do tempo para selecionar horários
-  de reunião ou arraste para escolher um intervalo de tempo. Adicione cidades ou fusos
-  horários usando as caixas de seleção abaixo.'
+usage_tip: Passe o mouse sobre a linha do tempo para ver os horários de cada região.
+  Clique e arraste para selecionar um intervalo de tempo e abrir a janela de criação
+  de reunião. Use as caixas de seleção para adicionar cidades ou fusos horários.
+use_case_course_title: Agendamento de cursos online entre fusos horários
+use_case_course_desc: Um professor universitário que leciona um curso online precisa
+  agendar sessões ao vivo para estudantes na América do Norte, Europa e Ásia. Usando
+  este planejador de reuniões, eles selecionam 9-10 AM EST e veem imediatamente que
+  funciona para a Europa (14-15) e Ásia (22-23). Eles criam convites de calendário
+  para todos os estudantes com um clique.
+dialog_label_timezone_times: Horários em todos os fusos horários

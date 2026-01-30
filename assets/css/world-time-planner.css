@@ -66,7 +66,7 @@
 
 .wtp-header {
   text-align: center;
-  padding: 2em 1em 2em 1em;
+  padding: 2em 1em 1em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,14 +174,15 @@
 }
 
 .wtp-tab-btn:hover {
-  color: #475569;
-  background-color: #f1f5f9;
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+  /* background-color: #f1f5f9; */
 }
 
 .wtp-tab-btn.active {
   color: #6366f1;
   border-bottom-color: #6366f1;
-  background-color: #eef2ff;
+  /* background-color: #eef2ff; */
 }
 
 .wtp-tab-hint {
@@ -403,6 +404,9 @@
 
 #wtp-time-rows {
   padding-top: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #wtp-rows-wrapper {
@@ -833,12 +837,12 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-range-dialog-body {
-  padding: 24px;
+  padding: 20px;
 }
 
 /* Range edit container */
 .wtp-range-edit-container {
-  margin-bottom: 15px;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -848,13 +852,14 @@ body.dialog-open .wtp-container {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 4px 0;
 }
 
 .wtp-range-edit-item label {
   font-weight: 600;
   color: #6366f1;
-  font-size: 13px;
-  min-width: 60px;
+  font-size: 14px;
+  min-width: 70px;
   flex-shrink: 0;
 }
 
@@ -866,53 +871,88 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-date-value {
-  padding: 6px 10px;
-  font-size: 12px;
+  padding: 8px 12px;
+  font-size: 13px;
   color: #1e293b;
   text-align: center;
   font-family: monospace;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.wtp-date-value:hover {
+  border-color: #6366f1;
   background-color: #f8fafc;
+}
+
+.wtp-time-value {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #1e293b;
+  text-align: center;
+  font-family: monospace;
+  background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   transition: all 0.2s ease;
   min-width: 60px;
   flex-shrink: 0;
-  font-weight: 500;
-}
-
-.wtp-date-value:hover {
-  border-color: #6366f1;
-  background-color: #f1f5f9;
-}
-
-.wtp-time-value {
-  padding: 6px 10px;
-  font-size: 12px;
-  color: #1e293b;
-  text-align: center;
-  font-family: monospace;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  min-width: 50px;
-  flex-shrink: 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .wtp-time-value:hover {
   border-color: #6366f1;
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
+}
+
+.wtp-duration-input {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #1e293b;
+  text-align: center;
+  font-family: monospace;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  max-width: 120px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.wtp-duration-input:hover {
+  border-color: #6366f1;
+  background-color: #f8fafc;
+}
+
+.wtp-duration-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.wtp-duration-unit {
+  font-size: 12px;
+  color: #64748b;
+  margin-left: 4px;
+  font-weight: 500;
 }
 
 .wtp-time-btn {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border: 1px solid #6366f1;
   background-color: #6366f1;
   color: white;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -920,34 +960,38 @@ body.dialog-open .wtp-container {
   justify-content: center;
   transition: all 0.2s ease;
   flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
 }
 
 .wtp-time-btn:hover {
   background-color: #4f46e5;
   border-color: #4f46e5;
-  transform: scale(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
 }
 
 .wtp-time-btn:active {
-  transform: scale(0.95);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(99, 102, 241, 0.2);
 }
 
 .wtp-btn-group {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   flex-shrink: 0;
 }
 
 #wtp-range-info {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 #wtp-range-info h3 {
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 8px 0;
   color: #1e293b;
   font-size: 20px;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 /* Features Section Styles */
@@ -1088,7 +1132,7 @@ body.dialog-open .wtp-container {
 
 /* Meeting links section */
 .wtp-meeting-links {
-  margin: 15px 0;
+  margin: 16px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1096,42 +1140,47 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-meeting-label {
-  font-size: 14px;
-  font-weight: 600;
+  text-align: center;
+  margin: 0 0 16px 0;
   color: #1e293b;
-  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .wtp-meeting-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
+  width: 100%;
 }
 
 .wtp-meeting-btn {
-  padding: 10px 16px;
+  padding: 12px 20px;
   background-color: #6366f1;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 13px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
   white-space: nowrap;
+  flex: 1;
+  min-width: 140px;
 }
 
 .wtp-meeting-btn:hover {
   background-color: #4f46e5;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .wtp-meeting-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
 }
 
 
@@ -1153,38 +1202,76 @@ body.dialog-open .wtp-container {
   font-size: 0.9em;
 }
 
+.wtp-timezone-times-section {
+  margin: 16px 0;
+}
+
+.wtp-timezone-times-title {
+  text-align: center;
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
 #wtp-timezone-times {
   display: grid;
   gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+#wtp-timezone-times::-webkit-scrollbar {
+  width: 6px;
+}
+
+#wtp-timezone-times::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+#wtp-timezone-times::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+#wtp-timezone-times::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .wtp-timezone-time-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  gap: 10px;
+  padding: 8px 0;
+  gap: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.wtp-timezone-time-item:last-child {
+  border-bottom: none;
 }
 
 .wtp-timezone-time-item:hover {
-  background-color: #f1f5f9;
-  border-color: #c7d2fe;
+  background-color: transparent;
 }
 
 .wtp-timezone-name {
   font-weight: 600;
   color: #1e293b;
+  font-size: 14px;
 }
 
 .wtp-timezone-time {
   color: #6366f1;
   font-family: 'Courier New', monospace;
-  font-size: 0.9em;
+  font-size: 13px;
   font-weight: 600;
+  background-color: #f0f4ff;
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 /* Timeline Row Styles */
@@ -1236,7 +1323,8 @@ body.dialog-open .wtp-container {
 }
 
 .wtp-timezone-info {
-  flex: 0 0 auto;
+  flex: 0 0 150px;
+  width: 150px;
   padding: 8px 12px;
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -1249,7 +1337,8 @@ body.dialog-open .wtp-container {
   white-space: nowrap;
   cursor: move;
   transition: all 0.2s ease;
-  min-width: 0;
+  min-width: 150px;
+  max-width: 150px;
   height: 100%;
   box-sizing: border-box;
   margin-right: 8px;
@@ -1405,7 +1494,7 @@ body.dialog-open .wtp-container {
 .wtp-date-text {
   font-size: 0.65em;
   font-weight: 600;
-  color: #64748b;
+  color: #1e293b;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1415,6 +1504,11 @@ body.dialog-open .wtp-container {
   display: block;
   text-align: left;
   box-sizing: border-box;
+}
+
+.wtp-date-text.weekend {
+  color: #ef4444;
+  font-weight: 700;
 }
 
 /* 小时日期组之间的分割线 - 已移除边框 */
@@ -1472,6 +1566,16 @@ body.dialog-open .wtp-container {
   color: #9ca3af;
   font-weight: 500;
   text-shadow: none;
+}
+
+/* 清晨 - 浅绿色背景 */
+.wtp-timeline-hour.morning {
+  background-color: #86efac;
+}
+
+.wtp-timeline-hour.morning::after {
+  color: #1e293b;
+  font-weight: 500;
 }
 
 /* 早晨 - 明亮的淡黄色 */
@@ -1547,15 +1651,18 @@ body.dialog-open .wtp-container {
   opacity: 0.6;
 }
 
-/* Weekend shading on timeline hours */
+/* Weekend shading on timeline hours - more visible */
 .wtp-timeline-hour.weekend {
   background-image: repeating-linear-gradient(
     45deg,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 8px,
-    transparent 8px,
-    transparent 16px
+    rgba(239, 68, 68, 0.4) 0px,
+    rgba(239, 68, 68, 0.4) 2px,
+    transparent 2px,
+    transparent 8px
   );
+  background-blend-mode: normal;
+  filter: none;
+  box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.15);
 }
 
 .wtp-current-time-marker {
@@ -1585,26 +1692,44 @@ body.dialog-open .wtp-container {
 .wtp-current-hour {
     font-weight: bold;
     position: relative; /* 为子元素定位做准备 */
+    box-shadow: 0 0 0 2px #6366f1, 0 0 8px rgba(99, 102, 241, 0.5);
+    z-index: 10;
+    opacity: 1 !important; /* 确保当前小时不会因为night等class而变淡 */
 }
 
 .wtp-current-hour::after {
     color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* 当前时间标识 */
 .wtp-current-time-indicator {
     position: absolute;
-    bottom: -20px; /* 在小时块下方 */
+    bottom: -22px; /* 在小时块下方 */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4caf50; /* 绿色背景 */
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); /* 靛蓝色渐变背景 */
     color: white; /* 白色文字 */
-    font-size: 0.6em;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 3px;
+    font-size: 0.65em;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
     white-space: nowrap;
-    z-index: 15;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    box-shadow: 0 3px 8px rgba(99, 102, 241, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: pulse-now 2s ease-in-out infinite;
+}
+
+@keyframes pulse-now {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 3px 8px rgba(99, 102, 241, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.8), 0 0 0 3px rgba(255, 255, 255, 0.9);
+    }
 }
