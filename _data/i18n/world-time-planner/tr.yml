@@ -1,58 +1,79 @@
-# i18n data for world-time-planner post
-# Turkish (tr) language
-
-title: "Dünya Zaman Planlayıcısı: Küresel Ekipler için Mükemmel Toplantı Zamanını Doğrudan Bulun"
-description: "Farklı saat dilimleri arasında mükemmel toplantı zamanını bulmak için basit bir araç. Şehirleri veya saat dilimlerini seçin ve zaman örtüşmesini görselleştirin."
-main_title: "Dünya Zaman Planlayıcısı"
-subtitle: "Küresel Ekipler için Mükemmel Toplantı Zamanını Doğrudan Bulun"
-user_feedback_tip: "Sorun mu yaşıyorsunuz veya öneriniz var mı? Sayfanın alt kısmına yorum bırakın, ciddiye alacağım."
-
-add_city_title: "Şehir Ekle"
-tab_popular: "Popüler Şehirler"
-tab_country: "Ülkeye Göre"
-tab_timezone: "Saat Dilimine Göre"
-button_scroll_left: "Sola kaydır"
-button_now: "Şimdi"
-button_scroll_right: "Sağa kaydır"
-features_title: "Dünya Zaman Planlayıcısı"
-features_intro: "Karmaşa olmadan saat dilimleri arasında toplantılar planlayın. Bu araç, küresel ekipler ve müşteriler için en iyi toplantı zamanlarını bulmanıza yardımcı olur."
-
-feature_local_time_title: "Önce Yerel Zamanınız"
-feature_local_time_desc: "Yerel zamanınızı otomatik olarak üstte görün. Bulunduğunuz yerin saatini anlamanıza gerek yok."
-feature_easy_add_title: "Kolay Saat Dilimi Ekleme"
-feature_easy_add_desc: "Tek tıkla herhangi bir şehir veya saat dilimi ekleyin. Dünya çapında anında karşılaştırın."
-feature_visual_title: "Görsel Zaman Planlaması"
-feature_visual_desc: "Zaman aralıklarını seçmek için sürükleyin ve farklı saat dilimlerinde nasıl göründüğünü görün. Toplantı planlamak için mükemmel."
-feature_calendar_title: "Doğrudan Takvim Entegrasyonu"
-feature_calendar_desc: "Doğrudan Google Calendar, Outlook veya Yahoo Calendar'da takvim etkinlikleri oluşturun. Kopyala-yapıştır gerektirmez."
-feature_no_registration_title: "Kayıt Gerektirmez"
-feature_no_registration_desc: "Hemen planlamaya başlayın. Hesap, indirme veya kurulum gerekmez."
-feature_offline_title: "Çevrimdışı Çalışır"
-feature_offline_desc: "Yüklendikten sonra internetsiz çalışır. Seyahat veya güvenilir olmayan bağlantılar için harika."
-
-use_cases_title: "Mükemmel İçin:"
-use_case_remote_teams_title: "Farklı ülkelerde uzak ekipler"
-use_case_remote_teams_desc: "New York'taki Sarah, Londra, Tokyo ve Sydney'deki meslektaşlarıyla bir ekip toplantısı planlaması gerekiyor. Saat 14-16'sını seçmek için sürüklüyor ve anında Londra'da 19-21, Tokyo'da ertesi gün sabah 4-6 ve Sydney'de ertesi gün sabah 6-8 olduğunu görüyor."
-use_case_client_title: "Uluslararası ortaklarla müşteri toplantıları"
-use_case_client_desc: "Berlin'deki bir pazarlama ajansı San Francisco'daki bir müşteriye sunum yapması gerekiyor. Berlin saati 15-16'yı seçiyorlar ve San Francisco'da sabah 6-7 olduğunu görüyorlar - çok erken. San Francisco'da daha iyi bir sabah 8-9 saati için Berlin saatinde 17-18'e ayarlıyorlar."
-use_case_webinar_title: "Küresel kitleler için web semineri planlama"
-use_case_webinar_desc: "Bir teknoloji şirketi dünya çapında kullanıcılar için web semineri düzenlemek istiyor. 14-15 EST'i seçiyorlar ve hemen Avrupa (19-20) ve Asya (ertesi gün sabah 3-4) için çalıştığını görüyorlar. Tek tıkla tüm saat dilimleri için takvim daveti oluşturuyorlar."
-use_case_travel_title: "Kişisel seyahat planlaması"
-use_case_travel_desc: "Mike Chicago'dan Paris'e iş için seyahat ediyor. Seyahati sırasında evdeki ailesini araması gerekiyor. Paris saati 19-20'yi seçiyor ve Chicago'da öğleden sonra 1-2 olduğunu görüyor - öğle arası araması için mükemmel."
-use_case_family_title: "Saat dilimleri arası aile görüşmeleri"
-use_case_family_desc: "Bir aile Los Angeles, New York ve Londra'da üyeler var. Herkes için uygun bir zaman bulmak istiyorlar. Farklı saat dilimleri deniyorlar ve Los Angeles saati sabah 10'un New York'ta öğleden sonra 1 ve Londra'da akşam 6 için çalıştığını keşfediyorlar - herkes katılabilir."
-
-dialog_title: "Zaman Aralığını İnce Ayar"
-dialog_label_start: "Başlangıç"
-dialog_label_end: "Bitiş"
-dialog_label_duration: "Süre"
-dialog_label_add_calendar: "Takvime Ekle"
-button_google_calendar: "Google Calendar"
-button_outlook: "Outlook"
-button_yahoo_calendar: "Yahoo Calendar"
-
-text_invalid_timezone: "Geçersiz"
-text_timezone_label: "Saat Dilimi"
-text_now: "Şimdi"
-text_view_times: "Saatleri Görüntüle"
-text_unknown: "Bilinmeyen"
+---
+title: 'Dünya Zaman Planlayıcısı: Küresel Ekipler için Mükemmel Toplantı Zamanını
+  Doğrudan Bulun'
+description: Farklı saat dilimleri arasında mükemmel toplantı zamanını bulmak için
+  basit bir araç. Şehirleri veya saat dilimlerini seçin ve zaman örtüşmesini görselleştirin.
+main_title: Dünya Zaman Planlayıcısı
+subtitle: Küresel Ekipler için Mükemmel Toplantı Zamanını Doğrudan Bulun
+user_feedback_tip: Sorun mu yaşıyorsunuz veya öneriniz var mı? Sayfanın alt kısmına
+  yorum bırakın, ciddiye alacağım.
+add_city_title: Şehir Ekle
+tab_popular: Popüler Şehirler
+tab_country: Ülkeye Göre
+tab_timezone: Saat Dilimine Göre
+button_scroll_left: Sola kaydır
+button_now: Şimdi
+button_scroll_right: Sağa kaydır
+features_title: Dünya Zaman Planlayıcısı
+features_intro: Karmaşa olmadan saat dilimleri arasında toplantılar planlayın. Bu
+  araç, küresel ekipler ve müşteriler için en iyi toplantı zamanlarını bulmanıza yardımcı
+  olur.
+feature_local_time_title: Önce Yerel Zamanınız
+feature_local_time_desc: Yerel zamanınızı otomatik olarak üstte görün. Bulunduğunuz
+  yerin saatini anlamanıza gerek yok.
+feature_easy_add_title: Kolay Saat Dilimi Ekleme
+feature_easy_add_desc: Tek tıkla herhangi bir şehir veya saat dilimi ekleyin. Dünya
+  çapında anında karşılaştırın.
+feature_visual_title: Görsel Zaman Planlaması
+feature_visual_desc: Zaman aralıklarını seçmek için sürükleyin ve farklı saat dilimlerinde
+  nasıl göründüğünü görün. Toplantı planlamak için mükemmel.
+feature_calendar_title: Doğrudan Takvim Entegrasyonu
+feature_calendar_desc: Doğrudan Google Calendar, Outlook veya Yahoo Calendar'da takvim
+  etkinlikleri oluşturun. Kopyala-yapıştır gerektirmez.
+feature_no_registration_title: Kayıt Gerektirmez
+feature_no_registration_desc: Hemen planlamaya başlayın. Hesap, indirme veya kurulum
+  gerekmez.
+feature_offline_title: Çevrimdışı Çalışır
+feature_offline_desc: Yüklendikten sonra internetsiz çalışır. Seyahat veya güvenilir
+  olmayan bağlantılar için harika.
+use_cases_title: 'Mükemmel İçin:'
+use_case_remote_teams_title: Farklı ülkelerde uzak ekipler
+use_case_remote_teams_desc: New York'taki Sarah, Londra, Tokyo ve Sydney'deki meslektaşlarıyla
+  bir ekip toplantısı planlaması gerekiyor. Saat 14-16'sını seçmek için sürüklüyor
+  ve anında Londra'da 19-21, Tokyo'da ertesi gün sabah 4-6 ve Sydney'de ertesi gün
+  sabah 6-8 olduğunu görüyor.
+use_case_client_title: Uluslararası ortaklarla müşteri toplantıları
+use_case_client_desc: Berlin'deki bir pazarlama ajansı San Francisco'daki bir müşteriye
+  sunum yapması gerekiyor. Berlin saati 15-16'yı seçiyorlar ve San Francisco'da sabah
+  6-7 olduğunu görüyorlar - çok erken. San Francisco'da daha iyi bir sabah 8-9 saati
+  için Berlin saatinde 17-18'e ayarlıyorlar.
+use_case_webinar_title: Küresel kitleler için web semineri planlama
+use_case_webinar_desc: Bir teknoloji şirketi dünya çapında kullanıcılar için web semineri
+  düzenlemek istiyor. 14-15 EST'i seçiyorlar ve hemen Avrupa (19-20) ve Asya (ertesi
+  gün sabah 3-4) için çalıştığını görüyorlar. Tek tıkla tüm saat dilimleri için takvim
+  daveti oluşturuyorlar.
+use_case_travel_title: Kişisel seyahat planlaması
+use_case_travel_desc: Mike Chicago'dan Paris'e iş için seyahat ediyor. Seyahati sırasında
+  evdeki ailesini araması gerekiyor. Paris saati 19-20'yi seçiyor ve Chicago'da öğleden
+  sonra 1-2 olduğunu görüyor - öğle arası araması için mükemmel.
+use_case_family_title: Saat dilimleri arası aile görüşmeleri
+use_case_family_desc: Bir aile Los Angeles, New York ve Londra'da üyeler var. Herkes
+  için uygun bir zaman bulmak istiyorlar. Farklı saat dilimleri deniyorlar ve Los
+  Angeles saati sabah 10'un New York'ta öğleden sonra 1 ve Londra'da akşam 6 için
+  çalıştığını keşfediyorlar - herkes katılabilir.
+dialog_title: Zaman Aralığını İnce Ayar
+dialog_label_start: Başlangıç
+dialog_label_end: Bitiş
+dialog_label_duration: Süre
+dialog_label_add_calendar: Takvime Ekle
+button_google_calendar: Google Calendar
+button_outlook: Outlook
+button_yahoo_calendar: Yahoo Calendar
+text_invalid_timezone: Geçersiz
+text_timezone_label: Saat Dilimi
+text_now: Şimdi
+text_view_times: Saatleri Görüntüle
+text_unknown: Bilinmeyen
+usage_tip: 'Nasıl kullanılır: Toplantı saatlerini seçmek için zaman çizelgesinin üzerine
+  gelin veya bir zaman aralığı seçmek için sürükleyin. Aşağıdaki onay kutularını kullanarak
+  şehirler veya saat dilimleri ekleyin.'

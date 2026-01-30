@@ -1,58 +1,65 @@
-# i18n data for world-time-planner post
-# Thai (th) language
-
-title: "ตัววางแผนเวลาโลก: ค้นหาเวลาประชุมที่สมบูรณ์แบบโดยตรงสำหรับทีมทั่วโลก"
-description: "เครื่องมือที่เรียบง่ายในการค้นหาเวลาประชุมที่สมบูรณ์แบบในโซนเวลาต่างๆ เลือกเมืองหรือเขตเวลาและแสดงภาพการทับซ้อนของเวลา"
-main_title: "ตัววางแผนเวลาโลก"
-subtitle: "ค้นหาเวลาประชุมที่สมบูรณ์แบบโดยตรงสำหรับทีมทั่วโลก"
-user_feedback_tip: "พบปัญหาหรือมีข้อเสนอแนะ? ฝากความคิดเห็นที่ด้านล่างของหน้าค่ะ ฉันจะพิจารณาอย่างจริงจัง"
-
-add_city_title: "เพิ่มเมือง"
-tab_popular: "เมืองยอดนิยม"
-tab_country: "ตามประเทศ"
-tab_timezone: "ตามเขตเวลา"
-button_scroll_left: "เลื่อนไปทางซ้าย"
-button_now: "ตอนนี้"
-button_scroll_right: "เลื่อนไปทางขวา"
-features_title: "ตัววางแผนเวลาโลก"
-features_intro: "วางแผนการประชุมข้ามเขตเวลาโดยไม่สับสน เครื่องมือนี้ช่วยให้คุณค้นหาเวลาประชุมที่ดีที่สุดสำหรับทีมทั่วโลกและลูกค้า"
-
-feature_local_time_title: "เวลาท้องถิ่นของคุณก่อน"
-feature_local_time_desc: "ดูเวลาท้องถิ่นของคุณที่ด้านบนโดยอัตโนมัติ ไม่จำเป็นต้องคิดว่าเวลาเท่าไหร่ที่คุณอยู่"
-feature_easy_add_title: "การเพิ่มเขตเวลาอย่างง่าย"
-feature_easy_add_desc: "เพิ่มเมืองหรือเขตเวลาใดๆ ด้วยคลิกเดียว เปรียบเทียบเวลาทั่วโลกทันที"
-feature_visual_title: "การวางแผนเวลาแบบภาพ"
-feature_visual_desc: "ลากเพื่อเลือกช่วงเวลาและดูว่าจะแสดงอย่างไรในเขตเวลาที่แตกต่างกัน เหมาะสำหรับการจัดตารางการประชุม"
-feature_calendar_title: "การรวมปฏิทินโดยตรง"
-feature_calendar_desc: "สร้างกิจกรรมปฏิทินโดยตรงใน Google Calendar, Outlook หรือ Yahoo Calendar ไม่ต้องคัดลอก-วาง"
-feature_no_registration_title: "ไม่ต้องลงทะเบียน"
-feature_no_registration_desc: "เริ่มวางแผนทันที ไม่มีบัญชี ไม่ต้องดาวน์โหลด ไม่มีการตั้งค่า"
-feature_offline_title: "ทำงานออฟไลน์"
-feature_offline_desc: "เมื่อโหลดแล้ว สามารถทำงานโดยไม่มีอินเทอร์เน็ต เหมาะสำหรับการเดินทางหรือการเชื่อมต่อที่ไม่น่าเชื่อถือ"
-
-use_cases_title: "เหมาะสำหรับ:"
-use_case_remote_teams_title: "ทีมรีโมตในประเทศต่างๆ"
-use_case_remote_teams_desc: "Sarah ใน New York ต้องนัดหมายการประชุมทีมกับเพื่อนร่วมงานใน London, Tokyo และ Sydney เธอลากเพื่อเลือก 14-16 น. ของเธอและเห็นทันทีว่าเป็น 19-21 น. ใน London, 4-6 น. วันที่ถัดไปใน Tokyo และ 6-8 น. วันที่ถัดไปใน Sydney"
-use_case_client_title: "การประชุมลูกค้ากับพันธมิตรต่างประเทศ"
-use_case_client_desc: "เอเจนซี่การตลาดใน Berlin ต้องนำเสนอลูกค้าใน San Francisco พวกเขาเลือก 15-16 น. ตามเวลา Berlin และเห็นว่าเป็น 6-7 น. ใน San Francisco - เร็วเกินไป พวกเขาปรับเป็น 17-18 น. ตามเวลา Berlin เพื่อช่วงเวลาที่ดีกว่า 8-9 น. ใน San Francisco"
-use_case_webinar_title: "การจัดตารางสัมมนาออนไลน์สำหรับผู้ชมทั่วโลก"
-use_case_webinar_desc: "บริษัทเทคโนโลยีต้องการจัดสัมมนาออนไลน์สำหรับผู้ใช้ทั่วโลก พวกเขาเลือก 14-15 น. EST และเห็นทันทีว่าทำงานได้สำหรับยุโรป (19-20 น.) และเอเชีย (3-4 น. วันที่ถัดไป) พวกเขาสร้างคำเชิญปฏิทินสำหรับเขตเวลาทั้งหมดด้วยคลิกเดียว"
-use_case_travel_title: "การวางแผนการเดินทางส่วนตัว"
-use_case_travel_desc: "Mike เดินทางจาก Chicago ไป Paris เพื่อธุรกิจ เขาต้องโทรหาครอบครัวที่บ้านระหว่างการเดินทาง เขาเลือก 19-20 น. ตามเวลา Paris และเห็นว่าเป็น 13-14 น. ใน Chicago - เหมาะสำหรับโทรระหว่างพักเที่ยง"
-use_case_family_title: "การโทรครอบครัวข้ามเขตเวลา"
-use_case_family_desc: "ครอบครัวมีสมาชิกใน Los Angeles, New York และ London พวกเขาต้องการหาเวลาที่เหมาะสมสำหรับทุกคน พวกเขาลองช่วงเวลาต่างๆ และค้นพบว่า 10 น. ตามเวลา Los Angeles ใช้งานได้สำหรับ 13:00 น. ใน New York และ 18:00 น. ใน London - ทุกคนสามารถเข้าร่วมได้"
-
-dialog_title: "ปรับช่วงเวลา"
-dialog_label_start: "เริ่ม"
-dialog_label_end: "สิ้นสุด"
-dialog_label_duration: "ระยะเวลา"
-dialog_label_add_calendar: "เพิ่มในปฏิทิน"
-button_google_calendar: "Google Calendar"
-button_outlook: "Outlook"
-button_yahoo_calendar: "Yahoo Calendar"
-
-text_invalid_timezone: "ไม่ถูกต้อง"
-text_timezone_label: "เขตเวลา"
-text_now: "ตอนนี้"
-text_view_times: "ดูเวลา"
-text_unknown: "ไม่ทราบ"
+---
+title: 'ตัววางแผนเวลาโลก: ค้นหาเวลาประชุมที่สมบูรณ์แบบโดยตรงสำหรับทีมทั่วโลก'
+description: เครื่องมือที่เรียบง่ายในการค้นหาเวลาประชุมที่สมบูรณ์แบบในโซนเวลาต่างๆ
+  เลือกเมืองหรือเขตเวลาและแสดงภาพการทับซ้อนของเวลา
+main_title: ตัววางแผนเวลาโลก
+subtitle: ค้นหาเวลาประชุมที่สมบูรณ์แบบโดยตรงสำหรับทีมทั่วโลก
+user_feedback_tip: พบปัญหาหรือมีข้อเสนอแนะ? ฝากความคิดเห็นที่ด้านล่างของหน้าค่ะ ฉันจะพิจารณาอย่างจริงจัง
+add_city_title: เพิ่มเมือง
+tab_popular: เมืองยอดนิยม
+tab_country: ตามประเทศ
+tab_timezone: ตามเขตเวลา
+button_scroll_left: เลื่อนไปทางซ้าย
+button_now: ตอนนี้
+button_scroll_right: เลื่อนไปทางขวา
+features_title: ตัววางแผนเวลาโลก
+features_intro: วางแผนการประชุมข้ามเขตเวลาโดยไม่สับสน เครื่องมือนี้ช่วยให้คุณค้นหาเวลาประชุมที่ดีที่สุดสำหรับทีมทั่วโลกและลูกค้า
+feature_local_time_title: เวลาท้องถิ่นของคุณก่อน
+feature_local_time_desc: ดูเวลาท้องถิ่นของคุณที่ด้านบนโดยอัตโนมัติ ไม่จำเป็นต้องคิดว่าเวลาเท่าไหร่ที่คุณอยู่
+feature_easy_add_title: การเพิ่มเขตเวลาอย่างง่าย
+feature_easy_add_desc: เพิ่มเมืองหรือเขตเวลาใดๆ ด้วยคลิกเดียว เปรียบเทียบเวลาทั่วโลกทันที
+feature_visual_title: การวางแผนเวลาแบบภาพ
+feature_visual_desc: ลากเพื่อเลือกช่วงเวลาและดูว่าจะแสดงอย่างไรในเขตเวลาที่แตกต่างกัน
+  เหมาะสำหรับการจัดตารางการประชุม
+feature_calendar_title: การรวมปฏิทินโดยตรง
+feature_calendar_desc: สร้างกิจกรรมปฏิทินโดยตรงใน Google Calendar, Outlook หรือ Yahoo
+  Calendar ไม่ต้องคัดลอก-วาง
+feature_no_registration_title: ไม่ต้องลงทะเบียน
+feature_no_registration_desc: เริ่มวางแผนทันที ไม่มีบัญชี ไม่ต้องดาวน์โหลด ไม่มีการตั้งค่า
+feature_offline_title: ทำงานออฟไลน์
+feature_offline_desc: เมื่อโหลดแล้ว สามารถทำงานโดยไม่มีอินเทอร์เน็ต เหมาะสำหรับการเดินทางหรือการเชื่อมต่อที่ไม่น่าเชื่อถือ
+use_cases_title: 'เหมาะสำหรับ:'
+use_case_remote_teams_title: ทีมรีโมตในประเทศต่างๆ
+use_case_remote_teams_desc: Sarah ใน New York ต้องนัดหมายการประชุมทีมกับเพื่อนร่วมงานใน
+  London, Tokyo และ Sydney เธอลากเพื่อเลือก 14-16 น. ของเธอและเห็นทันทีว่าเป็น 19-21
+  น. ใน London, 4-6 น. วันที่ถัดไปใน Tokyo และ 6-8 น. วันที่ถัดไปใน Sydney
+use_case_client_title: การประชุมลูกค้ากับพันธมิตรต่างประเทศ
+use_case_client_desc: เอเจนซี่การตลาดใน Berlin ต้องนำเสนอลูกค้าใน San Francisco พวกเขาเลือก
+  15-16 น. ตามเวลา Berlin และเห็นว่าเป็น 6-7 น. ใน San Francisco - เร็วเกินไป พวกเขาปรับเป็น
+  17-18 น. ตามเวลา Berlin เพื่อช่วงเวลาที่ดีกว่า 8-9 น. ใน San Francisco
+use_case_webinar_title: การจัดตารางสัมมนาออนไลน์สำหรับผู้ชมทั่วโลก
+use_case_webinar_desc: บริษัทเทคโนโลยีต้องการจัดสัมมนาออนไลน์สำหรับผู้ใช้ทั่วโลก พวกเขาเลือก
+  14-15 น. EST และเห็นทันทีว่าทำงานได้สำหรับยุโรป (19-20 น.) และเอเชีย (3-4 น. วันที่ถัดไป)
+  พวกเขาสร้างคำเชิญปฏิทินสำหรับเขตเวลาทั้งหมดด้วยคลิกเดียว
+use_case_travel_title: การวางแผนการเดินทางส่วนตัว
+use_case_travel_desc: Mike เดินทางจาก Chicago ไป Paris เพื่อธุรกิจ เขาต้องโทรหาครอบครัวที่บ้านระหว่างการเดินทาง
+  เขาเลือก 19-20 น. ตามเวลา Paris และเห็นว่าเป็น 13-14 น. ใน Chicago - เหมาะสำหรับโทรระหว่างพักเที่ยง
+use_case_family_title: การโทรครอบครัวข้ามเขตเวลา
+use_case_family_desc: ครอบครัวมีสมาชิกใน Los Angeles, New York และ London พวกเขาต้องการหาเวลาที่เหมาะสมสำหรับทุกคน
+  พวกเขาลองช่วงเวลาต่างๆ และค้นพบว่า 10 น. ตามเวลา Los Angeles ใช้งานได้สำหรับ 13:00
+  น. ใน New York และ 18:00 น. ใน London - ทุกคนสามารถเข้าร่วมได้
+dialog_title: ปรับช่วงเวลา
+dialog_label_start: เริ่ม
+dialog_label_end: สิ้นสุด
+dialog_label_duration: ระยะเวลา
+dialog_label_add_calendar: เพิ่มในปฏิทิน
+button_google_calendar: Google Calendar
+button_outlook: Outlook
+button_yahoo_calendar: Yahoo Calendar
+text_invalid_timezone: ไม่ถูกต้อง
+text_timezone_label: เขตเวลา
+text_now: ตอนนี้
+text_view_times: ดูเวลา
+text_unknown: ไม่ทราบ
+usage_tip: 'วิธีใช้: เลื่อนเมาส์เหนือไทม์ไลน์เวลาเพื่อเลือกเวลาประชุม หรือลากเพื่อเลือกช่วงเวลา
+  เพิ่มเมืองหรือเขตเวลาโดยใช้ช่องทำเครื่องหมายด้านล่าง'

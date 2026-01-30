@@ -1,65 +1,77 @@
-# i18n data for world-time-planner post
-# English (en) language
-
-# Frontmatter
-title: "World Time Planner: Directly Find Perfect Meeting Time for Global Team"
-description: "A simple tool to find the perfect meeting time across different time zones. Select cities or timezones and visualize the time overlap."
-main_title: "World Time Planner"
-subtitle: "Directly Find Perfect Meeting Time for Global Team"
-user_feedback_tip: "Having issues or suggestions? Leave a comment at the bottom of the page, and I'll take it seriously."
-
-# UI elements
-add_city_title: "Add Cities"
-tab_popular: "Popular Cities"
-tab_country: "By Country"
-tab_timezone: "By Time Zone"
-button_scroll_left: "Scroll left"
-button_now: "Now"
-button_scroll_right: "Scroll right"
-features_title: "World Time Planner"
-features_intro: "Plan meetings across time zones without the confusion. This tool helps you find the best meeting times for global teams and clients."
-
-# Feature items
-feature_local_time_title: "Your Local Time First"
-feature_local_time_desc: "See your local time at the top automatically. No need to figure out what time it is where you are."
-feature_easy_add_title: "Easy Time Zone Addition"
-feature_easy_add_desc: "Add any city or time zone with one click. Compare times across the world instantly."
-feature_visual_title: "Visual Time Planning"
-feature_visual_desc: "Drag to select time ranges and see how they look in different time zones. Perfect for scheduling meetings."
-feature_calendar_title: "Direct Calendar Integration"
-feature_calendar_desc: "Create calendar events directly in Google Calendar, Outlook, or Yahoo Calendar. No copy-paste needed."
-feature_no_registration_title: "No Registration Required"
-feature_no_registration_desc: "Start planning immediately. No accounts, no downloads, no setup required."
-feature_offline_title: "Works Offline"
-feature_offline_desc: "Once loaded, works without internet. Great for travel or unreliable connections."
-
-# Use cases
-use_cases_title: "Perfect For:"
-use_case_remote_teams_title: "Remote teams across different countries"
-use_case_remote_teams_desc: "Sarah in New York needs to schedule a team meeting with colleagues in London, Tokyo, and Sydney. She drags to select 2-4 PM her time and instantly sees it's 7-9 PM in London, 4-6 AM next day in Tokyo, and 6-8 AM next day in Sydney."
-use_case_client_title: "Client meetings with international partners"
-use_case_client_desc: "A marketing agency in Berlin needs to present to a client in San Francisco. They select 3-4 PM Berlin time and see it's 6-7 AM in San Francisco - too early. They adjust to 5-6 PM Berlin time for a better 8-9 AM San Francisco slot."
-use_case_webinar_title: "Webinar scheduling for global audiences"
-use_case_webinar_desc: "A tech company wants to host a webinar for users worldwide. They select 2-3 PM EST and immediately see it works for Europe (7-8 PM) and Asia (3-4 AM next day). They create calendar invites for all time zones with one click."
-use_case_travel_title: "Personal travel planning"
-use_case_travel_desc: "Mike is traveling from Chicago to Paris for business. He needs to call his family back home during his trip. He selects 7-8 PM Paris time and sees it's 1-2 PM in Chicago - perfect for a lunch break call."
-use_case_family_title: "Family calls across time zones"
-use_case_family_desc: "A family has members in Los Angeles, New York, and London. They want to find a time that works for everyone. They try different time slots and discover 10 AM LA time works for 1 PM New York and 6 PM London - everyone can join."
-
-# Dialog elements
-dialog_title: "Fine-tune Time Range"
-dialog_label_start: "Start"
-dialog_label_end: "End"
-dialog_label_duration: "Duration"
-dialog_label_add_calendar: "Add to Calendar"
-button_google_calendar: "Google Calendar"
-button_outlook: "Outlook"
-button_yahoo_calendar: "Yahoo Calendar"
-
-# Hidden text templates
-text_invalid_timezone: "Invalid"
-text_timezone_label: "Timezone"
-text_now: "Now"
-text_view_times: "View Times"
-text_unknown: "Unknown"
-
+---
+title: 'Global Meeting Time Planner: Best Visual Tool for International Scheduling'
+description: The best visual meeting time planner for global teams. Easily plan your
+  international meeting schedule across time zones with our world clock meeting planner.
+  Compare meeting planner time zones visually.
+main_title: Global Meeting Time Planner
+subtitle: Best Visual Tool for International Scheduling
+user_feedback_tip: Having issues or suggestions? Leave a comment at the bottom of
+  the page, and I'll take it seriously.
+add_city_title: Add Cities
+tab_popular: Popular Cities
+tab_country: By Country
+tab_timezone: By Time Zone
+button_scroll_left: Scroll left
+button_now: Now
+button_scroll_right: Scroll right
+features_title: World Clock Meeting Planner Features
+features_intro: Plan meetings across time zones without the confusion. This meeting
+  time planner helps you find the best meeting times for global teams and clients
+  by comparing meeting planner time zones instantly.
+feature_local_time_title: Your Local Time First
+feature_local_time_desc: See your local time at the top automatically. No need to
+  figure out what time it is where you are.
+feature_easy_add_title: Easy Time Zone Addition
+feature_easy_add_desc: Add any city or time zone with one click. Compare times across
+  the world instantly.
+feature_visual_title: Visual Time Planning
+feature_visual_desc: Drag to select time ranges and see how they look in different
+  time zones. Perfect for scheduling meetings.
+feature_calendar_title: Direct Calendar Integration
+feature_calendar_desc: Create calendar events directly in Google Calendar, Outlook,
+  or Yahoo Calendar. No copy-paste needed.
+feature_no_registration_title: No Registration Required
+feature_no_registration_desc: Start planning immediately. No accounts, no downloads,
+  no setup required.
+feature_offline_title: Works Offline
+feature_offline_desc: Once loaded, works without internet. Great for travel or unreliable
+  connections.
+use_cases_title: 'Perfect For:'
+use_case_remote_teams_title: Remote teams across different countries
+use_case_remote_teams_desc: Sarah in New York needs to schedule a team meeting with
+  colleagues in London, Tokyo, and Sydney. She drags to select 2-4 PM her time and
+  instantly sees it's 7-9 PM in London, 4-6 AM next day in Tokyo, and 6-8 AM next
+  day in Sydney.
+use_case_client_title: Client meetings with international partners
+use_case_client_desc: A marketing agency in Berlin needs to present to a client in
+  San Francisco. They select 3-4 PM Berlin time and see it's 6-7 AM in San Francisco
+  - too early. They adjust to 5-6 PM Berlin time for a better 8-9 AM San Francisco
+  slot.
+use_case_webinar_title: Webinar scheduling for global audiences
+use_case_webinar_desc: A tech company wants to host a webinar for users worldwide.
+  They select 2-3 PM EST and immediately see it works for Europe (7-8 PM) and Asia
+  (3-4 AM next day). They create calendar invites for all time zones with one click.
+use_case_travel_title: Personal travel planning
+use_case_travel_desc: Mike is traveling from Chicago to Paris for business. He needs
+  to call his family back home during his trip. He selects 7-8 PM Paris time and sees
+  it's 1-2 PM in Chicago - perfect for a lunch break call.
+use_case_family_title: Family calls across time zones
+use_case_family_desc: A family has members in Los Angeles, New York, and London. They
+  want to find a time that works for everyone. They try different time slots and discover
+  10 AM LA time works for 1 PM New York and 6 PM London - everyone can join.
+dialog_title: Fine-tune Time Range
+dialog_label_start: Start
+dialog_label_end: End
+dialog_label_duration: Duration
+dialog_label_add_calendar: Add to Calendar
+button_google_calendar: Google Calendar
+button_outlook: Outlook
+button_yahoo_calendar: Yahoo Calendar
+text_invalid_timezone: Invalid
+text_timezone_label: Timezone
+text_now: Now
+text_view_times: View Times
+text_unknown: Unknown
+usage_tip: 'How to use: Hover over the timeline to select meeting times, or drag to
+  choose a time range. Use our world clock meeting planner to add cities or time zones
+  below.'

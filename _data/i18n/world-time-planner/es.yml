@@ -1,59 +1,82 @@
-# i18n data for world-time-planner post
-# Spanish (es) language
-
-title: "Planificador de Horario Mundial: Encuentra el Mejor Momento para Reuniones Globales"
-description: "Una herramienta sencilla para encontrar el momento perfecto para reuniones entre diferentes zonas horarias. Selecciona ciudades o zonas horarias y visualiza la superposición de horarios."
-main_title: "Planificador de Horario Mundial"
-subtitle: "Encuentra el Mejor Momento para Reuniones Globales"
-user_feedback_tip: "¿Tienes problemas o sugerencias? Deja un comentario al final de la página, y lo tomaré en serio."
-
-add_city_title: "Agregar Ciudades"
-tab_popular: "Ciudades Populares"
-tab_country: "Por País"
-tab_timezone: "Por Zona Horaria"
-button_scroll_left: "Desplazar izquierda"
-button_now: "Ahora"
-button_scroll_right: "Desplazar derecha"
-features_title: "Planificador de Horario Mundial"
-features_intro: "Planifica reuniones entre zonas horarias sin confusión. Esta herramienta te ayuda a encontrar los mejores horarios para equipos globales y clientes."
-
-feature_local_time_title: "Tu Hora Local Primero"
-feature_local_time_desc: "Ve tu hora local en la parte superior automáticamente. No necesitas averiguar qué hora es donde estás."
-feature_easy_add_title: "Fácil Adición de Zona Horaria"
-feature_easy_add_desc: "Agrega cualquier ciudad o zona horaria con un clic. Compara horarios en todo el mundo instantáneamente."
-feature_visual_title: "Planificación Visual de Tiempo"
-feature_visual_desc: "Arrastra para seleccionar rangos de tiempo y ver cómo se ven en diferentes zonas horarias. Perfecto para programar reuniones."
-feature_calendar_title: "Integración Directa de Calendario"
-feature_calendar_desc: "Crea eventos de calendario directamente en Google Calendar, Outlook o Yahoo Calendar. No se necesita copiar y pegar."
-feature_no_registration_title: "Sin Registro Requerido"
-feature_no_registration_desc: "Comienza a planificar de inmediato. Sin cuentas, sin descargas, sin configuración requerida."
-feature_offline_title: "Funciona Sin Conexión"
-feature_offline_desc: "Una vez cargado, funciona sin internet. Excelente para viajes o conexiones poco confiables."
-
-use_cases_title: "Perfecto Para:"
-use_case_remote_teams_title: "Equipos remotos en diferentes países"
-use_case_remote_teams_desc: "Sarah en Nueva York necesita programar una reunión de equipo con colegas en Londres, Tokio y Sydney. Arrastra para seleccionar las 2-4 PM de su hora e instantáneamente ve que son las 7-9 PM en Londres, las 4-6 AM del día siguiente en Tokio y las 6-8 AM del día siguiente en Sydney."
-use_case_client_title: "Reuniones con socios internacionales"
-use_case_client_desc: "Una agencia de marketing en Berlín necesita presentar a un cliente en San Francisco. Seleccionan las 3-4 PM hora de Berlín y ven que son las 6-7 AM en San Francisco - demasiado temprano. Ajustan a las 5-6 PM hora de Berlín para un mejor horario de 8-9 AM en San Francisco."
-use_case_webinar_title: "Programación de seminarios web para audiencias globales"
-use_case_webinar_desc: "Una empresa tecnológica quiere organizar un seminario web para usuarios de todo el mundo. Seleccionan las 2-3 PM EST e inmediatamente ven que funciona para Europa (7-8 PM) y Asia (3-4 AM del día siguiente). Crean invitaciones de calendario para todas las zonas horarias con un clic."
-use_case_travel_title: "Planificación de viajes personales"
-use_case_travel_desc: "Mike está viajando de Chicago a París por negocios. Necesita llamar a su familia en casa durante su viaje. Selecciona las 7-8 PM hora de París y ve que son las 1-2 PM en Chicago - perfecto para una llamada durante el almuerzo."
-use_case_family_title: "Llamadas familiares entre zonas horarias"
-use_case_family_desc: "Una familia tiene miembros en Los Ángeles, Nueva York y Londres. Quieren encontrar un momento que funcione para todos. Prueban diferentes horarios y descubren que las 10 AM hora de Los Ángeles funciona para las 1 PM en Nueva York y las 6 PM en Londres - todos pueden unirse."
-
-dialog_title: "Ajustar Rango de Tiempo"
-dialog_label_start: "Inicio"
-dialog_label_end: "Fin"
-dialog_label_duration: "Duración"
-dialog_label_add_calendar: "Agregar al Calendario"
-button_google_calendar: "Google Calendar"
-button_outlook: "Outlook"
-button_yahoo_calendar: "Yahoo Calendar"
-
-text_invalid_timezone: "Inválido"
-text_timezone_label: "Zona Horaria"
-text_now: "Ahora"
-text_view_times: "Ver Tiempos"
-text_unknown: "Desconocido"
-
+---
+title: 'Planificador global de horarios de reuniones: la mejor herramienta visual
+  para la programación internacional'
+description: El mejor planificador visual de horarios de reuniones para equipos globales.
+  Planifique fácilmente su calendario de reuniones internacionales en diferentes zonas
+  horarias con nuestro planificador de reuniones con reloj mundial. Compare visualmente
+  las zonas horarias del planificador de reuniones.
+main_title: Planificador global de horarios de reuniones
+subtitle: La mejor herramienta visual para la programación internacional
+user_feedback_tip: "¿Tienes problemas o sugerencias? Deja un comentario al final de
+  la página, y lo tomaré en serio."
+add_city_title: Agregar Ciudades
+tab_popular: Ciudades Populares
+tab_country: Por País
+tab_timezone: Por Zona Horaria
+button_scroll_left: Desplazar izquierda
+button_now: Ahora
+button_scroll_right: Desplazar derecha
+features_title: Funciones del planificador de reuniones con reloj mundial
+features_intro: Planifique reuniones en diferentes zonas horarias sin confusiones.
+  Este planificador de horarios de reuniones le ayuda a encontrar los mejores horarios
+  para equipos y clientes globales al comparar instantáneamente las zonas horarias
+  del planificador de reuniones.
+feature_local_time_title: Tu Hora Local Primero
+feature_local_time_desc: Ve tu hora local en la parte superior automáticamente. No
+  necesitas averiguar qué hora es donde estás.
+feature_easy_add_title: Fácil Adición de Zona Horaria
+feature_easy_add_desc: Agrega cualquier ciudad o zona horaria con un clic. Compara
+  horarios en todo el mundo instantáneamente.
+feature_visual_title: Planificación Visual de Tiempo
+feature_visual_desc: Arrastra para seleccionar rangos de tiempo y ver cómo se ven
+  en diferentes zonas horarias. Perfecto para programar reuniones.
+feature_calendar_title: Integración Directa de Calendario
+feature_calendar_desc: Crea eventos de calendario directamente en Google Calendar,
+  Outlook o Yahoo Calendar. No se necesita copiar y pegar.
+feature_no_registration_title: Sin Registro Requerido
+feature_no_registration_desc: Comienza a planificar de inmediato. Sin cuentas, sin
+  descargas, sin configuración requerida.
+feature_offline_title: Funciona Sin Conexión
+feature_offline_desc: Una vez cargado, funciona sin internet. Excelente para viajes
+  o conexiones poco confiables.
+use_cases_title: 'Perfecto Para:'
+use_case_remote_teams_title: Equipos remotos en diferentes países
+use_case_remote_teams_desc: Sarah en Nueva York necesita programar una reunión de
+  equipo con colegas en Londres, Tokio y Sydney. Arrastra para seleccionar las 2-4
+  PM de su hora e instantáneamente ve que son las 7-9 PM en Londres, las 4-6 AM del
+  día siguiente en Tokio y las 6-8 AM del día siguiente en Sydney.
+use_case_client_title: Reuniones con socios internacionales
+use_case_client_desc: Una agencia de marketing en Berlín necesita presentar a un cliente
+  en San Francisco. Seleccionan las 3-4 PM hora de Berlín y ven que son las 6-7 AM
+  en San Francisco - demasiado temprano. Ajustan a las 5-6 PM hora de Berlín para
+  un mejor horario de 8-9 AM en San Francisco.
+use_case_webinar_title: Programación de seminarios web para audiencias globales
+use_case_webinar_desc: Una empresa tecnológica quiere organizar un seminario web para
+  usuarios de todo el mundo. Seleccionan las 2-3 PM EST e inmediatamente ven que funciona
+  para Europa (7-8 PM) y Asia (3-4 AM del día siguiente). Crean invitaciones de calendario
+  para todas las zonas horarias con un clic.
+use_case_travel_title: Planificación de viajes personales
+use_case_travel_desc: Mike está viajando de Chicago a París por negocios. Necesita
+  llamar a su familia en casa durante su viaje. Selecciona las 7-8 PM hora de París
+  y ve que son las 1-2 PM en Chicago - perfecto para una llamada durante el almuerzo.
+use_case_family_title: Llamadas familiares entre zonas horarias
+use_case_family_desc: Una familia tiene miembros en Los Ángeles, Nueva York y Londres.
+  Quieren encontrar un momento que funcione para todos. Prueban diferentes horarios
+  y descubren que las 10 AM hora de Los Ángeles funciona para las 1 PM en Nueva York
+  y las 6 PM en Londres - todos pueden unirse.
+dialog_title: Ajustar Rango de Tiempo
+dialog_label_start: Inicio
+dialog_label_end: Fin
+dialog_label_duration: Duración
+dialog_label_add_calendar: Agregar al Calendario
+button_google_calendar: Google Calendar
+button_outlook: Outlook
+button_yahoo_calendar: Yahoo Calendar
+text_invalid_timezone: Inválido
+text_timezone_label: Zona Horaria
+text_now: Ahora
+text_view_times: Ver Tiempos
+text_unknown: Desconocido
+usage_tip: 'Cómo usar: Pase el mouse sobre la línea de tiempo para seleccionar horarios
+  de reunión, o arrastre para elegir un rango de tiempo. Utilice nuestro planificador
+  de reuniones con reloj mundial para agregar ciudades o zonas horarias a continuación.'

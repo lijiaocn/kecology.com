@@ -9,8 +9,8 @@ mysetting:
   nowrapper: true
   background-color: '#121212'
   # display: fullscreen
-title:  "World Time Planner: Directly Find Perfect Meeting Time for Global Team"
-description: "A simple tool to find the perfect meeting time across different time zones. Select cities or timezones and visualize the time overlap."
+title:  "Global Meeting Time Planner: Best Visual Tool for International Scheduling"
+description: "The best visual meeting time planner for global teams. Easily plan your international meeting schedule across time zones with our world clock meeting planner. Compare meeting planner time zones visually."
 ---
 
 {% assign i18n_data = site.data.i18n['world-time-planner'][page.lang] %}
@@ -19,7 +19,7 @@ description: "A simple tool to find the perfect meeting time across different ti
 {% endif %}
 
 
-<link rel="stylesheet" href="/assets/css/world-time-planner.css?v=11">
+<link rel="stylesheet" href="/assets/css/world-time-planner.css?v=12">
 
 <div class="wtp-header">
   <h1>
@@ -28,36 +28,21 @@ description: "A simple tool to find the perfect meeting time across different ti
     <span class="wtp-subtitle">{{ i18n_data.subtitle }}</span>
     {% endif %}
   </h1>
+  {% if i18n_data.usage_tip %}
+  <p class="wtp-usage-tip">{{ i18n_data.usage_tip }}</p>
+  {% endif %}
   {% if i18n_data.user_feedback_tip %}
-  <p class="wtp-feedback-tip">{{ i18n_data.user_feedback_tip }}</p>
+  <!-- <p class="wtp-feedback-tip">{{ i18n_data.user_feedback_tip }}</p> -->
   {% endif %}
 </div>
 
 <div id="world-time-planner-app">
-  <div id="wtp-timeline-container" class="wtp-timeline-container">
-    <div class="wtp-timeline-header">
-      <div class="wtp-date-controls">
-        <div id="wtp-date-buttons"></div>
-        <input type="date" id="wtp-date-picker">
-      </div>
-      <div class="wtp-time-nav-controls">
-        <button id="wtp-scroll-left-btn" title="{{ i18n_data.button_scroll_left }}">&lt;</button>
-        <button id="wtp-now-btn" title="{{ i18n_data.button_now }}">{{ i18n_data.button_now }}</button>
-        <button id="wtp-scroll-right-btn" title="{{ i18n_data.button_scroll_right }}">&gt;</button>
-      </div>
-    </div>
-        <div id="wtp-scroll-container">
-          <div id="wtp-rows-wrapper" style="position: relative;">
-              <div id="wtp-time-rows"></div>
-              <div id="wtp-time-selector" style="display: none;"></div>
-          </div>
-        </div>
-  </div>
+
 
   <div class="wtp-selectors-container">
     <div class="wtp-tab-buttons">
       <div class="wtp-tab-btn-container">
-        <span class="wtp-add-city-title">{{ i18n_data.add_city_title }}</span>
+        <!-- <span class="wtp-add-city-title">{{ i18n_data.add_city_title }}</span> -->
         <button class="wtp-tab-btn active" data-tab="popular">{{ i18n_data.tab_popular }}</button>
         <button class="wtp-tab-btn" data-tab="country">{{ i18n_data.tab_country }}</button>
         <button class="wtp-tab-btn" data-tab="timezone">{{ i18n_data.tab_timezone }}</button>
@@ -87,6 +72,28 @@ description: "A simple tool to find the perfect meeting time across different ti
   </div>
 
 
+  <div id="wtp-timeline-container" class="wtp-timeline-container">
+    <div id="wtp-scroll-container">
+       <div id="wtp-rows-wrapper" style="position: relative;">
+           <div id="wtp-time-rows"></div>
+           <div id="wtp-time-selector" style="display: none;"></div>
+       </div>
+    </div>
+    <div class="wtp-timeline-header">
+      <div class="wtp-date-controls">
+        <div id="wtp-date-buttons"></div>
+        <input type="date" id="wtp-date-picker">
+      </div>
+      <div class="wtp-time-nav-controls">
+        <button id="wtp-scroll-left-btn" title="{{ i18n_data.button_scroll_left }}">&lt;</button>
+        <button id="wtp-now-btn" title="{{ i18n_data.button_now }}">{{ i18n_data.button_now }}</button>
+        <button id="wtp-scroll-right-btn" title="{{ i18n_data.button_scroll_right }}">&gt;</button>
+      </div>
+    </div>
+  </div>
+
+
+
 
   <div class="wtp-features-section">
     <h2>{{ i18n_data.features_title }}</h2>
@@ -96,32 +103,50 @@ description: "A simple tool to find the perfect meeting time across different ti
     
     <div class="wtp-features-grid">
       <div class="wtp-feature-item">
-        <h3>{{ i18n_data.feature_local_time_title }}</h3>
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          {{ i18n_data.feature_local_time_title }}
+        </h3>
         <p>{{ i18n_data.feature_local_time_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>{{ i18n_data.feature_easy_add_title }}</h3>
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+          {{ i18n_data.feature_easy_add_title }}
+        </h3>
         <p>{{ i18n_data.feature_easy_add_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>{{ i18n_data.feature_visual_title }}</h3>
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          {{ i18n_data.feature_visual_title }}
+        </h3>
         <p>{{ i18n_data.feature_visual_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>{{ i18n_data.feature_calendar_title }}</h3>
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          {{ i18n_data.feature_calendar_title }}
+        </h3>
         <p>{{ i18n_data.feature_calendar_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>{{ i18n_data.feature_no_registration_title }}</h3>
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg>
+          {{ i18n_data.feature_no_registration_title }}
+        </h3>
         <p>{{ i18n_data.feature_no_registration_desc }}</p>
       </div>
       
       <div class="wtp-feature-item">
-        <h3>{{ i18n_data.feature_offline_title }}</h3>
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+          {{ i18n_data.feature_offline_title }}
+        </h3>
         <p>{{ i18n_data.feature_offline_desc }}</p>
       </div>
     </div>
