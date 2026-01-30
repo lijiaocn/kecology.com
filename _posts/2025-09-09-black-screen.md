@@ -18,19 +18,12 @@ description: "the best online black screen tool for instant full-screen testing.
   {% assign i18n_data = site.data.i18n['black-screen']['en'] %}
 {% endif %}
 
-<link rel="stylesheet" href="/assets/css/black-screen.css?v=1">
+<link rel="stylesheet" href="/assets/css/black-screen.css?v=2">
 
 <div id="content">
   <h1>{{ i18n_data.title }}</h1>
-  <p>{{ i18n_data.intro_text }}</p>
-  <div id="more-info">
-    <p>{{ i18n_data.useful_text }}</p>
-    <ul>
-      <li><b>{{ i18n_data.dead_pixels }}:</b> {{ i18n_data.dead_pixels_desc }}</li>
-      <li><b>{{ i18n_data.clean_screen }}:</b> {{ i18n_data.clean_screen_desc }}</li>
-      <li><b>{{ i18n_data.backlight_bleed }}:</b> {{ i18n_data.backlight_bleed_desc }}</li>
-    </ul>
-  </div>
+  <p class="intro">{{ i18n_data.intro_text }}</p>
+
   <div id="color-palette-container">
     <p>{{ i18n_data.color_palette_text }}</p>
     <div id="color-palette">
@@ -42,6 +35,60 @@ description: "the best online black screen tool for instant full-screen testing.
       <div class="color-swatch" style="background-color: green;" data-color="green" title="{{ i18n_data.green_screen }}"></div>
     </div>
   </div>
+
+  <div id="features-section">
+    <p class="section-title">{{ i18n_data.useful_text }}</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>{{ i18n_data.dead_pixels }}</h3>
+        <p>{{ i18n_data.dead_pixels_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.backlight_bleed }}</h3>
+        <p>{{ i18n_data.backlight_bleed_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.clean_screen }}</h3>
+        <p>{{ i18n_data.clean_screen_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.oled_test }}</h3>
+        <p>{{ i18n_data.oled_test_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.local_dimming }}</h3>
+        <p>{{ i18n_data.local_dimming_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.focus_mode }}</h3>
+        <p>{{ i18n_data.focus_mode_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.photography_backdrop }}</h3>
+        <p>{{ i18n_data.photography_backdrop_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.sleep_aid }}</h3>
+        <p>{{ i18n_data.sleep_aid_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.calibration_warmup }}</h3>
+        <p>{{ i18n_data.calibration_warmup_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.physical_inspection }}</h3>
+        <p>{{ i18n_data.physical_inspection_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.hdr_test }}</h3>
+        <p>{{ i18n_data.hdr_test_desc }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ i18n_data.pixel_fringe_test }}</h3>
+        <p>{{ i18n_data.pixel_fringe_test_desc }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<script src="/assets/js/black-screen.js?v=1"></script>
+<script src="/assets/js/black-screen.js?v=2"></script>

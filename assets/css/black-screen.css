@@ -2,61 +2,129 @@ html, body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  background-color: #000; /* Ensure background is black */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 #content {
-  color: white;
+  color: #f0f0f0; /* Softer white for better readability */
   text-align: center;
-  max-width: 800px;
-  padding: 2rem 0;
+  max-width: 1000px; /* Increased width for grid */
+  padding: 3rem 20px;
+  box-sizing: border-box;
 }
+
+/* Typography */
 #content h1 {
-  font-size: 2.1em;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff;
 }
-#content p {
-  font-size: 1.3em;
+
+.intro {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
 }
-#more-info {
-  margin-top: 20px;
-  text-align: left;
-  display: inline-block;
-}
-#more-info p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-#more-info ul {
-  list-style-position: inside;
-  padding-left: 0;
-}
-#more-info li {
-  font-size: 1em;
-  margin-bottom: 8px;
-}
+
+/* Color Palette (The Tool) */
 #color-palette-container {
-  margin-top: 30px;
+  margin-bottom: 4rem;
 }
+
+#color-palette-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
 #color-palette {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 20px;
 }
+
 .color-swatch {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
-  border: 3px solid white;
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
+
 .color-swatch:hover {
-  transform: scale(1.15);
+  transform: translateY(-5px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.1);
+}
+
+/* Features Section */
+#features-section {
+  text-align: left;
+  border-top: 1px solid #222;
+  padding-top: 3rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  transition: background 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #4dabf7; /* Soft blue accent */
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #bbb;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  #content h1 {
+    font-size: 2rem;
+  }
+  .color-swatch {
+    width: 55px;
+    height: 55px;
+  }
 }
