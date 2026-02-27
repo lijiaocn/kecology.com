@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 60%, #000 100%);
+  color: #e5e7eb;
+}
+
+.baby-black-screen-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+.baby-black-screen-page .page-description {
+  max-width: 780px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #FFE0B2;
+}
+
+.baby-black-screen-page .hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.baby-black-screen-page .hero .hero-title {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin: 0 0 16px;
+  color: #f9fafb;
+}
+
+.hero-support {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
+}
+
+.hero-support-title {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #9ca3af;
+}
+
+.hero-support-email {
+  margin: 2px 0 0;
+  font-size: 0.95rem;
+}
+
+.hero-support-email a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-support-email a:hover {
+  text-decoration: underline;
+}
+
+.screenshot-section {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 32px auto 40px;
+  flex-wrap: wrap;
+}
+
+.screenshot-card {
+  flex: 1 1 260px;
+  max-width: 320px;
+  text-align: center;
+}
+
+.screenshot-image {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.caption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.baby-black-screen-page h2 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #e5e7eb;
+}
+
+.baby-black-screen-page h3 {
+  margin-top: 28px;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  color: #e5e7eb;
+}
+
+.baby-black-screen-page p {
+  margin: 6px 0 10px;
+  line-height: 1.8;
+  color: #9ca3af;
+}
+
+.baby-black-screen-page ul {
+  margin: 8px 0 16px 1.2rem;
+  padding: 0;
+  color: #9ca3af;
+}
+
+.baby-black-screen-page ul li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .baby-black-screen-page {
+    padding-top: 32px;
+  }
+
+  .baby-black-screen-page .hero .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .screenshot-section {
+    gap: 16px;
+  }
+}
+

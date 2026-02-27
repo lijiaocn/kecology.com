@@ -1,0 +1,33 @@
+title: "Baby Black Screen: One-Tap Fake Shutdown to Reduce Toddler Screen Time"
+description: "Baby Black Screen is a minimalist iOS app that turns your screen into a 'powered off' black display with one tap. It’s designed to trick toddlers who always grab your phone, helping reduce their interest in the device and preventing accidental touches or eye strain."
+
+hero_title: "Baby Black Screen — The 'Fake Shutdown' Tool for Parents"
+hero_subtitle: "A full-screen fake shutdown display: when your toddler grabs the phone and taps everywhere, nothing happens. It calms them down and gradually reduces their obsession with the screen."
+screenshot_en_alt: "Baby Black Screen iOS app screenshot (English interface)"
+screenshot_en_caption: "English Interface"
+screenshot_zh_alt: "Baby Black Screen iOS app screenshot (Chinese interface)"
+screenshot_zh_caption: "Chinese Interface"
+
+section_how_it_works_title: "How Does Baby Black Screen Work?"
+section_how_it_works_p1: "Many toddlers under 3 years old will immediately grab a phone whenever they see an adult using it, then start tapping away to watch videos or animations."
+section_how_it_works_p2: "With Baby Black Screen, your phone instantly shows a black 'fake shutdown' screen. No matter how much your toddler taps or swipes, the device doesn't respond. They quickly lose interest and put the phone down, naturally reducing screen time in a gentle way."
+
+section_features_title: "Key Features"
+feature_fullscreen_fake_shutdown: "One-tap full-screen black display – looks just like the phone is out of battery or off."
+feature_brightness_control: "Stable, simple interface with no visible buttons, making it hard for toddlers to accidentally exit."
+feature_keep_screen_on: "Perfect for temporarily 'tricking' toddlers, helping parents manage how often kids play with the phone."
+feature_no_ads_simple: "Minimalist design with zero ads – no complex or distracting features."
+
+section_usage_tips_title: "Usage Tips (Important)"
+tip_adjust_brightness: "Baby Black Screen is essentially just a 'fake shutdown' display. It works best for toddlers who cannot yet distinguish between a real shutdown and a fake one (typically those under 3)."
+tip_turn_on_airplane_mode: "Before use, you can lower the system brightness or enable Airplane Mode/Focus Mode to further reduce light and interruptions."
+tip_lock_orientation: "This app is only a helper tool and is not a replacement for parental supervision of screen time and content. Please use it responsibly."
+
+section_support_title: "Support & Feedback"
+support_intro: "If you have any questions, suggestions, or ideas for Baby Black Screen, the developer would love to hear from you."
+support_how_to_contact: "You can reach the developer at lijiaocn@foxmial.com for feedback or feature requests."
+support_bug_report: "When reporting a bug, please include your iPhone model, iOS version, and the steps to reproduce the issue for faster troubleshooting."
+
+section_privacy_title: "Privacy Policy"
+privacy_policy_content: "Baby Black Screen respects your privacy. This app does not collect, store, or transmit any personal information or user data."
+

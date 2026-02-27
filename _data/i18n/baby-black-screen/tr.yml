@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Turkish (tr)
+
+title: "Baby Black Screen: Küçük çocukların ekran süresini azaltmak için sahte kapanma ekranı"
+description: "Baby Black Screen, iPhone’da tamamen siyah bir ekran göstererek telefon kapalıymış gibi görünmesini sağlayan basit bir iOS uygulamasıdır. Küçük çocuklar telefonu alıp ekrana her yere dokunduğunda hiçbir şey olmaz — bu da telefona olan takıntının, yanlışlıkla kullanımın ve aşırı ekran süresine bağlı göz yorgunluğunun azaltılmasına yardımcı olur."
+
+hero_title: "Baby Black Screen – Küçük çocuklar için sahte kapanma ekranı"
+hero_subtitle: "Çocuk telefonu eline alıp ekrana rastgele dokunduğunda, yalnızca kapalı ya da şarjsızmış gibi görünen siyah bir ekran görür; böylece sakinleşir ve zamanla cihaza olan ilgisi azalır."
+
+screenshot_en_alt: "Baby Black Screen İngilizce arayüz ekran görüntüsü"
+screenshot_en_caption: "İngilizce arayüz"
+screenshot_zh_alt: "Baby Black Screen Çince arayüz ekran görüntüsü"
+screenshot_zh_caption: "Çince arayüz"
+
+section_how_it_works_title: "Baby Black Screen nasıl çalışır?"
+section_how_it_works_p1: "Pek çok 3 yaş altı çocuk, yetişkinlerin telefonu kullandığını görür görmez hemen telefonu kapar; videolar ve çizgi filmler izlemek için ekrana sürekli dokunur ve kaydırır."
+section_how_it_works_p2: "Baby Black Screen etkinleştirildiğinde, telefon tek dokunuşla tamamen siyah bir \"sahte kapanma / şarjsız\" ekrana dönüşür. Çocuk telefonu alıp dokunsa veya kaydırsa bile hiçbir tepki alamaz; kısa sürede sıkılıp telefonu bırakır ve böylece günlük ekran süresi yumuşak bir şekilde azaltılır."
+
+section_features_title: "Temel özellikler"
+feature_fullscreen_fake_shutdown: "Tek dokunuşla tam ekran siyah görüntü; telefon kapalı ya da pili bitmiş gibi görünür."
+feature_brightness_control: "Basit ve stabil siyah ekran; belirgin düğmeler olmadığı için çocuğun uygulamadan yanlışlıkla çıkması daha zordur."
+feature_keep_screen_on: "Sürekli telefonu almaya çalışan küçük çocukları geçici olarak \"kandırmak\" için uygundur ve ebeveynlerin telefon kullanım sıklığını azaltmasına yardımcı olur."
+feature_no_ads_simple: "Reklamsız, minimalist arayüz; gereksiz karmaşık özellikler yoktur."
+
+section_usage_tips_title: "Kullanım notları (önemli)"
+tip_adjust_brightness: "Baby Black Screen esasen bir \"sahte kapanma siyah ekranı\"dır. Gerçek kapanma ile sahte ekranı ayırt edemeyen çok küçük çocuklarda en iyi sonucu verir; genellikle yaklaşık 3 yaşına kadar daha etkilidir."
+tip_turn_on_airplane_mode: "Kullanmadan önce sistem parlaklığını azaltabilir, uçak modunu veya odak modunu açarak ışığı ve bildirim kaynaklı dikkat dağınıklığını daha da azaltabilirsiniz."
+tip_lock_orientation: "Bu uygulama sadece küçük bir yardımcı araçtır ve çocukların ekran süresi ile içeriklerini yönetme konusunda ebeveyn kontrolünün yerini alamaz. Lütfen sorumlu ve bilinçli şekilde kullanın."
+
+section_support_title: "Destek ve iletişim"
+support_intro: "Baby Black Screen kullanırken sorularınız, önerileriniz veya karşılaştığınız sorunlar varsa, geliştirici geri bildirimlerinizi almaktan memnuniyet duyar."
+support_how_to_contact: "Destek, geri bildirim veya özellik talepleri için lijiaocn@foxmial.com adresine e‑posta gönderebilirsiniz."
+support_bug_report: "Hata bildirirken mümkünse iPhone modelinizi, iOS sürümünü ve sorunun ortaya çıktığı sıradaki adımlarınızı belirtmeniz çözüm sürecini hızlandıracaktır."
+
+section_privacy_title: "Gizlilik Politikası"
+privacy_policy_content: "Baby Black Screen gizliliğinize saygı duyar. Bu uygulama herhangi bir kişisel bilgi veya kullanıcı verisi toplamaz, saklamaz veya iletmez."
+

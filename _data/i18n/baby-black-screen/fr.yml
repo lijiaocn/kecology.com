@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# French (fr)
+
+title: "Baby Black Screen : écran noir de faux arrêt pour réduire le temps d'écran des tout-petits"
+description: "Baby Black Screen est une application iOS simple qui affiche un écran noir comme si le téléphone était éteint. Quand les tout-petits prennent votre téléphone et appuient partout, rien ne se passe — ce qui aide à réduire l'obsession pour le smartphone, les utilisations accidentelles et la fatigue oculaire potentielle liée à un temps d'écran excessif."
+
+hero_title: "Baby Black Screen – Écran de faux arrêt pour les jeunes enfants"
+hero_subtitle: "Quand l'enfant attrape le téléphone et appuie partout, il ne voit qu'un écran noir comme si l'appareil était éteint ou sans batterie, ce qui l'aide à se calmer et, peu à peu, à perdre de l'intérêt pour le téléphone."
+
+screenshot_en_alt: "Capture d'écran de l'interface anglaise de Baby Black Screen"
+screenshot_en_caption: "Interface en anglais"
+screenshot_zh_alt: "Capture d'écran de l'interface chinoise de Baby Black Screen"
+screenshot_zh_caption: "Interface en chinois"
+
+section_how_it_works_title: "Comment fonctionne Baby Black Screen"
+section_how_it_works_p1: "De nombreux enfants de moins de 3 ans se précipitent sur le téléphone dès qu'ils voient un adulte l'utiliser, appuyant et faisant défiler pour regarder des vidéos ou des dessins animés."
+section_how_it_works_p2: "Avec Baby Black Screen activé, votre téléphone devient un écran noir complet de « faux arrêt / batterie vide ». Quand l'enfant le prend et appuie ou fait défiler, rien ne répond, il se lasse rapidement et repose le téléphone, ce qui réduit en douceur son exposition quotidienne à l'écran."
+
+section_features_title: "Fonctionnalités principales"
+feature_fullscreen_fake_shutdown: "Écran noir plein écran en un seul geste, qui donne l'impression que le téléphone est éteint ou sans batterie."
+feature_brightness_control: "Écran noir simple et stable, sans boutons visibles, ce qui limite les sorties accidentelles de l'application."
+feature_keep_screen_on: "Idéal pour « tromper » temporairement les jeunes enfants qui veulent toujours prendre le téléphone, et aider les parents à réduire la fréquence d'utilisation."
+feature_no_ads_simple: "Interface minimaliste, sans publicité, sans fonctions complexes supplémentaires."
+
+section_usage_tips_title: "Conseils d'utilisation (important)"
+tip_adjust_brightness: "Baby Black Screen est essentiellement un « écran noir de faux arrêt ». Il fonctionne surtout avec les jeunes enfants qui ne distinguent pas encore bien un arrêt réel d'un arrêt simulé, généralement plus efficace jusqu'à environ 3 ans."
+tip_turn_on_airplane_mode: "Avant l'utilisation, vous pouvez réduire la luminosité du système et activer le mode Avion ou un mode Concentration pour limiter encore davantage la lumière et les distractions."
+tip_lock_orientation: "Cette application est un simple outil d'appoint et ne remplace pas le contrôle parental sur la durée et le contenu d'utilisation des écrans. Utilisez-la avec discernement."
+
+section_support_title: "Support et contact"
+support_intro: "Si vous avez des questions, des suggestions ou rencontrez des problèmes avec Baby Black Screen, le développeur sera ravi de recevoir vos retours."
+support_how_to_contact: "Vous pouvez envoyer un e-mail à lijiaocn@foxmial.com pour obtenir de l'aide, donner votre avis ou proposer de nouvelles fonctionnalités."
+support_bug_report: "Lors d'un rapport de bug, indiquez si possible le modèle de votre iPhone, la version d'iOS et ce que vous faisiez lorsque le problème est survenu, afin de faciliter sa résolution."
+
+section_privacy_title: "Politique de confidentialité"
+privacy_policy_content: "Baby Black Screen ne collecte, ne stocke et ne transmet aucune information personnelle ou donnée utilisateur."
+

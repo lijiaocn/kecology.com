@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Vietnamese (vi)
+
+title: "Baby Black Screen: Màn hình tắt giả để giảm thời gian dùng điện thoại của trẻ nhỏ"
+description: "Baby Black Screen là một ứng dụng iOS đơn giản hiển thị màn hình đen hoàn toàn như thể điện thoại đã tắt. Khi trẻ nhỏ giật điện thoại và bấm loạn khắp nơi, sẽ không có gì xảy ra – điều này giúp giảm sự ám ảnh với điện thoại, hạn chế thao tác nhầm và giảm nguy cơ mỏi mắt do nhìn màn hình quá lâu."
+
+hero_title: "Baby Black Screen – Màn hình tắt giả cho trẻ nhỏ"
+hero_subtitle: "Khi trẻ cầm điện thoại và bấm loạn, chúng chỉ thấy một màn hình đen giống như điện thoại tắt hoặc hết pin, nhờ đó dần bình tĩnh lại và bớt hứng thú với thiết bị."
+
+screenshot_en_alt: "Ảnh chụp màn hình giao diện tiếng Anh của Baby Black Screen"
+screenshot_en_caption: "Giao diện tiếng Anh"
+screenshot_zh_alt: "Ảnh chụp màn hình giao diện tiếng Trung của Baby Black Screen"
+screenshot_zh_caption: "Giao diện tiếng Trung"
+
+section_how_it_works_title: "Baby Black Screen hoạt động như thế nào?"
+section_how_it_works_p1: "Rất nhiều trẻ dưới 3 tuổi ngay khi thấy người lớn dùng điện thoại là lập tức giật lấy, bấm và vuốt liên tục để xem video hoặc hoạt hình."
+section_how_it_works_p2: "Khi bật Baby Black Screen, điện thoại chỉ với một lần chạm sẽ chuyển thành màn hình đen hoàn toàn – giống như đang tắt hoặc hết pin. Trẻ cầm lên bấm hoặc vuốt thế nào màn hình cũng không phản hồi, nhanh chóng cảm thấy chán và đặt điện thoại xuống, từ đó nhẹ nhàng giảm thời gian tiếp xúc màn hình mỗi ngày."
+
+section_features_title: "Tính năng chính"
+feature_fullscreen_fake_shutdown: "Một chạm để chuyển sang màn hình đen toàn bộ, trông như điện thoại đã tắt hoặc hết pin."
+feature_brightness_control: "Màn hình đen đơn giản và ổn định, không có nút nổi bật nên trẻ khó thoát ứng dụng một cách vô tình."
+feature_keep_screen_on: "Phù hợp để \"đánh lừa\" tạm thời những trẻ nhỏ hay giật điện thoại, giúp phụ huynh giảm tần suất cho trẻ dùng điện thoại."
+feature_no_ads_simple: "Giao diện tối giản, không quảng cáo, không có tính năng phức tạp không cần thiết."
+
+section_usage_tips_title: "Lưu ý sử dụng (quan trọng)"
+tip_adjust_brightness: "Về bản chất, Baby Black Screen chỉ là một \"màn hình đen tắt giả\". Ứng dụng hoạt động tốt nhất với trẻ còn nhỏ, chưa phân biệt rõ giữa tắt thật và tắt giả – thường hiệu quả hơn với trẻ khoảng dưới 3 tuổi."
+tip_turn_on_airplane_mode: "Trước khi dùng, bạn có thể giảm độ sáng màn hình, bật Chế độ máy bay hoặc chế độ Tập trung để hạn chế ánh sáng và thông báo làm trẻ bị kích thích thêm."
+tip_lock_orientation: "Ứng dụng này chỉ là một công cụ hỗ trợ nhỏ, không thể thay thế vai trò của phụ huynh trong việc quản lý thời lượng và nội dung sử dụng thiết bị điện tử. Hãy sử dụng một cách có trách nhiệm."
+
+section_support_title: "Hỗ trợ & liên hệ"
+support_intro: "Nếu bạn có câu hỏi, góp ý hoặc gặp vấn đề khi sử dụng Baby Black Screen, nhà phát triển rất mong nhận được phản hồi từ bạn."
+support_how_to_contact: "Bạn có thể gửi email tới lijiaocn@foxmial.com để nhận hỗ trợ, gửi góp ý hoặc đề xuất tính năng mới."
+support_bug_report: "Khi báo lỗi, nếu có thể hãy cho biết mẫu iPhone, phiên bản iOS và thao tác bạn đã thực hiện trước khi xảy ra vấn đề để việc khắc phục được nhanh hơn."
+
+section_privacy_title: "Chính sách bảo mật"
+privacy_policy_content: "Baby Black Screen tôn trọng quyền riêng tư của bạn. Ứng dụng này không thu thập, lưu trữ hoặc truyền tải bất kỳ thông tin cá nhân hoặc dữ liệu người dùng nào."
+

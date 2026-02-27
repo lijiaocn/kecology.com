@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# German (de)
+
+title: "Baby Black Screen: Fake-Shutdown-Bildschirm zur Verringerung der Bildschirmzeit von Kleinkindern"
+description: "Baby Black Screen ist eine einfache iOS-App, die einen komplett schwarzen Bildschirm anzeigt, als wäre das iPhone ausgeschaltet. Wenn Kleinkinder das Telefon nehmen und überall tippen, passiert nichts – so lässt sich die Faszination für das Smartphone, unbeabsichtigte Bedienung und mögliche Überanstrengung der Augen durch zu viel Bildschirmzeit verringern."
+
+hero_title: "Baby Black Screen – Fake-Shutdown-Bildschirm für kleine Kinder"
+hero_subtitle: "Wenn Ihr Kind das Telefon schnappt und wild auf dem Display herumtippt, sieht es nur einen schwarzen Bildschirm, als wäre das Gerät aus oder der Akku leer – so beruhigt es sich schneller und verliert nach und nach das Interesse am Smartphone."
+
+screenshot_en_alt: "Screenshot der englischen Benutzeroberfläche von Baby Black Screen"
+screenshot_en_caption: "Englische Oberfläche"
+screenshot_zh_alt: "Screenshot der chinesischen Benutzeroberfläche von Baby Black Screen"
+screenshot_zh_caption: "Chinesische Oberfläche"
+
+section_how_it_works_title: "Wie Baby Black Screen funktioniert"
+section_how_it_works_p1: "Viele Kinder unter 3 Jahren greifen sofort nach dem Smartphone, sobald sie es in den Händen von Erwachsenen sehen – sie tippen, wischen und schauen Videos oder Zeichentrickfilme."
+section_how_it_works_p2: "Mit aktiviertem Baby Black Screen wird das Telefon per Tipp zu einem komplett schwarzen „Fake-Shutdown/kein Akku“-Bildschirm. Nimmt das Kind das Gerät und tippt oder wischt darauf herum, reagiert nichts. So wird ihm schnell langweilig und es legt das Smartphone wieder weg – die tägliche Bildschirmzeit wird sanft reduziert."
+
+section_features_title: "Wichtigste Funktionen"
+feature_fullscreen_fake_shutdown: "Vollflächiger schwarzer Bildschirm per Tipp – das Telefon wirkt ausgeschaltet oder leer."
+feature_brightness_control: "Schlichtes, stabiles Schwarzbild ohne auffällige Schaltflächen, sodass Kinder die App nicht so leicht versehentlich verlassen."
+feature_keep_screen_on: "Ideal, um kleinem Nachwuchs, der ständig zum Smartphone greift, vorübergehend ein „ausgeschaltetes“ Gerät vorzugaukeln und so die Nutzungshäufigkeit zu verringern."
+feature_no_ads_simple: "Minimalistische, werbefreie Oberfläche ohne unnötige Zusatzfunktionen."
+
+section_usage_tips_title: "Hinweise zur Nutzung (wichtig)"
+tip_adjust_brightness: "Im Kern ist Baby Black Screen ein „Fake-Shutdown-Schwarzer Bildschirm“. Am wirksamsten ist es bei sehr kleinen Kindern, die echtes Ausschalten und eine nachgeahmte Abschaltung noch nicht unterscheiden können – in der Regel bis etwa 3 Jahre."
+tip_turn_on_airplane_mode: "Vor der Verwendung können Sie die Systemhelligkeit reduzieren und den Flugmodus oder einen Fokusmodus aktivieren, um Licht und Ablenkungen weiter zu minimieren."
+tip_lock_orientation: "Diese App ist nur ein kleines Hilfsmittel und ersetzt keine elterliche Kontrolle über Dauer und Inhalte der Mediennutzung. Bitte setzen Sie sie verantwortungsvoll ein."
+
+section_support_title: "Support & Kontakt"
+support_intro: "Wenn Sie Fragen, Anregungen oder Probleme bei der Nutzung von Baby Black Screen haben, freut sich der Entwickler über Ihre Rückmeldung."
+support_how_to_contact: "Für Support, Feedback oder Funktionswünsche können Sie eine E-Mail an lijiaocn@foxmial.com senden."
+support_bug_report: "Beim Melden eines Fehlers helfen Angaben zum iPhone-Modell, zur iOS-Version und zu den Schritten vor Auftreten des Problems, um die Ursache schneller zu finden und zu beheben."
+
+section_privacy_title: "Datenschutzrichtlinie"
+privacy_policy_content: "Baby Black Screen respektiert Ihre Privatsphäre. Diese App sammelt, speichert oder überträgt keine persönlichen Informationen oder Benutzerdaten."
+

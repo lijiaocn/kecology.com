@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Portuguese (pt)
+
+title: "Baby Black Screen: Tela de desligamento falso para reduzir o tempo de tela das crianças"
+description: "Baby Black Screen é um app simples para iOS que mostra uma tela preta de desligamento falso. Quando as crianças pegam o celular e tocam em todos os lugares, nada acontece — ajudando a reduzir a obsessão pelo telefone, os toques acidentais e o possível cansaço visual causado por tempo excessivo de tela."
+
+hero_title: "Baby Black Screen – Tela de desligamento falso para crianças pequenas"
+hero_subtitle: "Quando a criança pega o celular e toca em tudo, ela vê apenas uma tela preta, como se o aparelho estivesse desligado ou sem bateria, o que a ajuda a se acalmar e, com o tempo, a perder o interesse pelo dispositivo."
+
+screenshot_en_alt: "Captura da interface em inglês do Baby Black Screen"
+screenshot_en_caption: "Interface em inglês"
+screenshot_zh_alt: "Captura da interface em chinês do Baby Black Screen"
+screenshot_zh_caption: "Interface em chinês"
+
+section_how_it_works_title: "Como funciona o Baby Black Screen"
+section_how_it_works_p1: "Muitas crianças menores de 3 anos pegam o celular assim que veem um adulto usando, tocando e deslizando sem parar para assistir a vídeos e desenhos."
+section_how_it_works_p2: "Com o Baby Black Screen ativado, o telefone se transforma em uma tela preta completa de \"desligado / sem bateria\". Quando a criança o pega e toca ou desliza, nada responde, então ela rapidamente perde o interesse e larga o celular, reduzindo de forma suave sua exposição diária à tela."
+
+section_features_title: "Principais recursos"
+feature_fullscreen_fake_shutdown: "Um toque para deixar a tela totalmente preta, parecendo que o celular está desligado ou sem bateria."
+feature_brightness_control: "Tela preta simples e estável, sem botões chamativos, o que dificulta que a criança saia do app por engano."
+feature_keep_screen_on: "Ideal para \"enganar\" temporariamente crianças pequenas que vivem pegando o celular, ajudando os pais a reduzir a frequência com que elas o utilizam."
+feature_no_ads_simple: "Interface minimalista e sem anúncios, sem funções extras desnecessárias."
+
+section_usage_tips_title: "Orientações de uso (importante)"
+tip_adjust_brightness: "O Baby Black Screen é, na essência, uma \"tela preta de desligamento falso\". Funciona melhor com crianças bem pequenas que ainda não distinguem bem o desligado real do simulado, sendo geralmente mais eficaz até cerca de 3 anos de idade."
+tip_turn_on_airplane_mode: "Antes de usar, você pode reduzir o brilho do sistema e ativar o modo Avião ou um modo de Concentração para diminuir ainda mais a luz e as distrações."
+tip_lock_orientation: "Este app é apenas uma ferramenta auxiliar e não substitui o controle dos pais sobre o tempo e o conteúdo de uso de telas. Utilize com bom senso."
+
+section_support_title: "Suporte e contato"
+support_intro: "Se você tiver dúvidas, sugestões ou encontrar problemas ao usar o Baby Black Screen, o desenvolvedor ficará feliz em receber seu contato."
+support_how_to_contact: "Você pode enviar um e-mail para lijiaocn@foxmial.com para obter suporte, enviar feedback ou sugerir novos recursos."
+support_bug_report: "Ao relatar um erro, inclua, se possível, o modelo do iPhone, a versão do iOS e o que você estava fazendo quando o problema ocorreu, para facilitar a correção."
+
+section_privacy_title: "Política de Privacidade"
+privacy_policy_content: "Baby Black Screen respeita a sua privacidade. Este aplicativo não coleta, armazena ou transmite qualquer informação pessoal ou dados do usuário."
+

@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Korean (ko)
+
+title: "Baby Black Screen: 영유아의 화면 시간을 줄이기 위한 가짜 전원 종료 화면"
+description: "Baby Black Screen은 아이폰에 전원이 꺼진 것처럼 보이는 완전한 검은색 화면을 보여주는 간단한 iOS 앱입니다. 아기가 휴대를 잡고 여기저기 두드려도 아무 반응이 없기 때문에, 스마트폰 집착과 오동작, 과도한 화면 시청으로 인한 눈 피로를 줄이는 데 도움이 됩니다."
+
+hero_title: "Baby Black Screen – 영유아를 위한 가짜 전원 종료 화면"
+hero_subtitle: "아기가 휴대폰을 빼앗아 여기저기 눌러도, 배터리가 다 떨어져 꺼진 것 같은 검은 화면만 보이기 때문에, 차츰 흥미를 잃고 휴대폰에서 자연스럽게 멀어지게 됩니다."
+
+screenshot_en_alt: "Baby Black Screen 영어 인터페이스 스크린샷"
+screenshot_en_caption: "영어 인터페이스"
+screenshot_zh_alt: "Baby Black Screen 중국어 인터페이스 스크린샷"
+screenshot_zh_caption: "중국어 인터페이스"
+
+section_how_it_works_title: "Baby Black Screen 작동 방식"
+section_how_it_works_p1: "많은 3세 미만 아이들은 어른이 휴대폰을 사용하는 모습을 보기만 해도 바로 빼앗아 가서, 화면을 두드리거나 넘기며 영상과 애니메이션을 계속 보려고 합니다."
+section_how_it_works_p2: "Baby Black Screen을 켜면, 휴대폰은 한 번의 탭으로 완전한 검은색의 ‘가짜 전원 종료/배터리 방전’ 화면으로 바뀝니다. 아이가 휴대를 가져가서 두드리거나 넘겨도 아무 반응이 없기 때문에, 금방 지루해져서 휴대를 내려놓게 되고, 일상 속에서 조금씩 화면 노출 시간을 줄일 수 있습니다."
+
+section_features_title: "주요 기능"
+feature_fullscreen_fake_shutdown: "한 번만 눌러도 전체 화면이 검게 변해, 휴대폰이 꺼지거나 배터리가 없는 것처럼 보입니다."
+feature_brightness_control: "간단하고 안정적인 검은 화면으로, 눈에 띄는 버튼이 없어 아이가 실수로 앱을 종료하기 어렵습니다."
+feature_keep_screen_on: "항상 휴대폰을 빼앗으려는 영유아를 잠시 \"속이는\" 용도로 적합하며, 부모가 아이의 휴대폰 사용 빈도를 줄이는 데 도움을 줍니다."
+feature_no_ads_simple: "불필요한 기능 없이, 광고가 없는 미니멀한 인터페이스."
+
+section_usage_tips_title: "사용 시 참고 사항 (중요)"
+tip_adjust_brightness: "Baby Black Screen은 본질적으로 ‘가짜 전원 종료 검은 화면’입니다. 진짜 전원 종료와 가짜 화면을 구별하지 못하는 아주 어린 아이에게 특히 효과적이며, 대략 3세 전후까지 더 잘 작동합니다."
+tip_turn_on_airplane_mode: "사용 전에 시스템 밝기를 낮추고, 필요하다면 비행기 모드나 집중 모드를 켜서 빛과 알림으로 인한 자극을 더 줄일 수 있습니다."
+tip_lock_orientation: "이 앱은 어디까지나 보조 도구일 뿐이며, 아이의 미디어 사용 시간과 콘텐츠를 관리하는 부모의 역할을 대신할 수 없습니다. 가정의 규칙에 맞게 적절히 사용해 주세요."
+
+section_support_title: "지원 및 문의"
+support_intro: "Baby Black Screen 사용 중 질문이나 제안, 또는 문제를 발견하셨다면, 개발자는 여러분의 의견을 듣게 되어 매우 기쁩니다."
+support_how_to_contact: "지원, 피드백 또는 기능 제안을 위해서는 lijiaocn@foxmial.com 으로 이메일을 보내 주시기 바랍니다."
+support_bug_report: "버그를 제보하실 때는 가능하다면 iPhone 기종, iOS 버전, 문제가 발생했을 때의 대략적인 조작 과정을 함께 알려 주시면 문제 해결에 큰 도움이 됩니다."
+
+section_privacy_title: "개인정보 처리방침"
+privacy_policy_content: "Baby Black Screen은 사용자의 어떠한 개인 정보나 데이터도 수집, 저장 또는 전송하지 않습니다."
+

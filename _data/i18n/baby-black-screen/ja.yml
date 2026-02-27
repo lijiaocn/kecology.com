@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Japanese (ja)
+
+title: "Baby Black Screen：子どもの画面時間を減らすためのフェイク電源オフ画面"
+description: "Baby Black Screen は、iPhone に電源オフのように見える真っ黒な画面を表示するシンプルなアプリです。幼い子どもがスマホを奪ってあちこちタップしても何も起こらないため、スマホへの執着や誤操作、長時間画面を見ることによる目の疲れをやわらげるのに役立ちます。"
+
+hero_title: "Baby Black Screen – 幼児向けフェイク電源オフ画面"
+hero_subtitle: "子どもがスマホを奪って適当にタップしても、電源が切れた・バッテリー切れのような真っ黒な画面しか表示されないので、次第に飽きてスマホから離れてくれます。"
+
+screenshot_en_alt: "Baby Black Screen 英語インターフェースのスクリーンショット"
+screenshot_en_caption: "英語インターフェース"
+screenshot_zh_alt: "Baby Black Screen 中国語インターフェースのスクリーンショット"
+screenshot_zh_caption: "中国語インターフェース"
+
+section_how_it_works_title: "Baby Black Screen の仕組み"
+section_how_it_works_p1: "多くの 3 歳未満の子どもは、大人がスマホを触っているのを見るとすぐに取り上げて、タップやスワイプで動画やアニメを見続けようとします。"
+section_how_it_works_p2: "Baby Black Screen をオンにすると、スマホはワンタップで真っ黒な「フェイク電源オフ／バッテリー切れ」画面になります。子どもがそれを持ってタップ／スワイプしても一切反応がないため、すぐにつまらなくなり、スマホを手放しやすくなります。こうして日常の中で、少しずつ画面を見る時間を減らすことができます。"
+
+section_features_title: "主な機能"
+feature_fullscreen_fake_shutdown: "ワンタップでフルスクリーンの黒画面にし、スマホの電源が切れた・バッテリーがないように見せます。"
+feature_brightness_control: "シンプルで安定した黒画面で、目立つボタンもなく、子どもが誤ってアプリを終了しにくい設計です。"
+feature_keep_screen_on: "いつもスマホを奪ってしまう幼児を一時的に「だます」用途に向いており、親が子どものスマホ使用頻度を減らすのに役立ちます。"
+feature_no_ads_simple: "ミニマルなデザインで広告なし、余計な機能はありません。"
+
+section_usage_tips_title: "使用上の注意（重要）"
+tip_adjust_brightness: "Baby Black Screen は本質的に「フェイク電源オフ黒画面」です。本当に電源オフかどうかをまだはっきり区別できない小さな子ども向けで、おおよそ 3 歳くらいまでの幼児に特に効果的です。"
+tip_turn_on_airplane_mode: "使用前に、必要に応じてシステムの画面輝度を下げたり、機内モードや集中モードをオンにしたりして、光や通知による刺激をさらに減らすことができます。"
+tip_lock_orientation: "本アプリはあくまで補助的なツールであり、子どものスクリーンタイムやコンテンツを管理する保護者の役割に取って代わるものではありません。ルールを決めて、適切な範囲でご利用ください。"
+
+section_support_title: "サポート・お問い合わせ"
+support_intro: "Baby Black Screen のご利用中に質問・要望・不具合などがありましたら、ぜひ開発者までお知らせください。"
+support_how_to_contact: "サポートやフィードバック、機能の提案については、lijiaocn@foxmial.com までメールをお送りください。"
+support_bug_report: "不具合を報告する際は、お使いの iPhone モデル、iOS のバージョン、不具合が発生したときの操作手順などを可能な範囲で記載していただけると、原因調査と修正がスムーズになります。"
+
+section_privacy_title: "プライバシーポリシー"
+privacy_policy_content: "Baby Black Screen は、ユーザーの個人情報を収集、保存、または送信することはありません。"
+

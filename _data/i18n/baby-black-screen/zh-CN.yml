@@ -1,0 +1,33 @@
+title: "哄娃黑屏：一键假关机，减少宝宝玩手机"
+description: "哄娃黑屏（Baby Black Screen）是一款极简的 iOS 黑屏应用，一键把屏幕变成“没电关机”的黑屏，骗过总爱抢手机的宝宝，减少他们玩手机的时间和频率，间接降低视力疲劳等风险。"
+
+hero_title: "哄娃黑屏 —— 哄娃用的“关机”黑屏"
+hero_subtitle: "全屏假关机黑屏，宝宝抢到手机、随便乱按也没有反应，既能安抚情绪，又能慢慢降低他们对手机的兴趣。"
+screenshot_en_alt: "哄娃黑屏（Baby Black Screen）英文界面截图"
+screenshot_en_caption: "英文版界面"
+screenshot_zh_alt: "哄娃黑屏（Baby Black Screen）中文界面截图"
+screenshot_zh_caption: "中文版界面"
+
+section_how_it_works_title: "哄娃黑屏是怎么工作的？"
+section_how_it_works_p1: "很多 3 岁以下的宝宝一看到大人拿手机，就会抢过来按来按去、看视频、刷动画片。"
+section_how_it_works_p2: "打开哄娃黑屏后，手机一键变成全黑的“假关机没电”画面，宝宝拿过去再怎么点、怎么划都没有反应，很快就觉得没意思，自然放下手机。这样既能安抚情绪，又能在日常中温和地减少他们接触手机和亮屏的时间。"
+
+section_features_title: "主要功能"
+feature_fullscreen_fake_shutdown: "一键全屏黑屏，看起来就像手机没电关机了。"
+feature_brightness_control: "黑屏界面简单稳定，不会弹出按钮，也不容易被宝宝误触退出。"
+feature_keep_screen_on: "适合临时“骗过”总爱抢手机的幼儿，帮助家长减少宝宝玩手机的次数。"
+feature_no_ads_simple: "界面极简无广告，不做其他复杂功能。"
+
+section_usage_tips_title: "使用说明（重要）"
+tip_adjust_brightness: "哄娃黑屏本质上只是一个“假关机黑屏”，主要是骗过还分不清真关机和假关机的幼儿，一般只对 3 岁以下的宝宝更有效。"
+tip_turn_on_airplane_mode: "使用前可以根据需要调低系统亮度、打开飞行模式或专注模式，进一步减少亮光和干扰。"
+tip_lock_orientation: "本应用只是一种辅助小工具，无法替代家长对孩子使用电子产品时长和内容的管理，请理性使用。"
+
+section_support_title: "技术支持与反馈"
+support_intro: "如果你在使用哄娃黑屏（Baby Black Screen）的过程中有任何问题、建议或功能想法，都非常欢迎反馈给开发者。"
+support_how_to_contact: "你可以发送邮件到 lijiaocn@foxmial.com，与开发者取得联系，提交反馈或功能建议。"
+support_bug_report: "遇到问题时，尽量说明你的 iPhone 型号、iOS 版本，以及大致的操作步骤，方便快速定位和修复。"
+
+section_privacy_title: "隐私政策"
+privacy_policy_content: "哄娃黑屏（Baby Black Screen）尊重并保护用户隐私。本应用不会收集、存储或传输您的任何个人信息或使用数据。"
+

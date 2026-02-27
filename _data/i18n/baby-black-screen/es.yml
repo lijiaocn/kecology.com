@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Spanish (es)
+
+title: "Baby Black Screen: Pantalla negra de falso apagado para reducir el tiempo de pantalla"
+description: "Baby Black Screen es una sencilla app para iOS que muestra una pantalla negra de falso apagado. Cuando los niños pequeños cogen tu móvil y tocan por todas partes, no pasa nada, lo que ayuda a reducir la obsesión por el teléfono, los toques accidentales y el posible cansancio visual por demasiado tiempo de pantalla."
+
+hero_title: "Baby Black Screen – Pantalla de falso apagado para niños pequeños"
+hero_subtitle: "Cuando tu hijo coge el móvil y pulsa por todas partes, solo ve una pantalla negra como si el teléfono estuviera apagado o sin batería, así se calma y poco a poco pierde interés por el dispositivo."
+
+screenshot_en_alt: "Captura de pantalla en inglés de la app Baby Black Screen"
+screenshot_en_caption: "Interfaz en inglés"
+screenshot_zh_alt: "Captura de pantalla en chino de la app Baby Black Screen"
+screenshot_zh_caption: "Interfaz en chino"
+
+section_how_it_works_title: "Cómo funciona Baby Black Screen"
+section_how_it_works_p1: "Muchos niños menores de 3 años cogen el móvil en cuanto ven que los adultos lo usan: tocan, deslizan y ven vídeos continuamente."
+section_how_it_works_p2: "Con Baby Black Screen activado, el teléfono se convierte con un toque en una pantalla negra de falso apagado. El niño lo coge, toca y desliza, pero nada responde. Al poco tiempo se aburre y deja el móvil, lo que ayuda a reducir de forma suave su exposición diaria a la pantalla."
+
+section_features_title: "Funciones principales"
+feature_fullscreen_fake_shutdown: "Un toque para poner la pantalla totalmente negra, como si el móvil estuviera apagado o sin batería."
+feature_brightness_control: "Interfaz simple y estable, sin botones llamativos que el niño pueda pulsar por error."
+feature_keep_screen_on: "Pensado para \"engañar\" temporalmente a los niños pequeños que siempre quieren coger el móvil, ayudando a reducir la frecuencia con la que lo usan."
+feature_no_ads_simple: "Diseño minimalista y sin anuncios, sin funciones innecesarias."
+
+section_usage_tips_title: "Indicaciones de uso (importante)"
+tip_adjust_brightness: "En esencia es solo una \"pantalla negra de falso apagado\". Funciona mejor con niños muy pequeños que aún no distinguen bien entre apagado real y simulado; suele ser más eficaz aproximadamente hasta los 3 años."
+tip_turn_on_airplane_mode: "Antes de usarla, puedes bajar el brillo del sistema y activar el modo avión o un modo de concentración para reducir aún más la luz y las distracciones."
+tip_lock_orientation: "Esta app es solo una ayuda complementaria y no sustituye el control de los padres sobre el tiempo y el contenido de uso de pantallas; úsala con criterio."
+
+section_support_title: "Soporte y contacto"
+support_intro: "Si tienes preguntas, sugerencias o encuentras algún problema al usar Baby Black Screen, al desarrollador le encantará conocer tu opinión."
+support_how_to_contact: "Puedes enviar un correo a lijiaocn@foxmial.com para solicitar soporte, enviar comentarios o proponer nuevas funciones."
+support_bug_report: "Al informar de un error, indica si es posible el modelo de iPhone, la versión de iOS y qué estabas haciendo cuando ocurrió el problema para facilitar su resolución."
+
+section_privacy_title: "Política de privacidad"
+privacy_policy_content: "Baby Black Screen respeta su privacidad. Esta aplicación no recopila, almacena ni transmite ninguna información personal o datos de usuario."
+

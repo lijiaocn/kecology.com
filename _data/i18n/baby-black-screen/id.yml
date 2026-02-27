@@ -1,0 +1,37 @@
+# i18n data for baby-black-screen post
+# Indonesian (id)
+
+title: "Baby Black Screen: Layar mati palsu untuk mengurangi waktu layar anak kecil"
+description: "Baby Black Screen adalah aplikasi iOS sederhana yang menampilkan layar hitam seolah‑olah ponsel mati. Saat balita mengambil ponsel dan mengetuk di mana‑mana, tidak ada yang terjadi—membantu mengurangi ketergantungan pada ponsel, sentuhan yang tidak disengaja, dan potensi kelelahan mata karena terlalu lama menatap layar."
+
+hero_title: "Baby Black Screen – Layar mati palsu untuk balita"
+hero_subtitle: "Ketika anak mengambil ponsel dan menekan ke mana‑mana, yang mereka lihat hanya layar hitam seperti ponsel kehabisan baterai, sehingga mereka lebih cepat tenang dan perlahan kehilangan minat pada perangkat."
+
+screenshot_en_alt: "Tangkapan layar antarmuka bahasa Inggris Baby Black Screen"
+screenshot_en_caption: "Antarmuka bahasa Inggris"
+screenshot_zh_alt: "Tangkapan layar antarmuka bahasa Tionghoa Baby Black Screen"
+screenshot_zh_caption: "Antarmuka bahasa Tionghoa"
+
+section_how_it_works_title: "Cara kerja Baby Black Screen"
+section_how_it_works_p1: "Banyak anak di bawah 3 tahun langsung mengambil ponsel ketika melihat orang dewasa menggunakannya—mengetuk, menggeser, dan menonton video tanpa henti."
+section_how_it_works_p2: "Dengan Baby Black Screen diaktifkan, ponsel berubah menjadi layar hitam penuh yang tampak seperti mati atau kehabisan baterai. Saat anak mengambilnya dan mengetuk atau menggeser, tidak ada yang merespons, sehingga mereka cepat bosan dan meletakkan ponsel, secara halus mengurangi paparan layar setiap hari."
+
+section_features_title: "Fitur utama"
+feature_fullscreen_fake_shutdown: "Satu ketukan untuk membuat layar hitam penuh, tampak seperti ponsel mati atau kehabisan baterai."
+feature_brightness_control: "Layar hitam yang sederhana dan stabil tanpa tombol mencolok, sehingga anak tidak mudah keluar dari aplikasi secara tidak sengaja."
+feature_keep_screen_on: "Cocok untuk sementara \"mengelabui\" anak kecil yang suka merebut ponsel, membantu orang tua mengurangi frekuensi mereka bermain ponsel."
+feature_no_ads_simple: "Antarmuka minimalis tanpa iklan, tanpa fitur tambahan yang rumit."
+
+section_usage_tips_title: "Petunjuk penggunaan (penting)"
+tip_adjust_brightness: "Baby Black Screen pada dasarnya adalah \"layar hitam mati palsu\". Paling efektif untuk anak yang masih sangat kecil dan belum bisa membedakan mati sungguhan dan palsu, biasanya lebih efektif hingga sekitar usia 3 tahun."
+tip_turn_on_airplane_mode: "Sebelum digunakan, Anda dapat menurunkan kecerahan sistem dan mengaktifkan Mode Pesawat atau mode Fokus untuk semakin mengurangi cahaya dan gangguan."
+tip_lock_orientation: "Aplikasi ini hanyalah alat bantu kecil dan tidak dapat menggantikan pengawasan orang tua terhadap durasi dan konten penggunaan layar. Gunakan dengan bijak."
+
+section_support_title: "Dukungan & kontak"
+support_intro: "Jika Anda memiliki pertanyaan, saran, atau menemukan masalah saat menggunakan Baby Black Screen, pengembang akan sangat senang menerima masukan Anda."
+support_how_to_contact: "Anda dapat mengirim email ke lijiaocn@foxmial.com untuk dukungan, umpan balik, atau permintaan fitur."
+support_bug_report: "Saat melaporkan bug, sertakan model iPhone, versi iOS, dan apa yang Anda lakukan saat masalah terjadi untuk membantu proses perbaikan."
+
+section_privacy_title: "Kebijakan Privasi"
+privacy_policy_content: "Baby Black Screen menghormati privasi Anda. Aplikasi ini tidak mengumpulkan, menyimpan, atau mengirimkan informasi pribadi atau data pengguna apa pun."
+
