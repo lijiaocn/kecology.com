@@ -35,11 +35,19 @@ module Jekyll
           if type == 'posts' && original_permalink && !original_permalink.empty?
             resource_name = original_permalink.split('/').last
             resource_name = resource_name.split('.').first if resource_name.include?('.')
+            # 预取当前资源在数据文件中的 i18n 配置
+            resource_i18n_data = site.data.dig('i18n', resource_name)
           else
             resource_name = nil
+            resource_i18n_data = nil
           end
           
           languages.each do |lang|
+            # 对 posts：只有存在对应语言的 i18n 数据文件时，才生成该语言版本
+            if type == 'posts'
+              next unless resource_i18n_data && resource_i18n_data[lang]
+            end
+
             # 克隆文档对象
             doc_to_add = template.dup
             
@@ -51,8 +59,8 @@ module Jekyll
             doc_to_add.data['lang'] = lang
             
             # 对于 posts：从 i18n 数据文件读取并替换 title 和 description
-            if type == 'posts' && site.data['i18n'] && site.data['i18n'][resource_name] && site.data['i18n'][resource_name][lang]
-              i18n_data = site.data['i18n'][resource_name][lang]
+            if type == 'posts'
+              i18n_data = resource_i18n_data[lang]
               doc_to_add.data['title'] = i18n_data['title'] if i18n_data['title']
               doc_to_add.data['description'] = i18n_data['description'] if i18n_data['description']
             end
