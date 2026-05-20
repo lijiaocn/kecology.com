@@ -1,5 +1,5 @@
 title: "Baby Black Screen: One-Tap Fake Shutdown to Reduce Toddler Screen Time"
-description: "Baby Black Screen is a minimalist iOS app that turns your screen into a 'powered off' black display with one tap. It’s designed to trick toddlers who always grab your phone, helping reduce their interest in the device and preventing accidental touches or eye strain."
+description: "Baby Black Screen is a minimalist iOS and Android app that turns your screen into a 'powered off' black display with one tap. It’s designed to trick toddlers who always grab your phone, helping reduce their interest in the device and preventing accidental touches or eye strain."
 
 hero_title: "Baby Black Screen — The 'Fake Shutdown' Tool for Parents"
 hero_subtitle: "A full-screen fake shutdown display: when your toddler grabs the phone and taps everywhere, nothing happens. It calms them down and gradually reduces their obsession with the screen."
@@ -8,6 +8,10 @@ screenshot_en_caption: "English Interface"
 screenshot_zh_alt: "Baby Black Screen iOS app screenshot (Chinese interface)"
 screenshot_zh_caption: "Chinese Interface"
 
+section_download_title: "Download"
+download_ios_label: "iOS · App Store (Baby Black Screen)"
+download_android_label: "Android · Download APK v1.0"
+download_note: "On Android, allow installation from unknown sources if prompted. On iOS, install via the App Store."
 section_how_it_works_title: "How Does Baby Black Screen Work?"
 section_how_it_works_p1: "Many toddlers under 3 years old will immediately grab a phone whenever they see an adult using it, then start tapping away to watch videos or animations."
 section_how_it_works_p2: "With Baby Black Screen, your phone instantly shows a black 'fake shutdown' screen. No matter how much your toddler taps or swipes, the device doesn't respond. They quickly lose interest and put the phone down, naturally reducing screen time in a gentle way."

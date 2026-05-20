@@ -122,6 +122,41 @@ body {
   margin-bottom: 6px;
 }
 
+.download-section {
+  text-align: center;
+  margin: 24px 0 32px;
+}
+
+.download-section h2 {
+  margin-top: 0;
+}
+
+.download-links {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.download-links li {
+  margin-bottom: 10px;
+}
+
+.download-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.download-links a:hover {
+  text-decoration: underline;
+}
+
+.download-note {
+  font-size: 0.88rem;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
 @media (max-width: 768px) {
   .baby-black-screen-page {
     padding-top: 32px;
