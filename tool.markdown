@@ -3,7 +3,7 @@ layout: tool
 title: Tools
 permalink: /tool/
 i18n: true
-nav_order: 2
+nav_order: 3
 body_class: tool-layout
 ---
 
