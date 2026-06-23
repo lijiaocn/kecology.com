@@ -1,0 +1,42 @@
+{%- comment -%}
+  Header language dropdown. Requires page.base_url (set by i18n_generator).
+{%- endcomment -%}
+{%- if page.base_url -%}
+{%- assign default_lang = site.default_lang | default: "en" -%}
+{%- assign current_lang = page.lang | default: default_lang -%}
+{%- assign lang_data = site.data.i18n.index[current_lang] -%}
+{%- assign current_lang_name = lang_data[current_lang] | default: current_lang -%}
+{%- assign i18n_base = page.base_url -%}
+{%- assign is_post = false -%}
+{%- if page.path contains '_posts/' -%}
+  {%- assign is_post = true -%}
+  {%- assign resource_name = i18n_base | split: '/' | last -%}
+  {%- assign resource_i18n = site.data.i18n[resource_name] -%}
+{%- endif -%}
+
+<div class="lang-selector" data-lang-selector>
+  <button type="button" class="lang-selector-btn" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
+    <span class="lang-selector-current">{{ current_lang_name }}</span>
+    <svg class="lang-selector-chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <ul class="lang-selector-menu" role="listbox">
+  {%- for lang_code in site.languages -%}
+    {%- assign show_lang = true -%}
+    {%- if is_post and resource_i18n[lang_code] == nil -%}
+      {%- assign show_lang = false -%}
+    {%- endif -%}
+    {%- if show_lang -%}
+    {%- assign lang_name = lang_data[lang_code] | default: lang_code -%}
+    {%- if lang_code == default_lang -%}
+      {%- assign lang_url = i18n_base -%}
+    {%- else -%}
+      {%- assign lang_url = "/" | append: lang_code | append: i18n_base -%}
+    {%- endif -%}
+    <li role="option"{% if lang_code == current_lang %} aria-selected="true"{% endif %}>
+      <a href="{{ lang_url | relative_url }}" class="lang-selector-option{% if lang_code == current_lang %} is-active{% endif %}" hreflang="{{ lang_code }}">{{ lang_name }}</a>
+    </li>
+    {%- endif -%}
+  {%- endfor -%}
+  </ul>
+</div>
+{%- endif -%}

@@ -1,6 +1,6 @@
 ---
 layout: tool
-title: Tool
+title: Tools
 permalink: /tool/
 i18n: true
 nav_order: 2
