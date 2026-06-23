@@ -1,0 +1,157 @@
+/* Blog page — warm, reading-friendly palette */
+
+body.blog-layout {
+  background-color: #f7f4ef;
+  color: #2c2c2c;
+}
+
+body.blog-layout .site-header {
+  border-top-color: #c4b5a0;
+  border-bottom-color: #e0d8cc;
+  background-color: #f7f4ef;
+}
+
+body.blog-layout .site-title,
+body.blog-layout .site-title:visited {
+  color: #5c4a3a;
+}
+
+body.blog-layout .site-nav .page-link {
+  color: #4a4a4a;
+}
+
+body.blog-layout .site-nav .page-link:hover {
+  color: #8b5e3c;
+}
+
+body.blog-layout .site-footer {
+  border-top-color: #e0d8cc;
+  background-color: #f0ebe3;
+}
+
+body.blog-layout .footer-col-wrapper {
+  color: #6b6b6b;
+}
+
+/* Language tabs */
+.blog-page .language-tabs {
+  border-bottom: 1px solid #ddd5c8;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.blog-page .tab-button {
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #8a8278;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.blog-page .tab-button:hover {
+  color: #5c4a3a;
+}
+
+.blog-page .tab-button.active {
+  color: #5c4a3a;
+  border-bottom-color: #8b5e3c;
+  font-weight: 500;
+}
+
+/* Header */
+.blog-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd5c8;
+}
+
+.blog-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.blog-description {
+  font-size: 1.05rem;
+  color: #6b6560;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Post list */
+.blog-post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-post-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e8e2d8;
+}
+
+.blog-post-item:first-child {
+  padding-top: 0;
+}
+
+.blog-post-date {
+  display: block;
+  font-size: 0.85rem;
+  color: #9a9288;
+  margin-bottom: 0.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.blog-post-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.blog-post-link {
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.blog-post-link:hover {
+  color: #8b5e3c;
+}
+
+.blog-post-excerpt {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b6560;
+  line-height: 1.65;
+}
+
+.blog-empty {
+  color: #9a9288;
+  font-style: italic;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 1.6rem;
+  }
+
+  .blog-page .tab-button {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}

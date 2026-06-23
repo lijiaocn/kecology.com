@@ -3,11 +3,11 @@
 <header class="site-header" role="banner">
 
   <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- assign default_lang = site.default_lang | default: "en" -%}
+    {%- assign nav_pages = site.pages | where_exp: "p", "p.title != nil" | where_exp: "p", "p.lang == nil or p.lang == default_lang" | sort: "nav_order" -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}{{page.mysetting.noheader}}</a>
 
-    {%- if page_paths -%}
+    {%- if nav_pages.size > 0 -%}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
@@ -19,11 +19,13 @@
         </label>
 
         <div class="trigger">
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+          {%- for my_page in nav_pages -%}
+            {%- if my_page.i18n and page.lang and page.lang != default_lang -%}
+              {%- assign nav_url = "/" | append: page.lang | append: my_page.base_url -%}
+            {%- else -%}
+              {%- assign nav_url = my_page.url -%}
             {%- endif -%}
+            <a class="page-link" href="{{ nav_url | relative_url }}">{{ my_page.title | escape }}</a>
           {%- endfor -%}
         </div>
       </nav>

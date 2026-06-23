@@ -1,0 +1,95 @@
+{%- comment -%}
+  Reusable i18n post list page (home / blog / tool).
+  Parameters:
+    base_path  — page base URL, e.g. "/", "/blog/", "/tool/"
+    variant    — home | blog | tool (controls markup & CSS classes)
+    category   — optional post category filter (e.g. "blog", "tool")
+    i18n_key   — optional _data/i18n key for page title / description / empty message
+{%- endcomment -%}
+{%- assign default_lang = site.default_lang | default: "en" -%}
+{%- assign current_lang = page.lang | default: default_lang -%}
+{%- assign variant = include.variant | default: "home" -%}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+{%- if include.i18n_key -%}
+  {%- assign page_data = site.data.i18n[include.i18n_key][current_lang] -%}
+  {%- if page_data == nil -%}
+    {%- assign page_data = site.data.i18n[include.i18n_key]['en'] -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- include language-tabs.html base_path=include.base_path -%}
+
+{%- if variant == "home" and page.list_title -%}
+<h2 class="post-list-heading">{{ page.list_title }}</h2>
+{%- elsif variant == "blog" -%}
+<header class="blog-header">
+  <h1 class="blog-title">{{ page_data.page_title }}</h1>
+  {%- if page_data.page_description -%}
+  <p class="blog-description">{{ page_data.page_description }}</p>
+  {%- endif -%}
+</header>
+{%- elsif variant == "tool" and page_data.page_title -%}
+<header class="tool-header">
+  <h1 class="tool-title">{{ page_data.page_title }}</h1>
+</header>
+{%- endif -%}
+
+{%- assign has_posts = false -%}
+
+{%- if variant == "home" -%}
+<ul class="post-list">
+{%- elsif variant == "blog" -%}
+<ul class="blog-post-list">
+{%- else -%}
+<ul class="tool-post-list">
+{%- endif -%}
+{%- for post in site.posts -%}
+    {%- assign post_lang = post.lang | default: default_lang -%}
+    {%- assign post_cats = post.categories | join: ',' | downcase -%}
+    {%- assign matches_category = true -%}
+    {%- if include.category -%}
+        {%- unless post_cats contains include.category -%}
+            {%- assign matches_category = false -%}
+        {%- endunless -%}
+    {%- endif -%}
+    {%- if post_lang == current_lang and matches_category -%}
+    {%- assign has_posts = true -%}
+    {%- if variant == "home" -%}
+    <li class="post-item">
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h3>
+        {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+        {%- endif -%}
+    </li>
+    {%- elsif variant == "blog" -%}
+    <li class="blog-post-item">
+        <time class="blog-post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+        <h2 class="blog-post-title">
+            <a class="blog-post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        {%- if post.description -%}
+        <p class="blog-post-excerpt">{{ post.description | escape }}</p>
+        {%- endif -%}
+    </li>
+    {%- else -%}
+    <li class="tool-post-item">
+        <time class="tool-post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+        <h2 class="tool-post-title">
+            <a class="tool-post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        {%- if site.show_excerpts -%}
+        <div class="tool-post-excerpt">{{ post.excerpt }}</div>
+        {%- endif -%}
+    </li>
+    {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+</ul>
+
+{%- if variant == "blog" and has_posts == false -%}
+<p class="blog-empty">{{ page_data.empty_message }}</p>
+{%- endif -%}

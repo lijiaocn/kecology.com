@@ -1,0 +1,151 @@
+/* Tool page — cool slate palette, distinct from blog warmth & home darkness */
+
+body.tool-layout {
+  background-color: #eef2f7;
+  color: #1e293b;
+}
+
+body.tool-layout .site-header {
+  border-top-color: #94a3b8;
+  border-bottom-color: #cbd5e1;
+  background-color: #eef2f7;
+}
+
+body.tool-layout .site-title,
+body.tool-layout .site-title:visited {
+  color: #1e3a5f;
+}
+
+body.tool-layout .site-nav .page-link {
+  color: #475569;
+}
+
+body.tool-layout .site-nav .page-link:hover {
+  color: #0d9488;
+}
+
+body.tool-layout .site-footer {
+  border-top-color: #cbd5e1;
+  background-color: #e2e8f0;
+}
+
+body.tool-layout .footer-col-wrapper {
+  color: #64748b;
+}
+
+/* Language tabs */
+.tool-page .language-tabs {
+  border-bottom: 1px solid #cbd5e1;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.tool-page .tab-button {
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.tool-page .tab-button:hover {
+  color: #1e3a5f;
+}
+
+.tool-page .tab-button.active {
+  color: #1e3a5f;
+  border-bottom-color: #0d9488;
+  font-weight: 500;
+}
+
+/* Page header */
+.tool-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.tool-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Post list */
+.tool-post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-post-item {
+  padding: 1.25rem 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tool-post-item:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.tool-post-date {
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tool-post-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.tool-post-link {
+  color: #1e293b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.tool-post-link:hover {
+  color: #0d9488;
+}
+
+.tool-post-excerpt {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .tool-title {
+    font-size: 1.45rem;
+  }
+
+  .tool-page .tab-button {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .tool-post-item {
+    padding: 1rem 0.85rem;
+  }
+}
