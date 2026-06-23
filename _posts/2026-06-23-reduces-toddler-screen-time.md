@@ -4,7 +4,6 @@ date: "2026-06-23 10:00:00 +0800"
 categories: "guides"
 permalink: /guides/reduces-toddler-screen-time
 i18n: true
-body_class: guides-layout
 title: "The App That Directly Reduces Toddler Screen Time"
 description: "Tired of generic screen-time tips that don't work? Baby Black Screen turns your phone into an unresponsive black screen so toddlers lose interest fast—plus what parents must do for lasting results."
 ---
@@ -13,8 +12,6 @@ description: "Tired of generic screen-time tips that don't work? Baby Black Scre
 {% if i18n_data == nil %}
   {% assign i18n_data = site.data.i18n['reduces-toddler-screen-time']['en'] %}
 {% endif %}
-
-<link rel="stylesheet" href="{{ '/assets/css/guides.css' | relative_url }}">
 
 {% if i18n_data.intro_p1 %}
 {{ i18n_data.intro_p1 | markdownify }}

@@ -1,54 +1,23 @@
-/* Tool page — cool slate palette, distinct from blog warmth & home darkness */
+@import "editorial-shell.css";
 
-body.tool-layout {
-  background-color: #eef2f7;
-  color: #1e293b;
-}
+/* Tool list — editorial shell + card layout */
 
-body.tool-layout .site-header {
-  border-top-color: #94a3b8;
-  border-bottom-color: #cbd5e1;
-  background-color: #eef2f7;
-}
-
-body.tool-layout .site-title,
-body.tool-layout .site-title:visited {
-  color: #1e3a5f;
-}
-
-body.tool-layout .site-nav .page-link {
-  color: #475569;
-}
-
-body.tool-layout .site-nav .page-link:hover {
-  color: #0d9488;
-}
-
-body.tool-layout .site-footer {
-  border-top-color: #cbd5e1;
-  background-color: #e2e8f0;
-}
-
-body.tool-layout .footer-col-wrapper {
-  color: #64748b;
-}
-
-/* Page header */
 .tool-header {
   margin-bottom: 2rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .tool-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #0f172a;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 2.625rem;
+  font-weight: 700;
+  color: #242424;
   letter-spacing: -0.02em;
+  line-height: 1.15;
   margin: 0;
 }
 
-/* Post list */
 .tool-post-list {
   list-style: none;
   margin: 0;
@@ -58,52 +27,54 @@ body.tool-layout .footer-col-wrapper {
 .tool-post-item {
   padding: 1.25rem 1rem;
   margin-bottom: 0.75rem;
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: #fafafa;
+  border: 1px solid #f2f2f2;
   border-radius: 8px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .tool-post-item:hover {
-  border-color: #94a3b8;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .tool-post-date {
   display: block;
-  font-size: 0.8rem;
-  color: #94a3b8;
+  font-size: 0.8125rem;
+  color: #757575;
   margin-bottom: 0.3rem;
   font-variant-numeric: tabular-nums;
 }
 
 .tool-post-title {
   margin: 0;
-  font-size: 1.15rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .tool-post-link {
-  color: #1e293b;
+  color: #242424;
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 .tool-post-link:hover {
-  color: #0d9488;
+  color: #242424;
+  opacity: 0.75;
 }
 
 .tool-post-excerpt {
   margin: 0.4rem 0 0;
-  font-size: 0.9rem;
-  color: #64748b;
+  font-size: 0.9375rem;
+  color: #757575;
   line-height: 1.55;
 }
 
 @media (max-width: 768px) {
   .tool-title {
-    font-size: 1.45rem;
+    font-size: 2rem;
   }
 
   .tool-page .tab-button {

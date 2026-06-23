@@ -7,6 +7,7 @@ title: Home
 permalink: /
 i18n: true
 nav_order: 0
+body_class: home-layout
 ---
 
 {%- include post-list-page.html base_path="/" variant="home" -%}

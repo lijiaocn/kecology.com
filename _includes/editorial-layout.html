@@ -1,0 +1,30 @@
+{%- comment -%}
+  Resolve editorial layout from page.body_class or post categories.
+  Usage:
+    {% include editorial-layout.html part="class" %}
+    {% include editorial-layout.html part="stylesheet" %}
+{%- endcomment -%}
+
+{%- assign editorial_class = page.body_class -%}
+{%- if editorial_class == nil or editorial_class == '' -%}
+  {%- assign post_cats = page.categories | join: ',' | downcase -%}
+  {%- if post_cats contains 'guides' -%}
+    {%- assign editorial_class = 'guides-layout' -%}
+  {%- elsif post_cats contains 'blog' -%}
+    {%- assign editorial_class = 'blog-layout' -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if include.part == 'class' -%}
+  {{- editorial_class -}}
+{%- elsif include.part == 'stylesheet' -%}
+  {%- if editorial_class == 'home-layout' -%}
+  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+  {%- elsif editorial_class == 'blog-layout' -%}
+  <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
+  {%- elsif editorial_class == 'guides-layout' -%}
+  <link rel="stylesheet" href="{{ '/assets/css/guides.css' | relative_url }}">
+  {%- elsif editorial_class == 'tool-layout' -%}
+  <link rel="stylesheet" href="{{ '/assets/css/tool.css' | relative_url }}">
+  {%- endif -%}
+{%- endif -%}
