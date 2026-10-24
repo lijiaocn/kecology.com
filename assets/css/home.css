@@ -88,14 +88,20 @@ h1.ap-vision {
 .ap-duo a {
   --ap-slide-h: 520px;
   --ap-slide-pad-y: 28px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 28px;
+  justify-content: space-around;
   height: var(--ap-slide-h);
-  padding: var(--ap-slide-pad-y) 96px var(--ap-slide-pad-y) 56px;
+  padding: var(--ap-slide-pad-y) 0;
   border-radius: 28px;
+  text-align: left;
+}
+
+.ap-copy {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 28rem;
   text-align: left;
 }
 
@@ -117,6 +123,7 @@ h1.ap-vision {
 }
 
 .ap-shot {
+  flex: 0 0 auto;
   height: calc(var(--ap-slide-h) - var(--ap-slide-pad-y) * 2);
   width: auto;
   max-width: none;
@@ -272,11 +279,16 @@ h1.ap-vision {
   .ap-duo a {
     --ap-slide-h: auto;
     --ap-slide-pad-y: 24px;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     height: auto;
     padding: 24px 28px 28px;
+  }
+
+  .ap-copy {
+    max-width: 28rem;
+    text-align: center;
   }
 
   .ap-shot {
