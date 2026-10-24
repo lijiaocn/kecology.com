@@ -1,0 +1,24 @@
+{
+  "type": "design",
+  "designSystems": [],
+  "primaryDesignSystem": null,
+  "assets": {
+    "公司首页": {
+      "versions": [
+        {
+          "path": "Homepage.html",
+          "createdAt": "2026-10-24T08:05:00.834Z",
+          "status": "needs-review",
+          "subtitle": "三个桌面方向：登记册、产品册、目录页",
+          "viewport": {
+            "width": 1280,
+            "height": 1480
+          },
+          "section": "公司首页"
+        }
+      ]
+    }
+  },
+  "createdAt": "2026-10-24T08:05:00.835Z",
+  "updatedAt": "2026-10-24T08:05:00.835Z"
+}

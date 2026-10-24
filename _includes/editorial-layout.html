@@ -16,11 +16,12 @@
 {%- if include.part == 'class' -%}
   {{- editorial_class -}}
 {%- elsif include.part == 'stylesheet' -%}
+  {%- assign asset_v = site.time | date: "%s" -%}
   {%- if editorial_class == 'home-layout' -%}
-  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/home.css?v=' | append: asset_v | relative_url }}">
   {%- elsif editorial_class == 'guides-layout' -%}
-  <link rel="stylesheet" href="{{ '/assets/css/guides.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/guides.css?v=' | append: asset_v | relative_url }}">
   {%- elsif editorial_class == 'tool-layout' -%}
-  <link rel="stylesheet" href="{{ '/assets/css/tool.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/tool.css?v=' | append: asset_v | relative_url }}">
   {%- endif -%}
 {%- endif -%}
