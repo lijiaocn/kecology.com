@@ -10,8 +10,6 @@
   {%- assign post_cats = page.categories | join: ',' | downcase -%}
   {%- if post_cats contains 'guides' -%}
     {%- assign editorial_class = 'guides-layout' -%}
-  {%- elsif post_cats contains 'blog' -%}
-    {%- assign editorial_class = 'blog-layout' -%}
   {%- endif -%}
 {%- endif -%}
 
@@ -20,8 +18,6 @@
 {%- elsif include.part == 'stylesheet' -%}
   {%- if editorial_class == 'home-layout' -%}
   <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
-  {%- elsif editorial_class == 'blog-layout' -%}
-  <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
   {%- elsif editorial_class == 'guides-layout' -%}
   <link rel="stylesheet" href="{{ '/assets/css/guides.css' | relative_url }}">
   {%- elsif editorial_class == 'tool-layout' -%}

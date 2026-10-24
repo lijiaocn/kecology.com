@@ -1,8 +1,8 @@
 ---
 layout: page
 date: "2026-02-27 10:00:00 +0800"
-categories: "tool"
-permalink: /tool/baby-black-screen
+categories: "app"
+permalink: /app/baby-black-screen
 i18n: true
 mysetting:
   header: hidden

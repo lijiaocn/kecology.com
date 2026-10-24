@@ -1,6 +1,6 @@
 apps:
   - id: baby-black-screen
-    path: /tool/baby-black-screen
+    path: /app/baby-black-screen
     theme: "#020617"
     ink: "#f9fafb"
     muted: "#d1d5db"

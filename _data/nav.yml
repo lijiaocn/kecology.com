@@ -1,0 +1,6 @@
+# Header page links, top to bottom is left to right.
+# Each entry is that page's permalink (without a language prefix).
+- /
+- /app/
+- /tool/
+- /guides/

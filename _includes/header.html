@@ -4,7 +4,7 @@
 
   <div class="wrapper">
     {%- assign default_lang = site.default_lang | default: "en" -%}
-    {%- assign nav_pages = site.pages | where_exp: "p", "p.title != nil" | where_exp: "p", "p.lang == nil or p.lang == default_lang" | sort: "nav_order" -%}
+    {%- assign nav_pages = site.pages | where_exp: "p", "p.title != nil" | where_exp: "p", "p.lang == nil or p.lang == default_lang" -%}
     {%- if page.lang and page.lang != default_lang -%}
       {%- assign home_href = "/" | append: page.lang | append: "/" -%}
     {%- else -%}
@@ -25,19 +25,21 @@
 
         <div class="trigger">
           {%- assign current_base = page.base_url | default: page.url -%}
-          {%- for my_page in nav_pages -%}
-            {%- if my_page.i18n and page.lang and page.lang != default_lang -%}
-              {%- assign nav_url = "/" | append: page.lang | append: my_page.base_url -%}
-            {%- else -%}
-              {%- assign nav_url = my_page.url -%}
-            {%- endif -%}
-            {%- assign link_base = my_page.base_url | default: my_page.url -%}
+          {%- if page.lang and page.lang != default_lang -%}
+            {%- assign lang_prefix = "/" | append: page.lang -%}
+          {%- else -%}
+            {%- assign lang_prefix = "" -%}
+          {%- endif -%}
+          {%- for nav_path in site.data.nav -%}
+            {%- assign my_page = nav_pages | where: "base_url", nav_path | first -%}
+            {%- unless my_page -%}{%- continue -%}{%- endunless -%}
+            {%- assign nav_url = lang_prefix | append: nav_path -%}
             {%- assign is_current = false -%}
-            {%- if link_base == "/" -%}
+            {%- if nav_path == "/" -%}
               {%- if current_base == "/" or current_base == "/index.html" -%}
                 {%- assign is_current = true -%}
               {%- endif -%}
-            {%- elsif current_base == link_base or current_base contains link_base -%}
+            {%- elsif current_base == nav_path or current_base contains nav_path -%}
               {%- assign is_current = true -%}
             {%- endif -%}
             <a class="page-link" href="{{ nav_url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ my_page.nav_title | default: my_page.title | escape }}</a>

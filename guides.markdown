@@ -3,7 +3,6 @@ layout: guides
 title: Guides
 permalink: /guides/
 i18n: true
-nav_order: 2
 body_class: guides-layout
 ---
 

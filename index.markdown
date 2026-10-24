@@ -5,7 +5,6 @@ nav_title: Home
 description: 北京前浪求知科技有限公司（Beijing Qianlang Qiuzhi Technology Co., Ltd.）
 permalink: /
 i18n: true
-nav_order: 0
 body_class: home-layout
 mysetting:
   nowrapper: true
