@@ -1,0 +1,40 @@
+vision: Strumenti web e app che fanno risparmiare un passaggio e, ogni tanto, sorprendono.
+apps_title: App mobili
+carousel_prev: Indietro
+carousel_next: Avanti
+tools_title: Strumenti online
+categories:
+  screen: Schermo
+  sleep: Sonno
+  time: Ora
+  data: Dati
+  entry: Accesso
+apps:
+  baby-black-screen:
+    name: Schermo nero per bambini
+    desc: Uno spegnimento finto per i più piccoli
+  looksync:
+    name: LookSync
+    desc: Provare sul proprio viso trucco, capelli e stile di una foto.
+tools:
+  black-screen:
+    name: Schermo nero
+    desc: Bleeding, pixel morti, bagliore IPS
+  best-bedtime-calculator:
+    name: Ora di dormire
+    desc: Tornare indietro di un ciclo di sonno
+  wakeup-calculator:
+    name: Ora di sveglia
+    desc: Una sveglia che cade nel ciclo
+  world-time-planner:
+    name: Orari di riunione
+    desc: Un'ora che va bene in più città
+  what-time:
+    name: Ora locale
+    desc: Che ore sono in una città
+  json:
+    name: JSON
+    desc: Formattare, controllare, passare a XML o YAML
+  ai-chatbot-hub:
+    name: Accesso IA
+    desc: ChatGPT, Gemini, Grok e gli altri

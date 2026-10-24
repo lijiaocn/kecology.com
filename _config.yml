@@ -81,3 +81,4 @@ exclude:
   - vendor/ruby/
   - README.md
   - run.sh
+  - designs/

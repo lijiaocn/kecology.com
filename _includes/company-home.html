@@ -1,0 +1,80 @@
+{%- assign default_lang = site.default_lang | default: "en" -%}
+{%- assign current_lang = page.lang | default: default_lang -%}
+{%- assign home = site.data.i18n.home[current_lang] -%}
+{%- if home == nil -%}
+  {%- assign home = site.data.i18n.home.en -%}
+{%- endif -%}
+{%- if current_lang == default_lang -%}
+  {%- assign lang_prefix = "" -%}
+{%- else -%}
+  {%- assign lang_prefix = "/" | append: current_lang -%}
+{%- endif -%}
+
+<section class="ap-hero">
+  <h1 class="ap-vision">{{ home.vision }}</h1>
+</section>
+
+<section class="ap-band" aria-label="{{ home.apps_title }}">
+  <div class="ap-inner">
+    <h2>{{ home.apps_title }}</h2>
+    <div class="ap-carousel">
+      <button class="ap-arrow ap-prev" type="button" aria-label="{{ home.carousel_prev }}">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ap-viewport">
+        <ul class="ap-duo">
+          {%- for item in site.data.home_catalog.apps -%}
+            {%- assign copy = home.apps[item.id] -%}
+            {%- if item.url -%}
+              {%- assign item_href = item.url -%}
+            {%- else -%}
+              {%- assign item_href = lang_prefix | append: item.path | relative_url -%}
+            {%- endif -%}
+            {%- assign slide_image = item.image -%}
+            {%- if item.image_zh -%}
+              {%- if current_lang == "zh-CN" or current_lang == "zh-TW" -%}
+                {%- assign slide_image = item.image_zh -%}
+              {%- endif -%}
+            {%- endif -%}
+            <li style="--ap-theme: {{ item.theme }}; --ap-ink: {{ item.ink }}; --ap-muted: {{ item.muted }};">
+              <a href="{{ item_href }}"{% if item.url %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                <span class="ap-copy">
+                  <h3>{{ copy.name }}</h3>
+                  <p>{{ copy.desc }}</p>
+                </span>
+                <img class="ap-shot" src="{{ slide_image | relative_url }}" alt="{{ copy.name }}">
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <button class="ap-arrow ap-next" type="button" aria-label="{{ home.carousel_next }}">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ap-dots">
+        {%- for item in site.data.home_catalog.apps -%}
+          {%- assign copy = home.apps[item.id] -%}
+          <button type="button" aria-label="{{ copy.name }}"{% if forloop.first %} aria-current="true"{% endif %}></button>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ap-band ap-tools" aria-label="{{ home.tools_title }}">
+  <div class="ap-inner">
+  <h2>{{ home.tools_title }}</h2>
+  <ul class="ap-grid">
+    {%- for item in site.data.home_catalog.tools -%}
+      {%- assign copy = home.tools[item.id] -%}
+      <li>
+        <a href="{{ lang_prefix | append: item.path | relative_url }}">
+          <h3>{{ copy.name }}</h3>
+          <p>{{ copy.desc }}</p>
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+  </div>
+</section>
+<script src="{{ '/assets/js/home-carousel.js' | relative_url }}" defer></script>

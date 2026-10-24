@@ -1,0 +1,40 @@
+vision: 便利で、少し新しいウェブツールやアプリをつくっています。
+apps_title: モバイルアプリ
+carousel_prev: 前へ
+carousel_next: 次へ
+tools_title: オンラインツール
+categories:
+  screen: 画面
+  sleep: 睡眠
+  time: 時差
+  data: データ
+  entry: 入口
+apps:
+  baby-black-screen:
+    name: 子ども用黒画面
+    desc: 幼児向けの偽シャットダウン
+  looksync:
+    name: LookSync
+    desc: 写真のメイクや髪型を、自分の顔に合わせてみる。
+tools:
+  black-screen:
+    name: 黒画面
+    desc: 光漏れ、ドット抜け、IPS グロー
+  best-bedtime-calculator:
+    name: 就寝時刻
+    desc: 睡眠周期から逆算する
+  wakeup-calculator:
+    name: 起床時刻
+    desc: 周期に合う起床時刻を出す
+  world-time-planner:
+    name: 会議の時差
+    desc: 複数都市で重なる時間を探す
+  what-time:
+    name: 都市の時刻
+    desc: その都市の今を見る
+  json:
+    name: JSON
+    desc: 整形、検証、XML / YAML へ変換
+  ai-chatbot-hub:
+    name: AI 入口
+    desc: ChatGPT、Gemini、Grok などをまとめて開く

@@ -1,0 +1,40 @@
+vision: ऐसे वेब टूल और ऐप बनाते हैं जो काम आसान करें, और कभी-कभी नया भी लगें।
+apps_title: मोबाइल ऐप
+carousel_prev: पिछला
+carousel_next: अगला
+tools_title: ऑनलाइन उपकरण
+categories:
+  screen: स्क्रीन
+  sleep: नींद
+  time: समय
+  data: डेटा
+  entry: प्रवेश
+apps:
+  baby-black-screen:
+    name: बच्चों की काली स्क्रीन
+    desc: छोटे बच्चों के लिए नकली शटडाउन
+  looksync:
+    name: LookSync
+    desc: किसी फोटो का मेकअप, बाल और स्टाइल अपने चेहरे पर आज़माएं।
+tools:
+  black-screen:
+    name: काली स्क्रीन
+    desc: लाइट लीक, डेड पिक्सल, IPS ग्लो
+  best-bedtime-calculator:
+    name: सोने का समय
+    desc: नींद के चक्र से उल्टा हिसाब
+  wakeup-calculator:
+    name: जागने का समय
+    desc: चक्र से मेल खाती सुबह
+  world-time-planner:
+    name: मीटिंग का समय
+    desc: कई शहरों में एक साथ जमने वाला घंटा
+  what-time:
+    name: शहर का समय
+    desc: उस शहर में अभी कितने बजे हैं
+  json:
+    name: JSON
+    desc: स्वरूप, जाँच, XML या YAML में बदलना
+  ai-chatbot-hub:
+    name: AI प्रवेश
+    desc: ChatGPT, Gemini, Grok और बाकी

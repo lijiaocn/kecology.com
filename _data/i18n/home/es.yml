@@ -1,0 +1,40 @@
+vision: Herramientas web y apps que ahorran un paso y, de vez en cuando, se sienten nuevas.
+apps_title: Apps móviles
+carousel_prev: Anterior
+carousel_next: Siguiente
+tools_title: Herramientas en línea
+categories:
+  screen: Pantalla
+  sleep: Sueño
+  time: Hora
+  data: Datos
+  entry: Acceso
+apps:
+  baby-black-screen:
+    name: Pantalla negra infantil
+    desc: Un apagado falso para niños pequeños
+  looksync:
+    name: LookSync
+    desc: Probar en la propia cara el maquillaje, el pelo y el estilo de una foto.
+tools:
+  black-screen:
+    name: Pantalla negra
+    desc: Fuga de luz, píxeles muertos, brillo IPS
+  best-bedtime-calculator:
+    name: Hora de dormir
+    desc: Calcular hacia atrás con un ciclo de sueño
+  wakeup-calculator:
+    name: Hora de despertar
+    desc: Un despertar que encaje con el ciclo
+  world-time-planner:
+    name: Horas de reunión
+    desc: Una hora que sirva en varias ciudades
+  what-time:
+    name: Hora local
+    desc: Qué hora es en una ciudad
+  json:
+    name: JSON
+    desc: Dar formato, validar, pasar a XML o YAML
+  ai-chatbot-hub:
+    name: Acceso a IA
+    desc: ChatGPT, Gemini, Grok y el resto

@@ -1,13 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
-title: Home
+title: 北京前浪求知科技有限公司
+nav_title: Home
+description: 北京前浪求知科技有限公司（Beijing Qianlang Qiuzhi Technology Co., Ltd.）
 permalink: /
 i18n: true
 nav_order: 0
 body_class: home-layout
+mysetting:
+  nowrapper: true
 ---
 
-{%- include post-list-page.html base_path="/" variant="home" -%}
+{%- include company-home.html -%}

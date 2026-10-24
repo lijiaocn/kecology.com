@@ -1,0 +1,40 @@
+vision: Делаем веб-инструменты и приложения, которыми удобно пользоваться и которые чуть меняют привычный ход дел.
+apps_title: Мобильные приложения
+carousel_prev: Назад
+carousel_next: Дальше
+tools_title: Онлайн-инструменты
+categories:
+  screen: Экран
+  sleep: Сон
+  time: Время
+  data: Данные
+  entry: Вход
+apps:
+  baby-black-screen:
+    name: Чёрный экран для детей
+    desc: Ложное выключение для малышей
+  looksync:
+    name: LookSync
+    desc: Примерить макияж, причёску и стиль с чужого фото на своё лицо.
+tools:
+  black-screen:
+    name: Чёрный экран
+    desc: Засветка, битые пиксели, IPS-свечение
+  best-bedtime-calculator:
+    name: Время сна
+    desc: Отсчитать цикл назад
+  wakeup-calculator:
+    name: Время подъёма
+    desc: Подъём, который попадает в цикл
+  world-time-planner:
+    name: Время встреч
+    desc: Час, удобный сразу в нескольких городах
+  what-time:
+    name: Время в городе
+    desc: Который час в выбранном городе
+  json:
+    name: JSON
+    desc: Форматировать, проверить, перевести в XML или YAML
+  ai-chatbot-hub:
+    name: Вход к ИИ
+    desc: ChatGPT, Gemini, Grok и другие

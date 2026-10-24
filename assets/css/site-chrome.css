@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap");
+
+.site-header,
+.site-footer {
+  --chrome-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  --chrome-ink: #ffffff;
+  --chrome-muted: rgba(255, 255, 255, 0.86);
+  --chrome-accent: #fbbf24;
+  background: var(--chrome-bg);
+  color: var(--chrome-ink);
+}
+
+.site-header {
+  border-top: 0px solid #f59e0b;
+  border-bottom: 0;
+  min-height: 3.25rem;
+}
+
+.site-header .wrapper,
+.site-footer .wrapper {
+  max-width: 1120px;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+.site-title,
+.site-title:visited {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--chrome-ink);
+}
+
+.site-nav .page-link,
+.site-header .lang-selector-btn {
+  color: var(--chrome-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.site-nav .page-link:hover,
+.site-header .lang-selector-btn:hover {
+  color: var(--chrome-accent);
+  opacity: 1;
+  text-decoration: none;
+}
+
+.site-nav .page-link[aria-current="page"],
+.site-nav .page-link[aria-current="page"]:hover {
+  color: var(--chrome-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--chrome-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  opacity: 1;
+}
+
+.site-footer {
+  border-top: 0px solid #f59e0b;
+}
+
+.footer-col-wrapper,
+.site-footer a {
+  color: var(--chrome-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer .svg-icon {
+  fill: var(--chrome-ink);
+}
+
+.footer-heading {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  color: var(--chrome-ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.site-footer .wrapper > a,
+.site-footer a:hover {
+  color: var(--chrome-ink);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--chrome-accent);
+}
+
+@media (max-width: 900px) {
+  .site-header .wrapper,
+  .site-footer .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .site-nav {
+    background: #4f46e5;
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .site-nav .menu-icon > svg {
+    fill: #ffffff;
+  }
+}

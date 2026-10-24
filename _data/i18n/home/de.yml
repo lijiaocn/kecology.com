@@ -1,0 +1,40 @@
+vision: Wir bauen Web-Tools und Apps, die den Alltag leichter machen und ab und zu überraschen.
+apps_title: Mobile Apps
+carousel_prev: Zurück
+carousel_next: Weiter
+tools_title: Online-Tools
+categories:
+  screen: Bildschirm
+  sleep: Schlaf
+  time: Zeit
+  data: Daten
+  entry: Zugang
+apps:
+  baby-black-screen:
+    name: Schwarzbild für Kinder
+    desc: Vorgetäuschtes Ausschalten für Kleinkinder
+  looksync:
+    name: LookSync
+    desc: Make-up, Frisur und Stil aus einem Foto auf das eigene Gesicht legen.
+tools:
+  black-screen:
+    name: Schwarzbild
+    desc: Lichthöfe, Pixelfehler, IPS-Glow
+  best-bedtime-calculator:
+    name: Schlafenszeit
+    desc: Vom Schlafzyklus zurückrechnen
+  wakeup-calculator:
+    name: Aufwachzeit
+    desc: Aufstehen passend zum Zyklus
+  world-time-planner:
+    name: Besprechungszeiten
+    desc: Eine Stunde, die in mehreren Städten passt
+  what-time:
+    name: Ortszeit
+    desc: Wie spät es in einer Stadt ist
+  json:
+    name: JSON
+    desc: Formatieren, prüfen, nach XML oder YAML
+  ai-chatbot-hub:
+    name: KI-Zugang
+    desc: ChatGPT, Gemini, Grok und weitere

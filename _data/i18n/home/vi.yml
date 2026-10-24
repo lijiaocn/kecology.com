@@ -1,0 +1,40 @@
+vision: Làm công cụ web và ứng dụng cho đỡ mất công, thỉnh thoảng lại thấy lạ một chút.
+apps_title: Ứng dụng di động
+carousel_prev: Trước
+carousel_next: Sau
+tools_title: Công cụ trực tuyến
+categories:
+  screen: Màn hình
+  sleep: Giấc ngủ
+  time: Giờ
+  data: Dữ liệu
+  entry: Lối vào
+apps:
+  baby-black-screen:
+    name: Màn hình đen cho bé
+    desc: Màn hình giả tắt máy cho trẻ nhỏ
+  looksync:
+    name: LookSync
+    desc: Thử son, tóc và kiểu từ một bức ảnh lên mặt mình.
+tools:
+  black-screen:
+    name: Màn hình đen
+    desc: Lọt sáng, điểm chết, hào quang IPS
+  best-bedtime-calculator:
+    name: Giờ đi ngủ
+    desc: Tính ngược từ một chu kỳ ngủ
+  wakeup-calculator:
+    name: Giờ thức dậy
+    desc: Giờ dậy khớp với chu kỳ
+  world-time-planner:
+    name: Giờ họp
+    desc: Một giờ hợp với nhiều thành phố
+  what-time:
+    name: Giờ địa phương
+    desc: Bây giờ ở thành phố đó là mấy giờ
+  json:
+    name: JSON
+    desc: Định dạng, kiểm tra, chuyển sang XML hoặc YAML
+  ai-chatbot-hub:
+    name: Lối vào AI
+    desc: ChatGPT, Gemini, Grok và những cái khác

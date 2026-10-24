@@ -20,82 +20,10 @@ body.tool-layout .page-content > .wrapper {
   max-width: 728px;
 }
 
-body.home-layout .site-header,
-body.blog-layout .site-header,
-body.guides-layout .site-header,
-body.tool-layout .site-header {
-  border-top: none;
-  border-bottom: 1px solid #f2f2f2;
-  background-color: #ffffff;
-  min-height: 3.25rem;
-}
-
-body.home-layout .site-title,
-body.home-layout .site-title:visited,
-body.blog-layout .site-title,
-body.blog-layout .site-title:visited,
-body.guides-layout .site-title,
-body.guides-layout .site-title:visited,
-body.tool-layout .site-title,
-body.tool-layout .site-title:visited {
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  color: #242424;
-}
-
-body.home-layout .site-nav .page-link,
-body.blog-layout .site-nav .page-link,
-body.guides-layout .site-nav .page-link,
-body.tool-layout .site-nav .page-link {
-  color: #242424;
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-
-body.home-layout .site-nav .page-link:hover,
-body.blog-layout .site-nav .page-link:hover,
-body.guides-layout .site-nav .page-link:hover,
-body.tool-layout .site-nav .page-link:hover {
-  color: #242424;
-  opacity: 0.65;
-  text-decoration: none;
-}
-
-body.home-layout .site-footer,
-body.blog-layout .site-footer,
-body.guides-layout .site-footer,
-body.tool-layout .site-footer {
-  border-top: 1px solid #f2f2f2;
-  background-color: #ffffff;
-}
-
-body.home-layout .footer-col-wrapper,
-body.blog-layout .footer-col-wrapper,
-body.guides-layout .footer-col-wrapper,
-body.tool-layout .footer-col-wrapper {
-  color: #757575;
-  font-size: 0.875rem;
-}
-
-body.home-layout .footer-heading,
-body.blog-layout .footer-heading,
-body.guides-layout .footer-heading,
-body.tool-layout .footer-heading {
-  color: #242424;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
 body.home-layout .post-content a,
-body.home-layout .site-footer a,
 body.blog-layout .post-content a,
-body.blog-layout .site-footer a,
 body.guides-layout .post-content a,
-body.guides-layout .site-footer a,
-body.tool-layout .post-content a,
-body.tool-layout .site-footer a {
+body.tool-layout .post-content a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -104,13 +32,9 @@ body.tool-layout .site-footer a {
 }
 
 body.home-layout .post-content a:hover,
-body.home-layout .site-footer a:hover,
 body.blog-layout .post-content a:hover,
-body.blog-layout .site-footer a:hover,
 body.guides-layout .post-content a:hover,
-body.guides-layout .site-footer a:hover,
-body.tool-layout .post-content a:hover,
-body.tool-layout .site-footer a:hover {
+body.tool-layout .post-content a:hover {
   color: inherit;
   text-decoration-color: #242424;
 }
@@ -205,24 +129,6 @@ body.guides-layout .post-content ol {
 body.blog-layout .post-content li,
 body.guides-layout .post-content li {
   margin-bottom: 0.5em;
-}
-
-/* Mobile nav — light dropdown on editorial pages */
-@media screen and (max-width: 600px) {
-  body.home-layout .site-nav,
-  body.blog-layout .site-nav,
-  body.guides-layout .site-nav,
-  body.tool-layout .site-nav {
-    background-color: #ffffff;
-    border-color: #e6e6e6;
-  }
-
-  body.home-layout .site-nav .menu-icon > svg,
-  body.blog-layout .site-nav .menu-icon > svg,
-  body.guides-layout .site-nav .menu-icon > svg,
-  body.tool-layout .site-nav .menu-icon > svg {
-    fill: #242424;
-  }
 }
 
 @media (max-width: 768px) {

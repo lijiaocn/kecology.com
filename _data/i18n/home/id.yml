@@ -1,0 +1,40 @@
+vision: Alat web dan aplikasi yang mempermudah urusan, dan sesekali terasa baru.
+apps_title: Aplikasi seluler
+carousel_prev: Sebelumnya
+carousel_next: Berikutnya
+tools_title: Alat online
+categories:
+  screen: Layar
+  sleep: Tidur
+  time: Waktu
+  data: Data
+  entry: Akses
+apps:
+  baby-black-screen:
+    name: Layar hitam anak
+    desc: Layar mati palsu untuk balita
+  looksync:
+    name: LookSync
+    desc: Coba riasan, rambut, dan gaya dari sebuah foto di wajah sendiri.
+tools:
+  black-screen:
+    name: Layar hitam
+    desc: Cahaya bocor, piksel mati, IPS glow
+  best-bedtime-calculator:
+    name: Jam tidur
+    desc: Hitung mundur dari siklus tidur
+  wakeup-calculator:
+    name: Jam bangun
+    desc: Bangun yang pas dengan siklusnya
+  world-time-planner:
+    name: Jam rapat
+    desc: Jam yang cocok di beberapa kota
+  what-time:
+    name: Waktu kota
+    desc: Sekarang jam berapa di suatu kota
+  json:
+    name: JSON
+    desc: Rapikan, periksa, ubah ke XML atau YAML
+  ai-chatbot-hub:
+    name: Akses AI
+    desc: ChatGPT, Gemini, Grok, dan lainnya

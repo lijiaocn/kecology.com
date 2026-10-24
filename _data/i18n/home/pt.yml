@@ -1,0 +1,40 @@
+vision: Ferramentas web e apps que facilitam o dia a dia e, às vezes, mudam o jeito de fazer as coisas.
+apps_title: Apps móveis
+carousel_prev: Anterior
+carousel_next: Seguinte
+tools_title: Ferramentas online
+categories:
+  screen: Ecrã
+  sleep: Sono
+  time: Hora
+  data: Dados
+  entry: Acesso
+apps:
+  baby-black-screen:
+    name: Ecrã preto infantil
+    desc: Um desligar falso para crianças pequenas
+  looksync:
+    name: LookSync
+    desc: Experimentar na própria cara a maquiagem, o cabelo e o estilo de uma foto.
+tools:
+  black-screen:
+    name: Ecrã preto
+    desc: Fuga de luz, pixéis mortos, brilho IPS
+  best-bedtime-calculator:
+    name: Hora de deitar
+    desc: Recuar a partir de um ciclo de sono
+  wakeup-calculator:
+    name: Hora de acordar
+    desc: Um acordar que caiba no ciclo
+  world-time-planner:
+    name: Horas de reunião
+    desc: Uma hora que sirva em várias cidades
+  what-time:
+    name: Hora local
+    desc: Que horas são numa cidade
+  json:
+    name: JSON
+    desc: Formatar, validar, converter para XML ou YAML
+  ai-chatbot-hub:
+    name: Acesso a IA
+    desc: ChatGPT, Gemini, Grok e os restantes

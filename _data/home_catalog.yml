@@ -1,0 +1,37 @@
+apps:
+  - id: baby-black-screen
+    path: /tool/baby-black-screen
+    theme: "#020617"
+    ink: "#f9fafb"
+    muted: "#d1d5db"
+    image: /assets/img/fakeshutdown/screen-en.png
+    image_zh: /assets/img/fakeshutdown/screen-zh.png
+  - id: looksync
+    url: https://www.looksync.app/
+    theme: "linear-gradient(115deg, #ff7b7b 0%, #6ad9c9 100%)"
+    ink: "#141418"
+    muted: "#3f3f46"
+    image: /assets/img/looksync/step5-result.jpg
+
+tools:
+  - id: black-screen
+    category: screen
+    path: /tool/black-screen
+  - id: best-bedtime-calculator
+    category: sleep
+    path: /tool/best-bedtime-calculator
+  - id: wakeup-calculator
+    category: sleep
+    path: /tool/wakeup-calculator
+  - id: world-time-planner
+    category: time
+    path: /tool/world-time-planner
+  - id: what-time
+    category: time
+    path: /tool/what-time
+  - id: json
+    category: data
+    path: /tool/json
+  - id: ai-chatbot-hub
+    category: entry
+    path: /tool/ai-chatbot-hub

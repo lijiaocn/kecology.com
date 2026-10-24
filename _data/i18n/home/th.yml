@@ -1,0 +1,40 @@
+vision: ทำเว็บทูลและแอปที่ใช้ง่าย และบางครั้งก็ให้ความรู้สึกใหม่
+apps_title: แอปมือถือ
+carousel_prev: ก่อนหน้า
+carousel_next: ถัดไป
+tools_title: เครื่องมือออนไลน์
+categories:
+  screen: หน้าจอ
+  sleep: การนอน
+  time: เวลา
+  data: ข้อมูล
+  entry: ทางเข้า
+apps:
+  baby-black-screen:
+    name: จอดำสำหรับเด็ก
+    desc: หน้าจอปิดเครื่องปลอมสำหรับเด็กเล็ก
+  looksync:
+    name: LookSync
+    desc: ลองเมกอัป ทรงผม และสไตล์จากรูป บนใบหน้าตัวเอง
+tools:
+  black-screen:
+    name: จอดำ
+    desc: แสงรั่ว พิกเซลเสีย แสง IPS
+  best-bedtime-calculator:
+    name: เวลานอน
+    desc: นับถอยหลังจากวงจรการนอน
+  wakeup-calculator:
+    name: เวลาตื่น
+    desc: เวลาตื่นที่เข้ากับวงจร
+  world-time-planner:
+    name: เวลาประชุม
+    desc: ชั่วโมงที่หลายเมืองใช้ร่วมกันได้
+  what-time:
+    name: เวลาในเมือง
+    desc: ตอนนี้เมืองนั้นกี่โมง
+  json:
+    name: JSON
+    desc: จัดรูปแบบ ตรวจ แปลงเป็น XML หรือ YAML
+  ai-chatbot-hub:
+    name: ทางเข้า AI
+    desc: ChatGPT, Gemini, Grok และอื่น ๆ

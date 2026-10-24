@@ -1,0 +1,40 @@
+vision: نبني أدوات ويب وتطبيقات تسهّل الأمر، وتمنح أحيانًا تجربة مختلفة.
+apps_title: تطبيقات الجوال
+carousel_prev: السابق
+carousel_next: التالي
+tools_title: أدوات على الويب
+categories:
+  screen: الشاشة
+  sleep: النوم
+  time: الوقت
+  data: البيانات
+  entry: المدخل
+apps:
+  baby-black-screen:
+    name: شاشة سوداء للأطفال
+    desc: إطفاء وهمي للصغار
+  looksync:
+    name: LookSync
+    desc: جرّب المكياج والشعر والأسلوب من صورة على وجهك.
+tools:
+  black-screen:
+    name: شاشة سوداء
+    desc: تسرّب الضوء والبكسلات الميتة وتوهج IPS
+  best-bedtime-calculator:
+    name: وقت النوم
+    desc: احسب للخلف من دورة النوم
+  wakeup-calculator:
+    name: وقت الاستيقاظ
+    desc: استيقاظ يوافق الدورة
+  world-time-planner:
+    name: وقت الاجتماع
+    desc: ساعة تناسب عدة مدن معًا
+  what-time:
+    name: توقيت المدينة
+    desc: كم الساعة الآن في مدينة
+  json:
+    name: JSON
+    desc: تنسيق وتحقق وتحويل إلى XML أو YAML
+  ai-chatbot-hub:
+    name: مدخل الذكاء
+    desc: ChatGPT وGemini وGrok وغيرها

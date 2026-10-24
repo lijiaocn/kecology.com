@@ -1,0 +1,40 @@
+vision: 쓰기 편하고, 가끔은 새롭게 느껴지는 웹 도구와 앱을 만듭니다.
+apps_title: 모바일 앱
+carousel_prev: 이전
+carousel_next: 다음
+tools_title: 온라인 도구
+categories:
+  screen: 화면
+  sleep: 수면
+  time: 시간대
+  data: 데이터
+  entry: 입구
+apps:
+  baby-black-screen:
+    name: 아이용 검은 화면
+    desc: 유아용 가짜 종료 화면
+  looksync:
+    name: LookSync
+    desc: 사진 속 화장과 헤어, 스타일을 내 얼굴에 얹어 본다.
+tools:
+  black-screen:
+    name: 검은 화면
+    desc: 빛샘, 불량 화소, IPS 글로우
+  best-bedtime-calculator:
+    name: 취침 시각
+    desc: 수면 주기로 잠들 시간을 거꾸로 계산
+  wakeup-calculator:
+    name: 기상 시각
+    desc: 주기에 맞는 다음 날 기상 시각
+  world-time-planner:
+    name: 회의 시간대
+    desc: 여러 도시가 겹치는 시간을 찾음
+  what-time:
+    name: 도시별 시각
+    desc: 그 도시의 현재 시각
+  json:
+    name: JSON
+    desc: 정리, 검사, XML·YAML 변환
+  ai-chatbot-hub:
+    name: AI 입구
+    desc: ChatGPT, Gemini, Grok 등을 한곳에

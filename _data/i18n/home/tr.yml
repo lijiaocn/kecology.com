@@ -1,0 +1,40 @@
+vision: İşleri kolaylaştıran, arada da yeni hissettiren web araçları ve uygulamalar yapıyoruz.
+apps_title: Mobil uygulamalar
+carousel_prev: Önceki
+carousel_next: Sonraki
+tools_title: Çevrimiçi araçlar
+categories:
+  screen: Ekran
+  sleep: Uyku
+  time: Saat
+  data: Veri
+  entry: Giriş
+apps:
+  baby-black-screen:
+    name: Çocuk siyah ekranı
+    desc: Küçük çocuklar için sahte kapanış
+  looksync:
+    name: LookSync
+    desc: Bir fotodaki makyajı, saçı ve stili kendi yüzünde dene.
+tools:
+  black-screen:
+    name: Siyah ekran
+    desc: Işık sızıntısı, ölü piksel, IPS parlaması
+  best-bedtime-calculator:
+    name: Uyku saati
+    desc: Uyku döngüsünden geriye say
+  wakeup-calculator:
+    name: Uyanma saati
+    desc: Döngüye uyan bir kalkış
+  world-time-planner:
+    name: Toplantı saati
+    desc: Birkaç şehirde birden uyan saat
+  what-time:
+    name: Şehir saati
+    desc: Bir şehirde şu an saat kaç
+  json:
+    name: JSON
+    desc: Düzenle, doğrula, XML veya YAML'a çevir
+  ai-chatbot-hub:
+    name: Yapay zeka girişi
+    desc: ChatGPT, Gemini, Grok ve diğerleri

@@ -1,0 +1,40 @@
+vision: 为用户研发提供便利和新体验的网页工具/APP
+apps_title: 移动应用
+carousel_prev: 上一个
+carousel_next: 下一个
+tools_title: 在线工具
+categories:
+  screen: 屏幕
+  sleep: 作息
+  time: 时区
+  data: 数据
+  entry: 入口
+apps:
+  baby-black-screen:
+    name: 哄娃黑屏
+    desc: 给幼儿用的假关机画面
+  looksync:
+    name: LookSync
+    desc: 把一张照片里的妆发和造型，试到自己脸上。
+tools:
+  black-screen:
+    name: 在线黑屏
+    desc: 查漏光、坏点、IPS 辉光
+  best-bedtime-calculator:
+    name: 入睡时间
+    desc: 按睡眠周期倒推就寝时刻
+  wakeup-calculator:
+    name: 起床时间
+    desc: 按睡眠周期安排次日起床
+  world-time-planner:
+    name: 会议时区
+    desc: 对齐多地都能开会的时段
+  what-time:
+    name: 各地时间
+    desc: 查看城市当前时间
+  json:
+    name: JSON
+    desc: 格式化、校验，转到 XML、YAML
+  ai-chatbot-hub:
+    name: AI 入口
+    desc: 集中打开 ChatGPT、Gemini、Grok 等
