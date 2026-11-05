@@ -24,6 +24,7 @@
         </label>
 
         <div class="trigger">
+          {%- assign current_lang = page.lang | default: default_lang -%}
           {%- assign current_base = page.base_url | default: page.url -%}
           {%- if page.lang and page.lang != default_lang -%}
             {%- assign lang_prefix = "/" | append: page.lang -%}
@@ -42,7 +43,17 @@
             {%- elsif current_base == nav_path or current_base contains nav_path -%}
               {%- assign is_current = true -%}
             {%- endif -%}
-            <a class="page-link" href="{{ nav_url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ my_page.nav_title | default: my_page.title | escape }}</a>
+            {%- if nav_path == "/" -%}
+              {%- assign nav_i18n_key = "home" -%}
+            {%- else -%}
+              {%- assign nav_i18n_key = nav_path | remove: "/" -%}
+            {%- endif -%}
+            {%- assign nav_i18n = site.data.i18n[nav_i18n_key][current_lang] -%}
+            {%- if nav_i18n == nil -%}
+              {%- assign nav_i18n = site.data.i18n[nav_i18n_key][default_lang] -%}
+            {%- endif -%}
+            {%- assign nav_label = nav_i18n.nav_title | default: nav_i18n.page_title | default: my_page.nav_title | default: my_page.title -%}
+            <a class="page-link" href="{{ nav_url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ nav_label | escape }}</a>
           {%- endfor -%}
           {%- include language-selector.html -%}
         </div>
