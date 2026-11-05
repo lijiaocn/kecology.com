@@ -15,6 +15,12 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  {%- if page.image -%}
+  <figure class="post-cover">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" itemprop="image">
+  </figure>
+  {%- endif -%}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>

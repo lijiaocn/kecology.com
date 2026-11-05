@@ -58,11 +58,12 @@ module Jekyll
             # 注入新的语言代码
             doc_to_add.data['lang'] = lang
             
-            # 对于 posts：从 i18n 数据文件读取并替换 title 和 description
+            # 对于 posts：从 i18n 数据文件读取并替换 title、description、image
             if type == 'posts'
               i18n_data = resource_i18n_data[lang]
               doc_to_add.data['title'] = i18n_data['title'] if i18n_data['title']
               doc_to_add.data['description'] = i18n_data['description'] if i18n_data['description']
+              doc_to_add.data['image'] = i18n_data['image'] if i18n_data['image']
             end
             
             # 构造 permalink：默认语言不添加前缀，其他语言添加语言前缀
