@@ -1,8 +1,8 @@
 ---
 layout: post
 date: "2026-06-23 10:00:00 +0800"
-categories: "guides"
-permalink: /guides/reduces-toddler-screen-time
+categories: "blog"
+permalink: /blog/reduces-toddler-screen-time
 i18n: true
 title: "The App That Directly Reduces Toddler Screen Time"
 description: "Tired of generic screen-time tips that don't work? Baby Black Screen turns your phone into an unresponsive black screen so toddlers lose interest fast—plus what parents must do for lasting results."
