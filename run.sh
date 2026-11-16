@@ -7,4 +7,4 @@
 #
 
 
-JEKYLL_ENV=development  bundle exec jekyll serve -H 0.0.0.0
+JEKYLL_ENV=development  bundle exec jekyll serve -H 0.0.0.0 -P 8000
