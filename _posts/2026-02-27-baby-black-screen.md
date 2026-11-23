@@ -66,7 +66,7 @@ description: "Baby Black Screen is a simple iOS and Android app that shows a fak
   <ul>
     <li>{{ i18n_data.support_how_to_contact }}</li>
     <li>{{ i18n_data.support_bug_report }}</li>
-    <li><a href="mailto:lijiaocn@foxmial.com">lijiaocn@foxmial.com</a></li>
+    <li><a href="mailto:lijiaocn@foxmail.com">lijiaocn@foxmail.com</a></li>
   </ul>
 
   <h2>{{ i18n_data.section_privacy_title }}</h2>
